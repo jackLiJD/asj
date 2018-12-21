@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded,ContentDescription,RtlSymmetry,RelativeOverlap">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.BankCardAddIDVM" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".auth.ui.BankCardAddIdActivity">
+        <View
+            android:background="@color/default_divider_color"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/x20"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="@dimen/y20"
+            android:text="@{viewModel.displayHint}"
+            android:textColor="@color/text_color_normal"
+            android:textSize="@dimen/x24"
+            tools:text="@string/bank_card_add_id_hint" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y80"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp">
+
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="@dimen/x130"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.lblName}"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/x28"
+                tools:text="姓名" />
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:enabled="@{viewModel.etNameEnable}"
+                android:focusable="true"
+                android:hint="@string/bank_card_add_input_hint"
+                android:lines="1"
+                android:maxLength="19"
+                android:paddingLeft="@dimen/x10"
+                android:paddingRight="@dimen/x24"
+                android:textColor="@color/text_color_black"
+                android:textColorHint="@color/text_color_normal_light"
+                android:textSize="@dimen/x28"
+                app:watcher="@{viewModel.idWatcher}" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="33dp"
+                android:onClick="@{viewModel.nameClick}"
+                android:src="@drawable/ic_info"
+                app:visibility="@{viewModel.showNoticeIc}" />
+
+        </LinearLayout>
+        <View
+            android:background="@color/default_divider_color"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y80"
+            android:layout_marginTop="@dimen/y1"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="15dp">
+
+            <TextView
+                android:id="@+id/lbl_id"
+                android:layout_width="@dimen/x130"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.lblNo}"
+                android:textColor="@color/text_color_black"
+                android:textSize="@dimen/x28"
+                tools:text="身份证号" />
+
+            <!--身份证号输入框-->
+            <com.ald.asjauthlib.authframework.core.ui.EditTextWithDelNew
+                android:id="@+id/et_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:cursorVisible="true"
+                android:digits="0123456789xX"
+                android:focusable="true"
+                android:hint="@string/bank_card_add_input_hint"
+                android:lines="1"
+                android:maxLength="18"
+                android:paddingLeft="@dimen/x10"
+                android:paddingRight="@dimen/x24"
+                android:textColor="@color/text_color_black"
+                android:textColorHint="@color/text_color_normal_light"
+                android:textSize="@dimen/x28"
+                app:visibility="@{viewModel.isIDLayout}"
+                app:watcher="@{viewModel.idWatcher}"
+                tools:visibility="gone" />
+
+            <!--银行卡号输入框 增加inputType属性，获取焦点后调用数字键盘-->
+            <com.ald.asjauthlib.authframework.core.ui.EditTextWithDelNew
+                android:id="@+id/et_bankcard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@null"
+                android:cursorVisible="true"
+                android:digits="0123456789"
+                android:inputType="number"
+                android:focusable="true"
+                android:hint="@string/bank_card_add_input_hint"
+                android:lines="1"
+                android:maxLength="19"
+                android:paddingLeft="@dimen/x10"
+                android:paddingRight="@dimen/x24"
+                android:textColor="@color/text_color_black"
+                android:textColorHint="@color/text_color_normal_light"
+                android:textSize="@dimen/x28"
+                app:visibility="@{!viewModel.isIDLayout}"
+                app:watcher="@{viewModel.bankCardWatcher}" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="33dp"
+                android:onClick="@{viewModel.onScanClick}"
+                android:src="@drawable/ic_camera_bank" />
+        </LinearLayout>
+        <View
+            android:background="@color/default_divider_color"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
+        <TextView
+            app:visibility="@{viewModel.showSupportBank}"
+            android:onClick="@{viewModel::supportBankClick}"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="end"
+            android:text="《支持银行卡》"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/color_blue_renewal_all"
+            android:textSize="13sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/drawable_validate_confirm_bg"
+            android:enabled="@{viewModel.submitEnable}"
+            android:gravity="center"
+            android:onClick="@{viewModel.onSubmitClick}"
+            android:text="@string/guide_dialog_next_step"
+            android:textColor="@color/btn_bottom_dialog_color"
+            android:textSize="@dimen/x32"
+            tools:visibility="visible" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/bank_card_info_safe_hint"
+            android:textColor="@color/text_color_normal_light"
+            android:textSize="@dimen/x24" />
+
+
+        <ImageView
+            android:id="@+id/iv_bottomImg"
+            android:onClick="@{viewModel.onCreditImgClick}"
+            android:src="@drawable/ic_bottom_addcard"
+            android:layout_marginTop="54dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:adjustViewBounds="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</layout>

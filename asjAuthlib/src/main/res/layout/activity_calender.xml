@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.CalenderVM" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/activity_calender"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.alfl.www.user.ui.CalenderActivity">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_year"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y108"
+            android:background="@color/white">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <View
+            android:id="@+id/line"
+            style="@style/hLineStyle"
+            android:layout_below="@+id/rv_year"/>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/y30"
+            android:paddingTop="@dimen/y40"/>
+
+
+    </RelativeLayout>
+</layout>

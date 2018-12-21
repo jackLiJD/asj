@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?><!--账单详情-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.BillDtlVM" />
+
+        <import type="com.ald.asjauthlib.tatarka.bindingcollectionadapter.LayoutManagers" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/activity_current_bill"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context="com.alfl.www.business.ui.BillDtlActivity">
+
+        <LinearLayout
+            android:id="@+id/ll_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/y30"
+                android:onClick="@{viewModel.yearClick}"
+                android:text="@{viewModel.billYear}"
+                android:textColor="@color/color_ff7722"
+                app:view_width="@{viewModel.yearWidth}"
+                tools:text="2017" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/y15"
+                android:layout_marginTop="@dimen/y15"
+                android:background="@color/color_e4e4e4" />
+
+            <!--月份横向rv-->
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:itemView="@{viewModel.monthView}"
+                app:items="@{viewModel.months}"
+                app:layoutManager="@{LayoutManagers.linear(0, false)}" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_calendar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y50"
+            android:text="@{viewModel.dateSpan}"
+            tools:text="9月10日~10月9日"
+            tools:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/txt_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_duration"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y10"
+            android:text="@{viewModel.billAmount}"
+            android:textColor="@color/color_232323"
+            android:textSize="@dimen/x90"
+            tools:text="896.10" />
+
+        <TextView
+            android:id="@+id/txt_deadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_total"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y10"
+            android:text="@{viewModel.deadline}"
+            android:textColor="@color/color_ff5546"
+            android:textSize="@dimen/x30"
+            tools:text="最后还款日11月26日" />
+
+        <TextView
+            android:id="@+id/btn_repay"
+            android:layout_width="222dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_deadline"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="21dp"
+            android:background="@drawable/btn_circle_main_color"
+            android:gravity="center"
+            android:onClick="@{viewModel.monthBtnClick}"
+            android:padding="@dimen/y25"
+            android:text="@{viewModel.monthBtn}"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            tools:text="立即还款" />
+
+        <ImageView
+            app:visibility="@{viewModel.qusVis}"
+            android:onClick="@{viewModel.questionClick}"
+            android:layout_below="@+id/txt_deadline"
+            android:layout_marginTop="21dp"
+            android:layout_toRightOf="@id/btn_repay"
+            android:layout_alignBottom="@id/btn_repay"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/question_shade"/>
+
+        <ImageView
+            android:id="@+id/imgSrc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_calendar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:adjustViewBounds="true"
+            android:src="@{viewModel.imgSrc}"
+            app:visibility="@{viewModel.imgVis}"
+            tools:src="@drawable/no_bills"
+            tools:visibility="gone" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgSrc"
+            android:gravity="center"
+            android:text="@{viewModel.imgText}"
+            android:textColor="@color/color_666666"
+            android:textSize="14sp"
+            app:visibility="@{viewModel.imgVis}"
+            tools:text="无账单记录"
+            tools:visibility="gone" />
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:layout_below="@id/btn_repay"
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:background="@color/color_f6f6f6"
+            android:layout_height="match_parent"
+            app:srlEnableLoadmore="true"
+            app:srlEnableLoadmoreWhenContentNotFull="true">
+
+            <!--上拉刷新和下拉加载更多可以通过Falsify开头的布局实现数据更新,
+                此效果用户看不到任何额外布局,但SmartRefreshLayout布局判断数据加载
+                的条件与mHeaderHeight, mFooterHeight高度有关(见overSpinner()方法),
+                由于使用Falsify系列布局看不到任何布局提示,顾mHeaderHeight(srlHeaderHeight),
+                mFooterHeight(srlFooterHeight)高度设置不该太大(要刷新加载的情况下),
+                太大触发不敏感,用此系列布局也可实现越界滚动效果,
+                如果直接禁止下拉刷新头部是不会有越界滚动效果-->
+            <com.scwang.smartrefresh.layout.header.FalsifyHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:addItemDecoration="@{viewModel.type}"
+                app:itemView="@{viewModel.itemView}"
+                app:items="@{viewModel.items}"
+                app:layoutManager="@{LayoutManagers.linear()}" />
+
+            <com.scwang.smartrefresh.layout.footer.FalsifyFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+    </RelativeLayout>
+
+</layout>

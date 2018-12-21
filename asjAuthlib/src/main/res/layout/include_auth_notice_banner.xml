@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.CreditPromoteVM" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:visibility="@{viewModel.showNoticeBanner}"
+        tools:visibility="gone">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_limit_promot" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_notice_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.txtNoticeTitle1}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x50"
+                tools:text="注意标题一" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y30"
+                android:gravity="center_horizontal"
+                android:text="@{viewModel.txtNoticeTitle2}"
+                android:textColor="@color/white"
+                tools:text="注意标题2注意标题2注意标题2注意标题2注意标题2注意标题2" />
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>

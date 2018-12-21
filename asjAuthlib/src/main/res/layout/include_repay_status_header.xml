@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription,RelativeOverlap">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.RepayStatusVM" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_head"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y100"
+        android:background="@color/background_white_color">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="@{viewModel.onBackClick}"
+            android:layout_marginStart="@dimen/x18"
+            android:src="@drawable/icon_titlebar_heise_fanhui" />
+
+        <TextView
+            android:id="@+id/img_top_bar_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:onClick="@{viewModel.telClick}"
+            android:paddingLeft="@dimen/x24"
+            android:paddingRight="@dimen/x24"
+            android:scaleType="center"
+            android:text="@string/btn_custom_service"
+            android:textColor="@color/color_232323"
+            android:textSize="@dimen/x28" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y1"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_line_gray_bg" />
+
+    </RelativeLayout>
+</layout>

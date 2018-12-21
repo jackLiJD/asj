@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?><!--退款详情-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.ReimburseDtlVM" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/activity_reimburse_dtl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="com.alfl.www.business.ui.ReimburseDtlActivity">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/y40"
+                android:paddingTop="@dimen/y40">
+
+                <TextView
+                    android:id="@+id/txt_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="退款成功"
+                    android:textColor="@color/color_blue_renewal_all"
+                    android:textSize="@dimen/x42" />
+
+                <ImageView
+                    android:layout_width="@dimen/y55"
+                    android:layout_height="@dimen/y55"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/y10"
+                    android:layout_toLeftOf="@+id/txt_header"
+                    android:src="@drawable/ic_repay_success" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:paddingBottom="@dimen/y30"
+                android:paddingTop="@dimen/y10"
+                android:text="温馨提示:已退款至您的账户余额/银行卡"
+                android:textSize="@dimen/x28" />
+
+
+            <RelativeLayout
+                style="@style/repayment_dtl_item_rl"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y100"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="退款总金额"
+                    android:textSize="@dimen/x30" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@{viewModel.displayAmount}"
+                    android:textColor="@color/color_oto_list_return"
+                    android:textSize="@dimen/x32"
+                    tools:text="150.56元" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                style="@style/reimburse_dtl_item_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="本金"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@{viewModel.displayPrinciple}"
+                    android:textSize="@dimen/x28"
+                    tools:text="300元" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                style="@style/reimburse_dtl_item_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="分期手续费"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@{viewModel.displayStageServiceCharge}"
+                    android:textSize="@dimen/x28"
+                    tools:text="300元" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                style="@style/reimburse_dtl_item_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="逾期利息"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@{viewModel.displayOverdueInterest}"
+                    android:textSize="@dimen/x28"
+                    tools:text="300元" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                style="@style/reimburse_dtl_item_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:visibility="@{viewModel.showSystemDiscontLayout}"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="系统减免"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@{viewModel.displaySystemDiscont}"
+                    android:textSize="@dimen/x28"
+                    tools:text="150.56元" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y100"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/y30"
+                    android:text="退款详情"
+                    android:textSize="@dimen/x30" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                style="@style/reimburse_dtl_item_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="商品名称"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:gravity="right"
+                    android:maxLines="1"
+                    android:layout_marginLeft="@dimen/y30"
+                    android:text="@{viewModel.displayName}"
+                    android:textSize="@dimen/x28"
+                    tools:text="儿童双色双肩包小宝宝最可..." />
+            </LinearLayout>
+
+            <RelativeLayout
+                style="@style/reimburse_dtl_item_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="商品售价"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@{viewModel.displayPriceAmount}"
+                    android:textSize="@dimen/x28"
+                    tools:text="800.00元" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                style="@style/reimburse_dtl_item_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="直接支付"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@{viewModel.displayDtlBankAmount}"
+                    android:textSize="@dimen/x28"
+                    tools:text="800.00元" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/reimburse_dtl_item_rl">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="分期详情"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@{viewModel.displayStageDtl}"
+                    android:textSize="@dimen/x28"
+                    tools:text="180.56X3期（已支付2期）" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/reimburse_dtl_item_rl">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="退款时间"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@{viewModel.displayTime}"
+                    android:textSize="@dimen/x28"
+                    tools:text="2017/7/4 16:09:09" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/reimburse_dtl_item_rl">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="退款编号"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@{viewModel.displayRefundId}"
+                    android:textSize="@dimen/x28"
+                    tools:text="201707081629009876876" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <TextView
+                    android:layout_width="@dimen/y550"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/y120"
+                    android:background="@drawable/bg_origen_circle_frame"
+                    android:gravity="center"
+                    android:onClick="@{viewModel.onBackHome}"
+                    android:paddingBottom="@dimen/y20"
+                    android:paddingTop="@dimen/y20"
+                    android:text="返回首页"
+                    android:textColor="@color/colorPrimaryNew"
+                    android:textSize="@dimen/x36" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

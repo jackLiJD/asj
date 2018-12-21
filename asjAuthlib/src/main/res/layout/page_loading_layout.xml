@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+>
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="state"
+            type="com.ald.asjauthlib.authframework.core.vm.entity.EmptyState"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:onClick="@{state::onClick}"
+        android:orientation="vertical">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/x100"
+            android:layout_gravity="center_horizontal"
+            android:visibility="@{state.image != null ? View.VISIBLE : View.GONE}"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/empty"
+            android:src="@{state.image}"
+            android:visibility="@{state.image != null ? View.VISIBLE : View.GONE}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@{state.prompt ??  @string/page_loading}"
+            android:textColor="@color/fw_text_grey"
+            android:textSize="16sp" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Translucent_NoTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/shape_circle_trolley_dialog_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/y50"
+    android:paddingTop="@dimen/y50"
+    tools:ignore="ContentDescription">
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/trolley_notice_coupon_use_tips"
+        android:textColor="@color/color_2e2e2e"
+        android:textSize="@dimen/x36" />
+
+    <TextView
+        android:id="@+id/txt_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y50"
+        android:background="@color/white"
+        android:gravity="start|center"
+        android:lineSpacingExtra="10dp"
+        android:paddingLeft="@dimen/x55"
+        android:paddingRight="@dimen/x55"
+        android:textColor="@color/color_303030"
+        android:textSize="@dimen/x28"
+        tools:text="1.只有使用范围完全不同的优惠券才能叠加使用；
+2.订单未支付取消订单、订单已支付关闭订单时，优惠券会返回；
+3.合并支付时使用的优惠券不退回；
+4.退款退货时优惠金额不退回；
+5.每张优惠券的使用条件请看对应优惠券的使用说明；
+6.只有当优惠券的使用范围包含订单中的商品时，才可使用优惠券；金额限制计算满足条件的商品金额总和；
+7.未在使用期限内使用的优惠券自动作废；" />
+
+    <TextView
+        android:id="@+id/iv_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/y65"
+        android:layout_marginStart="@dimen/x65"
+        android:layout_marginTop="@dimen/y50"
+        android:background="@drawable/bg_trolley_btn"
+        android:gravity="center"
+        android:paddingBottom="@dimen/y20"
+        android:paddingTop="@dimen/y20"
+        android:text="@string/trolley_notice_coupon_sure"
+        android:textColor="@color/color_2e2e2e"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="@dimen/y65"
+        android:layout_marginStart="@dimen/x65"
+        android:layout_marginTop="@dimen/y80"
+        android:background="@drawable/bg_cashier_weixin_notice_btn"
+        android:gravity="center"
+        android:paddingBottom="@dimen/y30"
+        android:paddingTop="@dimen/y30"
+        android:text="知道了"
+        android:textColor="@color/color_2e2e2e"
+        android:textSize="16sp" />
+</LinearLayout>

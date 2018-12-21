@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.HistoryBillMonthDtlVM" />
+
+        <import type="com.ald.asjauthlib.tatarka.bindingcollectionadapter.LayoutManagers" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/activity_history_bill_month_status"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.alfl.www.business.ui.HistoryBillMonthStatusActivity">
+
+        <TextView
+            android:id="@+id/bill_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@color/white"
+            android:gravity="center"
+            android:paddingTop="@dimen/y80"
+            android:text="@string/history_bill_month_settled"
+            android:textColor="#48a6f9"
+            android:textSize="@dimen/x45" />
+
+        <TextView
+            android:id="@+id/txt_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bill_status"
+            android:layout_centerHorizontal="true"
+            android:background="@color/white"
+            android:gravity="center"
+            android:paddingBottom="@dimen/y30"
+            android:paddingTop="@dimen/y30"
+            android:text="@{viewModel.displayDuration}"
+            android:textColor="@color/text_other_color"
+            android:textSize="@dimen/x32"
+            tools:text="2017.07.07-2017.08.08" />
+
+        <TextView
+            android:id="@+id/txt_status_dtl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_duration"
+            android:background="@color/color_f6f6f6"
+            android:gravity="center"
+            android:paddingBottom="@dimen/y30"
+            android:paddingTop="@dimen/y30"
+            android:text="@{viewModel.displayAmountInfo}"
+            tools:text="本月共消费10笔，退款2笔，实际支出5000元" />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_status_dtl"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/y30"
+            android:paddingRight="@dimen/y30"
+            app:addItemDecoration="@{viewModel.type}"
+            app:itemView="@{viewModel.itemView}"
+            app:items="@{viewModel.items}"
+            app:layoutManager="@{LayoutManagers.linear()}"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+    </RelativeLayout>
+
+</layout>

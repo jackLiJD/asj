@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y128"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    tools:ignore="RtlHardcoded,RelativeOverlap,ContentDescription">
+
+
+    <ImageView
+        android:id="@+id/iv_left"
+        android:layout_width="@dimen/x62"
+        android:layout_height="@dimen/x62"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="@dimen/y30"
+        android:layout_marginLeft="@dimen/x24"
+        android:layout_marginTop="@dimen/y30"
+        android:src="@drawable/ic_wechat" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/iv_left"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x24"
+
+            android:lines="1"
+            android:textColor="@color/text_important_color"
+            android:textSize="@dimen/x32"
+            tools:text="工商银行" />
+
+        <TextView
+            android:id="@+id/tv_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginLeft="@dimen/x24"
+            android:textSize="@dimen/x22"
+            tools:text="单笔限额" />
+
+        <!--手续费-->
+        <TextView
+            android:id="@+id/tv_charge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_toEndOf="@+id/tv_tip"
+            android:text="@string/cashier_list_credit_charge"
+            android:textSize="@dimen/x22" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/x24"
+        android:src="@drawable/ic_arrow_right" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y1"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_f6f6f6" />
+
+    <View
+        android:id="@+id/cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cashier_bank_item_cover"
+        tools:visibility="gone" />
+
+</RelativeLayout>

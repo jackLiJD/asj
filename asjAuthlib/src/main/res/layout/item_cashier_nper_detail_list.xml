@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/y15"
+        android:layout_marginTop="@dimen/y15">
+
+        <TextView
+            android:id="@+id/txt_nper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="第1期"
+            android:textColor="@color/color_404040"
+            android:textSize="@dimen/x28" />
+
+        <TextView
+            android:id="@+id/txt_nper_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="766.28元"
+            android:textColor="@color/color_404040"
+            android:textSize="@dimen/x28" />
+
+        <TextView
+            android:id="@+id/txt_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="617.11元"
+            android:textColor="@color/color_404040"
+            android:textSize="@dimen/x28" />
+
+        <TextView
+            android:id="@+id/txt_fee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="149.71元"
+            android:textColor="@color/color_404040"
+            android:textSize="@dimen/x28" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_first_hint"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y50"
+        android:layout_marginEnd="@dimen/x30"
+        android:layout_marginStart="@dimen/x30"
+        android:background="@drawable/bg_first_nper_hint"
+        android:gravity="center"
+        android:text="首期还款时间，根据确认收货时间和出账日的时间为准"
+        android:textColor="#ff6530"
+        android:textSize="@dimen/x24" />
+</LinearLayout>

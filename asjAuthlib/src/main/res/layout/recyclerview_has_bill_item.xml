@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded,ContentDescription,RtlSymmetry,RelativeOverlap">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.HasBillItemVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="99dp"
+        android:onClick="@{viewModel.hasBillsItemClick}">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@color/color_F4F4F4" />
+
+        <ImageView
+            android:id="@+id/billIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/month_bill" />
+
+        <TextView
+            android:id="@+id/month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/billIcon"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:text="@{viewModel.month}"
+            android:textSize="11sp"
+            tools:text="7月" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@id/billIcon"
+            android:background="@color/background_white_color">
+
+            <com.ald.asjauthlib.widget.RoundRectBlurView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/x10"
+                android:background="@drawable/bill_item_bg">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@{viewModel.billPrice}"
+                    android:textSize="20sp"
+                    tools:text="1111" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@{viewModel.imageStatus}"
+                    tools:src="@drawable/overdue" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/title"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/overdue_bg"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="14dp"
+                    android:text="@{viewModel.overdue}"
+                    tools:text="包含逾期利息 200.00元" />
+            </RelativeLayout>
+        </FrameLayout>
+
+    </RelativeLayout>
+</layout>

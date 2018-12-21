@@ -1,0 +1,2057 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">爱上街</string>
+
+    <!-- 网路请求基础参数-->
+    <string name="fw_app_id">id</string>
+    <string name="fw_app_time">time</string>
+    <string name="fw_app_sign">sign</string>
+    <string name="fw_app_version">appVersion</string>
+    <string name="fw_app_user_name">userName</string>
+    <string name="fw_app_network_type">netType</string>
+    <string name="fw_app_uuid">uuid</string>
+    <string name="fw_app_phoneType">phoneType</string>
+    <string name="fw_app_sysVersion">sysVersion</string>
+    <string name="fw_app_latLng">latLng</string>
+    <string name="fw_app_gps">gps</string>
+
+    <string name="bank_card_scan_recognize">重新识别</string>
+    <string name="sure">确认</string>
+    <string name="ensure_bank_card_num">核对卡号</string>
+
+    <!--引导页按钮-->
+    <string name="guide_btn_start">立即进入</string>
+    <string name="splash_ad_time">%1$d 秒</string>
+
+    <!--dialog还款-->
+    <string name="dialog_pwd_title">选择支付方式</string>
+    <string name="dialog_pwd_title_other_pay">选择还款方式</string>
+    <string name="dialog_pwd_title_other_pay_amount_format">支付金额¥%s</string>
+    <string name="dialog_pay_confirm_title">确认付款</string>
+    <string name="dialog_pay_confirm_combination_title">组合支付</string>
+    <string name="dialog_pay_confirm_promote_title">提升额度</string>
+    <string name="dialog_pay_confirm_order_title">订单金额</string>
+    <string name="dialog_pay_confirm_quota_title">额度支付:¥%s</string>
+    <string name="dialog_pay_confirm_bank_title">银行卡支付</string>
+    <string name="dialog_pay_confirm_bank_amount">银行卡支付:¥%s</string>
+    <string name="dialog_pay_confirm_other_title">其他支付方式</string>
+    <string name="dialog_pay_confirm_quota_nper_item_title">信用分期</string>
+    <string name="dialog_pay_confirm">确认付款</string>
+    <string name="dialog_pay_confirm_combination">确认支付</string>
+    <string name="dialog_pay_select_bank">添加银行卡</string>
+    <string name="dialog_pay_select_bank_title_select">选择银行卡</string>
+    <string name="dialog_pay_select_bank_toast_support_N">暂不支持%1$s卡哦～</string>
+    <string name="dialog_pay_select_bank_tip_support_N">暂不支持%1$s卡</string>
+    <string name="dialog_pay_confirm_bank_tip_support_N">暂不支持%1$s卡，请切换或添加其他银行卡</string>
+
+    <!-- 底部菜单 -->
+    <string name="tab_bottom_tv_home">首页</string>
+    <string name="tab_bottom_tv_brand">分类</string>
+    <string name="tab_bottom_tv_group">分期商城</string>
+    <string name="tab_bottom_tv_search">搜索</string>
+    <string name="tab_bottom_tv_haitao">海淘馆</string>
+    <string name="tab_bottom_tv_mine">我的</string>
+    <string name="tab_bottom_tv_gold">赚金币</string>
+
+    <!-- 首页 -->
+    <string name="home_hint_search">输入商品名称</string>
+    <string name="home_hint_search2">搜索你要的商品</string>
+    <string name="home_tool_first_title">每日签到</string>
+    <string name="home_tool_second_title">手机充值</string>
+    <string name="home_tool_third_title">9.9包邮</string>
+    <string name="home_tool_fourth_title">品牌特卖</string>
+    <string name="home_tool_five_title">邀请好友</string>
+    <string name="home_one_many_more">查看更多</string>
+
+    <!-- 首页活动 1对2-->
+    <string name="home_activity_time_formatter">%1$d天%2$d时%3$d分%4$d秒</string>
+    <string name="home_activity_start">距开始仅剩：</string>
+    <string name="home_activity_end">距结束仅剩：</string>
+
+
+    <!-- 品牌 -->
+    <!--<string name="brand_top_bar_title">爱上街</string>-->
+    <string name="brand_top_bar_title">吃玩住行</string>
+    <string name="brand_item_info_rebate">最高返</string>
+    <string name="toast_get_brand_url_err">获取商城信息失败,请重试</string>
+    <string name="toast_get_order_err">获取订单信息失败,请重试</string>
+    <string name="toast_pay_timeout">订单超时,请重新下单</string>
+    <string name="toast_list_brand_empty_tip">暂无店铺哦~</string>
+    <string name="text_item_use">去使用</string>
+    <string name="text_item_use_title">最近使用</string>
+
+    <!--品牌支付成功-->
+    <string name="brand_pay_success_title">提交成功</string>
+    <string name="tip_pay_success_title">支付处理中</string>
+    <string name="tip_pay_success_msg">您提交的支付已在处理中,需要等待几分钟。\n支付成功后将自动更改订单状态</string>
+    <string name="text_btn_return_to_home">返回首页</string>
+    <string name="text_btn_goto_order">查看订单</string>
+
+    <!--确认支付-->
+    <string name="brand_pay_info_title">选择付款方式</string>
+    <string name="cashier_title">收银台</string>
+
+    <!-- 搜呗 -->
+    <string name="search_title">搜索淘宝商品</string>
+    <string name="search_rebate_title">购物最高返利80%</string>
+    <string name="search_search">搜索</string>
+    <string name="search_hit_search">输入商品名称</string>
+    <string name="search_hot_search">热门搜索</string>
+    <string name="search_rebate_tip">返利小贴士</string>
+    <string name="search_rebate_guide">详细教程</string>
+    <string name="search_delete_history_success">删除成功</string>
+    <string name="search_goods_list_sort_all">综合</string>
+    <string name="search_goods_list_sort_sale">销量</string>
+    <string name="search_goods_list_sort_shop">店铺</string>
+    <string name="search_shop_list_in">进入店铺</string>
+    <string name="toast_search_shop_none">获取店铺信息失败，请重试</string>
+    <!-- 话费充值 -->
+    <string name="pay_success_toast">付款成功</string>
+    <!-- 分呗 -->
+    <string name="stage_top_bar_title">分呗</string>
+    <string name="stage_top_bar_detail">明细</string>
+    <string name="stage_available_waiting">审核中</string>
+    <string name="stage_available_title">可用额度(元)</string>
+    <string name="stage_credit_title">信用额度%s元</string>
+    <string name="stage_auth_waiting">正在快马加鞭审核中..</string>
+    <string name="stage_raise_crash">提升信用额度</string>
+    <string name="stage_loan_crash">去借钱</string>
+    <string name="stage_bill_detail_title">查看详情</string>
+    <string name="stage_loan_bill">分期账单</string>
+    <string name="stage_all_bill">全部</string>
+    <string name="stage_refund">本期待还</string>
+    <string name="stage_refund_now">马上还款</string>
+    <string name="stage_refund_now_time">请在%1$s天内还款</string>
+    <string name="stage_refund_idf_title">去认证</string>
+    <string name="stage_limit_low_title">无额度</string>
+    <string name="stage_limit_low_tips">您的综合信用有待提升</string>
+    <string name="stage_limit_low_time">评估时间 %1$s</string>
+    <string name="stage_refund_idf_toast">实名认证出错</string>
+    <string name="stage_refund_no_idf_tips">完成认证获得最高20000的借款额度</string>
+    <string name="stage_credit">人人征信值</string>
+    <string name="stage_loan_apply_toast">您的借款申请成功。3个工作日内会完成审核，请及时关注审核进度。如通过会打款至您的绑定银行卡，请知悉。</string>
+    <string name="stage_quota_list_empty_tip">暂无数据哦~</string>
+    <string name="stage_loan_crash_err">您未绑定主卡</string>
+
+    <!--51信用首页-->
+    <string name="stage_header_right_text">帮助中心</string>
+    <string name="stage_header_title_text">爱花</string>
+    <string name="stage_bottom_menu_history_bill">历史账单</string>
+    <string name="stage_bottom_menu_record_rabate">返利记录</string>
+    <string name="stage_bottom_menu_record_repayments">退还款记录</string>
+    <string name="stage_bottom_menu_bill_date_modify">修改账单日</string>
+    <string name="repayment_overdue_first">逾期账单还清后，才能查看</string>
+    <string name="stage_auth_submit_hint">温馨提示，您需要完成上述基础认证才可以提交审核</string>
+    <string name="stage_auth_wait">预计3分钟完成审核</string>
+    <string name="stage_auth_ing">审核中</string>
+    <string name="stage_auth_limit_0">信用额度0.00元</string>
+    <string name="stage_auth_fail_try">基础认证审核失败，点击重试</string>
+    <string name="stage_no_available">暂无</string>
+    <string name="stage_repay_next_month">还下月账单</string>
+    <string name="stage_goto_repay">立即还款</string>
+    <string name="stage_have_overdue_month">您有%1$d个月的逾期账单</string>
+    <string name="stage_loan_limit">借吧可用额度</string>
+    <string name="stage_buy_limit">花吧可用额度</string>
+    <string name="stage_limit_promot_hint">您有一个临时提额包哦~</string>
+    <string name="stage_limit_promot_hint_amout">已领取临时额度%s元</string>
+    <string name="stage_limit_promot_use_amout">待还临时额度%s元</string>
+    <string name="stage_limit_click_get">立即领取</string>
+    <string name="stage_limit_open">查看全部额度</string>
+    <string name="stage_limit_auth_continue">继续认证</string>
+    <string name="stage_repaymenting_count">有%s笔正在还款中</string>
+    <string name="stage_limit_cash">借贷额度</string>
+    <string name="stage_limit_online">购物额度</string>
+    <string name="stage_login_regist">点我开启信用生活</string>
+    <string name="stage_all_bill_entrance">全部账单</string>
+    <string name="stage_settle_ahead_entrance">提前结清</string>
+    <string name="stage_repay_entrance">立即还款</string>
+    <string name="stage_not_out_bill">未出账单(元)</string>
+    <string name="stage_out_bill">已出账单待还（元）</string>
+
+
+    <!-- 征信认证 -->
+    <string name="rr_identification_err">认证出错，请重新认证</string>
+    <string name="rr_identification_success">认证成功</string>
+
+
+    <!-- 提升个人征信 -->
+    <string name="credit_promote_tips">添加个人信息，有助于全面的额度评分</string>
+    <string name="credit_base_tips">基本信息</string>
+    <string name="credit_use_tips">完成以下操作，即可借款</string>
+    <string name="credit_promote_title">信用等级</string>
+    <string name="credit_promote_update">评估时间：%s</string>
+
+    <string name="credit_iv_score_title">反欺诈认证</string>
+    <string name="credit_td_score_title">人人授信</string>
+
+    <string name="credit_promote_auth_title">信用认证</string>
+    <string name="credit_promote_phone">运营商认证</string>
+    <string name="credit_promote_phone_err">运营商认证失败,\n请重试</string>
+    <string name="credit_promote_auth">已认证</string>
+    <string name="credit_promote_do_auth">未认证</string>
+    <string name="credit_promote_phone_bind">已认证</string>
+    <string name="credit_promote_phone_unbind">未认证</string>
+    <string name="credit_promote_phone_update">您已进行运营商认证,\n是否需要进行更新</string>
+    <string name="credit_promote_contact">社交认证</string>
+
+
+    <string name="credit_promote_contact_hit"> 未同步</string>
+    <string name="credit_promote_contact_bind">已同步</string>
+    <string name="credit_promote_contact_update">通讯录已认证,是否进行\n重新认证</string>
+    <string name="credit_promote_mail">邮箱地址</string>
+    <string name="credit_promote_mail_bind">已绑定</string>
+    <string name="credit_promote_mail_unbind">未绑定</string>
+    <string name="credit_promote_contact_bind_success">通讯录匹配成功</string>
+    <string name="credit_promote_contact_bind_err">通讯录匹配失败,\n请重试</string>
+    <string name="credit_promote_bind_card_success">银行卡绑定失败,\n请重试</string>
+    <string name="credit_promote_bind_card_err">银行卡绑定成功</string>
+    <string name="credit_promote_bind_card_update">您已绑定一张银行卡，是\n否需要进行更换？</string>
+    <string name="credit_idf_toast">已认证，无需重复认证</string>
+    <string name="credit_contact_toast">通讯录已认证</string>
+    <string name="credit_promote_location_toast">定位出错，请重新定位</string>
+    <string name="credit_promote_location_dialog">正在定位中</string>
+    <string name="credit_promote_location_update">您已经定位,\n是否需要重新定位</string>
+    <string name="credit_promote_mobile_ing">您的认证申请申请已提交,请耐心等待审核结果</string>
+    <string name="credit_promote_mobile_sure">知道了</string>
+    <string name="credit_promote_mobile_give_up">暂不认证</string>
+    <string name="credit_promote_mobile_again">重新认证</string>
+    <string name="credit_promote_mobile_auth_again">您好，您本次认证未通过！您可以核对身份证信息后，重新尝试认证</string>
+    <string name="credit_promote_mobile_auth_success">恭喜，您已通过运营商认证！马上去下一步认证吧，您离获得信用额度越来越近了哦</string>
+    <string name="credit_promote_mobile_success">恭喜，您已通过运营商认证！</string>
+    <string name="credit_promote_contact_bind_err_toast">通讯录认证失败,请重试</string>
+    <string name="credit_promote_success_toast">提交成功</string>
+
+
+    <string name="credit_basic_info">基本认证(必填)</string>
+    <string name="credit_promote_user_info">身份认证</string>
+    <string name="credit_promote_user_info_auth">已认证</string>
+    <string name="credit_promote_user_info_do_auth">未认证</string>
+    <string name="credit_promote_bind_card">绑定银行卡 </string>
+    <string name="credit_promote_bind_card_unbind">请绑定</string>
+    <string name="credit_promote_bind_card_bind">已绑定</string>
+    <string name="credit_promote_zm_score">芝麻信用</string>
+    <string name="credit_promote_zm_score_auth">已认证</string>
+    <string name="credit_promote_zm_score_do_auth">未认证</string>
+    <string name="credit_promote_zm_score_overdue">已过期</string>
+    <string name="credit_promote_zm_score_fail">认证失败</string>
+    <string name="credit_promote_operator">运营商认证</string>
+    <string name="credit_promote_operator_auth">已认证</string>
+    <string name="credit_promote_operator_do_auth">未认证</string>
+    <string name="credit_promote_location">定位地址</string>
+    <string name="credit_promote_location_set">已认证</string>
+    <string name="credit_promote_location_un_set">未认证</string>
+    <string name="credit_promote_urgent_contact">联系人</string>
+    <string name="credit_promote_contact_item_title">通讯录认证</string>
+    <string name="credit_promote_urgent_contact_un_set">未设置</string>
+    <string name="credit_promote_submit">提交审核</string>
+    <string name="credit_promote_submit_waiting">审核中...</string>
+    <string name="credit_promote_basic_fail">认证失败</string>
+
+
+    <string name="basic_auth_tab_info">基本认证</string>
+    <string name="extra_auth_tab_info">补充认证</string>
+
+    <!--额外认证信息-->
+    <string name="extra_auth_max_amount">最高提升至(元)</string>
+    <string name="extra_auth_now_amount">当前额度(元)</string>
+    <string name="extra_auth_security">社保认证</string>
+    <string name="extra_auth_alipay">支付宝认证</string>
+    <string name="extra_auth_fund">公积金认证</string>
+    <string name="extra_auth_zhengxin">人行征信认证</string>
+    <string name="extra_auth_chsi">学信网认证</string>
+    <string name="extra_auth_online_bank">网银认证</string>
+    <string name="extra_auth_social_contact">社交认证</string>
+    <string name="extra_auth_apply_status">未认证</string>
+    <string name="extra_auth_success_status">已认证</string>
+    <string name="extra_auth_query_ing_status">等待查询</string>
+    <string name="extra_auth_ing_status">认证中</string>
+    <string name="extra_auth_risk_fail_status">重新认证</string>
+    <string name="extra_auth_fail_status">重新认证</string>
+    <string name="extra_auth_resubmit_status">重新提交</string>
+    <string name="extra_auth_overdue">已过期</string>
+    <string name="extra_auth_credit_card">信用卡邮箱认证</string>
+    <string name="extra_auth_ing_text">%s认证中</string>
+    <string name="extra_auth_success_text">%s已认证</string>
+    <string name="extra_auth_risk_fail_text">%s风控审核失败</string>
+    <string name="extra_auth_ing_tips">%s正在认证中，请耐心等待</string>
+
+    <string name="credit_promote_submit_user_info_error">请先认证身份证信息</string>
+    <string name="credit_promote_submit_bind_card_error">请先绑定银行卡信息</string>
+    <string name="credit_promote_submit_zm_error">请先授权芝麻信用信息</string>
+    <string name="credit_promote_submit_operator_wait">请先等待运营商认证完成</string>
+    <string name="credit_promote_submit_operator_error">请先认证运营商信息</string>
+    <string name="credit_promote_submit_contact_error">请先认证通讯录</string>
+
+    <string name="credit_promote_submit_wait_minutes">已提交申请，预计3分钟处理完成</string>
+    <string name="credit_promote_submit_wait">等待处理</string>
+    <string name="credit_promote_submit_complete">完成</string>
+
+    <!-- 现金借款 -->
+    <string name="cash_loan_limit_title">借款金额</string>
+    <string name="cash_loan_limit_get_limit_title">提现金额</string>
+    <string name="cash_loan_limit_hit">最多可借%s元</string>
+    <string name="cash_loan_limit_get_hit">最多可提现%s元</string>
+    <string name="cash_loan_limit_get_hit_min">提现金额不能小于20元</string>
+    <string name="cash_loan_limit_get_borrow">请填写借款金额</string>
+    <string name="cash_loan_limit_get_withdrawals">请填写提现金额</string>
+    <string name="cash_loan_loan_account">收款账户</string>
+    <string name="cash_loan_loan_tip">只支持提现至该卡,如需更改,请联系客服</string>
+    <string name="cash_loan_sure">确定</string>
+    <string name="cash_loan_agreement">《爱上街借款协议》</string>
+    <string name="cash_loan_agreement_withdrawals">请阅读并同意《爱上街提现协议》</string>
+    <string name="cash_loan_agreement_toast">请阅读并同意《爱上街借款协议》</string>
+    <string name="cash_loan_no_card_tip">您还未绑定银行卡</string>
+    <string name="cash_loan_loan_success">借款申请提交成功</string>
+    <string name="cash_loan_withdrawals_success">提现申请提交成功</string>
+    <string name="cash_loan_interest_desc">日利率%1$s,手续费¥%2$s</string>
+    <string name="cash_loan_supermarket_loan_number">本月放贷人数</string>
+    <string name="cash_loan_dialog_rate">借钱手续费率低至%s%</string>
+
+    <!--续期-->
+    <string name="cash_loan_title_renewal">申请续期</string>
+    <string name="cash_loan_title_renewal_amount_title">续期金额</string>
+    <string name="cash_loan_title_renewal_amount">续期金额¥%s</string>
+    <string name="cash_loan_title_renewal_amount_goods">购买商品¥%s</string>
+    <string name="cash_loan_title_renewal_amount_hint">续期金额不能低于100元</string>
+    <string name="cash_loan_title_renewal_day">续期天数%s天</string>
+    <string name="cash_loan_title_renewal_all">全部续期</string>
+    <string name="cash_loan_title_renewal_pay">续期支付</string>
+    <string name="cash_loan_title_renewal_info">续期需支付费用</string>
+    <string name="cash_loan_title_renewal_info_interest_title">上期利息</string>
+    <string name="cash_loan_title_renewal_info_service_charge">上期手续费</string>
+    <string name="cash_loan_title_renewal_info_interest">上期利息¥%s</string>
+    <string name="cash_loan_title_renewal_info_late_title">上期逾期费</string>
+    <string name="cash_loan_title_renewal_info_late">上期逾期费¥%s</string>
+    <string name="cash_loan_title_renewal_info_counter_title">续期手续费</string>
+    <string name="cash_loan_title_renewal_info_counter">续期手续费¥%s</string>
+    <string name="cash_loan_title_renewal_info_stay_title">上期待还订单</string>
+    <string name="cash_loan_title_renewal_info_stay_title_v2">代买商品价格</string>
+    <string name="cash_loan_title_renewal_info_capital_title">本金还款部分</string>
+    <string name="cash_loan_title_renewal_info_capital">本金还款部分¥%s</string>
+    <string name="cash_loan_title_renewal_agreement_title">阅读并同意</string>
+    <string name="cash_loan_title_renewal_agreement">《续期协议》</string>
+    <string name="cash_loan_title_renewal_action_renewal">立即续期</string>
+    <string name="cash_loan_title_pay_success">正在处理中</string>
+    <string name="cash_loan_title_pay_todo">正在处理</string>
+    <string name="cash_loan_toast_failed">续期失败</string>
+    <string name="cash_loan_title_renewal_success">续期成功</string>
+    <string name="cash_loan_title_renewal_high">最高可续期%s元</string>
+    <string name="cash_loan_title_renewal_amount_format">¥%s</string>
+    <string name="cash_loan_title_renewal_amount_all">合计:¥%s</string>
+    <string name="cash_loan_title_renewal_tips">温馨提示：续期费用请勿通过任何线下方式转账，请在线完成支付。</string>
+
+    <!--续期-合规-->
+    <string name="cash_loan_legal_title_renewal">申请续期</string>
+    <string name="cash_loan_legal_title_renewal_pay_total">续期支付</string>
+    <string name="cash_loan_legal_title_renewal_info">续期需支付包含以下费用</string>
+
+    <!--还款 -->
+    <string name="stage_refund_limit_title">需还款金额</string>
+    <string name="stage_refund_coupon_title">还款优惠</string>
+    <string name="stage_refund_rebate_title">账户余额</string>
+    <string name="stage_refund_rebate_type_title">还款方式</string>
+    <string name="stage_refund_rebate_select_hit">请选择</string>
+    <string name="stage_refund_tips">您还需支付¥%s</string>
+    <string name="stage_refund_remain_tip">温馨提示：请确保您的银行卡余额充足</string>
+    <string name="stage_refund_no_extra_tips">您无需额外支付</string>
+    <string name="stage_refund_refund">立即还款</string>
+    <!--额度还款借款详情 -->
+    <string name="limit_detail_refund_desc_title">还款说明</string>
+    <string name="limit_detail_refund_offer">优惠抵扣</string>
+    <string name="limit_detail_refund_rebate">账户余额</string>
+    <string name="limit_detail_refund_actual_pay">现金</string>
+    <string name="limit_detail_refund_no_title">还款编号</string>
+    <string name="limit_detail_refund_type_title">还款方式</string>
+    <string name="limit_detail_refund_time_title">创建时间</string>
+
+    <string name="limit_detail_loan_account_title">收款账户</string>
+    <string name="limit_detail_loan_type_title">借款类型</string>
+    <string name="limit_detail_loan_desc_title">借款明细</string>
+    <string name="limit_detail_loan_nepr_title">分期</string>
+    <string name="limit_detail_loan_has_nepr_title">已还期数</string>
+    <string name="limit_detail_loan_nepr_amount_title">每期还款金额</string>
+    <string name="limit_detail_loan_has_amount_title">已还本金</string>
+    <string name="limit_detail_loan_no_title">借款编号</string>
+    <string name="limit_detail_loan_refund_no_title">还款编号</string>
+    <string name="limit_detail_success_state">还款成功</string>
+    <string name="limit_detail_failed_state">还款失败</string>
+    <string name="limit_detail_default_state">还款中</string>
+    <string name="limit_detail_loan_success_state">借款成功</string>
+    <string name="limit_detail_loan_cash_day_title">借款天数</string>
+    <string name="limit_detail_loan_cash_refund_title">还款金额</string>
+
+    <!--优惠券 -->
+    <string name="coupon_list_get">立即\n领取</string>
+    <string name="coupon_list_get_desc">还款满%1$s元使用\n每人限领1张</string>
+    <string name="coupon_list_get_time">有效期%1$s至%2$s</string>
+    <string name="coupon_list_no">暂无优惠券</string>
+
+    <!--月账单列表-->
+    <string name="stage_bill_month_list_title">本月账单共%1$d笔，共计%2$s元</string>
+
+    <!--我的分呗账单 -->
+    <string name="stage_bill_list_current_title">本期账单</string>
+    <string name="stage_bill_list_next_title">下期账单</string>
+    <string name="stage_bill_list_month_title">账单月份</string>
+    <string name="stage_bill_list_limit">还款金额</string>
+    <string name="stage_bill_list_limit_title">应还金额</string>
+    <string name="stage_bill_list_limit_waiting">还款中</string>
+    <string name="stage_bill_list_limit_waiting_text">请耐心等待</string>
+    <string name="stage_bill_list_limit_should_title">还款金额</string>
+    <string name="stage_bill_list_check_detail">查看详情</string>
+    <string name="stage_bill_list_refund_success">还款成功</string>
+    <string name="stage_bill_list_bill_desc">本月账单共%1$d笔，共计%2$s元</string>
+    <string name="stage_bill_list_bill_refund_time">请在%1$s内还款</string>
+    <string name="stage_bill_list_bill_refund_now">立即还款</string>
+    <string name="stage_bill_list_no_data">暂无账单</string>
+
+    <!--消费或分期详情 -->
+    <string name="stage_bill_detail_type_title">借款类型</string>
+    <string name="stage_bill_detail_goods_name_title">商品名称</string>
+    <string name="stage_bill_detail_order_no_title">订单编号</string>
+    <string name="stage_bill_detail_nper_title">还款期数</string>
+    <string name="stage_bill_detail_consume_nper_title">分期阶段</string>
+    <string name="stage_bill_detail_principal_title">本金</string>
+    <string name="stage_bill_detail_interest_title">还款日内利息（%1$d天)</string>
+    <string name="stage_bill_detail_extra_title">手续费</string>
+    <string name="stage_bill_detail_over_interest_title">逾期累计利息（%1$d天)</string>
+    <string name="stage_bill_detail_over_cash_title">滞纳金</string>
+    <string name="stage_bill_detail_cash_title">借款金额</string>
+    <string name="stage_bill_detail_no_title">借款编号</string>
+    <string name="stage_bill_detail_time_title">借款时间</string>
+
+    <!-- 签到 -->
+    <string name="sign_in_check">签到</string>
+    <string name="sign_in_already_sign">已签到</string>
+    <string name="sign_in_check_desc">已连续签到%1$s天\n还需签到%1$s天，即可获得还款优惠</string>
+    <string name="sign_in_desc">爱上街签到规则：</string>
+    <string name="sign_tip_already_sign">您已签到,明天再来吧</string>
+    <!-- 我的 -->
+    <string name="mine_hit_nick">这里是昵称</string>
+    <string name="mine_tip_nick_not_login">登录/注册</string>
+    <string name="mine_hit_tel">***</string>
+    <string name="mine_tip_tel_not_login"> </string>
+    <string name="mine_return_crash">余额(元)</string>
+    <string name="mine_return_coin">金币</string>
+    <string name="mine_return_integral">集分宝</string>
+    <string name="mine_coupon">优惠券</string>
+    <string name="mine_all_order">全部订单</string>
+    <string name="mine_service">我的服务</string>
+    <string name="mine_invitation">邀请有礼</string>
+    <string name="mine_message">消息中心</string>
+    <string name="mine_collection">我的收藏</string>
+    <string name="mine_customer">联系客服</string>
+    <string name="mine_service_center">帮助中心</string>
+    <string name="mine_address">地址管理</string>
+    <string name="mine_bank">银行卡</string>
+    <string name="mine_credit">信用认证</string>
+    <string name="mine_setting">设置</string>
+    <string name="mine_setting_service_address_test">切换至testapp服务器</string>
+    <string name="mine_setting_service_address_atest">切换至atestapp服务器</string>
+    <string name="mine_setting_service_address_btest">切换至btestapp服务器</string>
+    <string name="mine_setting_service_address_ctest">切换至ctestapp服务器</string>
+    <string name="mine_setting_service_address_dtest">切换至dtestapp服务器</string>
+    <string name="mine_setting_service_address_preview">切换至预发服务器</string>
+    <string name="mine_setting_service_address_release">切换至正式服务器</string>
+    <string name="mine_setting_h5_address_testh5">切换至testh5</string>
+    <string name="mine_setting_h5_address_atesth5">切换至atesth5</string>
+    <string name="mine_setting_h5_address_btesth5">切换至btesth5</string>
+    <string name="mine_setting_h5_address_ctesth5">切换至ctesth5</string>
+    <string name="mine_setting_h5_address_dtesth5">切换至dtesth5</string>
+    <string name="mine_setting_h5_address_previewh5">切换至预发h5</string>
+    <string name="mine_setting_h5_address_releaseh5">切换至正式h5</string>
+
+    <!-- 添加银行 -->
+    <string name="bank_card_add_card_name_title">持卡人</string>
+    <string name="bank_card_add_card_no_title">卡号</string>
+    <string name="bank_card_add_card_type_title">卡类型</string>
+    <string name="bank_card_add_card_type_hit">请选择银行卡类型</string>
+    <string name="bank_card_add_card_phone_title">手机号</string>
+    <string name="bank_card_add_card_captcha_title">验证码</string>
+    <string name="bank_card_add_card_captcha_hit">短信验证码</string>
+    <string name="bank_card_add_card_get_captcha">获取验证码</string>
+    <string name="bank_card_add_card_phone_hit">请输入银行预留11位手机号</string>
+    <string name="bank_card_add_card_phone_toast">请输入银行预留手机号</string>
+    <string name="bank_card_add_card_card_type_toast">请选择银行卡类型</string>
+    <string name="bank_card_add_card_no_hit">获取银行卡号失败</string>
+    <string name="bank_card_add_card_no_err_hit">请输入16位银行卡号</string>
+    <string name="bank_card_add_card_no_phone">请输入手机号</string>
+    <string name="bank_card_add_card_no_toast">请输入短信验证码</string>
+    <string name="bank_card_add_card_captcha_toast">请先获取短信验证码</string>
+    <string name="bank_card_add_hit">*仅支持添加储蓄卡账户</string>
+    <string name="bank_card_add_captcha_hit">*该验证码由第三方支付公司发送，收到后请您及时填写</string>
+    <string name="bank_card_add_save">绑卡</string>
+    <string name="bank_card_add_agreement">《服务协议》</string>
+    <string name="bank_card_add_captcha_success_toast">短信已发送</string>
+    <string name="bank_card_add_agreement_toast">请阅读并同意《服务协议》</string>
+    <string name="bank_card_add_dialog_name_title">持卡人说明</string>
+    <string name="bank_card_add_dialog_name_content">为保证账户资金安全，只能绑定认证用户本人的银行卡</string>
+    <string name="bank_card_add_dialog_phone_title">手机号说明</string>
+    <string name="bank_card_add_dialog_phone_content">银行预留的手机号码是办理该银行卡时所填写的手机号码。没有预留、忘记手机号或已停用，请联系银行客服更新处理。大陆手机号为11位数字，非大陆手机号为“国家代码-手机号码”形式</string>
+    <string name="bank_card_add_card_err_toast">请输入16-19位储蓄卡号</string>
+    <string name="bank_card_add_card_phone_err_toast">请输入11位手机号</string>
+    <string name="bank_card_add_card_validity_err_toast">请输入验证码</string>
+    <string name="bank_card_add_card_safecode_err_toast">请输入安全码</string>
+
+    <!-- 填写银行卡信息 -->
+    <string name="bank_card_fill_info_card_type_title">卡类型</string>
+    <string name="bank_card_fill_info_card_type_type">请选择银行卡类型</string>
+    <string name="bank_card_fill_info_phone_title">手机号:</string>
+    <string name="bank_card_fill_info_phone_hit">请输入银行预留手机号</string>
+    <string name="bank_card_fill_info_agreement">我已阅读并同意《服务协议》</string>
+    <string name="bank_card_fill_info_next">下一步</string>
+    <string name="bank_card_type">储蓄卡</string>
+    <string name="bank_card_type2">信用卡</string>
+
+    <!-- 银行卡验证信息 -->
+    <string name="bank_card_check_title">本次操作需要短信确认,请输入%s收到的短信验证码</string>
+    <string name="bank_card_check_captcha">获取验证码</string>
+    <string name="bank_card_check_captcha_title">验证码</string>
+    <string name="bank_card_check_captcha_hit">短信验证码</string>
+    <string name="bank_card_check_captcha_toast">请输入短信验证码</string>
+    <string name="bank_card_check_done">完成</string>
+    <!-- 设置 -->
+    <string name="setting_pay_pwd">支付设置</string>
+    <string name="setting_login_pwd">登录密码设置</string>
+    <string name="setting_bill_date_modify">修改账单日</string>
+    <string name="setting_address">我的收货地址</string>
+    <string name="setting_clear_cache">清空缓存</string>
+    <string name="setting_feed_back">意见反馈</string>
+    <string name="setting_guide">使用帮助</string>
+    <string name="setting_version">版本号</string>
+    <string name="setting_update">版本更新</string>
+    <string name="setting_logout">退出登录</string>
+    <string name="setting_save">保存</string>
+    <string name="setting_nick_hit">请输入昵称</string>
+    <string name="setting_nick_tip_min">昵称不能少于2个字哦~</string>
+    <string name="setting_nick_tip_max">昵称不能超过10个字哦~</string>
+    <string name="setting_change_phone">更换手机号</string>
+    <string name="setting_change_mail">更换邮箱</string>
+    <string name="setting_bind_phone_title">绑定手机号</string>
+    <string name="setting_bind_mail_title">绑定邮箱</string>
+    <string name="setting_bind_change_phone_hit">请输入需要更换的手机号</string>
+    <string name="setting_bind_change_mail_hit">请输入需要更换的邮箱地址</string>
+    <string name="setting_bind_change_captcha">获取验证码</string>
+    <string name="setting_bind_change_captcha_hit">请输入验证码</string>
+
+    <!--支付设置-->
+    <string name="pay_settings_title">支付设置</string>
+    <string name="pay_settings_pwd">支付密码设置</string>
+    <string name="pay_settings_withhold">代扣设置</string>
+
+    <!--代扣设置-->
+    <string name="withhold_settings_title">代扣设置</string>
+    <string name="withhold_settings_commission">委托代扣</string>
+    <string name="withhold_settings_commission_tip">开启后，当您有未还账单或借款时，在还款日系统会自动划扣您银行卡中的资金。</string>
+    <string name="withhold_settings_balance">使用账户余额</string>
+    <string name="withhold_settings_chargeback_order">扣款顺序</string>
+    <string name="withhold_settings_close_tip">关闭后可能会导致逾期,是否确认要关闭？</string>
+
+    <!--扣款顺序-->
+    <string name="withhold_card_title">扣款顺序</string>
+    <string name="withhold_card_tip1">系统将根据下面排列顺序扣款</string>
+    <string name="withhold_card_tip2">拖动</string>
+    <string name="withhold_card_tip3">以下卡片未加入代扣顺序</string>
+    <string name="withhold_card_format_main">%s-主卡</string>
+
+    <!--收藏-->
+    <string name="collection_tip_delete_success">取消收藏成功</string>
+    <string name="collection_tip_delete_failed">取消收藏失败</string>
+    <string name="collection_list_empty">暂无收藏</string>
+
+    <!-- 个人中心 -->
+    <string name="user_info_logo">头像</string>
+    <string name="user_info_register_account">注册账号</string>
+    <string name="user_info_nick">昵称</string>
+    <string name="user_info_hit_nick">未设置</string>
+    <string name="user_info_card">银行卡</string>
+    <string name="user_info_hit_card">未绑卡</string>
+    <string name="user_info_hit_bind_card">已绑卡</string>
+    <string name="user_info_phone">手机号</string>
+    <string name="user_info_phone_err_tip">手机号格式不正确</string>
+    <string name="user_info_email_err_tip">邮箱格式不正确</string>
+    <string name="user_info_hit_phone">135****2341</string>
+    <string name="user_info_mail">绑定邮箱</string>
+    <string name="user_info_hit_mail">未设置</string>
+    <string name="user_info_place">联系地址</string>
+    <string name="user_info_hit_place">未选择</string>
+    <string name="user_info_title_real_name_info">实名资料</string>
+    <string name="user_info_title_real_name_au">信用认证</string>
+    <string name="user_info_real_name_au_not">未认证</string>
+    <string name="user_info_real_name_au_already">已认证</string>
+    <string name="user_info_title_real_name_info_not_modify">实名资料(不可更改)</string>
+    <string name="user_info_title_real_name_info_name">真实姓名</string>
+    <string name="user_info_title_real_name_info_card_id">身份证号</string>
+    <string name="user_info_title_real_name_info_card_info">证件信息</string>
+    <string name="user_info_status_card_info_not_upload">未上传</string>
+    <string name="user_info_status_card_info_already_upload">已上传</string>
+    <string name="user_info_title_real_name_info_other">补充资料</string>
+    <!-- 消息中心 -->
+    <string name="message_list_system">系统通知</string>
+    <string name="toast_list_system_empty_system">暂无系统通知哦~</string>
+    <string name="message_list_toast">温馨提示</string>
+    <string name="toast_list_system_empty_tip">暂无温馨提示哦~</string>
+    <!-- 登录注册 -->
+    <string name="login">立即登录</string>
+    <string name="login_verification">确定</string>
+    <string name="login_hit_user">请输入登录手机号</string>
+    <string name="login_hit_user_toast">请输入正确手机号</string>
+    <string name="login_verification_tip"><![CDATA[为保障您的账号安全，请使用短信验证码进行确认。若手机号不可用，<font color="#47a6f9">请联系客服</font>]]></string>
+    <string name="login_hit_password">请输入登录密码</string>
+    <string name="login_verification_toast_code">请输入验证码</string>
+    <string name="login_verification_hit_code">请输入验证码</string>
+    <string name="login_hit_password_toast">请输入6-18位数字、字母组合的登录密码</string>
+    <string name="register_password_toast_min">密码不能少于6位</string>
+    <string name="register_password_toast_max">密码不能超过18位</string>
+    <string name="login_register">立即注册</string>
+    <string name="login_forget_pwd">忘记密码</string>
+    <string name="next">下一步</string>
+    <string name="register_hit_user">请输入注册手机号</string>
+    <string name="register_hit_captcha">请输入短信验证码</string>
+    <string name="register_hit_captcha_img">请输入图形验证码</string>
+    <string name="register_get_captcha">获取验证码</string>
+    <string name="register_get_captcha_tip">发送成功</string>
+    <string name="register_get_captcha_time_down">重新获取\n(%1$s)</string>
+    <string name="register_done">完成</string>
+    <string name="register_hit_referrer">请输入邀请码(选填)</string>
+    <string name="register_hit_nick">请输入昵称</string>
+    <string name="register_agreement_cb">我已阅读并同意</string>
+    <string name="register_agreement_tv">《爱上街注册协议》</string>
+    <string name="register_agreement_tip">请先同意服务协议哦~</string>
+
+    <!-- 忘记密码 -->
+    <string name="forget_hit_pwd">请设置登录密码</string>
+    <string name="forget_hit_pwd_toast">请设置正确的密码</string>
+
+    <!-- 设置密码 -->
+    <string name="pwd_submit">提交</string>
+    <string name="pwd_hit_old">请输入原密码</string>
+    <string name="pwd_hit_new">请输入新密码</string>
+    <string name="pwd_err_tip">密码格式不正确</string>
+
+    <!-- 支付密码 -->
+    <string name="pwd_pay_original_title">输入原支付密码，完成身份验证</string>
+    <string name="pwd_pay_original_forget_title">忘记密码</string>
+    <string name="pwd_pay_new_toast">请输入新的支付密码</string>
+    <string name="pwd_pay_next">下一步</string>
+    <string name="pwd_pay_captcha_title">已向您的绑定手机号%1$s发送短信验证码，完成验证后继续设置</string>
+    <string name="pwd_pay_captcha_toast">请输入验证码</string>
+    <string name="pwd_pay_id_no_hit">请输入身份证号</string>
+    <string name="pwd_pay_id_no_title">填写%1$s的身份证号验证身份</string>
+    <string name="pwd_pay_id_input_pwd_title">输入交易密码</string>
+    <string name="pwd_pay_id_forget_pwd">忘记支付密码</string>
+    <string name="pwd_pay_id_input_pwd_err_toast">输入密码有误</string>
+    <string name="pwd_pay_set_success">添加成功</string>
+    <string name="pwd_pay_set_success_hint">您的账号安全级别又提高了一个等级！</string>
+
+    <!-- 意见反馈 -->
+    <string name="feed_back_submit">提交</string>
+    <string name="feed_back_hit">不要说太多，200字就够了</string>
+    <string name="feed_back_opinion_empty">请输入您的反馈哦~</string>
+    <string name="feed_back_opinion_max">字数超出限制了哦~</string>
+
+    <!--选择城市-->
+    <string name="select_city_title">选择城市</string>
+    <string name="select_city_confirm">确认</string>
+
+    <!-- 话费充值 -->
+    <string name="phone_recharge">立即充值</string>
+    <string name="phone_recharge_limit">充值金额</string>
+    <string name="phone_recharge_coupon_title">使用优惠</string>
+    <string name="phone_recharge_hit_phone">请输入手机号码</string>
+    <string name="phone_recharge_hit_phone_toast">请输入正确的手机号码</string>
+    <string name="phone_recharge_limit_toast">请选择要充值的金额</string>
+    <string name="phone_recharge_success">充值成功</string>
+    <string name="phone_recharge_ticket">优惠%s元</string>
+    <string name="phone_recharge_no_ticket">无优惠</string>
+    <string name="phone_recharge_no_recharge">当前城市暂不支持充值</string>
+    <!-- 商品列表 -->
+    <string name="goods_list_return">返</string>
+    <string name="goods_list_pay_month">月供</string>
+    <string name="goods_list_sale_count">月销%s</string>
+    <!-- 商品详情 -->
+    <string name="goods_detail_top_bar_title">商品详情</string>
+    <string name="goods_detail_top_bar_collect">收藏</string>
+    <string name="goods_detail_sale_price_title">原价</string>
+    <string name="goods_detail_rebate_price_title">返利</string>
+    <string name="goods_detail_goods_get_price_title">到手价</string>
+    <string name="goods_detail_goods_stage_title">分期流程</string>
+    <string name="goods_detail_goods_stage_desc1">选择分期</string>
+    <string name="goods_detail_goods_stage_desc2">选择期数</string>
+    <string name="goods_detail_goods_stage_desc3">审核打款</string>
+    <string name="goods_detail_goods_stage_desc4">选择【直接购买】完成购物，获得返利</string>
+    <string name="goods_detail_buy">直接购买</string>
+    <string name="goods_detail_stage_buy">分期购买</string>
+    <string name="goods_detail_goods_stage_buy_toast">购买数量最少为1件</string>
+    <!-- 商品消费分期 -->
+    <string name="goods_stage_goods_count_title">购买数量</string>
+    <string name="goods_stage_agreement_title">《爱上街消费借款协议》</string>
+    <string name="goods_stage_agreement_toast">请阅读并同意《爱上街借款协议》</string>
+    <string name="goods_stage_agreement_tips">须知：若在放款三天内跟踪不到您的消费订单，本次分期借款将以取现日利率0.15%计算，且按取现规则，只能享受11-42天的周转服务！</string>
+    <string name="goods_stage_bank_title">只支持提现至该卡,如需更改,请联系客服</string>
+    <string name="goods_stage_bank_sure">确定</string>
+    <string name="goods_stage_loan_toast">消费借款申请成功</string>
+    <string name="goods_stage_do_auth_toast">完成征信认证\n开通分期服务</string>
+
+    <!-- 手机运营商认证 -->
+    <string name="phone_operator_title">请输入当前账户的注册手机号%s的服务密码并完成验证！</string>
+    <string name="phone_operator_pwd_hit">请输入服务密码</string>
+    <string name="phone_operator_agreement">同意《授权服务协议》</string>
+    <string name="phone_operator_get_captcha">获取验证码</string>
+    <string name="phone_operator_check">完成认证</string>
+
+
+    <!--我的订单-->
+    <string name="orders_detail_title">全部订单</string>
+    <string name="orders_my">我的订单</string>
+    <string name="orders_detail_no">订单号  %1$s</string>
+    <string name="orders_detail_unit">¥ %1$s</string>
+    <string name="orders_list_no_data">暂无订单</string>
+    <string name="orders_list_err">加载失败</string>
+    <string name="orders_list_total_amount">¥%1$s</string>
+    <string name="orders_list_total_amount_use_coupon">(已优惠¥%1$s)</string>
+    <string name="orders_list_action_delete">删除订单</string>
+    <string name="orders_list_action_pay">立即付款</string>
+    <string name="orders_list_action_after_sales">申请售后</string>
+    <string name="orders_list_action_confirm_receipt">确认收货</string>
+    <string name="orders_list_toast_order_empty">获取订单信息失败，请重试</string>
+    <string name="check_logistics">查看物流</string>
+    <string name="tao_bubble">订单完成且过了维权期后返利到账,确认收货后15天左右</string>
+    <string name="self_bubble">确认收货后返利到账</string>
+    <string name="rebate_reminder">订单申请售后成功后\n会扣除已发放的返利哦~</string>
+    <string name="rebate_reminder_go">我要继续</string>
+    <string name="rebate_reminder_stop">我再想想</string>
+    <string name="goods_service_1">售后无忧</string>
+    <string name="goods_service_2">极速物流</string>
+    <string name="goods_service_3">官方直采</string>
+    <!-- 集分宝 -->
+    <string name="user_integral_alipay_account_hit">请输入支付宝账号</string>
+    <string name="user_integral_alipay_account_tip">支付宝账号格式不正确</string>
+    <string name="user_integral_count_tip">请输入要提取的集分宝数量</string>
+    <string name="user_integral_limit_hit">最多可提取%1$s集分宝</string>
+    <string name="user_integral_limit_tip_min">至少提取20集分宝</string>
+    <string name="user_integral_sure">确定</string>
+    <!-- 银行卡 -->
+    <string name="pay_we_chat">微信</string>
+    <string name="pay_ali_pay">支付宝</string>
+    <string name="pay_outline">线下还款</string>
+    <string name="pay_we_chat_uninstall">请先安装微信</string>
+
+    <!--邀请有奖-->
+    <string name="invitation_title">邀请有礼</string>
+    <string name="invitation_title_right_btn">全国排行榜</string>
+    <string name="invitation_action_rule">活动规则</string>
+    <string name="invitation_action_invitation">立即邀请 得奖励</string>
+    <string name="invitation_action_invitation_cancel">取消分享</string>
+    <string name="invitation_tip_success">%s\n注册成功/位</string>
+    <string name="invitation_tip_task_success">%s\n借款成功/位</string>
+    <string name="invitation_tip_cumulative">%s\n累计邀请奖励/元</string>
+    <string name="invitation_code">邀请码:</string>
+    <string name="invitation_list_title_recommender">被邀请人</string>
+    <string name="invitation_list_title_state">状态</string>
+    <string name="invitation_list_title_date">注册时间</string>
+    <string name="invitation_list_title_reward">奖励/元</string>
+    <string name="invitation_code_format">点击复制邀请码:%s</string>
+    <string name="invitation_data_title">我的邀请战绩</string>
+    <string name="invitation_pop_title">分享到</string>
+    <string name="invitation_share_channel_pyq">朋友圈</string>
+    <string name="invitation_share_channel_wx">微信好友</string>
+    <string name="invitation_share_channel_sina">新浪微博</string>
+    <string name="invitation_share_channel_qz">QQ空间</string>
+    <string name="invitation_share_channel_qr">二维码</string>
+    <string name="invitation_share_tiele">爱上街邀请有礼,快来参与~</string>
+    <string name="invitation_share_describe">爱上街APP购物享0首付、月供低至1元，邀请好友还可赚钱~</string>
+    <string name="invitation_code_copy">复制</string>
+    <string name="invitation_code_copy_label">邀请码</string>
+    <string name="invitation_code_toast_copy_success">已复制到剪贴板</string>
+    <string name="invitation_toast_info_error">获取邀请信息失败，请重试</string>
+    <string name="invitation_tip_no_data">您还没有邀请过好友，现在邀请立即赚钱</string>
+
+
+    <!--优惠券-->
+    <string name="my_ticket_title">我的优惠券</string>
+    <string name="my_ticket_operation_right">领券中心</string>
+    <string name="my_ticket_limit_unlimited">无门槛使用</string>
+    <string name="my_ticket_limit_format">满%s元可用</string>
+    <string name="my_ticket_unlimit_format">满任意金额可用</string>
+    <string name="my_ticket_limit_format_max">满%1$s元可用,最高减免¥%2$s</string>
+    <string name="my_ticket_limit_max">,最高可减¥%1$s</string>
+    <string name="my_ticket_limit_format_max_unlimited">无门槛使用,最高减免¥%1$s</string>
+    <string name="my_ticket_type_cash">现金券</string>
+    <string name="my_ticket_type_mobile">充值券</string>
+    <string name="my_ticket_type_activity">会场券</string>
+    <string name="my_ticket_type_full">满减券</string>
+    <string name="my_ticket_type_full_discount">折扣券</string>
+    <string name="my_ticket_type_repayment">还款券</string>
+
+
+    <!--订单详情-->
+    <string name="order_detail_title">订单详情</string>
+    <string name="order_detail_source">订单来源：</string>
+    <string name="order_detail_number">订单编号：</string>
+    <string name="order_detail_time_start">创建时间：</string>
+    <string name="order_detail_pay_way">支付方式</string>
+    <string name="order_detail_pay_time">付款时间：</string>
+    <string name="order_detail_pay_trade_no">支付流水号</string>
+    <string name="order_detail_send_time">发货时间</string>
+    <string name="order_detail_stead_time">审核时间</string>
+    <string name="order_detail_time_end">成交时间：</string>
+    <string name="order_detail_time_return">返利时间：</string>
+    <string name="order_detail_time_close">关闭时间：</string>
+    <string name="order_detail_num">x%1$s</string>
+    <string name="order_detail_amount">订单金额:   ¥%1$s</string>
+    <string name="order_detail_actual_pay_amount">实付金额:   ¥%1$s</string>
+    <string name="order_detail_coupon_amount">满减券:   ¥%1$s</string>
+    <string name="order_detail_return_amount">返利金额:   ¥%1$s</string>
+    <string name="order_detail_mobile_amount">订单金额   ¥%1$s</string>
+    <string name="order_detail_mobile_discount_amount">优惠减免   ¥%1$s</string>
+    <string name="order_detail_mobile_real_amount">订单实付   ¥%1$s</string>
+    <string name="order_detail_mobile_return_amount">返利金额   ¥%1$s</string>
+    <string name="order_detail_status_wait_pay">等待支付</string>
+    <string name="order_detail_status_wait_pay_describe">请尽快在淘宝完成支付</string>
+    <string name="order_detail_invoice_header">发票抬头 %1$s</string>
+    <string name="order_detail_status_wait_pay_describe_self">请尽快完成支付</string>
+    <string name="order_detail_status_wait_collect">等待收货</string>
+    <string name="order_detail_status_wait_collect_describe">在淘宝完成收货后,即可等待返利到账</string>
+    <string name="order_detail_status_wait_collect_describe_self">您的订单将立即发货，请在收到货后点击确认</string>
+    <string name="order_detail_status_deal_refunding_describe_self">已提交售后申请，客服将在24小时内联系您</string>
+    <string name="order_detail_status_wait_rebate">等待返利</string>
+    <string name="order_detail_status_wait_rebate_describe">您的返利预计在%1$s月20日到账</string>
+    <string name="order_detail_status_already_rebate">返利成功</string>
+    <string name="order_detail_status_already_rebate_describe">您的返利已到账</string>
+    <string name="order_detail_status_close">订单关闭</string>
+    <string name="order_detail_status_close_describe">当前订单无法获得返利</string>
+    <string name="order_detail_status_close_describe_self">售后申请已通过，支付金额将原路退回</string>
+    <string name="order_detail_status_dealing_describe">您已支付,到账后即支付成功</string>
+    <string name="order_detail_status_title_apply_info">申请信息</string>
+    <string name="order_detail_text_stead_img">查看大图</string>
+    <string name="order_detail_title_message">留言</string>
+    <string name="order_detail_hint_no_message">无留言</string>
+    <string name="order_detail_action_pay">立即支付</string>
+    <string name="order_detail_action_cancel_order">取消订单</string>
+    <string name="order_detail_action_finish">确认收货</string>
+    <string name="order_detail_action_customer_service">联系客服</string>
+    <!--订单详情(代买)-->
+    <string name="stead_order_detail_status_wait_pay_describe">支付后,等待爱上街审核</string>
+    <string name="order_detail_status_wait_for_rebate">订单已完成,请耐心等待返利到账</string>
+    <string name="stead_order_detail_status_wait_collect_describe">审核通过,订单准备发货</string>
+    <string name="stead_order_detail_status_agency_completed">请确认已签收商品/服务</string>
+    <string name="stead_order_detail_status_agency_dealing">分期申请正在审核中,请耐心等待</string>
+    <string name="stead_order_toast_cancel_succeed">取消成功</string>
+    <string name="stead_order_toast_confirm_order_success">确认成功</string>
+    <string name="stead_order_toast_no_img_url">获取大图失败</string>
+    <string name="stead_order_toast_get_goods_failed">获取商品详情失败</string>
+    <string name="stead_order_info_title_buy">购物说明</string>
+
+    <!--订单详情(自营)-->
+    <string name="order_detail_self_toast_empty">获取订单信息失败，请重试</string>
+    <string name="order_detail_self_logistics_title">物流信息</string>
+    <string name="order_detail_self_invoice_title">发票信息</string>
+    <string name="order_detail_self_rebate_title">返利信息</string>
+    <string name="order_detail_self_rebate_amount">返利:  ¥%1$s</string>
+    <string name="order_detail_self_amount">实付款:  %1$s</string>
+
+    <!--取消订单-->
+    <string name="cancel_order_title">取消订单</string>
+    <string name="cancel_order_title_reason">取消原因</string>
+    <string name="cancel_order_title_select_reason">请选择取消原因</string>
+    <string name="cancel_order_title_describe_detail">详细说明</string>
+    <string name="data_picker_finish">完成</string>
+    <string name="cancel_order_toast_no_reason">请选择取消原因哦~</string>
+    <string name="cancel_order_action_commit">提交</string>
+
+    <!--提升信用提示框-->
+    <string name="credit_promote_dialog_title">温馨提示</string>
+    <string name="credit_promote_dialog_cancel">取消</string>
+    <string name="credit_promote_dialog_make_sure">确认</string>
+
+    <!--品牌特卖-->
+    <string name="brand_sale_rebate_title">最高返%1$s</string>
+
+    <!--权限提示框-->
+    <string name="permission_title">温馨提示</string>
+    <string name="permission_content">未能获取到您的%1$s访问权限，\n请通过设置-> 安全中心/隐私，\n设置允许51反呗使用%2$s权限！</string>
+    <string name="permission_make_sure">知道了</string>
+
+    <!--两个按钮的提示框按钮文案-->
+    <string name="dialog_tips_two_dialog_title_default">提示</string>
+    <string name="dialog_tips_two_dialog_content_default">是否放弃借款</string>
+    <string name="dialog_tips_two_dialog_sure">确定</string>
+    <string name="dialog_tips_two_dialog_cancel">取消</string>
+
+    <!--银行卡列表-->
+    <string name="card_list_main_card">%s（主卡）</string>
+    <string name="card_list_credit_promote">请先通过人脸识别添加主卡，\n以保证资金安全</string>
+    <string name="card_list_tip">如需更换主副卡，请至服务中心联系在线客服更换</string>
+
+    <!--我的全部账单页面-->
+    <string name="bill_all_list_moth_title">%s月账单</string>
+
+    <!--借款详情界面-->
+    <string name="loan_detail_total_repayment">剩余应还</string>
+    <string name="loan_detail_repayment">已还金额</string>
+    <string name="loan_detail_total_money">借款金额</string>
+    <string name="loan_detail_loan_money">到账金额</string>
+    <string name="loan_detail_extra_money">服务费</string>
+    <string name="loan_detail_service_fee">手续费</string>
+    <string name="loan_detail_interest_amount">利息</string>
+    <string name="loan_detail_time_limit">借款期限</string>
+    <string name="loan_detail_overdue_time">逾期天数</string>
+    <string name="loan_detail_overdue_money">逾期费</string>
+    <string name="loan_detail_card_info">收款银行卡</string>
+    <string name="loan_detail_time">申请时间</string>
+    <string name="loan_detail_close_time">关闭时间</string>
+    <string name="loan_detail_receive_time">打款时间</string>
+    <string name="loan_detail_repayment_overdue_time">最后还款时间</string>
+    <string name="loan_detail_loan_number">借款协议</string>
+    <string name="loan_detail_loan_apply">等待审核</string>
+    <string name="loan_detail_loan_apply_des">您的借款申请正在打款审核中，请稍后留意短信通知。</string>
+    <string name="loan_detail_loan_wait">等待打款</string>
+    <string name="loan_detail_loan_wait_des">您的借款审核已经通过，正在打款中，正常情况下最晚2小时内到账。</string>
+    <string name="loan_detail_close">借款关闭</string>
+    <string name="loan_detail_close_des">您好，您的借款审核未通过！\n原因：%1$s</string>
+    <string name="loan_detail_loan_repayment">等待还款</string>
+    <string name="loan_detail_loan_repayment_des">请在%1$s前还款</string>
+    <string name="loan_detail_loan_overdue_des">您已逾期，请尽快还款，以免影响信用</string>
+    <string name="loan_detail_loan_finish">已结清</string>
+    <string name="loan_detail_loan_finish_des">感谢使用爱上街借钱功能</string>
+    <string name="loan_detail_arrival_card">%1$s(尾号%2$s)</string>
+    <string name="loan_detail_formatter_money">¥%1$s</string>
+    <string name="loan_detail_formatter_day">%1$s天</string>
+    <string name="loan_detail_repayment_btn">立即还款</string>
+    <string name="loan_detail_repayment_processing_text">还款处理中</string>
+    <string name="loan_detail_repayment_processing_des">您的还款已经提交银行，请耐心等待。若2小时内状态没有变更，请联系我们客服电话4000025151</string>
+    <string name="loan_detail_repayment_processing_btn">还款处理中...</string>
+    <string name="loan_detail_deferred_record">续期记录</string>
+    <string name="loan_detail_deferred_number">续期编号</string>
+    <string name="loan_detail_repayment_detail">查看明细</string>
+
+
+    <!--贷呗页面-->
+    <string name="cash_loan_title">借钱</string>
+    <string name="cash_loan_record">借钱记录</string>
+    <string name="cash_loan_amount">借款金额</string>
+    <string name="cash_loan_day_limit">借款天数</string>
+    <string name="cash_loan_seven_day_limit">7天</string>
+    <string name="cash_loan_fourteen_day_limit">14天</string>
+    <string name="cash_loan_first_day_limit">10天</string>
+    <string name="cash_loan_second_day_limit">20天</string>
+    <string name="cash_loan_day_formatter_home">%s天</string>
+    <string name="cash_loan_day_formatter">%s天</string>
+    <string name="cash_loan_repayment_day_formatter">%s 天</string>
+    <string name="cash_loan_amount_formatter">¥%s</string>
+    <string name="cash_loan_goods_title">购买商品</string>
+    <string name="cash_loan_goods_amount_formatter">价值¥%s</string>
+    <string name="cash_loan_repayment_amount">到期应还 \n¥%s</string>
+    <string name="cash_loan_repayment_amount_legal">到期应还 \n¥%s(含商品价)</string>
+    <string name="cash_loan_repayment_amount_legal_v2">到期应还 \n¥%s</string>
+    <string name="cash_loan_repayment_info">到账金额 ¥%1$s\n手续费 ¥%2$s\n利息 ¥%3$s</string>
+    <string name="cash_loan_repayment_info_v2">借款到账 ¥%1$s\n手续费 ¥%2$s\n利息 ¥%3$s</string>
+    <string name="cash_loan_tips_title">费用说明</string>
+    <string name="cash_loan_commit">立即借钱</string>
+    <string name="cash_loan_commit_info">贷款申请</string>
+    <string name="cash_loan_commit_info_des">申请中：\n您提交的贷款申请未受理，请耐心等待</string>
+    <string name="cash_loan_commit_request">贷款审核</string>
+    <string name="cash_loan_commit_request_des">审核中：\n您的借钱申请正在打款审核中，请稍后留意短信通知。</string>
+    <string name="cash_loan_commit_request_des_v2">审核中：\n您的借款已提交审核，请耐心等待，商品将在打款成功后给您发货。</string>
+    <string name="cash_loan_commit_gmt_arrival">打款</string>
+    <string name="cash_loan_commit_gmt_arrival_des">打款中：\n您的借款申请已经通过，正在打款中，正常情况下最晚2小时内到帐。</string>
+    <string name="cash_loan_commit_gmt_arrival_des_v2">打款中：\n您的借款审核已通过，正在打款中，正常情况下，最晚2小时内到帐，商品将在打款成功后给您发货。</string>
+    <string name="cash_loan_edit_amount_tip">请输入借款金额</string>
+    <string name="cash_loan_safe_info">本服务由%s提供</string>
+    <string name="cash_loan_repayment_repayment">立即还款</string>
+    <string name="cash_loan_repayment_repayment_repaying">还款处理中…</string>
+    <string name="cash_loan_repayment_repayment_amount">待还金额</string>
+    <string name="cash_loan_repayment_repayment_amount_ing">在还金额</string>
+    <string name="cash_loan_repayment_repayment_day">还款倒计时</string>
+    <string name="cash_loan_repayment_overdue_day">已逾期天数</string>
+    <string name="cash_loan_overdue_info">%1$s[本金] + %2$s[逾期费]</string>
+    <string name="cash_loan_repayment_overdue_day_limit">应还款日：%1$s</string>
+    <string name="cash_loan_repayment_day_limit">最后还款日：%1$s</string>
+    <string name="cash_loan_borrow_tips">爱上街不向20岁以下及在校学生提供借款服务</string>
+    <string name="cash_loan_repayment_tips">温馨提示\n逾期会产生逾期费，并对您的信用造成严重影响，请务必按时还款；
+        \n完成该笔资金还款，方可申请下一笔借款</string>
+    <string name="cash_loan_overdue_tips">温馨提示\n您已逾期，平台将进入催收阶段；请及时还款；
+        \n完成该笔资金还款，方可申请下一笔借款</string>
+    <!--<string name="cash_loan_tip_info">手续费 = 借款本金 * 日手续费率 * 借款天数\n \n利息 = 借款本金 * 日利率 * 借款天数\n \n日利率：%1$s\n \n手续费率：%2$s\n</string>-->
+    <string name="cash_loan_tip_info" formatted="false">1、手续费=借款本金*年化手续费率*借款天数/365\n2、利息=借款本金*年化利率*借款天数/365\n3、借钱年化手续费率:36%\n4、借钱年化利率:0.0%\n5、商品分期免息</string>
+    <string name="cash_loan_tip_info_old">手续费 = 借款本金 * 日手续费率 * 借款天数\n \n利息 = 借款本金 * 日利率 * 借款天数\n \n日利率：%1$s\n \n手续费率：%2$s\n</string>
+    <string name="cash_loan_cash_amount_info">可借金额在%1$s元至%2$s元之间，并且为100的整数倍</string>
+    <string name="cash_loan_cash_finish_info">已达上限，明日再见</string>
+    <string name="cash_loan_cash_finish_des">今日放款</string>
+    <string name="cash_loan_cash_finish_money">%s元</string>
+    <string name="cash_loan_cash_finish_number">%s笔</string>
+    <string name="cash_loan_cash_finish_step1">1、先去【分期】页面，完成征信认证，借钱快人一步</string>
+    <string name="cash_loan_cash_finish_step2">2、7天、14天快速周转，随借随还</string>
+    <string name="cash_loan_cash_finish_step3">3、爱上街购物，拿返利，抵账单</string>
+    <string name="cash_loan_deferred">申请续期</string>
+    <string name="cash_loan_deferred_apply">续期申请中</string>
+    <string name="cash_loan_other_repayment">其他还款方式</string>
+    <string name="cash_loan_supermarket_link_error">获取地址失败,请重试</string>
+    <string name="cash_loan_supermarket_toast_renewal_err">有一笔还款正在处理中</string>
+    <string name="cash_loan_coupon">借钱免息券</string>
+    <string name="cash_loan_repayment_text">还款处理中：</string>
+    <string name="cash_loan_repayment_ing">您的还款已经提交银行，请耐心等待。若2小时内状态没有变更，请联系我们客服电话4000025151</string>
+    <string name="cash_loan_goods_select_dialog_detail">查看详情</string>
+    <string name="cash_loan_goods_select_dialog_sure">确定</string>
+
+    <!--借贷超市-->
+    <string name="cash_loan_supermarket_title">借贷超市</string>
+    <string name="cash_loan_supermarket_action_more">查看更多</string>
+    <string name="cash_loan_examine_refuse_title">审核不通过!</string>
+    <string name="cash_loan_examine_refuse_info">非常抱歉，您的本次贷款未通过我们的审核，我们\n推荐您尝试其他借贷平台的借款。</string>
+    <string name="cash_loan_examine_refuse_action_other">试试其他借贷平台</string>
+    <string name="cash_loan_examine_refuse_action_loan_market">去借贷超市看看</string>
+    <string name="cash_loan_supermarket_no_data">暂无数据哦～</string>
+    <string name="cash_loan_package_reward_to">奖励已发放至-%s</string>
+
+
+    <!---确认借款-->
+    <string name="verify_loan_amount">借款金额</string>
+    <string name="verify_loan_amount_arrival">借款到账</string>
+    <string name="verify_loan_amount_arrival_tip">借款成功后，将在借款到账金额中扣除商品金额</string>
+    <string name="verify_loan_amount_shopping">购物支付</string>
+    <string name="verify_loan_amount_shopping_arrival">购物后到账</string>
+    <string name="verify_loan_day_limit">借款期限</string>
+    <string name="verify_loan_extra_money">手续费</string>
+    <string name="verify_loan_extra_interest">利息</string>
+    <string name="verify_loan_loan_amount">到账金额</string>
+    <string name="verify_loan_card">收款人账户</string>
+    <string name="verify_loan_make_sure">确认借款</string>
+    <string name="verify_loan_card_formatter">%1$s(尾号%2$s )</string>
+    <string name="verify_loan_tip_info">请输入支付密码</string>
+    <string name="verify_loan_success">借款申请提交成功</string>
+    <string name="verify_loan_agreement">《个人现金服务合同》</string>
+    <string name="verify_loan_money_formatter">¥%s</string>
+    <string name="verify_loan_day_formatter">%s天</string>
+    <string name="verify_loan_agreement_cb">本人已同意并签署</string>
+    <string name="verify_loan_agreement_info">请阅读并签署《个人现金服务合同》</string>
+    <string name="verify_loan_agreement_tip">*请谨慎评估你的还款能力</string>
+    <string name="verify_loan_agreement_tip2">点击确认借款即同意《借款相关协议》</string>
+    <string name="verify_loan_agreement_renewal">点击立即续期即同意《续期协议》</string>
+
+    <!--确认借款-合规-->
+    <string name="verify_loan_legal_loan_purpose">借款用途</string>
+    <string name="verify_loan_legal_repayment_source">还款来源</string>
+    <string name="verify_loan_legal_goods_null">获取商品信息失败，请返回重试</string>
+    <string name="verify_loan_legal_address_null">获取收货地址失败，请返回重试</string>
+    <string name="verify_loan_legal_purpose_null">请选择借款用途</string>
+    <string name="verify_loan_legal_source_null">请选择还款方式</string>
+
+    <!--借款申请提交成功-->
+    <string name="loan_success_step_one">借款申请已经提交成功</string>
+    <string name="loan_success_step_two">平台审核，放款</string>
+    <string name="loan_success_step_three">平台放款\n开始计算利息，还款倒计时</string>
+    <string name="loan_success_title">申请提交成功</string>
+    <string name="loan_success_make_sure">完成</string>
+    <string name="loan_renewal_todo">申请处理中</string>
+
+    <!--借款记录-->
+    <string name="loan_record_title">借款记录</string>
+    <string name="loan_record_money_formatter">借款%s元</string>
+    <string name="loan_record_money_formatter_new">借款%1$s元 (%2$s)</string>
+    <string name="loan_record_type_null">获取数据失败，请返回重试</string>
+
+
+    <!--品牌确认支付-->
+    <string name="verify_pay_info_payment_title">选择付款方式</string>
+    <string name="verify_pay_info_payment_fanbei">信用分期</string>
+    <string name="verify_pay_info_payment_alipay">支付宝</string>
+    <string name="verify_pay_info_payment_weichat">微信</string>
+    <string name="verify_pay_info_payment_unionpay">银行卡支付</string>
+    <string name="verify_pay_info_bank_err">获取银行卡信息失败,请重新选择</string>
+    <string name="verify_pay_info_should_tip">应付金额:¥</string>
+    <string name="verify_pay_info_rebate_tip">返利金额:¥</string>
+    <string name="verify_pay_info_useable_tip">可用额度¥</string>
+    <string name="verify_pay_info_auth_tip">去认证</string>
+    <string name="verify_pay_info_auth_promote">提升额度</string>
+    <string name="verify_pay_info_bank_tip">去添加</string>
+    <string name="toast_location_can_not_get">请先开启爱上街定位权限哦~</string>
+    <string name="verify_pay_info_useable_virtualgoods_tip">本月充值可用额度¥</string>
+
+    <!--代付-->
+    <string name="fanbei_pay_way_repayment_title">还款总额</string>
+    <string name="fanbei_pay_way_pay_title">额度支付</string>
+    <string name="fanbei_pay_way">选择分期方式</string>
+    <string name="fanbei_pay_stead_buy_title">申请分期</string>
+    <string name="fanbei_pay_title">爱上街代付</string>
+    <string name="fanbei_pay_discount">优惠方式</string>
+    <string name="fanbei_pay_no_discount_tip">无优惠</string>
+    <string name="fanbei_pay_action_pay">立即支付</string>
+    <string name="fanbei_pay_nper_info">¥%1$sx%2$s期</string>
+    <string name="ishangjie_pay_nper_info">月供¥%1$s</string>
+    <string name="fanbei_pay_nper_title_other">¥%1$sx%2$s期\n¥%3$sx%4$s期</string>
+    <string name="fanbei_pay_nper_describe">含利息、手续费¥%s</string>
+    <string name="fanbei_pay_nper_sign_free">免息</string>
+    <string name="fanbei_pay_price">额度支付:¥%s</string>
+    <string name="fanbei_pay_price_usable">¥%s</string>
+    <string name="fanbei_pay_stead_buy_price">分期金额:¥%s</string>
+    <string name="fanbei_pay_nper_repayment">还款总额:¥%s</string>
+    <string name="fanbei_pay_bank_pay_amount">¥%s</string>
+    <string name="fanbei_pay_category_info">每月总额度¥%1$s\n本月剩余额度¥%2$s</string>
+    <string name="toast_agreement_unchecked">请先阅读并同意《服务协议》《分期服务协议》哦~</string>
+    <string name="text_fanbeipay_other_agreement">《服务协议》</string>
+    <string name="text_fanbeipay_agreement">《分期服务协议》</string>
+    <string name="text_loan_agreement">《借款协议》</string>
+    <string name="toast_fanbeipay_success">支付成功</string>
+    <string name="toast_fanbeipay_failed">支付失败</string>
+    <string name="toast_fanbeipay_order_err">获取订单信息失败,请重试</string>
+    <string name="toast_fanbeipay_quota_insufficient">您的可用额度不足哦~</string>
+    <string name="toast_fanbeipay_quota_virtualgoods">您本月剩余充值额度不足，请选择其他支付方式</string>
+    <string name="toast_fanbeipay_overdue">您有逾期未还款的订单，需还款后才能申请分期，马上去还款吧</string>
+    <string name="toast_fanbeipay_billid_empty">获取账单失败，请重试</string>
+
+    <!--还款列表-->
+    <string name="repayment_list_amount_formatter">%1$s ¥%2$s</string>
+    <string name="repayment_list_success_state">还款成功</string>
+    <string name="repayment_list_failed_state">还款失败</string>
+    <string name="repayment_list_default_state">还款中</string>
+
+    <!--还款页面-->
+    <string name="loan_repayment_amount">还款金额</string>
+    <string name="loan_repayment_offer">还款优惠</string>
+    <string name="loan_repayment_balance">返利金额</string>
+    <string name="loan_repayment_jifeng">集分宝</string>
+    <string name="loan_repayment_moeny_formatter">¥%s</string>
+    <string name="loan_repayment_error_info">您有一笔还款正在处理中，请等待处理完成后\n进行还款</string>
+
+    <!--逾期费-->
+    <string name="cash_overdue_time">日期</string>
+    <string name="cash_overdue_principal">本金（元）</string>
+    <string name="cash_overdue_overdue">逾期费（元）</string>
+    <!--紧急联系人-->
+    <string name="contact_urgent_type_title">与本人关系</string>
+    <string name="contact_urgent_done">完成</string>
+    <string name="contact_urgent_name_toast">请选择紧急联系人</string>
+    <string name="contact_urgent_mobile_toast">紧急联系人联系方式不能为空</string>
+    <string name="contact_urgent_type_toast">请选择紧急联系人与本人关系</string>
+
+    <!--我的优惠券页面-->
+    <string name="voucher_menu_title">我的优惠券</string>
+    <string name="voucher_menu_platform">购物优惠券(%s)</string>
+    <string name="voucher_menu_brand">逛逛优惠券(%s)</string>
+    <string name="voucher_menu_count_unit">张</string>
+
+    <string name="repayment_list_no_data">暂无还款</string>
+    <string name="record_list_no_data">暂无借款</string>
+    <string name="record_list_no_data_legal">暂无记录</string>
+    <string name="common_money_formatter">¥%s</string>
+
+    <!--创建收货地址-->
+    <string name="create_address_title_create">新增地址</string>
+    <string name="create_address_title_edit">编辑收货地址</string>
+    <string name="create_address_name">收货人</string>
+    <string name="create_address_name_hit">请输入收货人</string>
+    <string name="create_address_phone">手机号码</string>
+    <string name="create_address_phone_hit">请输入手机号</string>
+    <string name="create_address_location">省市地区</string>
+    <string name="create_address_location_hit">点击选择</string>
+    <string name="create_address_detail">详细地址</string>
+    <string name="create_address_detail_hit">请输入详细地址(5–120个字)</string>
+    <string name="create_address_auto">设置默认</string>
+    <string name="create_address_save">完成</string>
+    <string name="create_address_name_error">请输入收货人姓名</string>
+    <string name="create_address_phone_error">请输入正确的收货人联系电话</string>
+    <string name="create_address_location_error">请选择省市区</string>
+    <string name="create_address_detail_error">请填写详细地址，不少于5个字</string>
+
+    <!--代买页面-->
+    <string name="submit_order_add_address_info">添加地址 +</string>
+    <string name="submit_order_add_address_name">收件人: %1$s</string>
+    <string name="submit_order_goods_price">单价：¥%1$s</string>
+    <string name="submit_order_goods_rebate">返利：¥%1$s元</string>
+    <string name="submit_order_add_picture_info">点击添加第三方平台【确认订单】页面截图</string>
+    <string name="submit_order_money">订单金额</string>
+    <string name="submit_order_total_money">总计：¥%1$s</string>
+    <string name="submit_order_picture">订单截图</string>
+    <string name="submit_order_stead_buy_way">分期方式</string>
+    <string name="submit_order_stead_buy_coupon">优惠券</string>
+    <string name="submit_order_stead_buy_shop_coupon">店铺优惠</string>
+    <string name="submit_order_stead_buy_coupon_action">不使用优惠券</string>
+    <string name="submit_order_stead_buy_coupon_discount">已使用1张优惠券 优惠%s元</string>
+    <string name="submit_order_stead_buy_coupon_count">%s张可用</string>
+    <string name="submit_order_stead_buy_coupon_null">无可用优惠券</string>
+    <string name="submit_order_stead_buy_coupon_amount">已优惠 ¥%s</string>
+    <string name="submit_order_stead_buy_no_coupon">暂无可用优惠券哦～</string>
+    <string name="submit_order_stead_buy_address_error">请先选择收获地址</string>
+    <string name="submit_order_message">留言</string>
+    <string name="submit_order_modify_picture">修改</string>
+    <string name="submit_order_message_hint">需要注意什么，可以写这里，最多500字;</string>
+    <string name="submit_order_money_hint">请填写订单上的订单金额</string>
+    <string name="submit_order_submit">提交分期</string>
+    <string name="submit_order_agreement_info">《服务协议》</string>
+    <string name="submit_order_no_money_info">请输入订单金额</string>
+    <string name="submit_order_no_picture_info">请先添加第三方平台【确认订单】页面截图</string>
+    <string name="submit_order_no_nper_info">请先选择分期信息</string>
+    <!--<string name="submit_order_dis_agreement_info">请先阅读并同意《服务协议》《分期服务协议》</string>-->
+    <string name="submit_order_dis_agreement_info">请先阅读并同意《服务协议》</string>
+
+    <!--代买提交审核-->
+    <string name="stead_buy_submit_success_tip">审核中…</string>
+    <string name="stead_buy_submit_success_msg">提交成功,请等待管理员审核</string>
+    <string name="stead_buy_submit_success_amount_format">¥%s</string>
+    <string name="stead_buy_submit_success_goods_error">获取商品信息失败，请重试</string>
+
+    <!--代买优惠券-->
+    <string name="stead_buy_coupon_item_use">去用券</string>
+    <string name="stead_buy_coupon_list_empty">暂无可用优惠券哦～</string>
+
+    <!--管理收货地址-->
+    <string name="select_address_title">我的地址</string>
+    <string name="select_address_set_default">默认</string>
+    <string name="select_address_delete">删除</string>
+    <string name="select_address_edit">编辑</string>
+    <string name="select_address_name_title">收件人:</string>
+    <!--<string name="select_address_default_formatter">【默认地址】%1$s%2$s%3$s%4$s</string>-->
+
+    <!--分期成功-->
+    <string name="stead_buy_success_order_info">查看订单</string>
+    <string name="stead_buy_success_buy">继续购物</string>
+    <string name="stead_buy_success_step_one">申请分期成功</string>
+    <string name="stead_buy_success_step_two">平台审核，下单</string>
+    <string name="stead_buy_success_step_three">确认订单，享受返利</string>
+
+    <!--淘宝页面-->
+    <string name="tao_bao_stead_buy_tip_info">是否申请反呗分期代付</string>
+    <string name="tao_bao_stead_buy_collection">收藏</string>
+    <string name="tao_bao_stead_buy_guide">分期教程</string>
+    <string name="tao_bao_title">淘宝购物</string>
+    <string name="tao_bao_stead_buy_title">提交订单</string>
+    <string name="tao_bao_stead_buy_bind_title">请完成实名认证</string>
+    <string name="tao_bao_stead_buy_bind_dialog_sure">去实名</string>
+    <string name="tao_bao_stead_buy_dialog_sure">去认证</string>
+    <string name="tao_bao_stead_buy_tips">最高返利%1$s可分期</string>
+    <string name="tao_bao_close_tips">关闭</string>
+    <string name="tao_bao_stead_buy">分期购买</string>
+    <string name="tao_bao_stead_buy_shot_failure">商品截屏失败，请重新分期购买</string>
+    <string name="guide_dialog_item_title">分期购买流程</string>
+    <string name="guide_dialog_next_step">下一步</string>
+    <string name="guide_dialog_finish">知道了</string>
+
+
+    <!--身份信息-->
+    <string name="user_id_card_front">身份证正面</string>
+    <string name="user_id_card_submit">提交</string>
+    <string name="user_id_card_submit_toast">请上传正确的身份证信息</string>
+
+    <!--依图相关-->
+    <string name="liven_app_time_out">人脸识别超时，请重试</string>
+    <string name="liven_app_error">人脸识别错误，请重试</string>
+
+    <!-- 代买 -->
+    <string name="step_buy">申请分期</string>
+    <string name="step_buy_login">登录</string>
+
+    <!--续期记录-->
+    <string name="deferred_record_info">续期%1$s元%2$s天</string>
+
+    <!--续期详情-->
+    <string name="deferred_detail_title">续期成功</string>
+    <string name="deferred_status_in_hand">续期处理中</string>
+    <string name="deferred_detail_money">续期本金</string>
+    <string name="deferred_detail_money_goods">分期商品金额</string>
+    <string name="deferred_detail_money_goods_v2">代买商品金额</string>
+    <string name="deferred_detail_interest">上期利息</string>
+    <string name="deferred_detail_previous_service_fee">上期手续费</string>
+    <string name="deferred_detail_overdue">上期逾期费</string>
+    <string name="deferred_detail_next_poundage">下期手续费</string>
+    <string name="deferred_detail_capital">本金还款部分</string>
+    <string name="deferred_detail_last_repaid_amount">上期待还订单</string>
+    <string name="deferred_detail_pay_way">支付方式</string>
+    <string name="deferred_detail_pay_no">支付编号</string>
+    <string name="deferred_detail_create_time">创建时间</string>
+    <string name="deferred_detail_no">续期协议</string>
+
+    <string name="stead_buy_item_info">￥%1$sx%2$d期</string>
+    <string name="stead_buy_nper_item_info">￥%1$s起x%2$d期</string>
+    <string name="stead_buy_rebate_info">含利息、手续费%1$s元</string>
+    <string name="stead_buy_item_free">免息</string>
+    <string name="stead_buy_item_free_info">(免息)</string>
+    <string name="stead_buy_instalment_amount">待支付金额¥%s</string>
+    <string name="stead_buy_usable_amount">当前可用分期额度¥%s</string>
+    <string name="stead_buy_usable_amount_category">当前该类目可用分期额度¥%s</string>
+    <string name="stead_buy_nper_dialog_title">选择分期</string>
+    <string name="stead_buy_nper_dialog_toast_nper_unselect">请先选择分期哦～</string>
+    <string name="stead_buy_nper_dialog_confirm">确认</string>
+
+    <!--消费分期提示框-->
+    <string name="stead_buy_tips_login">请先登入账号</string>
+    <string name="stead_buy_tips_to_login">马上登入</string>
+    <string name="stead_buy_tips_auth">请先实名认证</string>
+    <string name="stead_buy_tips_to_auth">马上认证</string>
+    <string name="stead_buy_tips_upgrade">请先申请信用评估</string>
+    <string name="stead_buy_tips_to_upgrade">马上评估</string>
+
+    <string name="auth_user_info_name">姓名</string>
+    <string name="auth_user_info">身份信息</string>
+    <string name="auth_user_info_id_number">身份证号</string>
+    <string name="auth_user_info_card_info">证件信息</string>
+    <string name="auth_user_info_submit_info">已上传</string>
+    <string name="auth_user_info_do_submit">未上传</string>
+    <string name="auth_user_bind_card_info">绑定银行卡</string>
+    <string name="auth_user_bind_name">持卡人</string>
+    <string name="auth_user_bind_number">银行卡号</string>
+    <string name="auth_user_bind_mobile">手机号</string>
+
+    <string name="oppo_r11_mall_title">商品详情</string>
+    <string name="oppo_r11_mall_des">OPPO R11前后2000万 拍照更清晰</string>
+    <string name="oppo_r11_mall_scale_num">已售 %1$s</string>
+    <string name="oppo_r11_mall_type_select">规格数量选择</string>
+    <string name="oppo_r11_mall_buy">立即购买</string>
+    <string name="oppo_r11_mall_money_formatter">¥%1$s</string>
+
+    <string name="mall_goods_type_select_money_formatter">¥%1$s</string>
+    <string name="mall_goods_type_select_sure">确定</string>
+    <string name="mall_goods_type_select_number">购买数量</string>
+    <string name="mall_goods_type_select_color">颜色</string>
+    <string name="mall_goods_type_select_number_less">-</string>
+    <string name="mall_goods_type_select_number_add">+</string>
+    <string name="mall_goods_type_select_stage">爱上街分期(可选)</string>
+    <string name="mall_goods_type_select_submit_error">暂无库存</string>
+
+    <!--自营商城提交订单-->
+    <string name="mall_order_add_address_info">添加地址 +</string>
+    <string name="mall_order_title">确认订单</string>
+    <string name="mall_order_order_title">发票抬头</string>
+    <string name="mall_order_order_hint">请输入发票抬头</string>
+    <string name="mall_order_pay_way">爱上街分期支付</string>
+    <string name="mall_order_property_select">规格数量选择</string>
+    <string name="mall_order_select_property">选择规格数量</string>
+    <string name="mall_order_pay">提交订单</string>
+    <string name="mall_order_pay_money_formatter">¥%1$s</string>
+    <string name="mall_order_money_formatter">¥%1$s</string>
+    <string name="mall_order_num_formatter">X%1$s</string>
+    <string name="mall_order_none_quota">可用额度为0，请选择其他支付方式</string>
+
+
+    <!--申请退货-->
+    <string name="orders_return_title">申请退货</string>
+    <string name="orders_return_phone">手机号码</string>
+    <string name="orders_return_phone_hint">请输入手机号码</string>
+    <string name="orders_return_title_tip">Tips</string>
+    <string name="orders_return_msg">Tips \n\n提交申请后，客服会在24小时内联系上方所留电话，请保持电话畅通，谢谢！</string>
+    <string name="orders_return_action_submit">提交申请</string>
+    <string name="orders_return_toast_success">申请成功</string>
+    <string name="orders_return_toast_empty_phone">手机号码不能为空哦～</string>
+    <string name="orders_return_toast_empty_goods_id">获取商品信息失败，请重试</string>
+
+    <!--申请售后-->
+    <string name="after_sale_title">申请售后</string>
+    <string name="after_sale_goods_title">请选择需要售后的商品</string>
+    <string name="after_sale_reason_hint">在这里输入申请售后的原因...</string>
+    <string name="after_sale_action_repayment">提交申请</string>
+    <string name="after_sale_action_calcel">取消申请</string>
+    <string name="after_sale_action_edit">修改申请</string>
+    <string name="after_sale_action_close">关闭申请</string>
+    <string name="after_sale_toast_reason_empty">请填写退款原因哦～</string>
+    <string name="after_sale_toast_submit_success">提交成功</string>
+    <string name="after_sale_logistics_company">物流公司</string>
+    <string name="after_sale_logistics_company_hint">请填写物流公司</string>
+    <string name="after_sale_logistics_no">物流单号</string>
+    <string name="after_sale_logistics_no_hint">请填写物流单号</string>
+    <string name="after_sale_action_sure">确认</string>
+    <string name="after_sale_toast_company_empty">请填写物流公司哦～</string>
+    <string name="after_sale_toast_no_empty">请填写物流单号哦～</string>
+    <string name="after_sale_upload_file_hint">上传凭证</string>
+
+    <string name="common_loan_no_more_data">沒有更多的数据了</string>
+
+    <!--代买金额输入弹窗-->
+    <string name="dialog_stead_buy_title">输入订单金额</string>
+    <string name="dialog_stead_buy_hint_amount">请填写订单上的订单金额</string>
+    <string name="dialog_stead_buy_tip">●输入金额需与订单金额匹配\n●淘宝优惠券和爱上街优惠券不可同时使用</string>
+    <string name="dialog_stead_buy_amount_tip">请输入订单金额哦～</string>
+    <string name="dialog_stead_buy_action_sure">确定</string>
+
+    <!--红包-->
+    <string name="dialog_red_package_action_sure">确定</string>
+    <string name="dialog_red_package_action_use">立即使用</string>
+    <string name="dialog_red_package_action_apply">立即领取</string>
+    <string name="dialog_red_package_action_applyed">已领取</string>
+    <string name="dialog_red_package_action_apply_done">已领完</string>
+    <string name="dialog_red_package_tip_info">点击抽取1888现金红包</string>
+    <!--红包默认标题-->
+    <string name="dialog_red_package_title_default">恭喜您获得</string>
+    <!--额度不足-->
+    <string name="limit_less_desc">可用额度不足，支付失败</string>
+    <string name="limit_less_pay_title">需支付: </string>
+    <string name="limit_less_repay_title">提前还款，释放额度</string>
+    <string name="limit_less_auth_title">补充认证，秒升万元额度</string>
+    <string name="limit_less_other_pay_title">其他支付方式</string>
+
+    <string name="app_service_tel">拨打客服电话</string>
+    <string name="app_service_online">联系在线客服</string>
+
+
+    <!--HTML5WebView-->
+    <string name="web_view_coupons">我的券包</string>
+    <string name="web_view_win_rank">上月获奖名单</string>
+    <string name="web_view_original_agreement">查看原件</string>
+    <string name="ticket_center">领券中心</string>
+    <!--提升信用额度-->
+    <string name="web_view_promote_amount">去提升额度</string>
+    <!--商圈订单详情倒计时-->
+    <string name="trade_order_pay">去付款</string>
+    <string name="trade_order_cancel">取消订单</string>
+    <string name="trade_order_cancel_dialog_title">确定取消吗?</string>
+    <!--订单删除提示内容-->
+    <string name="order_delete_dialog_title">确定删除订单吗?</string>
+    <string name="settings_company">©2016 浙江阿拉丁电子商务股份有限公司</string>
+
+    <!--扫一扫-->
+    <string name="tip_code_scan_trade_error">商家信息获取失败，请重新扫描</string>
+
+    <string name="month_pay">月供</string>
+    <string name="f_rmb">¥%s</string>
+    <string name="f_space_rmb">¥ %s</string>
+    <string name="f_sale">售价¥%s</string>
+    <string name="f_month_pay_start">¥%s起</string>
+    <string name="f_month_pay_space_start">月供 ¥ %s 起</string>
+    <string name="f_rebate_double">返利¥ %s×2倍</string>
+    <string name="f_month_amout">月供¥%s起</string>
+    <string name="home_footer_content">生活的一半是回忆一半是继续</string>
+    <string name="f_register_verify_tip">动态码已发送至%s</string>
+
+
+    <!--登录被踢弹窗-->
+    <string name="dialog_kick_login_sure">确定</string>
+    <string name="dialog_kick_login_content_default">登录信息已过期或您的账号在其他设备登陆，请重新登陆。</string>
+
+    <string name="goods_search_history">历史搜索</string>
+    <string name="goods_search_hot">热门搜索</string>
+    <string name="goods_oval_tips">拿返利小贴士</string>
+    <string name="goods_oval_details">详细教程</string>
+    <string name="goods_oval_step1">在淘宝复制\n商品标题</string>
+    <string name="goods_oval_step2">在这里搜索\n购买商品</string>
+    <string name="goods_oval_step3">确认收货后\n返利到帐</string>
+    <string name="f_supermarket_sign_days">已签到%s天</string>
+
+    <!--身份证号格式化字符串-->
+    <string name="format_str_id_number">****************</string>
+
+    <string name="f_plus">+%s</string>
+    <string name="f_bill_stage_last_repayment_day">已出账单最后还款日%s</string>
+    <string name="f_idcard_verify_tip">请填写%s的身份证号，仅用于身份认证</string>
+    <string name="idcard_verify_tip_default">请填写您的身份证号，仅用于身份认证</string>
+    <string name="service_phone">4000025151</string>
+
+    <!--认证-->
+    <string name="dialog_btn_customer">联系客服</string>
+
+    <string name="un_paid">您有%1$d个订单待支付</string>
+    <!--收银台-->
+    <string name="cashier_pay_way_title">支付方式</string>
+    <string name="cashier_payment_fanbei">51信用</string>
+    <string name="cashier_payment_ali">支付宝</string>
+    <string name="cashier_payment_wx">微信</string>
+    <string name="cashier_quota_normal">可用额度%s</string>
+    <string name="cashier_quota_normal_virtualgoods">额度不足</string>
+    <string name="select_payment_should_tip">应付金额:¥%s</string>
+    <string name="select_payment_rebate_tip">返利金额:¥%s</string>
+    <string name="cashier_ap_usableAmount_virtualgoods">本月充值可用额度¥%s</string>
+    <string name="cashier_ap_usableAmount">可用额度¥%s</string>
+    <string name="cashier_ap_pay">购物额度支付</string>
+    <string name="cashier_bank_pay">银行卡支付¥</string>
+    <string name="cashier_ali_pay">支付宝支付¥</string>
+    <string name="cashier_wechat_pay">微信支付¥</string>
+    <string name="cashier_ap_cp_usableAmount">可用额度¥%s</string>
+    <string name="cashier_cp_pay_amount">剩余金额¥%s由银行卡支付</string>
+    <string name="select_bank_title">选择银行卡</string>
+    <string name="cashier_submit_order_no_nper_info">请先选择分期信息</string>
+    <string name="cashier_payment_auth_tip">完成信用认证，领取额度</string>
+    <string name="cashier_payment_need_up">额度不足</string>
+    <string name="cashier_payment_need_up_auth">额度不足,立即提额</string>
+    <string name="cashier_payment_supplement">您的信用额度不足,去认证补充额度</string>
+    <string name="cashier_payment_min_amount">金额小于分期限制</string>
+    <string name="cashier_payment_overdue">您有逾期，请先还款</string>
+    <string name="text_cashier_digital_certificate">《数字证书服务协议》</string>
+    <string name="text_cashier_risk_prompt">《风险提示函》</string>
+    <string name="text_platform_agreement">《平台服务协议》</string>
+    <string name="auth_step_id">身份认证</string>
+    <string name="auth_step_basic_info">基础信息</string>
+    <string name="auth_step_get_limit">领取额度</string>
+    <string name="credit_bank_pay">银行卡支付¥%1$s(含手续费¥%2$s)</string>
+    <string name="combpay_credit_bank_pay">信用额度+银行卡支付¥%1$s</string>
+
+
+    <string name="auth_basic_fail">10天后提交审核</string>
+    <string name="auth_bank_bard_unbind">请先绑定银行卡</string>
+    <string name="auth_submit">提交审核</string>
+    <string name="auth_id">身份认证</string>
+    <string name="auth_basic_info">基础信息</string>
+    <string name="auth_limit_get">领取额度</string>
+    <string name="auth_limit_from">当前额度</string>
+    <string name="auth_limit_to">可提升至</string>
+
+    <!--绑定银行卡中断提示框-->
+    <string name="auth_exit_dialog_title">确定退出?</string>
+    <string name="auth_exit_dialog_cancel">我再想想</string>
+    <string name="auth_exit_dialog_sure">去意已决</string>
+
+    <!--认证列表banner-->
+    <string name="auth_banner_basic_reauth">重新认证</string>
+    <string name="auth_banner_basic_ing">认证中</string>
+    <string name="auth_banner_basic_already">已认证</string>
+
+    <string name="auth_basic_submit_button_submit">提交审核</string>
+
+    <!--h5相关协议-->
+    <!--搜索-->
+    <string name="native_h5_agreement_search">搜索</string>
+
+    <!--退还款记录-->
+    <string name="refund_crecord_title">退还款记录</string>
+    <string name="calender_title">选择时间</string>
+    <string name="history_bill_title">历史账单</string>
+    <string name="history_bill_title_right_txt">退还款记录</string>
+    <string name="history_bill_month_title">历史账单</string>
+    <string name="history_bill_settle">已结清</string>
+    <string name="history_bill_not_settle">未结清</string>
+    <string name="history_bill_settle_overdue">已结清(有%1$d笔逾期记录)</string>
+    <string name="history_bill_not_settle_overdue">有%1$d笔逾期，未结清</string>
+    <string name="repayment_ticket_lbl">还款优惠券</string>
+    <string name="repayment_use_fl_balance">使用我的账户余额</string>
+    <string name="repayment_detail_title">还款详情</string>
+    <string name="repayment_title">还款</string>
+    <string name="btn_custom_service">客服</string>
+    <string name="reimburse_detail_title">退款详情</string>
+    <string name="consume_dtl_title">消费明细</string>
+    <string name="repay_bottom_dialog_item_stage_info">%1$d/%2$d期</string>
+    <string name="repay_coupon_use_expiod">使用时间: %1$s-%2$s</string>
+    <string name="repay_coupon_use_statement">使用说明: %1$s</string>
+    <string name="settle_advanced_title">提前结清</string>
+    <string name="settle_advanced_title_what">什么是提前结清</string>
+    <string name="stage_bills_settle">已还清</string>
+    <string name="stage_no_bill">暂无</string>
+    <string name="stage_deadline">最后还款日</string>
+    <string name="stage_temp_limit_owe">待还临时额度</string>
+    <string name="reimburse_record_item_title">%1$d年%2$d月份退款记录(共%3$d条)</string>
+    <string name="reimburse_record_item_title_null">%1$d年%2$d月份退款记录(无)</string>
+    <string name="reimburse_record_no_data">暂无记录</string>
+    <string name="repay_record_item_title">%1$d年%2$d月份还款记录(共%3$d条)</string>
+
+    <!--提交还款结果页-->
+    <string name="repayment_overdue_bill">逾期账单</string>
+    <string name="repayment_submit">立即还款</string>
+    <string name="repayment_real_repay">实际还款</string>
+    <string name="repayment_status_fail_hint">系统故障，钱已按原路返回扣款账户</string>
+    <string name="repayment_status_success">到账成功</string>
+    <string name="repayment_status_fail">还款失败</string>
+    <string name="repayment_status_success_hint">如遇系统延迟1-2日更新还款结果</string>
+    <string name="repayment_status_wait">还款成功</string>
+
+
+    <!--账号申诉-->
+    <string name="account_appeal_old_phone">请输入原手机号</string>
+    <string name="appeal_enter">账号申诉</string>
+    <string name="appeal_title">账号申诉</string>
+    <string name="appeal_hint_old_phone">需要修改的旧号码</string>
+    <string name="appeal_hint_new_phone">可接收短信的号码</string>
+    <string name="appeal_msg_send_success">已发送</string>
+    <string name="appeal_msg_send_fail">发送失败</string>
+    <string name="appeal_msg_not_get">请获取验证码</string>
+    <string name="appeal_msg_null">请输入验证码</string>
+    <string name="appeal_btn_next">下一步</string>
+    <string name="appeal_toast_old_phone_null">请输入原号码</string>
+    <string name="appeal_toast_new_phone_null">请输入可接收短信的号码</string>
+    <string name="appeal_toast_same_phone">新旧号码不能相同</string>
+    <string name="appeal_msg_resend">重新发送</string>
+    <string name="appeal_msg_get">获取验证码</string>
+    <string name="appeal_submit">确认</string>
+    <string name="appeal_set_new_pwd">设置新密码</string>
+    <string name="appeal_new_pwd">新密码</string>
+    <string name="appeal_verify_code">验证码</string>
+    <string name="appeal_new_phone">新号码</string>
+    <string name="appeal_old_phone">旧号码</string>
+    <string name="appeal_modify_complete">完成修改</string>
+    <string name="appeal_verify_phone">验证手机</string>
+    <string name="appeal_verify_id">身份验证</string>
+    <string name="appeal_msg_time">%1$ds</string>
+
+    <!--灰度测试之登录注册修改-->
+    <string name="register_51fanbei">注册爱上街</string>
+    <string name="welcome_to_51fanbei">欢迎来到爱上街</string>
+    <string name="input_phone_number">请输入手机号</string>
+    <string name="input_login_number">请输入登录手机号</string>
+    <string name="input_auth_code">请输入短信验证码</string>
+    <string name="input_login_pwd">请输入登录密码</string>
+    <string name="get_auth_code">获取验证码</string>
+    <string name="input_verification_code">输入验证码</string>
+    <string name="common_login">爱上街账号密码登录</string>
+    <string name="login_gray">登录</string>
+    <string name="safe_keyboard">爱上街安全键盘</string>
+    <string name="finish">完成</string>
+    <string name="sms_login">短信快捷登录</string>
+    <string name="register">注册</string>
+    <string name="pwd_set">密码设置</string>
+    <string name="pwd_style">输入6&#8211;18位数字+字符密码</string>
+    <string name="confirm_login">确定并登录</string>
+    <string name="phone_tip">请将%1$s收到的验证码填入下方</string>
+    <string name="auth_code">验证码</string>
+    <string name="new_pwd">新密码</string>
+    <string name="input_new_pwd">输入新密码</string>
+    <string name="save">保存</string>
+    <string name="confirm_phone">验证手机,立即进入</string>
+    <string name="forget_pwd">忘记密码</string>
+    <string name="safe_tip">为了账户安全,请输入验证码</string>
+    <string name="sent_to">已发送至+</string>
+    <string name="resend">%1$ds后重发</string>
+    <string name="gray_next">下一步</string>
+    <string name="my_invitation">我有邀请码</string>
+    <string name="input_invitation">输入邀请码</string>
+    <string name="jump">跳过</string>
+    <string name="find_pwd">别担心,在这里找回密码</string>
+    <string name="phone_register">手机号未注册</string>
+    <string name="unregister_tip">该手机号未注册,可通过验证码快速注册</string>
+    <string name="quick_register">快速注册</string>
+    <string name="account">已有账号</string>
+    <!--借款确认订单-->
+    <string name="cash_loan_order_confirm_title">确认订单</string>
+    <string name="cash_loan_order_confirm_default_num">x1</string>
+    <string name="cash_loan_order_confirm_price">订单金额:</string>
+    <string name="cash_loan_order_confirm_term">借款期限</string>
+    <string name="cash_loan_order_confirm_term_formatter">%s天</string>
+    <string name="cash_loan_order_confirm_fee">手续费</string>
+    <string name="cash_loan_order_confirm_interest">利息</string>
+    <string name="cash_loan_order_amount_formatter">¥%s</string>
+    <string name="cash_loan_order_confirm_tip_next">点击下一步即同意《分期服务协议》</string>
+    <string name="cash_loan_order_confirm_tip_next_v2">点击下一步即同意《代买服务协议》</string>
+    <string name="cash_loan_order_confirm_tip_order">*借款成功后，借款金额将自动支付您的商品金额</string>
+    <string name="cash_loan_order_confirm_action_next">下一步，确认借款信息</string>
+    <string name="cash_loan_order_confirm_order_amount_formatter">订单金额：%s元</string>
+    <string name="cash_loan_order_confirm_action_next_v2">下一步，确认借款</string>
+
+    <!--底部滚动选择-->
+    <string name="picker_btn_text_left_default">取消</string>
+    <string name="picker_btn_text_right_default">完成</string>
+
+    <!--借款协议弹窗-->
+    <string name="dialog_agreement_title">借款相关协议</string>
+    <string name="dialog_agreement_title_renewal">续期相关协议</string>
+    <string name="dialog_agreement_title_stage">分期相关协议</string>
+    <string name="dialog_agreement_cash_service">《个人现金服务合同》</string>
+    <string name="dialog_agreement_digital_service">《数字证书服务协议》</string>
+    <string name="dialog_agreement_risk">《风险提示函》</string>
+    <string name="dialog_agreements_stage">《分期协议》</string>
+    <string name="dialog_agreements_stage_service">《分期服务协议》</string>
+    <string name="dialog_agreements_renewal">《续期协议》</string>
+
+    <!--订单详情-合规-->
+    <string name="order_detail_legal_title">订单详情</string>
+    <string name="order_detail_legal_tab_left">订单信息</string>
+    <string name="order_detail_legal_tab_right">还款信息</string>
+    <string name="order_detail_legal_repayment_date">请在%s前还款</string>
+    <string name="order_detail_legal_logistics_title">物流信息</string>
+    <string name="order_detail_legal_logistics_addressee_title">收件人:%s</string>
+    <string name="order_detail_legal_logistics_addressee_formatter">地址:%s</string>
+    <string name="order_detail_legal_contact_customer">联系客服</string>
+    <string name="order_detail_legal_order_num">订单编号</string>
+    <string name="order_detail_legal_goods_amount_all">商品总价</string>
+    <string name="order_detail_legal_borrow_amount">借款金额</string>
+    <string name="order_detail_legal_stage_time">分期期限</string>
+    <string name="order_detail_legal_stage_time_formatter">%s天</string>
+    <string name="order_detail_legal_service_charge">手续费</string>
+    <string name="order_detail_legal_interest">利息</string>
+    <string name="order_detail_legal_create_time">创建时间</string>
+    <string name="order_detail_legal_delivery_time">发货时间</string>
+    <string name="order_detail_legal_last_repayment_time">最后还款时间</string>
+    <string name="order_detail_legal_overdue_days">逾期天数</string>
+    <string name="order_detail_legal_overdue_fee">逾期费</string>
+    <string name="order_detail_legal_stage_agreement">分期协议</string>
+    <string name="order_detail_legal_action_repayment">立即还款</string>
+
+    <!--借钱订单记录页面-合规-->
+    <string name="order_record_legal_title">订单记录</string>
+    <string name="order_record_legal_order_type">订单商品</string>
+    <!--订单记录-->
+    <string name="order_record_item_title">订单商品</string>
+    <string name="order_record_item_amount_all">总计:¥%s</string>
+
+    <!--只有¥符号的金额格式化-->
+    <string name="price_formatter_only_symbol">¥%s</string>
+
+    <string name="pop_bubble_menu_cash_loan_borrow">借钱记录</string>
+    <string name="pop_bubble_menu_cash_loan_order">订单记录</string>
+
+    <string name="agreements_cash_service">《个人现金服务合同》</string>
+    <string name="agreements_digital">《数字证书服务协议》</string>
+    <string name="agreements_risk">《风险提示函》</string>
+
+
+    <string name="the_history_bill">查看历史账单</string>
+    <string name="bills_paid">已出账单待还(元)</string>
+    <string name="only_overdue">只看逾期</string>
+    <string name="only_month_has_bill">只看本月已出</string>
+    <string name="ahead_settle">提前结清</string>
+    <string name="bills_not">未出账单(元)</string>
+    <string name="no_bills_record">无账单记录</string>
+    <string name="pay_off">赞,全部还清</string>
+    <string name="stage_money">分期本金(元)</string>
+    <string name="commission_charge">合计手续费(元)</string>
+    <string name="overdue_charge">逾期利息(元)</string>
+    <string name="bill_info">账单信息</string>
+    <string name="receipt_merchant">收款商家</string>
+    <string name="stage_info">分期信息</string>
+    <string name="bill_time">账单创建时间</string>
+    <!--額度拆分-->
+    <string name="all_limit_title">线下专项额度</string>
+    <string name="all_limit_offline">线下专项额度</string>
+    <string name="all_limit_train_stage">培训分期</string>
+    <string name="stage_resolution_auth_continue">继续认证</string>
+    <string name="stage_resolution_credit_promote">提升额度</string>
+    <string name="stage_resolution_limit_amout_txt">总额度%s元</string>
+    <string name="service_agreement">分期服务协议</string>
+
+    <string name="content_description"> </string>
+    <string name="rr_id_confirm_name">姓&#160;&#160;&#160;&#160;名</string>
+    <string name="rr_id_confirm_card">身份证</string>
+    <string name="rr_id_confirm_info">身份信息</string>
+    <string name="rr_id_confirm_auth">已认证</string>
+    <string name="rr_id_confirm_face_info">面部信息</string>
+    <string name="rr_id_confirm_face_auth">已绑定</string>
+    <string name="basic_auth_overdue">已过期</string>
+    <string name="basic_auth_recommit">重新认证</string>
+    <string name="stage_bill_date_title">修改账单日</string>
+    <string name="history_bill_month_settled">恭喜，已结清！</string>
+    <string name="repayment_dtl_real_repay">实际还款金额</string>
+    <string name="repayment_dtl_principal">本金</string>
+    <string name="repayment_dtl_stage_charge">分期手续费</string>
+    <string name="repayment_dtl_overdue_interest">逾期利息</string>
+    <string name="repayment_dtl_system_free">系统减免</string>
+    <string name="repayment_dtl_use_balance">账户余额抵扣</string>
+    <string name="repayment_dtl_use_coupon">优惠券抵扣</string>
+    <string name="repayment_dtl_direct_pay">直接支付</string>
+    <string name="repayment_dtl_progress">处理进度</string>
+    <string name="repayment_dtl_submit_time">提交还款</string>
+    <string name="repayment_dtl_bank_deal">银行处理中</string>
+    <string name="repayment_dtl_repay_time">还款时间</string>
+    <string name="repayment_dtl_repay_no">还款编号</string>
+    <string name="repayment_dtl_back_to_home">返回首页</string>
+    <string name="appeal_verify_mobile">验证手机</string>
+    <string name="rr_id_auth_modify">修改</string>
+    <string name="rr_id_back">身份证背面</string>
+    <string name="rr_id_auth_commit">确认提交</string>
+    <string name="rr_id_auth_hint2">身份信息仅用于爱上街信用认证</string>
+    <string name="rr_id_auth_hint1">银行级加密，保障您的信息安全</string>
+    <string name="cashier_loan_agreement">借款相关协议</string>
+    <string name="cashier_agreement_cancel">取消</string>
+    <string name="cashier_agreement_tip">点击支付即同意并签署</string>
+    <string name="cashier_agreement">相关服务协议</string>
+    <string name="cashier_pay_amount">应付金额</string>
+    <string name="cashier_return">返利</string>
+    <string name="cashier_available_amount">可用额度</string>
+    <string name="cashier_buy_limit">额度</string>
+    <string name="cashier_need_comb">需组合支付</string>
+    <string name="cashier_need_comb_pay">组合支付¥%s</string>
+    <string name="cashier_back_dialog_message">超过支付时效后订单将被取消，请尽快支付</string>
+    <string name="cashier_back_dialog_sure">确认离开</string>
+    <string name="cashier_back_dialog_cancel">继续支付</string>
+    <string name="cashier_back_dialog_title">确定要离开吗</string>
+    <string name="title_activity_comb_pay">CombPayActivity</string>
+    <string name="cashier_per_style">分期方式</string>
+    <string name="cashier_other_pay_way">其他支付方式&#160;&#160;(一次性支付)</string>
+    <string name="cashier_comb_pay">组合支付</string>
+    <string name="quality_recommend">看看这些精品推荐</string>
+    <string name="cashier_cp_useable_amount">可用额度</string>
+    <string name="cashier_err_dialog_pwd_forget">忘记密码</string>
+    <string name="cashier_err_dialog_cancel">取消</string>
+    <string name="cashier_free_interest">免息</string>
+    <string name="toast_get_location_fail">未获取到定位，请开启定位后重试</string>
+    <string name="liveness_face_to_screen">请正对屏幕</string>
+    <string name="repayment_dialog_sure">确定</string>
+    <string name="repayment_dialog_all_selected">全选</string>
+    <string name="repayment_dialog_total">总计%s元</string>
+    <string name="repayment_dialog_sum">合计%s元</string>
+    <string name="shopping_mall_goods_dtl">商品详情</string>
+    <string name="settle_advanced_real_pay">实付:</string>
+    <string name="settle_advanced_repay">立即还款</string>
+    <string name="settle_advanced_free_charge">已减免手续费</string>
+    <string name="id_confirm_sure">确定</string>
+    <string name="id_confirm_check_name">请检查身份信息，姓名有误可直接修改请检查</string>
+    <string name="id_confirm_check">姓名</string>
+    <string name="id_confirm_card">身份证</string>
+    <string name="id_confirm_retake">返回重拍</string>
+    <string name="repayment_coupon_complete">完成</string>
+
+    <string name="js_to_java_info_null">获取信息失败，请重试</string>
+    <string name="online_bank_tip_message">请使用您的工资卡（需先绑定）进行网银认证</string>
+    <string name="online_bank_tip_add_bankcard">立即绑卡</string>
+    <string name="online_bank_tip_auth">继续认证</string>
+    <string name="gray_forget_pwd_invalid_phone_no">手机号不可用</string>
+    <string name="message_center_no_message">暂无任何消息</string>
+    <string name="repayment_ticket_dialog_repay_ticket">还款券</string>
+    <string name="order_trade_dtl_no">订单编号</string>
+    <string name="order_trade_dtl_per_count">分期期数</string>
+    <string name="order_trade_dtl_phone">手机号码</string>
+    <string name="order_trade_dtl_cancel_time">取消时间</string>
+    <string name="order_trade_dtl_refund_dtl_devider">-----------退款详情-----------</string>
+    <string name="order_trade_refund_time">退款时间</string>
+    <string name="order_trade_refund_amount">退款金额</string>
+    <string name="order_trade_dtl_refund_reason">退款原因</string>
+    <string name="stage_offline_limit">线下专项额度</string>
+    <string name="stage_to_offline_limit">马上使用</string>
+
+    <!--更换主副卡-->
+    <string name="edit_main_card_title">银行卡详情</string>
+    <string name="toast_edit_main_card_bank_null">获取银行卡信息失败，请重试</string>
+    <string name="edit_main_card_set_main">设为主卡</string>
+    <string name="edit_main_card_remove_card">解除绑定</string>
+    <string name="toast_edit_main_card_remove_main">主卡不可解绑</string>
+    <string name="bank_card_main">主卡</string>
+    <string name="empty_string"> </string>
+
+    <string name="sold_count">%1$s件已售</string>
+    <string name="err_data_pull_refresh_hint">数据加载错误，请下拉刷新</string>
+    <string name="pwd_pay_id_input_validate_title">输入短信验证码</string>
+    <string name="pwd_pay_id_input_validate_hint_title">请输入短信验证码</string>
+    <string name="pwd_pay_id_input_validate_confirm">确认支付</string>
+
+    <string name="colon">:</string>
+    <string name="sale_des">销量</string>
+    <string name="price_des">价格</string>
+    <string name="hot_brand">热卖品牌</string>
+    <string name="all_brand">全部品牌</string>
+    <string name="sort_detail_item_rebare">返¥%1$s</string>
+    <string name="sort_detail_item_nper">x%1$s期</string>
+    <string name="pay_pwd_set_title">设置支付密码</string>
+    <string name="bank_card_phone_input_hint">请填写预留手机号</string>
+    <string name="bank_card_type_input_hint">请选择银行卡类型</string>
+    <string name="bank_card_info_safe_hint">采用银行级加密技术，确保您的信息安全</string>
+
+    <string name="bankcard_add_dialog_message">绑卡可以享受超多优惠，超高折扣，确认退出？</string>
+    <string name="bank_card_add_input_hint">请输入</string>
+    <string name="bank_card_add_id_hint">请添加本人的银行卡账号</string>
+    <string name="repayment_date">还款日期</string>
+    <string name="Reimburse_time_ensure">确认退款时间</string>
+    <string name="last_card_num">尾号%1$s</string>
+    <string name="permission_package_refuse">未通过审核</string>
+    <string name="permission_package_cashing_hint">VIP卡正在支付中，支付成功即可享受订单免审权限，请稍后！</string>
+    <string name="permission_package_pay_fail_hint">支付失败，请重新支付</string>
+    <string name="permission_package_buy_hint">恭喜获得爱上街VIP卡购买资格，购买后即可享受所有订单免审权限，分期购物更便捷</string>
+    <string name="permission_package_buy_btn">购买权限包</string>
+    <string name="permission_package_repay">重新支付</string>
+    <string name="permission_buy_success_congratulations">恭喜你</string>
+    <string name="permission_buy_success_per_get">已获得订单免审权限</string>
+    <string name="permission_buy_success_to_order">去待支付订单</string>
+    <string name="permission_buy_success_has_bill_notice">你有%1$d个未支付订单，快去使用吧</string>
+    <string name="permission_buy_success_notice">挑选心仪的商品使用分期权限吧</string>
+    <string name="permission_buy_success_to_home">去首页逛逛</string>
+    <string name="card_and_num">%1$s (%2$s)</string>
+    <string name="sigle_limit">单笔限额:%1$d 单日限额:%2$d</string>
+    <string name="home_task_done">您已做完每日任务，可以明天再来哦~</string>
+    <string name="contacts_invite_add">邀请</string>
+    <string name="contacts_invite_added">已注册</string>
+    <string name="contacts_invite_surch">搜索好友</string>
+    <string name="contacts_invite_title">通讯录好友</string>
+    <string name="cashier_list_credit_charge">手续费:0.45%</string>
+
+    <string name="home_task_coin">%s金币</string>
+    <string name="home_task_cash">%s元现金</string>
+    <string name="home_task_coupon">%s元优惠券</string>
+    <string name="sign_money">今天签到已送出%s元</string>
+    <string name="discount">折扣</string>
+
+    <string name="shopping_trolley_num_limit">限购%d件</string>
+    <string name="shopping_trolley_stock">仅剩%d件</string>
+    <string name="shopping_trolley_price_change">相比添加时%s元</string>
+    <string name="trolley_delete">删除</string>
+    <string name="trolley_complete">完成</string>
+    <string name="trolley_manager">管理</string>
+    <string name="trolley_no_checked">请选择商品</string>
+    <string name="trolley_order_btn">下单(%d)</string>
+    <string name="trolley_order_count_checked">已选(%d件)</string>
+    <string name="trolley_order_amount">合计：¥%s 不含运费</string>
+    <string name="shopping_trolley_null">购物车空空如也~</string>
+    <string name="shopping_trolley_guang">去逛逛</string>
+    <string name="shopping_trolley_guess_like">猜你喜欢</string>
+    <string name="order_list_comb_pay">合并支付</string>
+    <string name="order_list_count_checked">已选(%d件)</string>
+    <string name="mall_order_use_rebate">余额抵扣</string>
+    <string name="mall_order_use_gold">金币抵扣</string>
+    <string name="mall_order_gold">金币</string>
+    <string name="shopping_trolley_clear_invalid">清空失效商品</string>
+    <string name="shopping_trolley_select_all">全选</string>
+    <string name="trolley_guang">再逛逛</string>
+    <string name="trolley_activity_amount_satisfied">已购满%1$s元,已减%2$s元</string>
+    <string name="trolley_activity_amount_remark">以下商品享【满%1$s减"%2$s"】</string>
+    <string name="trolley_activity_amount_not_satisfied">再购%1$s元立享【满%2$s减%3$s】</string>
+    <string name="trolley_activity_count_satisfied">"已购满%1$s件,已减%2$s元"</string>
+    <string name="trolley_activity_count_remark">以下商品享【每满%1$d件减%2$d】</string>
+    <string name="trolley_activity_count_not_satisfied">再购%1$d件立享【每满%2$d件减%3$d】</string>
+    <string name="trolley_add_on_item">去凑单</string>
+    <string name="trolley_activity_full_reduce">满减</string>
+    <string name="trolley_activity_ishangjie">爱上街商城</string>
+    <string name="trolley_activity_invalid_goods">已失效商品</string>
+    <string name="trolley_reason_lack_of_stock">缺货</string>
+    <string name="trolley_reason_invalid">已失效</string>
+    <string name="trolley_toast_lack_of_stock">已到达库存数量</string>
+    <string name="trolley_toast_limit">已到达限制数量</string>
+    <string name="trolley_toast_property_modify_success">规格修改成功</string>
+    <string name="trolley_price_format">¥%s</string>
+    <string name="trolley_dialog_title">温馨提示</string>
+    <string name="trolley_dialog_sure">确认</string>
+    <string name="trolley_dialog_cancel">取消</string>
+    <string name="trolley_dialog_delete_message">是否删除所选商品？</string>
+    <string name="trolley_dialog_clear_invalid_goods">确认清空失效商品？</string>
+    <string name="trolley_dialog_delete_invalid_goods">确认删除失效商品？</string>
+    <string name="trolley_toast_delete_success">删除成功</string>
+    <string name="trolley_selected_count">已选 (%d件)</string>
+    <string name="trolley_max_count_tip">由于风险原因，一次只能下单支付15个商品，请重新选择商品</string>
+    <string name="trolley_goods_over_stock">您有宝贝已超过库存数量，请重新选择</string>
+    <string name="trolley_goods_over_limit">您有宝贝已超过限购数量，请重新选择</string>
+    <string name="trolley_dialog_i_see">我知道了</string>
+    <string name="mall_order_goods_amount">总计</string>
+    <string name="mall_order_coupon_amount">优惠减免</string>
+    <string name="mall_order_activity_discount">活动优惠</string>
+    <string name="mall_order_rebate">余额支付</string>
+    <string name="mall_order_total_amount">实付：</string>
+    <string name="click_and_close">点击缩起</string>
+    <string name="click_load_more">共计%d件商品，点击展开更多</string>
+    <string name="rmb">¥</string>
+    <string name="format_rmb">¥%s</string>
+    <string name="order_detail_after_sale">申请售后</string>
+    <string name="mall_order_delivery_type">运费</string>
+    <string name="mall_order_item_activity_discount">活动优惠</string>
+    <string name="order_list_modify_apply">修改申请</string>
+    <string name="order_list_close_apply">关闭申请</string>
+    <string name="order_list_item_sum_amount">总计:</string>
+    <string name="trolley_notice_coupon_use_tips">优惠券使用说明</string>
+    <string name="trolley_notice_coupon_sure">知道了</string>
+    <string name="message_list_open_notice">立即开启</string>
+    <string name="message_list_notice_hint">打开消息通知，不再错过优惠信息！</string>
+    <string name="bill_list_no_more_bill">没有更多订单了</string>
+    <string name="bill_list_all_select">全选</string>
+    <string name="shop_sale_count">在售商品%s件</string>
+
+    <string name="format_yuan">%s元</string>
+    <string name="format_nper_detail_fee">含利息、手续费¥%s</string>
+    <string name="format_nper_detail_per_num">第%s期</string>
+    <string name="cashier_nper_detail">每月需还</string>
+    <string name="home_banner_jump">跳过</string>
+    <string name="detail_spell_des">拼团价</string>
+    <string name="detail_spell_des2">跟好友一起买更划算</string>
+    <string name="detail_spell_goto">去拼团</string>
+    <string name="string_coupon">优惠券</string>
+
+    <string name="add_bank_card">+ 添加银行卡</string>
+    <string name="pop_goods_filter_reset">重置</string>
+    <string name="pop_goods_filter_submit">确定</string>
+
+    <!--LabelsView需要-->
+    <item name="tag_key_data" type="id" />
+    <item name="tag_key_position" type="id" />
+
+    <string name="format_volume">已售%d件</string>
+
+    <string name="product_filter_recommend">推荐</string>
+    <string name="product_filter_sale_count">销量</string>
+    <string name="product_filter_onsale_time">上新</string>
+    <string name="product_filter_screen">筛选</string>
+
+    <string name="new_vip_to_buy">抢购</string>
+    <string name="collect_cancel_shopdiadog_message">确定要取消关注的%d个店铺吗</string>
+    <string name="collect_cancel_gooddiadog_message">确定要取消收藏的%d种商品吗</string>
+    <string name="agreement">注册即同意爱上街注册协议</string>
+
+    <string name="product_comment">商品评价(%s)</string>
+    <string name="comment_tab_all">全部(%s)</string>
+    <string name="comment_tab_good">好评(%s)</string>
+    <string name="comment_tab_have_image">有图(%s)</string>
+    <string name="comment_content_length">%s/100</string>
+    <string name="comment_submit_img_count">%s/5</string>
+    <string name="comment_wait">待评价(%s)</string>
+    <string name="comment_complete">已评价(%s)</string>
+    <string name="comment_click_main">立即评价</string>
+    <string name="single_limit">单笔限额</string>
+    <string name="single_day_limit">单日限额</string>
+
+
+    <string name="build_type">debug</string>
+    <string name="product">framework</string>
+
+
+    <string name="app_exit">再按一次退出程序</string>
+    <!--update start-->
+    <string name="android_auto_update_download_progress">正在下载:%1$d%%</string>
+    <!--update end-->
+    <!-- common -->
+    <string name="empty" />
+    <string name="msg_system_error">系统异常请联系客服人员!</string>
+    <string name="confirm">确定</string>
+    <string name="cancel">取消</string>
+    <string name="page_loading">加载中&#8230;</string>
+
+    <!-- dialog -->
+
+    <!-- permission -->
+    <string name="permission_name_camera">为了能更好的使用本应用，请授予摄像头权限。</string>
+    <string name="permission_name_contacts">为了更好地评估您的信用额度，请允许爱上街访问您的通讯录</string>
+    <string name="permission_name_location">为了能更好的使用本应用，请开启定位权限。</string>
+    <string name="permission_name_sd">为了能更好的使用本应用，请开启SD卡读写权限。</string>
+    <string name="permission_settings">去设置</string>
+
+    <!--  分享  -->
+    <!-- 空态值 -->
+    <string name="empty_no_data">没有数据啦</string>
+
+    <!--粘性-->
+    <string name="scrollview_sticky">sticky</string>
+
+    <string name="auth_exit_dialog_message">完成信用认证即可立即领取最多20000元现金</string>
+
+    <string name="withhold_tip">1.您可以打开委托代扣开关，并设置扣款银行卡顺序，到还款日时爱上街会自动执行扣款，扣款结果会以短信方式发送给您；\n2.绑定多张借记卡的，默认按照绑定时间先后顺序扣款；请在还款日(0点)之前保证银行卡余额充足。</string>
+    <string name="tip_host_address">请输入或选择服务器地址</string>
+<!--bankcard-->
+    <string name="mis_folder_all">所有照片</string>
+    <string name="mis_action_button_string">%1$s(%2$d/%3$d)</string>
+    <string name="mis_msg_no_camera">没有系统相机</string>
+    <string name="mis_msg_amount_limit">已经达到最高选择数量</string>
+    <string name="mis_action_done">完成</string>
+    <string name="mis_photo_unit">张</string>
+    <string name="mis_tip_take_photo">拍摄照片</string>
+    <string name="mis_error_image_not_exist">图片错误</string>
+    <string name="mis_error_no_permission">无权限</string>
+    <string name="mis_permission_dialog_title">权限拒绝</string>
+    <string name="mis_permission_dialog_ok">好</string>
+    <string name="mis_permission_dialog_cancel">拒绝</string>
+    <string name="mis_permission_rationale_write_storage">保存拍照图片需要您提供写存储权限</string>
+    <string name="dialog_permission_request_btn_txt">点我打开</string>
+    <string name="msg_toast_title">提示</string>
+    <string name="box_coin">立即领取奖励</string>
+    <string name="not_need">我不需要了</string>
+<!--pickerview-->
+    <string name="pickerview_cancel">取消</string>
+    <string name="pickerview_submit">确定</string>
+    <string name="pickerview_year">年</string>
+    <string name="pickerview_month">月</string>
+    <string name="pickerview_day">日</string>
+    <string name="pickerview_hours">时</string>
+    <string name="pickerview_minutes">分</string>
+    <string name="pickerview_seconds">秒</string>
+    <!--人脸识别-->
+    <string name="meglive_prompt">请在光线充足的情况下进行检测</string>
+    <string name="meglive_detect_initfailed">检测器初始化失败</string>
+    <string name="meglive_camera_initfailed">打开前置摄像头失败</string>
+    <string name="meglive_getpermission_motion">请打开手机读取运动数据权限</string>
+    <string name="meglive_phone_vertical">请竖直握紧手机</string>
+    <string name="meglive_keep_eyes_open">请勿用手遮挡眼睛</string>
+    <string name="meglive_keep_mouth_open">请勿用手遮挡嘴巴</string>
+    <string name="face_not_found">请让我看到您的正脸</string>
+    <string name="face_too_dark">请让光线再亮点</string>
+    <string name="face_too_bright">请让光线再暗点</string>
+    <string name="face_too_small">请再靠近一些</string>
+    <string name="face_too_large">请再离远一些</string>
+    <string name="face_too_blurry">请避免侧光和背光</string>
+    <string name="face_out_of_rect">请保持脸在人脸框中</string>
+    <string name="meglive_pitch">缓慢点头</string>
+    <string name="meglive_yaw">左右摇头</string>
+    <string name="meglive_mouth_open_closed">张嘴</string>
+    <string name="meglive_eye_open_closed">眨眼</string>
+    <string name="meglive_pos_yaw_left">左转</string>
+    <string name="meglive_pos_yaw_right">右转</string>
+
+    <string name="verify_success">验证成功</string>
+    <string name="liveness_detection_failed">活体检测失败</string>
+    <string name="liveness_detection_failed_timeout">活体检测超时失败</string>
+    <string name="liveness_detection_failed_action_blend">活体检测动作错误</string>
+    <string name="liveness_detection_failed_not_video">活体检测连续性检测失败</string>
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.BankCardTypeItemVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y88"
+        android:onClick="@{viewModel.itemClick}"
+        android:background="@color/background_white_color"
+        android:clickable="true">
+
+        <ImageView
+            android:id="@+id/iv_bank_icon"
+            android:layout_width="@dimen/x35"
+            android:layout_height="@dimen/y35"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x24"
+            bind:src="@{viewModel.imgUrl}"/>
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/iv_bank_icon"
+            android:layout_marginRight="@dimen/x24"
+            android:layout_marginLeft="@dimen/x24"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:textColor="@color/text_important_color"
+            android:textSize="@dimen/x32"
+            android:text="@{viewModel.displayTitle}"
+            android:maxLength="8"/>
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x120"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:textColor="@color/text_important_color"
+            android:textSize="@dimen/x32"
+            android:text="@{viewModel.displayType}"
+        />
+        <ImageView
+            android:id="@+id/iv_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x24"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            bind:visibility="@{viewModel.state}"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_select"
+        />
+
+
+    </RelativeLayout>
+</layout>

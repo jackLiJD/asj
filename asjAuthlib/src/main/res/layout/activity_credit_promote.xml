@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="contentDescription,RtlCompat">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.CreditPromoteVM" />
+    </data>
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:srlReboundDuration="500">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_color">
+
+
+            <com.ald.asjauthlib.authframework.core.ui.NoDoubleClickButton
+                android:id="@+id/btn_submit_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y96"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/btn_login"
+                android:gravity="center"
+                android:onClick="@{viewModel.onSubmitClick}"
+                android:text="@string/auth_submit"
+                android:textColor="@color/text_white_color"
+                android:textSize="@dimen/x32"
+                android:visibility="gone" />
+
+            <TextView
+                android:textSize="@dimen/x30"
+                android:id="@+id/btn_submit_bottom_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/btn_submit_bottom"
+                android:layout_marginStart="@dimen/x24"
+                android:text="只有绑定储蓄卡才能通过银行卡认证哦"
+                android:textColor="@color/text_color_black"
+                android:visibility="gone" />
+
+            <ScrollView
+                android:id="@+id/scroll_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <include
+                        layout="@layout/include_auth_step"
+                        app:viewModel="@{viewModel}" />
+
+                    <View
+                        style="@style/hLineStyle"
+                        android:layout_marginTop="@dimen/y30"
+                        app:visibility="@{viewModel.displayStepLayout}" />
+
+                    <!--welcome banner-->
+                    <include
+                        layout="@layout/include_auth_welcome_banner"
+                        app:viewModel="@{viewModel}" />
+
+                    <include
+                        layout="@layout/include_auth_limit_banner"
+                        app:viewModel="@{viewModel}" />
+
+                    <!--notice banner-->
+                    <include
+                        layout="@layout/include_auth_notice_banner"
+                        app:viewModel="@{viewModel}" />
+
+                    <View
+                        style="@style/hLineStyle"
+                        android:visibility="gone" />
+
+                    <!--基础认证title-->
+                    <RelativeLayout
+                        android:id="@+id/ll_base_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/y96"
+                        android:onClick="@{viewModel.onBasicClick}"
+                        app:visibility="@{viewModel.showBasicStatus}">
+
+                        <TextView
+                            android:id="@+id/txt_base_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/x24"
+                            android:text="@string/basic_auth_tab_info"
+                            android:textColor="@color/text_ordinary_color"
+                            android:textSize="@dimen/x30" />
+
+                        <TextView
+                            android:id="@+id/txt_basic_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/x20"
+                            android:layout_toEndOf="@+id/txt_base_title"
+                            android:drawableEnd="@{viewModel.basicAuthStatusIc}"
+                            android:drawablePadding="@dimen/x10"
+                            android:gravity="end"
+                            android:padding="@dimen/x5"
+                            android:text="@{viewModel.txtBasicStatus}"
+                            android:textColor="#ff6e34"
+                            android:textSize="@dimen/x28" />
+
+                        <View
+                            style="@style/hLineStyle"
+                            android:layout_alignParentBottom="true" />
+
+                    </RelativeLayout>
+
+                    <!--<View-->
+                    <!--style="@style/hLineStyle"-->
+                    <!--app:visibility="@{!viewModel.showBanner}" />-->
+
+                    <!--基础认证fragment-->
+                    <FrameLayout
+                        android:id="@+id/fl_auth_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:visibility="@{viewModel.displayBasicFragment}" />
+
+                    <!--列表内提交审核btn-->
+                    <com.ald.asjauthlib.authframework.core.ui.NoDoubleClickButton
+                        android:id="@+id/btn_submit"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/y96"
+                        android:layout_margin="@dimen/y30"
+                        android:background="@drawable/btn_login"
+                        android:gravity="center"
+                        android:onClick="@{viewModel.onSubmitClick}"
+                        android:text="@string/auth_basic_fail"
+                        android:textColor="@color/text_white_color"
+                        android:textSize="@dimen/x32"
+                        android:visibility="gone"
+                        tools:visibility="visible" />
+
+                    <View
+                        style="@style/hDividerStyle"
+                        android:layout_height="@dimen/y10" />
+                    <!--补充认证-->
+                    <RelativeLayout
+                        android:id="@+id/ll_extra_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/y96"
+                        android:onClick="@{viewModel.onExtraClick}"
+                        app:visibility="@{viewModel.showExtraStatus}">
+
+                        <TextView
+                            android:id="@+id/txt_extra_title"
+                            android:layout_width="@dimen/x300"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/x24"
+                            android:text="@string/extra_auth_tab_info"
+                            android:textColor="@color/text_ordinary_color"
+                            android:textSize="@dimen/x30" />
+
+                        <ImageView
+                            android:id="@+id/btn_extra_open"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="@dimen/x20"
+                            android:drawablePadding="@dimen/x10"
+                            android:gravity="end"
+                            android:src="@{viewModel.extraAuthStatusIc}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/x28"
+                            tools:src="@drawable/ic_auth_open" />
+
+                        <SurfaceView
+                            style="@style/hLineStyle"
+                            android:layout_alignParentBottom="true" />
+                    </RelativeLayout>
+
+                    <!--补充认证fragment-->
+                    <FrameLayout
+                        android:id="@+id/fl_auth_content_extra"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:visibility="@{viewModel.displayExtraFragment}"
+                        tools:visibility="visible" />
+                </LinearLayout>
+            </ScrollView>
+
+        </RelativeLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</layout>

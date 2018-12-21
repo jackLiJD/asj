@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.BillDtlItemVM" />
+    </data>
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:bannerImages="@{viewModel.bannerModelList}"
+        app:bannerListener="@{viewModel.bannerListener}"
+        android:background="@color/color_F3F5F7"
+        android:paddingTop="30dp"
+        app:delay_time="5000"
+        app:image_scale_type="fit_xy"
+        app:indicator_drawable_selected="@drawable/shape_banner_indicator_s"
+        app:indicator_drawable_unselected="@drawable/shape_banner_indicator_u"
+        app:indicator_height="@dimen/y4"
+        app:indicator_margin="@dimen/x7"
+        app:indicator_width="@dimen/x28"
+        app:layout_height="@{viewModel.bannerHeight}"
+        app:is_auto_play="true"/>
+
+</layout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+>
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="baseVM"
+            type="com.ald.asjauthlib.authframework.core.vm.BaseVM" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/root_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/fw_background_color"
+        />
+    </LinearLayout>
+</layout>

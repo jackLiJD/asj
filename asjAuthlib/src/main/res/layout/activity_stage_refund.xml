@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.StageRefundVM"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_white_color"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/y30"
+                    android:paddingLeft="@dimen/x30">
+
+                    <TextView
+                        android:id="@+id/tv_repayment_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/y38"
+                        android:text="@string/loan_repayment_amount"
+                        android:textColor="#646464"
+                        android:textSize="@dimen/x26"/>
+
+                    <!-- 消费分期还款，不可修改 -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_repayment_amount"
+                        android:gravity="center_vertical"
+                        android:text="@{viewModel.displayMaxAmount}"
+                        android:textColor="@color/fb_dark_first"
+                        android:textSize="@dimen/x58"
+                        app:visibility="@{!viewModel.displayEditAmountView}"
+                        tools:text="￥499.00"
+                        tools:visibility="visible"/>
+
+                    <!-- 现金贷还款，可修改 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_below="@id/tv_repayment_amount"
+                        app:visibility="@{viewModel.displayEditAmountView}"
+                        tools:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tv_rmb_sign"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="￥"
+                            android:textColor="@color/fb_dark_first"
+                            android:textSize="@dimen/x58"/>
+
+                        <EditText
+                            android:id="@+id/edit_loan_repayment_amount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/x24"
+                            android:layout_toRightOf="@id/tv_rmb_sign"
+                            android:background="@null"
+                            android:cursorVisible="true"
+                            android:gravity="center_vertical"
+                            android:inputType="numberDecimal"
+                            android:lines="1"
+                            android:text="@={viewModel.displayEditAmount}"
+                            android:textColor="@color/fb_dark_first"
+                            android:textSize="@dimen/x58"
+                            app:textWatch="@{viewModel.watchListener}"/>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <View style="@style/hLineStyle"/>
+
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/y96"-->
+                <!--android:background="@drawable/item_selector"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:paddingLeft="@dimen/x24"-->
+                <!--android:paddingRight="@dimen/x24">-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:text="@string/loan_repayment_amount"-->
+                <!--android:textColor="@color/text_important_color"-->
+                <!--android:textSize="@dimen/x30"/>-->
+
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/x30"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:onClick="@{viewModel.onEditAmount}"-->
+                <!--android:text="@{viewModel.displayMaxAmount}"-->
+                <!--android:textColor="@color/text_other_color"-->
+                <!--android:textSize="@dimen/x30"-->
+                <!--app:visibility="@{!viewModel.displayEditAmountView}"/>-->
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:paddingLeft="@dimen/x30"-->
+                <!--android:paddingRight="@dimen/x6"-->
+                <!--android:text="￥"-->
+                <!--android:textColor="@color/text_important_color"-->
+                <!--android:textSize="@dimen/x30"-->
+                <!--app:visibility="@{viewModel.displayEditAmountView}"/>-->
+
+                <!--<EditText-->
+                <!--android:id="@+id/edit_loan_repayment_amount"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginRight="@dimen/x24"-->
+                <!--android:background="@null"-->
+                <!--android:cursorVisible="true"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:inputType="numberDecimal"-->
+                <!--android:lines="1"-->
+                <!--android:text="@={viewModel.displayEditAmount}"-->
+                <!--android:textColor="@color/text_important_color"-->
+                <!--android:textSize="@dimen/x30"-->
+                <!--app:textWatch="@{viewModel.watchListener}"-->
+                <!--app:visibility="@{viewModel.displayEditAmountView}"/>-->
+                <!--</LinearLayout>-->
+
+                <!--<View style="@style/hLineStyle"/>-->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y96"
+                    android:background="@drawable/item_selector"
+                    android:gravity="center_vertical"
+                    android:onClick="@{viewModel.couponClick}"
+                    android:paddingLeft="@dimen/x24"
+                    android:paddingRight="@dimen/x24">
+
+                    <TextView
+                        android:id="@+id/tv_refund_coupon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:drawablePadding="@dimen/x10"
+                        android:drawableRight="@drawable/fw__ic_arrow_right"
+                        android:gravity="center_vertical"
+                        android:text="@{viewModel.displayCouponValue}"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x30"
+                        tools:text="抵扣10.00"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/loan_repayment_offer"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x30"/>
+                </RelativeLayout>
+
+                <View style="@style/hLineStyle"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_refund_jifeng"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y96"
+                    android:background="@drawable/item_selector"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/x24"
+                    android:paddingRight="@dimen/x24"
+                    android:visibility="visible"
+                    app:visibility="@{viewModel.showJfbSwitch}">
+
+                    <TextView
+                        android:id="@+id/tv_refund_jifeng_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/loan_repayment_jifeng"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x30"/>
+
+                    <TextView
+                        android:id="@+id/tv_refund_jifeng"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/x30"
+                        android:layout_toRightOf="@id/tv_refund_jifeng_title"
+                        android:gravity="center_vertical"
+                        android:text="@{viewModel.displayJfInfo}"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x30"/>
+
+                    <ToggleButton
+                        android:layout_width="40dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/switch_button_style"
+                        android:checked="false"
+                        android:textOff=" "
+                        android:textOn=" "
+                        app:switchWatch="@{viewModel.jfSwitchListener}"/>
+
+                </RelativeLayout>
+
+                <View style="@style/hLineStyle"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_refund_rebate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y96"
+                    android:background="@drawable/item_selector"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/x24"
+                    android:paddingRight="@dimen/x24">
+
+                    <TextView
+                        android:id="@+id/tv_refund_rebate_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/loan_repayment_balance"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x30"/>
+
+                    <TextView
+                        android:id="@+id/tv_refund_rebate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/x30"
+                        android:layout_toRightOf="@id/tv_refund_rebate_title"
+                        android:gravity="center_vertical"
+                        android:text="@{viewModel.displayRebate}"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x30"/>
+
+                    <ToggleButton
+                        android:id="@+id/tb_rebate"
+                        android:layout_width="40dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/switch_button_style"
+                        android:checked="false"
+                        android:textOff=" "
+                        android:textOn=" "
+                        app:switchWatch="@{viewModel.rebateSwitchListener}"/>
+
+                </RelativeLayout>
+
+                <View style="@style/hLineStyle"/>
+
+                <TextView
+                    android:id="@+id/tv_refund_tips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/y230"
+                    android:gravity="center"
+                    android:text="@{viewModel.displayTips}"
+                    android:textColor="@color/text_important_color"
+                    android:textSize="@dimen/x34"
+                    tools:text="您还需支付¥500.00"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/y36"
+                    android:gravity="center_vertical"
+                    android:text="@{viewModel.displayRemainTip}"
+                    android:textColor="#969696"
+                    android:textSize="@dimen/x26"
+                    tools:text="温馨提示：请确保您的银行卡余额充足"/>
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y90"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:layout_marginRight="@dimen/x24"
+                    android:layout_marginTop="@dimen/y36"
+                    android:background="@drawable/btn_login"
+                    android:onClick="@{viewModel.onRefundClick}"
+                    android:text="@string/stage_refund_refund"
+                    android:textColor="@color/text_white_color"
+                    android:textSize="@dimen/x32"/>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

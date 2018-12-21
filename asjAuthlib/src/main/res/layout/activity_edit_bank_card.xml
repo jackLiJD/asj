@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.BankCardEditVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_white_color"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/x32"
+        android:paddingRight="@dimen/x32"
+        android:paddingTop="@dimen/y28">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y280"
+            android:background="@{viewModel.displayCardBg}"
+            tools:background="@drawable/ic_bank_bg_0_2">
+
+            <com.ald.asjauthlib.authframework.core.ui.AlaCircleImageView
+                android:id="@+id/image"
+                android:layout_width="@dimen/x92"
+                android:layout_height="@dimen/x92"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/x24"
+                android:layout_marginRight="@dimen/x24"
+                android:layout_marginTop="@dimen/y44"
+                android:background="@drawable/frame_circle_white"
+                android:scaleType="centerCrop"
+                app:defaultImage="@{@drawable/ic_default_bank_card_logo}"
+                app:src="@{viewModel.displayImageUrl}" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/x24"
+                android:layout_marginTop="@dimen/y44"
+                android:layout_toRightOf="@id/image"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.displayTitle}"
+                android:textColor="@color/text_white_color"
+                android:textSize="@dimen/x34"
+                tools:text="招商银行" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/y10"
+                android:layout_marginTop="@dimen/y52"
+                android:layout_toRightOf="@+id/tv_name"
+                android:background="@drawable/frame_bank_card_main"
+                android:paddingLeft="@dimen/x10"
+                android:paddingRight="@dimen/x10"
+                android:text="@string/bank_card_main"
+                android:textColor="@color/colorPrimaryNew"
+                android:textSize="@dimen/x22"
+                app:visibility="@{viewModel.showMainTv}" />
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_marginLeft="@dimen/x24"
+                android:layout_marginTop="@dimen/y5"
+                android:layout_toRightOf="@id/image"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.displayCardType}"
+                android:textColor="@color/text_white_color"
+                android:textSize="@dimen/x28" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_type"
+                android:layout_marginLeft="@dimen/x24"
+                android:layout_marginTop="@dimen/y10"
+                android:layout_toRightOf="@id/image"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.displayCardNo}"
+                android:textColor="@color/text_white_color"
+                android:textSize="@dimen/x44" />
+        </RelativeLayout>
+
+        <com.ald.asjauthlib.authframework.core.ui.NoDoubleClickButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y88"
+            android:layout_marginLeft="@dimen/x12"
+            android:layout_marginRight="@dimen/x12"
+            android:layout_marginTop="@dimen/y20"
+            android:background="@drawable/frame_radius_btn_normal"
+            android:onClick="@{viewModel.setMainCardClick}"
+            android:text="@string/edit_main_card_set_main"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x32"
+            app:visibility="@{viewModel.showSetMainBtn}" />
+
+        <com.ald.asjauthlib.authframework.core.ui.NoDoubleClickButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y88"
+            android:layout_marginLeft="@dimen/x12"
+            android:layout_marginRight="@dimen/x12"
+            android:layout_marginTop="@dimen/y20"
+            android:background="@drawable/frame_radius_btn_disable"
+            android:onClick="@{viewModel.removeCardClick}"
+            android:text="@string/edit_main_card_remove_card"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x32" />
+    </LinearLayout>
+</layout>

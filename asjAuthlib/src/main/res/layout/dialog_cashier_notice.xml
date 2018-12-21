@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Translucent_NoTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/transparent"
+    android:orientation="vertical"
+    tools:ignore="ContentDescription">
+
+    <TextView
+        android:id="@+id/txt_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/y300"
+        android:background="@drawable/shape_circle_agreement_dialog_bg"
+        android:gravity="left|center"
+        android:paddingLeft="@dimen/x42"
+        android:paddingRight="@dimen/x42"
+        android:lineSpacingExtra="10dp"
+        android:textColor="@color/color_303030"
+        tools:text="金额小于银行最低单笔限额，您可换卡重试" />
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/y30"
+        android:layout_marginRight="@dimen/y30"
+        android:layout_marginTop="@dimen/y200"
+        android:src="@drawable/ic_activity_dialog_close" />
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.PwdPayOriginalVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/x100"
+            android:gravity="center"
+            android:lines="1"
+            android:text="@string/pwd_pay_original_title"
+            android:textColor="@color/text_important_color"
+            android:textSize="@dimen/x34" />
+
+        <com.ald.asjauthlib.widget.PayEditText
+            android:id="@+id/pwd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x100"
+            android:layout_below="@id/tv_title"
+            android:layout_marginLeft="@dimen/x48"
+            android:layout_marginRight="@dimen/x48"
+            android:layout_marginTop="@dimen/x46"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/pwd"
+            android:layout_alignRight="@id/pwd"
+            android:layout_below="@id/pwd"
+            android:layout_marginTop="@dimen/x36"
+            android:onClick="@{viewModel.forgetPayPwdClick}"
+            android:text="@string/pwd_pay_original_forget_title"
+            android:textColor="@color/text_important_color" />
+
+        <com.ald.asjauthlib.widget.Keyboard
+            android:id="@+id/keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y600"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</layout>

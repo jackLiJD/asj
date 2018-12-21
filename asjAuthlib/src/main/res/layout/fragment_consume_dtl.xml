@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.ConsumDtlFrgVM" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingTop="18dp"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/billInfo"
+                android:layout_width="56dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="@string/bill_info"
+                android:textColor="@color/color_232323"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/receipt"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_below="@id/billInfo"
+                android:layout_marginLeft="42dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:text="@string/receipt_merchant"
+                android:textColor="@color/color_646464"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/merchant"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignBaseline="@id/receipt"
+                android:layout_marginLeft="18dp"
+                android:layout_toRightOf="@+id/receipt"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.displayBus}"
+                android:textColor="@color/color_232323"
+                android:textSize="@dimen/x32"
+                tools:text="星耀城罗森店" />
+
+            <TextView
+                android:id="@+id/payWay"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_below="@id/receipt"
+                android:layout_marginLeft="42dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/cashier_pay_way_title"
+                android:textColor="@color/color_646464"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/payWay"
+                android:layout_marginLeft="18dp"
+                android:layout_toRightOf="@+id/payWay"
+                android:lineSpacingExtra="4dp"
+                android:text="@{viewModel.displayPayWay}"
+                android:textColor="@color/color_232323"
+                android:textSize="14sp"
+                tools:text="組合支付\n其他額度6499.00元\n其他支付500元" />
+
+            <TextView
+                android:id="@+id/stageInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_below="@id/pay"
+                android:layout_marginLeft="42dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/stage_info"
+                android:textColor="@color/color_646464"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignBaseline="@id/stageInfo"
+                android:layout_marginLeft="18dp"
+                android:layout_toRightOf="@+id/stageInfo"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.displayNper}"
+                android:textColor="@color/color_232323"
+                android:textSize="14sp"
+                tools:text="分6期" />
+
+            <TextView
+                android:id="@+id/orderNo"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_below="@id/stageInfo"
+                android:layout_marginLeft="42dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/stage_bill_detail_order_no_title"
+                android:textColor="@color/color_646464"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignBaseline="@id/orderNo"
+                android:layout_marginLeft="18dp"
+                android:layout_toRightOf="@+id/orderNo"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.displayOrderNo}"
+                android:textColor="@color/color_232323"
+                android:textSize="14sp"
+                tools:text="xf20170502302002010204003302" />
+
+            <TextView
+                android:id="@+id/createTime"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_below="@id/orderNo"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/bill_time"
+                android:textColor="@color/color_646464"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignBaseline="@id/createTime"
+                android:layout_marginLeft="18dp"
+                android:layout_toRightOf="@+id/createTime"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.displayTime}"
+                android:textColor="@color/color_232323"
+                android:textSize="14sp"
+                tools:text="2017-08-24 21:00" />
+
+            <TextView
+                android:id="@+id/serviceAgreement"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_below="@id/createTime"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/service_agreement"
+                android:textColor="@color/color_646464"
+                android:textSize="14sp" />
+
+            <TextView
+                android:onClick="@{viewModel.agreementClick}"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_alignBaseline="@id/serviceAgreement"
+                android:layout_marginLeft="18dp"
+                android:layout_toRightOf="@id/serviceAgreement"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.displayAgreement}"
+                android:textColor="@color/color_232323"
+                android:textSize="14sp"
+                android:drawableRight="@drawable/ic_arrow_right"
+                android:paddingRight="15dp"
+                tools:text="AAAAAAA" />
+
+            <TextView
+                android:id="@+id/borrowTime"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_below="@id/serviceAgreement"
+                android:layout_marginLeft="42dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/stage_bill_detail_time_title"
+                android:textColor="@color/color_646464"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignBaseline="@id/borrowTime"
+                android:layout_marginLeft="18dp"
+                android:layout_toRightOf="@id/borrowTime"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.displayBorrowTime}"
+                android:textColor="@color/color_232323"
+                android:textSize="14sp"
+                tools:text="2017-01-18 12:00:00" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:layout_below="@id/borrowTime"
+                android:layout_marginTop="20dp"
+                android:background="@color/color_f6f6f6" />
+
+            <ImageView
+                android:id="@+id/imageGoods"
+                android:layout_width="108dp"
+                android:layout_height="108dp"
+                android:layout_below="@id/borrowTime"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                app:src="@{viewModel.displayGoodsImage}"
+                tools:src="@drawable/ic_app" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/imageGoods"
+                android:layout_alignTop="@id/imageGoods"
+                android:layout_toRightOf="@id/imageGoods"
+                android:gravity="center_vertical"
+                android:paddingLeft="14dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@{viewModel.displayTitle}"
+                    android:textColor="@color/color_232323"
+                    tools:text="联想小新锐机械套装记得的记套装11111" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:layout_marginTop="5dp"
+                    android:text="@{viewModel.displayPrice}"
+                    android:textColor="@color/color_232323"
+                    tools:text="售价59.00" />
+
+                <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                    android:id="@+id/rebate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/title"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/price"
+                    android:drawablePadding="6dp"
+                    android:gravity="center_vertical"
+                    android:text="@{viewModel.displayRebare}"
+                    android:textColor="@color/color_ff5546"
+                    android:textSize="14sp"
+                    app:drawable_height="16dp"
+                    app:drawable_location="left"
+                    app:drawable_src="@drawable/tag_rebate_big"
+                    app:drawable_width="16dp"
+                    tools:text="20" />
+
+                <!--<TextView-->
+                <!--android:id="@+id/month"-->
+                <!--android:layout_width="37dp"-->
+                <!--android:layout_height="18dp"-->
+                <!--android:layout_below="@id/price"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:background="@drawable/shape_cold_rect"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@string/month_pay"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="12sp" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/monthPay"-->
+                <!--android:layout_width="83dp"-->
+                <!--android:layout_height="18dp"-->
+                <!--android:layout_below="@+id/price"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:layout_toRightOf="@+id/month"-->
+                <!--android:background="@drawable/shape_cold_stroke_rect"-->
+                <!--android:gravity="center"-->
+                <!--android:text="@{viewModel.monthPay}"-->
+                <!--android:textColor="@color/fb_colorCold"-->
+                <!--android:textSize="12sp"-->
+                <!--tools:text="¥949.86起" />-->
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</layout>

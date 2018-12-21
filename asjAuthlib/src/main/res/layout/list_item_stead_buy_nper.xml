@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription,RtlHardcoded,RelativeOverlap">
+
+    <data>
+
+        <variable
+            name="adapter"
+            type="com.ald.asjauthlib.dialog.SteadBuyNperDialog.SteadBuyNperAdapter" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y130"
+        android:background="@color/background_white_color"
+        android:minHeight="@dimen/x158">
+
+        <ImageView
+            android:id="@+id/iv_select"
+            android:layout_width="@dimen/x65"
+            android:layout_height="@dimen/x65"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="@dimen/y10"
+            android:src="@drawable/ic_nper_unselect" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/y20"
+            android:layout_marginTop="@dimen/y20"
+            android:layout_toRightOf="@+id/iv_select"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/ll_stead_buy_nper_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerHorizontal="true">
+
+                <LinearLayout
+                    android:id="@+id/ll_stead_buy_item_free_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_free"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:id="@+id/tv_sign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/x14"
+                        android:background="@drawable/bg_free_info"
+                        android:paddingBottom="@dimen/x4"
+                        android:paddingLeft="@dimen/x10"
+                        android:paddingRight="@dimen/x10"
+                        android:paddingTop="@dimen/x4"
+                        android:text="@string/stead_buy_item_free"
+                        android:textColor="@color/text_white_color"
+                        android:textSize="@dimen/x18" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_not_free"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:layout_toRightOf="@+id/ll_stead_buy_item_free_info"
+                    android:textColor="@color/text_important_color"
+                    android:textSize="@dimen/x28" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_rebate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/ll_stead_buy_nper_info"
+                android:layout_marginTop="@dimen/y20"
+                android:textColor="@color/text_normal_color"
+                android:textSize="@dimen/x24" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_free_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_nepr_free" />
+
+        <View
+            style="@style/hNperLineStyle"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlSymmetry,RtlHardcoded,RelativeOverlap">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.BasicAuthVM" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_white_color"
+        android:orientation="vertical">
+
+        <View
+            style="@style/hLineStyle"
+            android:visibility="gone" />
+        <!--身份认证-->
+        <RelativeLayout
+            android:id="@+id/ll_td_identify"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:background="@drawable/item_selector"
+            android:onClick="@{viewModel.showAuthUserClick}"
+            android:paddingEnd="@dimen/x24"
+            android:paddingRight="@dimen/x24">
+
+            <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/x44"
+                android:layout_marginStart="@dimen/x44"
+                android:drawablePadding="@dimen/x46"
+                android:gravity="center_vertical"
+                android:text="@string/credit_promote_user_info"
+                android:textColor="@color/text_ordinary_color"
+                android:textSize="@dimen/x30"
+                app:drawable_height="@dimen/y44"
+                app:drawable_location="left"
+                app:drawable_src="@drawable/ic_auth_id"
+                app:drawable_width="@dimen/y44" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/x10"
+                android:drawableRight="@{viewModel.bindStatusImgUser}"
+                android:gravity="end"
+                android:text="@{viewModel.displayUserInfo}"
+                android:textColor="@{viewModel.bindStatusUser}"
+                android:textSize="@dimen/x28" />
+
+            <View
+                style="@style/hLineStyle"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="@dimen/x120"
+                android:layout_marginStart="@dimen/x120" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:background="@drawable/item_selector"
+            android:onClick="@{viewModel.showAuthCardClick}"
+            android:paddingEnd="@dimen/x24"
+            android:paddingLeft="@dimen/x44"
+            android:paddingRight="@dimen/x24"
+            android:paddingStart="@dimen/x44">
+
+            <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/x46"
+                android:gravity="center_vertical"
+                android:text="@string/credit_promote_bind_card"
+                android:textColor="@color/text_ordinary_color"
+                android:textSize="@dimen/x30"
+                app:drawable_height="@dimen/y44"
+                app:drawable_location="left"
+                app:drawable_src="@drawable/ic_credit_auth_bank_card"
+                app:drawable_width="@dimen/y44" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:drawableEnd="@{viewModel.bindStatusImgBank}"
+                android:drawablePadding="@dimen/x10"
+                android:drawableRight="@{viewModel.bindStatusImgBank}"
+                android:gravity="end"
+                android:text="@{viewModel.displayBindStatus}"
+                android:textColor="@{viewModel.bindStatusBank}"
+                android:textSize="@dimen/x28" />
+        </RelativeLayout>
+
+        <View
+            style="@style/hLineStyle"
+            android:layout_marginLeft="@dimen/x120"
+            android:layout_marginStart="@dimen/x120" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:background="@drawable/item_selector"
+            android:onClick="@{viewModel.bindZmClick}"
+            android:paddingLeft="@dimen/x44"
+            android:paddingRight="@dimen/x24"
+            app:visibility="@{viewModel.showZmLayout}"
+            tools:visibility="visible">
+
+            <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/x46"
+                android:gravity="center_vertical"
+                android:text="@string/credit_promote_zm_score"
+                android:textColor="@color/text_ordinary_color"
+                android:textSize="@dimen/x30"
+                app:drawable_height="@dimen/y44"
+                app:drawable_location="left"
+                app:drawable_src="@drawable/ic_credit_auth_zm"
+                app:drawable_width="@dimen/y44" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/x10"
+                android:drawableRight="@{viewModel.bindStatusImgZM}"
+                android:gravity="end"
+                android:hint="@string/credit_promote_contact_hit"
+                android:text="@{viewModel.displayZmStatus}"
+                android:textColor="@{viewModel.bindStatusZM}"
+                android:textColorHint="@color/text_other_color"
+                android:textSize="@dimen/x28" />
+        </RelativeLayout>
+
+        <View
+            style="@style/hLineStyle"
+            android:layout_marginLeft="@dimen/x120"
+            android:visibility="visible" />
+
+        <RelativeLayout
+            android:id="@+id/rl_phone_identify"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:background="@drawable/item_selector"
+            android:onClick="@{viewModel.bindPhoneClick}"
+            android:paddingLeft="@dimen/x44"
+            android:paddingRight="@dimen/x24">
+
+            <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/x46"
+                android:gravity="center_vertical"
+                android:text="@string/credit_promote_phone"
+                android:textColor="@color/text_ordinary_color"
+                android:textSize="@dimen/x30"
+                app:drawable_height="@dimen/y44"
+                app:drawable_location="left"
+                app:drawable_src="@drawable/ic_credit_auth_operator"
+                app:drawable_width="@dimen/y44" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/x10"
+                android:drawableRight="@{viewModel.bindStatusImgOperator}"
+                android:gravity="end"
+                android:hint="@string/credit_promote_phone_unbind"
+                android:text="@{viewModel.displayOperatorStatus}"
+                android:textColor="@{viewModel.bindStatusOperator}"
+                android:textColorHint="@color/text_other_color"
+                android:textSize="@dimen/x28" />
+        </RelativeLayout>
+
+
+        <View
+            style="@style/hLineStyle"
+            android:layout_marginLeft="@dimen/x120" />
+
+        <RelativeLayout
+            android:id="@+id/rl_urgent_contact"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:background="@drawable/item_selector"
+            android:onClick="@{viewModel.bindContactsClick}"
+            android:paddingLeft="@dimen/x44"
+            android:paddingRight="@dimen/x24"
+            android:visibility="gone">
+
+            <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/x46"
+                android:gravity="center_vertical"
+                android:text="@string/credit_promote_contact_item_title"
+                android:textColor="@color/text_ordinary_color"
+                android:textSize="@dimen/x30"
+                app:drawable_height="@dimen/y44"
+                app:drawable_location="left"
+                app:drawable_src="@drawable/ic_credit_auth_contacts"
+                app:drawable_width="@dimen/y44" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:drawablePadding="@dimen/x10"
+                android:drawableRight="@{viewModel.bindStatusImgMail}"
+                android:gravity="center_vertical|right"
+                android:hint="@string/credit_promote_location_un_set"
+                android:text="@{viewModel.displayContactsStatus  }"
+                android:textColor="@{viewModel.bindStatusMail}"
+                android:textColorHint="@color/text_other_color"
+                android:textSize="@dimen/x28" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/line_basic_bottom"
+            style="@style/hLineStyle"
+            android:layout_marginLeft="@dimen/x120"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</layout>

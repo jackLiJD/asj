@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/y20">
+
+    <TextView
+        android:id="@+id/txt_index"
+        android:layout_width="@dimen/y70"
+        android:layout_height="@dimen/y70"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/y30"
+        android:background="@drawable/circle_stage_gray"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x20"
+        tools:text="22期" />
+
+    <TextView
+        android:id="@+id/txt_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/y30"
+        android:layout_toRightOf="@+id/txt_index"
+        android:textColor="@color/color_232323"
+        android:textSize="@dimen/x36"
+        tools:text="251.00元" />
+
+    <TextView
+        android:id="@+id/txt_service_charge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_amount"
+        android:layout_marginLeft="@dimen/y30"
+        android:layout_marginTop="@dimen/y20"
+        android:layout_toRightOf="@+id/txt_index"
+        android:textColor="@color/fw_text_grey"
+        android:textSize="@dimen/x26"
+        tools:text="含手续费0.18" />
+
+    <TextView
+        android:id="@+id/txt_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/y28"
+        android:textColor="@color/color_232323"
+        android:textSize="@dimen/x28"
+        tools:text="已还款" />
+
+    <View
+        style="@style/hLineStyleE4"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/txt_service_charge"
+        android:layout_marginTop="@dimen/y20" />
+</RelativeLayout>

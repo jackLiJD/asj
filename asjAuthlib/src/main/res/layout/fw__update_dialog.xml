@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/update_frame"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <!-- 版本 -->
+    <TextView
+        android:id="@+id/up_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/x148"
+        android:layout_marginTop="@dimen/y76"
+        android:background="@drawable/bg_update_version"
+        android:text="1.0.0"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="10dp" />
+
+    <TextView
+        android:id="@+id/up_version_force"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="@dimen/x143"
+        android:layout_marginTop="@dimen/y170"
+        android:background="@drawable/bg_update_version_force"
+        android:gravity="center"
+        android:text="1.0.0"
+        android:textColor="#EB452B"
+        android:textSize="10dp" />
+
+
+    <LinearLayout
+        android:background="@android:color/white"
+        android:id="@+id/ll_bottom"
+        android:layout_width="@dimen/y540"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:id="@+id/fl_use"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_use"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/y77"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:src="@drawable/bg_update_use"
+                android:textColor="#ff111111"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:paddingBottom="@dimen/x12"
+                android:text="马上体验"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/btn_update_cancel"
+                android:textColor="#ff111111"
+                android:textSize="14sp" />
+        </FrameLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#f5f5f5" />
+
+        <FrameLayout
+            android:id="@+id/fl_confirm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/btn_update_confirm"
+                android:textColor="#ff111111"
+                android:textSize="14sp" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="@dimen/y540"
+        android:layout_height="1dp"
+        android:layout_above="@+id/ll_bottom"
+        android:background="#f5f5f5" />
+    <!-- Content -->
+    <ScrollView
+        android:layout_width="@dimen/y540"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/divider1"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/y280"
+        android:scrollbars="none">
+
+        <TextView
+            android:id="@+id/up_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="@dimen/x65"
+            android:layout_marginRight="@dimen/x65"
+            android:text="@string/app_name"
+            android:textColor="#111111"
+            android:textSize="16dp" />
+    </ScrollView>
+</RelativeLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--银行名称-->
+    <string-array name="bank_card_code_1">
+        <item>ABC</item>
+        <item>PSBC</item>
+        <item>CMBC</item>
+        <item>HZB</item>
+    </string-array>
+
+    <string-array name="bank_card_code_2">
+        <item>CCB</item>
+        <item>BCOM</item>
+        <item>CIB</item>
+        <item>SPDB</item>
+    </string-array>
+
+    <!--银行卡尾号-->
+    <string-array name="bank_card_end_no_0_2">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="bank_card_end_no_3_5">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
+
+    <string-array name="bank_card_end_no_6_7">
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+    <string-array name="bank_card_end_no_8_9">
+        <item>8</item>
+        <item>9</item>
+    </string-array>
+
+
+    <!--优惠券-->
+    <array name="myTicketTips">
+        <item>未使用</item>
+        <item>已使用</item>
+        <item>已过期</item>
+    </array>
+    <!--消费明细-->
+    <array name="consumeDtlTips">
+        <item>分期详情</item>
+        <item>消费详情</item>
+    </array>
+
+
+    <!--退还款记录-->
+    <array name="refundRecordTips">
+        <item>退款记录</item>
+        <item>还款记录</item>
+    </array>
+
+    <array name="calenderTabs">
+        <item>2017</item>
+        <item>2018</item>
+        <item>2019</item>
+    </array>
+    <array name="monthList">
+        <item>1月</item>
+        <item>2月</item>
+        <item>3月</item>
+        <item>4月</item>
+        <item>5月</item>
+        <item>6月</item>
+        <item>7月</item>
+        <item>8月</item>
+        <item>9月</item>
+        <item>10月</item>
+        <item>11月</item>
+        <item>12月</item>
+    </array>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="modelState"
+            type="com.ald.asjauthlib.authframework.core.vm.entity.ModelState" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fb_background"
+        android:gravity="center_horizontal"
+        android:onClick="@{modelState::onClick}"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y200"
+            android:contentDescription="@string/empty"
+            android:src="@drawable/ic_empty_repayment_info" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/x24"
+            android:gravity="center"
+            android:text="@{modelState.prompt}"
+            android:textColor="@color/fw_text_dark"
+            android:textSize="@dimen/x26" />
+    </LinearLayout>
+</layout>

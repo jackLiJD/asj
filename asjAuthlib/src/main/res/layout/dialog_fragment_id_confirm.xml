@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/color_auth_dialog_bg"
+    android:orientation="vertical"
+    tools:ignore="RtlHardcoded,RtlSymmetry,ContentDescription">
+
+    <TextView
+        android:id="@+id/txt_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:gravity="center"
+        android:text="@string/id_confirm_check_name"
+        android:textColor="#969696"
+        android:textSize="@dimen/x30" />
+
+    <TextView
+        android:id="@+id/lbl_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_hint"
+        android:layout_marginTop="@dimen/y30"
+        android:paddingLeft="@dimen/y60"
+        android:text="@string/id_confirm_check"
+        android:textColor="@color/color_un_auth_step_txt" />
+
+    <LinearLayout
+        android:id="@+id/rl_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lbl_name"
+        android:layout_marginTop="@dimen/y30"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/y50">
+
+        <EditText
+            android:id="@+id/txt_name"
+            style="@style/MyEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/y10"
+            android:layout_marginRight="@dimen/y30"
+            android:layout_weight="1"
+            android:background="@color/transparent"
+            android:inputType="text"
+            android:maxLength="15"
+            android:textColor="@color/color_646464"
+            android:textSize="@dimen/x32"
+            tools:text="权志龙" />
+
+        <ImageView
+            android:id="@+id/btn_edit"
+            android:layout_width="@dimen/y50"
+            android:layout_height="@dimen/y50"
+            android:layout_marginRight="@dimen/y60"
+            android:src="@drawable/ic_id_reset" />
+    </LinearLayout>
+
+    <!--<View-->
+    <!--android:id="@+id/line"-->
+    <!--style="@style/hLineStyle"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_below="@+id/rl_name"-->
+    <!--android:layout_marginLeft="@dimen/y60"-->
+    <!--android:layout_marginRight="@dimen/y60"></View>-->
+
+    <TextView
+        android:id="@+id/lbl_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_name"
+        android:layout_marginLeft="@dimen/y60"
+        android:layout_marginTop="@dimen/y30"
+        android:text="@string/id_confirm_card"
+        android:textColor="@color/color_un_auth_step_txt" />
+
+    <TextView
+        android:id="@+id/txt_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lbl_id"
+        android:layout_marginLeft="@dimen/y70"
+        android:layout_marginTop="@dimen/y30"
+        android:textColor="@color/color_646464"
+        android:textSize="@dimen/x32"
+        tools:text="410202" />
+
+    <View
+        android:id="@+id/line_button_top"
+        style="@style/hLineStyle"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/txt_id"
+        android:layout_marginTop="@dimen/y40" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y96"
+        android:layout_below="@+id/line_button_top"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/y5"
+            android:layout_marginLeft="@dimen/x5"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/id_confirm_retake"
+            android:textColor="#bababa"
+            android:textSize="@dimen/x32" />
+
+        <View style="@style/vLineStyle" />
+
+        <TextView
+            android:id="@+id/tv_sure"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/y5"
+            android:layout_marginRight="@dimen/x5"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/id_confirm_sure"
+            android:textColor="#007aff"
+            android:textSize="@dimen/x32" />
+    </LinearLayout>
+</RelativeLayout>

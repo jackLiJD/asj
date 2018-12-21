@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded,ContentDescription">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cover_black_color"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/rl_btn"
+            android:background="@color/background_white_color"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y116"
+                android:background="@color/background_white_color">
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/x18"
+                    android:src="@drawable/icon_titlebar_heise_fanhui" />
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="@string/stead_buy_nper_dialog_title"
+                    android:textColor="@color/text_important_color"
+                    android:textSize="@dimen/x32" />
+
+                <View
+                    android:id="@+id/divider"
+                    style="@style/hLineStyle"
+                    android:layout_alignParentBottom="true" />
+
+            </RelativeLayout>
+
+            <!--额度信息-->
+            <RelativeLayout
+                android:id="@+id/rl_quota_info"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y150"
+                android:background="@color/background_white_color"
+                android:paddingLeft="@dimen/x24"
+                android:paddingRight="@dimen/x24">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/iv_tip"
+                    android:gravity="center|left"
+                    android:orientation="vertical"
+                    android:weightSum="2">
+
+                    <!--待支付金额-->
+                    <TextView
+                        android:id="@+id/tv_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x32" />
+
+                    <!--当前可用分期额度-->
+                    <TextView
+                        android:id="@+id/tv_usable_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/color_combination_pay_credit_info"
+                        android:textSize="@dimen/x28" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/iv_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_combination_tip"
+                    android:visibility="gone" />
+
+                <View
+                    style="@style/hLineStyle"
+                    android:layout_alignParentBottom="true" />
+
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/lv_nper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background_white_color"
+                android:divider="@null"
+                android:horizontalSpacing="@dimen/x10"
+                android:minHeight="@dimen/y116"
+                android:scrollbars="none"
+                android:verticalSpacing="@dimen/x10" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y120"
+            android:layout_alignParentBottom="true"
+            android:background="@color/background_white_color">
+
+            <com.ald.asjauthlib.authframework.core.ui.NoDoubleClickButton
+                android:id="@+id/btn_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y80"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/x14"
+                android:layout_marginRight="@dimen/x14"
+                android:layout_marginTop="@dimen/y24"
+                android:background="@drawable/btn_login"
+                android:text="@string/stead_buy_nper_dialog_confirm"
+                android:textColor="@color/text_white_color"
+                android:textSize="@dimen/x32" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

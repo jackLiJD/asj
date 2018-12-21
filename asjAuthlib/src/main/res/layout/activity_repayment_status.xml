@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlSymmetry,ContentDescription,RelativeOverlap,HardcodedText">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.RepayStatusVM" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/activity_repayment_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            tools:context="com.alfl.www.business.ui.RepaymentStatusActivity">
+
+            <include
+                android:id="@+id/titlebar"
+                layout="@layout/include_repay_status_header"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y94"
+                app:viewModel="@{viewModel}" />
+
+            <LinearLayout
+                android:id="@+id/ll_step_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titlebar"
+                android:layout_marginStart="@dimen/y100"
+                android:layout_marginTop="@dimen/y80"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_status_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_repay_status_success" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="@dimen/x100"
+                    android:background="@color/color_step_line_blue" />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="@dimen/x100"
+                    android:background="@{viewModel.lineSetpColor}"
+                    tools:background="@color/color_step_line_blue" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@{viewModel.statusIcon}"
+                    tools:src="@drawable/ic_repay_status_success" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_status_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/titlebar"
+                android:layout_marginStart="@dimen/y30"
+                android:layout_marginTop="@dimen/y70"
+                android:layout_toEndOf="@+id/ll_step_line"
+                android:padding="@dimen/y5"
+                android:text="提交成功，正在处理中"
+                android:textColor="@color/color_step_line_blue"
+                android:textSize="@dimen/x30" />
+
+            <TextView
+                android:id="@+id/txt_time_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_status_submit"
+                android:layout_marginStart="@dimen/y30"
+                android:layout_toEndOf="@+id/ll_step_line"
+                android:padding="@dimen/y5"
+                android:text="@{viewModel.displayTime}"
+                android:textColor="@color/color_969696"
+                android:textSize="@dimen/x24"
+                tools:text="07/07 16:31" />
+
+            <TextView
+                android:id="@+id/txt_time_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_time_submit"
+                android:layout_marginStart="@dimen/y30"
+                android:layout_toEndOf="@+id/ll_step_line"
+                android:padding="@dimen/y5"
+                android:text="大约需要2分钟"
+                android:textColor="@color/color_969696"
+                android:textSize="@dimen/x24" />
+
+
+            <TextView
+                android:id="@+id/txt_stauts_repay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_status_submit"
+                android:layout_marginStart="@dimen/y30"
+                android:layout_marginTop="@dimen/x200"
+                android:layout_toEndOf="@+id/ll_step_line"
+                android:padding="@dimen/y5"
+                android:text="@{viewModel.displayStatusTxt}"
+                android:textColor="@color/color_step_line_blue"
+                android:textSize="@dimen/x30"
+                tools:text="还款成功" />
+
+            <TextView
+                android:id="@+id/txt_time_repay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_stauts_repay"
+                android:layout_marginStart="@dimen/y30"
+                android:layout_toEndOf="@+id/ll_step_line"
+                android:padding="@dimen/y5"
+                android:text="今天到账（最晚24:00）"
+                android:textColor="@color/color_969696"
+                android:textSize="@dimen/x24" />
+
+            <TextView
+                android:id="@+id/txt_time_hint_repay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_time_repay"
+                android:layout_marginStart="@dimen/y30"
+                android:layout_toEndOf="@+id/ll_step_line"
+                android:padding="@dimen/y5"
+                android:text="@{viewModel.displayStatusHintTxt}"
+                android:textColor="@color/color_969696"
+                android:textSize="@dimen/x24"
+                tools:text="如遇系统延迟1-2日更新还款结果" />
+
+            <LinearLayout
+                android:id="@+id/ll_dtl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_time_hint_repay"
+                android:layout_marginTop="@dimen/y50"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/y70"
+                android:paddingStart="@dimen/y30">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/y20"
+                    android:paddingEnd="@dimen/y20"
+                    android:paddingTop="@dimen/y20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="还款金额"
+                        android:textColor="@color/color_646464"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="@{viewModel.displayCash}"
+                        android:textColor="@color/color_232323"
+                        android:textSize="@dimen/x28"
+                        tools:text="500元" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/hLineStyleE4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y1">
+
+                </View>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/y20"
+                    android:paddingEnd="@dimen/y20"
+                    android:paddingStart="0dp"
+                    android:paddingTop="@dimen/y20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="还款账户"
+                        android:textColor="@color/color_646464"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="@{viewModel.displayPayWay}"
+                        android:textColor="@color/color_232323"
+                        android:textSize="@dimen/x28"
+                        tools:text="工商银行尾号（3145）" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/hLineStyleE4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y1">
+
+                </View>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/y20"
+                    android:paddingEnd="@dimen/y20"
+                    android:paddingTop="@dimen/y20"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="账户抵扣"
+                        android:textColor="@color/color_646464"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="@{viewModel.displayRebateAmount}"
+                        android:textColor="@color/color_232323"
+                        android:textSize="@dimen/x28"
+                        tools:text="123.00元" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/hLineStyleE4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y1"
+                    android:visibility="gone">
+
+                </View>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/y20"
+                    android:paddingEnd="@dimen/y20"
+                    android:paddingTop="@dimen/y20"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="优惠抵扣"
+                        android:textColor="@color/color_646464"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="@{viewModel.displayCouponAmount}"
+                        android:textColor="@color/color_232323"
+                        android:textSize="@dimen/x28"
+                        tools:text="12.42元" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/hLineStyleE4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y1">
+
+                </View>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/y20"
+                    android:paddingEnd="@dimen/y20"
+                    android:paddingTop="@dimen/y20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="还款时间"
+                        android:textColor="@color/color_646464"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="@{viewModel.displayTime}"
+                        android:textColor="@color/color_232323"
+                        android:textSize="@dimen/x28"
+                        tools:text="2017/0707 16:31" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/hLineStyleE4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y1">
+
+                </View>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/y20"
+                    android:paddingEnd="@dimen/y20"
+                    android:paddingTop="@dimen/y20">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="还款编号"
+                        android:textColor="@color/color_646464"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="@{viewModel.displayNo}"
+                        android:textColor="@color/color_232323"
+                        android:textSize="@dimen/x28"
+                        tools:text="201707081629009876876" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/hLineStyleE4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y1">
+
+                </View>
+
+            </LinearLayout>
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_dtl"
+                android:layout_marginTop="30dp"
+                app:bannerImages="@{viewModel.bannerList}"
+                app:bannerListener="@{viewModel.bannerListener}"
+                app:delay_time="5000"
+                app:image_scale_type="fit_xy"
+                app:indicator_drawable_selected="@drawable/shape_banner_indicator_s"
+                app:indicator_drawable_unselected="@drawable/shape_banner_indicator_u"
+                app:indicator_height="@dimen/y4"
+                app:indicator_margin="@dimen/x7"
+                app:indicator_width="@dimen/x28"
+                app:is_auto_play="true"
+                app:layout_height="@{viewModel.adHeight}"
+                app:layout_width="@{viewModel.adWidth}"
+                tools:layout_height="50dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</layout>

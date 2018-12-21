@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.PwdPayCaptchaVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_white_color"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginRight="@dimen/x24"
+            android:layout_marginTop="@dimen/x58"
+            android:gravity="center_vertical"
+            android:text="@{viewModel.displayTitle}"
+            android:textColor="@color/text_important_color"
+            android:textSize="@dimen/x28" />
+
+        <RelativeLayout
+            android:id="@+id/ll_captcha"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y100"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginRight="@dimen/x24"
+            android:layout_marginTop="@dimen/y34">
+
+            <TextView
+                android:id="@+id/btn_captcha_right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/x10"
+                android:background="@drawable/auth_code_radius_background"
+                android:enabled="true"
+                android:gravity="center"
+                android:lines="1"
+                android:onClick="@{viewModel.obtainCaptchaClick}"
+                android:paddingLeft="@dimen/x48"
+                android:paddingRight="@dimen/x48"
+                android:text="@string/register_get_captcha"
+                android:textColor="@color/text_normal_color"
+                android:textSize="@dimen/x32" />
+
+            <EditText
+                android:id="@+id/et_captcha"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="@dimen/x32"
+                android:layout_toLeftOf="@+id/btn_captcha_right"
+                android:background="@drawable/rectangle"
+                android:gravity="center_vertical"
+                android:hint="@string/register_hit_captcha"
+                android:lines="1"
+                android:paddingLeft="@dimen/x16"
+                android:textColor="@color/text_normal_color"
+                android:textColorHint="@color/text_other_color"
+                android:textSize="@dimen/x32"
+                app:list="@{viewModel.edList}"
+                app:watcher="@{viewModel.watcher}"/>
+
+
+        </RelativeLayout>
+
+        <com.ald.asjauthlib.authframework.core.ui.NoDoubleClickButton
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y90"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginRight="@dimen/x24"
+            android:layout_marginTop="@dimen/y100"
+            android:background="@drawable/btn_login"
+            android:onClick="@{viewModel.nextClick}"
+            android:text="@string/pwd_pay_next"
+            android:textColor="@color/text_white_color"
+            android:textSize="@dimen/x32"
+            android:enabled="@{viewModel.enable}"/>
+
+    </LinearLayout>
+</layout>

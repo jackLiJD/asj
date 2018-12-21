@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.PhoneTicketVM" />
+
+        <import type="com.ald.asjauthlib.tatarka.bindingcollectionadapter.LayoutManagers" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_white_color">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/button"
+            android:background="@color/background_gray_color"
+            app:addItemDecoration="@{viewModel.type}"
+            app:itemView="@{viewModel.itemView}"
+            app:items="@{viewModel.items}"
+            app:layoutManager="@{LayoutManagers.linear()}"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <TextView
+            android:id="@+id/no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawablePadding="@dimen/x66"
+            android:drawableTop="@drawable/ic_coupon_list_no_data"
+            android:gravity="center"
+            android:text="@string/coupon_list_no"
+            android:textColor="@color/text_normal_color"
+            android:textSize="@dimen/x26"
+            android:visibility="@{viewModel.visible}" />
+    </RelativeLayout>
+
+</layout>

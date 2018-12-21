@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/y40">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/y10"
+        android:text="照片拍摄要求"
+        android:textColor="#232323"
+        android:textSize="@dimen/x35" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/y40"
+        android:layout_marginTop="@dimen/y40"
+        android:src="@drawable/bg_camera_notice" />
+
+
+    <TextView
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/y50"
+        android:layout_marginRight="@dimen/y50"
+        android:gravity="center"
+        android:text="知道了"
+        android:textColor="#2996f5"
+        android:textSize="@dimen/x35" />
+
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y90">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/y24"
+            android:text="合计需还"
+            android:textColor="@color/color_2e2e2e"
+            android:textSize="@dimen/x32" />
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/x29"
+            android:src="@drawable/icon_x" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#eeeeee" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x26"
+        android:text="¥755.92"
+        android:textColor="@color/color_2e2e2e"
+        android:textSize="@dimen/x44" />
+
+    <TextView
+        android:id="@+id/txt_fee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x6"
+        android:text="含利息、手续费¥99.70"
+        android:textColor="@color/color_2e2e2e"
+        android:textSize="@dimen/x26" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y68"
+        android:layout_marginTop="@dimen/y29"
+        android:background="@drawable/shape_f9f9f9"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="期数"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/x28" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="月供"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/x28" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="本金"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/x28" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="利息手续费"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/x28" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list_view_line"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/y9"
+        android:layout_weight="1"
+        android:divider="@null"
+        android:scrollbars="none" />
+</LinearLayout>

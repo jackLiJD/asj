@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded,RtlSymmetry">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.AllLimitVM" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/activity_all_limit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <com.youth.banner.Banner
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y300"
+            android:layout_marginBottom="@dimen/y10"
+            android:fitsSystemWindows="true"
+            android:focusable="true"
+            app:bannerImages="@{viewModel.bannerList}"
+            app:bannerListener="@{viewModel.bannerListener}"
+            app:delay_time="5000"
+            app:image_scale_type="fit_xy"
+            app:indicator_drawable_selected="@drawable/shape_banner_indicator_s"
+            app:indicator_drawable_unselected="@drawable/shape_banner_indicator_u"
+            app:indicator_height="@dimen/y4"
+            app:indicator_margin="@dimen/x7"
+            app:indicator_width="@dimen/x28" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/y26"
+            android:background="@color/white"
+            android:padding="@dimen/y20"
+            android:paddingLeft="@dimen/x52"
+            android:text="@string/all_limit_offline"
+            android:textColor="@color/color_232323"
+            android:textSize="@dimen/x26" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:onClick="@{viewModel.onTrainClick}"
+                android:paddingLeft="@dimen/y40">
+
+                <ImageView
+                    android:id="@+id/ic_train"
+                    android:layout_width="@dimen/x80"
+                    android:layout_height="@dimen/x80"
+                    android:layout_marginEnd="@dimen/y20"
+                    android:layout_marginRight="@dimen/y20"
+                    android:src="@drawable/ic_train_stage" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_train_stage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.displayOffLineTitle}"
+                        android:textColor="@color/color_232323"
+                        android:textSize="@dimen/x28"
+                        tools:text="培训分期" />
+
+                    <TextView
+                        android:id="@+id/txt_train_stage_dtl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/y8"
+                        android:text="@{viewModel.displayOffLineDesc}"
+                        android:textColor="@color/color_666666"
+                        android:textSize="@dimen/x24"
+                        tools:text="培训默认描述" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:onClick="@{viewModel.onRentClick}"
+                android:paddingBottom="@dimen/y20"
+                android:paddingRight="@dimen/y40"
+                android:paddingTop="@dimen/y20"
+                app:visibility="@{viewModel.showRentLayout}"
+                tools:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/ic_house"
+                    android:layout_width="@dimen/x80"
+                    android:layout_height="@dimen/x80"
+                    android:layout_marginEnd="@dimen/y20"
+                    android:layout_marginRight="@dimen/y20"
+                    android:src="@drawable/ic_rent_stage"
+                    tools:ignore="ContentDescription" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_house"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.displayRentTitle}"
+                        android:textColor="@color/color_232323"
+                        android:textSize="@dimen/x28"
+                        tools:text="租房" />
+
+                    <TextView
+                        android:id="@+id/txt_house_dtl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/y8"
+                        android:text="@{viewModel.displayRentDesc}"
+                        android:textColor="@color/color_666666"
+                        android:textSize="@dimen/x24"
+                        tools:text="租房默认描述" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</layout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?><!--退款记录fragment-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.ReimburseRecordVM" />
+
+        <import type="com.ald.asjauthlib.tatarka.bindingcollectionadapter.LayoutManagers" />
+
+    </data>
+
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btn_repay"
+        app:srlEnableLoadmore="true"
+        app:srlEnableLoadmoreWhenContentNotFull="true">
+
+        <!--上拉刷新和下拉加载更多可以通过Falsify开头的布局实现数据更新,
+            此效果用户看不到任何额外布局,但SmartRefreshLayout布局判断数据加载
+            的条件与mHeaderHeight, mFooterHeight高度有关(见overSpinner()方法),
+            由于使用Falsify系列布局看不到任何布局提示,顾mHeaderHeight(srlHeaderHeight),
+            mFooterHeight(srlFooterHeight)高度设置不该太大(要刷新加载的情况下),
+            太大触发不敏感,用此系列布局也可实现越界滚动效果,
+            如果直接禁止下拉刷新头部是不会有越界滚动效果-->
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_color"
+                app:addItemDecoration="@{viewModel.type}"
+                app:itemView="@{viewModel.itemView}"
+                app:items="@{viewModel.items}"
+
+                app:layoutManager="@{LayoutManagers.linear()}" />
+
+            <ImageView
+                android:id="@+id/calender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/y30"
+                android:layout_marginTop="@dimen/y30"
+                android:onClick="@{viewModel.onCalendarClick}"
+                android:src="@drawable/ic_calender" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gary_bg"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:visibility="@{viewModel.showNoData}"
+                tools:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y300"
+                    android:src="@drawable/ic_empty_repayment_info" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y20"
+                    android:text="@string/reimburse_record_no_data"
+                    android:textColor="@color/color_969696"
+                    android:textSize="@dimen/x24" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</layout>

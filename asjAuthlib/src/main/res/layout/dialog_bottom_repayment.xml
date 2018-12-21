@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:ignore="RtlHardcoded">
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y100">
+
+        <CheckBox
+            android:id="@+id/checker"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/y60"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/y30"
+            android:layout_marginTop="@dimen/y30"
+            android:background="#00000000"
+            android:button="@null"
+            android:checked="true"
+            android:drawableLeft="@drawable/select_address_bg"
+            android:drawablePadding="@dimen/y30"
+            android:focusable="false"
+            android:text="@string/repayment_dialog_all_selected"
+            android:textColor="@color/color_646464"
+            android:textSize="@dimen/x30" />
+
+        <TextView
+            android:id="@+id/txt_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/y30"
+            android:layout_toRightOf="@+id/checker"
+            android:textColor="@color/color_303030"
+            android:textSize="@dimen/x32"
+            tools:text="共计300.00元" />
+
+        <TextView
+            android:id="@+id/txt_describe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/y30"
+            android:layout_toRightOf="@id/txt_amount"
+            android:textColor="@color/color_969696"
+            android:textSize="@dimen/x30"
+            tools:text="8月份未出已入账单" />
+
+        <View
+            style="@style/hLineStyleDE"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/x12"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/btn_sure"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y90"
+        android:background="@drawable/btn_auth_bottom"
+        android:gravity="center"
+        android:text="@string/repayment_dialog_sure"
+        android:textColor="@color/white"
+        android:textSize="@dimen/x34" />
+
+</LinearLayout>

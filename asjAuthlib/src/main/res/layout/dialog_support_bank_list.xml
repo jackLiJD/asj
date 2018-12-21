@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="40dp"
+    android:layout_marginRight="40dp"
+    android:background="@drawable/shape_circle_white_bg"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/banklist_iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:padding="14dp"
+        android:src="@drawable/ic_round_delete" />
+
+    <TextView
+        android:id="@+id/banklist_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="平台支持以下银行卡"
+        android:textColor="@color/text_color_black"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/banklist_tv_cashcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/banklist_tv_title"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:text="储蓄卡："
+        android:textColor="#54576a"
+        android:textSize="13sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/banklist_rv_cashcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/banklist_tv_cashcard"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/banklist_tv_creditcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/banklist_rv_cashcard"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="7dp"
+        android:text="信用卡："
+        android:textColor="#54576a"
+        android:textSize="13sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/banklist_rv_creditcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/banklist_tv_creditcard"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="8dp" />
+</RelativeLayout>

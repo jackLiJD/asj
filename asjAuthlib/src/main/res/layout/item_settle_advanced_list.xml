@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?><!--提前结清 item-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.ItemSettleAdvancedVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:onClick="@{viewModel.itemOnClick}"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/y30"
+        android:paddingTop="@dimen/y20">
+
+        <CheckBox
+            android:id="@+id/checker"
+            android:layout_width="@dimen/y60"
+            android:layout_height="@dimen/y60"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/y30"
+            android:background="#00000000"
+            android:button="@null"
+            android:checked="@{viewModel.isChecked}"
+            android:drawableStart="@drawable/select_address_bg"
+            android:focusable="false"
+            android:onClick="@{viewModel.onCheckerClick}"
+            android:padding="@dimen/x5"
+            android:textColor="@color/text_important_color"
+            android:textSize="@dimen/x28"
+            tools:checked="true" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/y30"
+            android:layout_marginStart="@dimen/y20"
+            android:layout_marginTop="@dimen/y10"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:textSize="@dimen/x35">
+
+            <TextView
+                android:id="@+id/txt_bill_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{viewModel.displayName}"
+                android:textColor="@color/color_232323"
+                android:textSize="@dimen/x28"
+                tools:text="儿童双色双肩包小宝宝最可儿童双色双肩包小宝宝最可..." />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y20"
+                android:text="@{viewModel.displayStageInfo}"
+                android:textSize="@dimen/x24"
+                tools:text="3/6期～6/6期" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/y30"
+            android:text="@{viewModel.displayAmount}"
+            android:textColor="@color/color_ff5546"
+            android:textSize="@dimen/x32"
+            tools:text="50000.00元" />
+
+        <ImageView
+            android:id="@+id/btn_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="@dimen/y30"
+            android:src="@drawable/ic_arrow_right" />
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.CreditPromoteVM" />
+    </data>
+
+    <FrameLayout
+        android:id="@+id/ll_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:visibility="@{viewModel.showBanner}"
+        tools:visibility="gone">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_auth" />
+
+        <LinearLayout
+            android:id="@+id/ll_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/y60"
+            android:paddingRight="@dimen/y60"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/txt_title1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.title1}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x40"
+                tools:text="你好，张先生" />
+
+            <TextView
+                android:id="@+id/txt_title2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y30"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{viewModel.title2}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x30"
+                tools:text="完善资料即可获取额度完善资料即可获取3000到20000额度完善资料即可获取额度完善资料即可获取3000到20000额度" />
+
+        </LinearLayout>
+    </FrameLayout>
+</layout>

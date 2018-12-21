@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ShadowLayout 阴影 -->
+    <declare-styleable name="ShadowLayout">
+        <attr name="shadow_Color" format="color" />
+        <attr name="shadowRadius" format="dimension" />
+        <attr name="shadowDx" format="dimension" />
+        <attr name="shadowDy" format="dimension" />
+        <attr name="shadowShape">
+            <flag name="rectangle" value="0x0001" />
+            <flag name="oval" value="0x0010" />
+        </attr>
+        <attr name="shadowSide">
+            <flag name="all" value="0x1111" />
+            <flag name="left" value="0x0001" />
+            <flag name="top" value="0x0010" />
+            <flag name="right" value="0x0100" />
+            <flag name="bottom" value="0x1000" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="PagerSlidingTabStrip">
+        <attr name="pstsIndicatorColor" format="color" />
+        <attr name="pstsUnderlineColor" format="color" />
+        <attr name="pstsDividerColor" format="color" />
+        <attr name="pstsIndicatorHeight" format="dimension" />
+        <attr name="pstsIndicatorPadding" format="dimension" />
+        <attr name="pstsUnderlineHeight" format="dimension" />
+        <attr name="pstsDividerPadding" format="dimension" />
+        <attr name="pstsTabPaddingLeftRight" format="dimension" />
+        <attr name="pstsScrollOffset" format="dimension" />
+        <attr name="pstsTabWidth" format="dimension" />
+        <attr name="pstsTabHeight" format="dimension" />
+        <attr name="pstsTabBackground" format="reference" />
+        <attr name="pstsTabSameWidth" format="boolean" />
+        <attr name="pstsTextAllCaps" format="boolean" />
+        <attr name="selectedTabTextColor" format="color" />
+        <attr name="tabTextColor" format="color" />
+        <attr name="tabTextSize" format="dimension" />
+        <attr name="isRoundRectIndicator" format="boolean"/>
+        <attr name="noScalBold" format="boolean"/>
+    </declare-styleable>
+
+    <!--自定义阴影-->
+    <declare-styleable name="RoundRectBlurView">
+        <attr name="hornRadiusRx" format="dimension" />
+        <attr name="hornRadiusRy" format="dimension" />
+        <attr name="shadowColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="DrawableText">
+        <attr name="drawable_src" format="reference" />
+        <attr name="drawable_height" format="dimension" />
+        <attr name="drawable_width" format="dimension" />
+        <attr name="drawable_location">
+            <enum name="left" value="1" />
+            <enum name="top" value="2" />
+            <enum name="right" value="3" />
+            <enum name="bottom" value="4" />
+        </attr>
+        <attr name="drTvRightClick" format="enum">
+            <enum name="dismiss" value="0"/>
+        </attr>
+    </declare-styleable>
+
+    <!-- TagFlowLayout样式 -->
+    <declare-styleable name="TagFlowLayout">
+        <attr name="auto_select_effect" format="boolean"/>
+        <attr name="max_select" format="integer"/>
+        <attr name="next" format="boolean"/>
+        <attr name="gravity">
+            <enum name="left" value="-1" />
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!-- AlaCircleImageView样式 -->
+    <declare-styleable name="AlaCircleImageView">
+        <attr name="AlaBorderWidth" format="dimension" />
+        <attr name="AlaBorderColor" format="color" />
+    </declare-styleable>
+
+
+    <declare-styleable name="RoundImageView">
+        <attr name="type" format="enum">
+            <enum name="circle" value="1" />
+            <enum name="round" value="2" />
+        </attr>
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="pickerview">
+        <attr name="wheelview_gravity">
+            <enum name="center" value="17"/>
+            <enum name="left" value="3"/>
+            <enum name="right" value="5"/>
+        </attr>
+        <attr name="wheelview_textSize" format="dimension"/>
+        <attr name="wheelview_textColorOut" format="color"/>
+        <attr name="wheelview_textColorCenter" format="color"/>
+        <attr name="wheelview_dividerColor" format="color"/>
+        <attr name="wheelview_lineSpacingMultiplier" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="AutoRatioImageView">
+
+        <!-- -ratio 高/宽 -->
+        <attr name="ratio" format="float" />
+        <attr name="prefer" format="integer" />
+    </declare-styleable>
+</resources>

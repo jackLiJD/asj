@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.CreditPromoteVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y30"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/y40"
+        android:paddingRight="@dimen/y40"
+        app:visibility="@{viewModel.displayStepLayout}"
+        tools:visibility="visible">
+
+        <com.ald.asjauthlib.authframework.core.ui.DrawableText
+            android:id="@+id/ll_step_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/auth_id"
+            android:textColor="@color/color_auth_step_txt"
+            android:textSize="@dimen/x25"
+            app:drawable_height="@dimen/y100"
+            app:drawable_location="top"
+            app:drawable_src="@drawable/ic_auth_step_id"
+            app:drawable_width="@dimen/y100" />
+
+        <View
+            android:id="@+id/line_left"
+            android:layout_width="@dimen/y120"
+            android:layout_height="@dimen/y5"
+            android:layout_marginLeft="@dimen/y10"
+            android:layout_marginRight="@dimen/y10"
+            android:layout_marginTop="@dimen/y40"
+            android:layout_weight="1"
+            android:background="@color/color_un_auth_step_line" />
+
+        <com.ald.asjauthlib.authframework.core.ui.DrawableText
+            android:id="@+id/ll_step_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/auth_basic_info"
+            android:textColor="@color/color_auth_step_txt"
+            android:textSize="@dimen/x25"
+            app:drawable_height="@dimen/y100"
+            app:drawable_location="top"
+            app:drawable_src="@drawable/ic_auth_step_base_ing"
+            app:drawable_width="@dimen/y100" />
+
+        <View
+            android:id="@+id/line_right"
+            android:layout_width="@dimen/y120"
+            android:layout_height="@dimen/y5"
+            android:layout_marginLeft="@dimen/y10"
+            android:layout_marginRight="@dimen/y10"
+            android:layout_marginTop="@dimen/y40"
+            android:layout_weight="1"
+            android:background="@color/color_un_auth_step_line" />
+
+        <com.ald.asjauthlib.authframework.core.ui.DrawableText
+            android:id="@+id/ll_step_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/auth_limit_get"
+            android:textColor="@color/color_un_auth_step_txt"
+            android:textSize="@dimen/x25"
+            app:drawable_height="@dimen/y100"
+            app:drawable_location="top"
+            app:drawable_src="@drawable/ic_un_auth_limit"
+            app:drawable_width="@dimen/y100" />
+
+    </LinearLayout>
+</layout>

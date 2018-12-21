@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x76"
+        android:layout_marginRight="@dimen/x76"
+        android:background="@drawable/shape_solid_white_r10">
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x24"
+            android:layout_marginTop="@dimen/y24"
+            android:src="@drawable/icon_x"/>
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x40"
+            android:layout_marginRight="@dimen/x40"
+            android:layout_below="@id/iv_close"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/y64"
+            android:lineSpacingExtra="@dimen/y10"
+            android:padding="@dimen/x24"
+            android:textColor="@color/fb_dark_first"
+            android:textSize="@dimen/x30"
+            tools:text="@string/dialog_kick_login_content_default"/>
+
+        <com.ald.asjauthlib.authframework.core.ui.NoDoubleClickButton
+            android:id="@+id/btn_sure"
+            style="@style/SubmitBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y76"
+            android:layout_below="@id/tv_content"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginRight="@dimen/x60"
+            android:layout_marginTop="@dimen/x74"
+            android:text="@string/dialog_kick_login_sure"
+            android:textColor="@color/text_white_color"
+            android:textSize="@dimen/x32"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x42"
+            android:layout_below="@id/btn_sure"/>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded,RelativeOverlap,RtlHardcoded,ContentDescription">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.PaySettingsVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_gray_color"
+        android:orientation="vertical">
+
+        <!--支付密码设置-->
+        <RelativeLayout
+            android:id="@+id/rl_pay_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:background="@drawable/item_selector"
+            android:onClick="@{viewModel.payPwdSetClick}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/x24"
+                android:gravity="center_vertical"
+                android:text="@string/pay_settings_pwd"
+                android:textColor="@color/text_important_color"
+                android:textSize="@dimen/x28" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="@dimen/x24"
+                android:src="@drawable/ic_arrow_right" />
+
+            <View
+                style="@style/hLineStyle"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+
+        <!--代扣设置-->
+        <RelativeLayout
+            android:id="@+id/rl_pay_withhold"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:background="@drawable/item_selector"
+            android:onClick="@{viewModel.withholdClick}"
+            app:visibility="@{viewModel.showWithholdEntrance}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/x24"
+                android:gravity="center_vertical"
+                android:text="@string/pay_settings_withhold"
+                android:textColor="@color/text_important_color"
+                android:textSize="@dimen/x28" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/x24"
+                android:src="@drawable/ic_arrow_right" />
+
+            <View
+                style="@style/hLineStyle"
+                android:layout_alignParentBottom="true" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

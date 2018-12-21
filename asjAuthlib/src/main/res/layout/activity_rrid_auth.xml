@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription,RtlHardcoded,RtlSymmetry,RelativeOverlap,UseCompoundDrawables">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.RRIdVM" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/activity_rrid_auth"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".auth.ui.RRIdAuthActivity">
+
+        <!--流程布局-->
+        <LinearLayout
+            android:id="@+id/ll_step"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--申诉流程布局-->
+            <LinearLayout
+                android:id="@+id/ll_auth_step"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                app:visibility="@{viewModel.isAppealLayout}">
+
+                <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                    android:id="@+id/ll_appeal_step_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="@string/appeal_verify_mobile"
+                    android:textColor="@color/color_auth_step_txt"
+                    android:textSize="@dimen/x25"
+                    app:drawable_height="@dimen/y80"
+                    app:drawable_location="top"
+                    app:drawable_src="@drawable/ic_appeal_auth_phone"
+                    app:drawable_width="@dimen/y80" />
+
+                <View
+                    android:layout_width="@dimen/y120"
+                    android:layout_height="@dimen/y5"
+                    android:layout_marginLeft="@dimen/y10"
+                    android:layout_marginTop="@dimen/y40"
+                    android:background="@color/color_un_auth_step_line" />
+
+                <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                    android:id="@+id/ll_appeal_step_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="@string/appeal_verify_id"
+                    android:textColor="@color/color_auth_step_txt"
+                    android:textSize="@dimen/x25"
+                    app:drawable_height="@dimen/y80"
+                    app:drawable_location="top"
+                    app:drawable_src="@drawable/ic_auth_step_id"
+                    app:drawable_width="@dimen/y80" />
+
+                <View
+                    android:layout_width="@dimen/y120"
+                    android:layout_height="@dimen/y5"
+                    android:layout_marginLeft="@dimen/y10"
+                    android:layout_marginTop="@dimen/y40"
+                    android:background="@color/color_un_auth_step_line" />
+
+                <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                    android:id="@+id/ll_appeal_step_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableTop="@drawable/ic_appeal_not_over"
+                    android:gravity="center_vertical"
+                    android:text="@string/appeal_modify_complete"
+                    android:textColor="@color/color_un_auth_step_txt"
+                    android:textSize="@dimen/x25"
+                    app:drawable_height="@dimen/y80"
+                    app:drawable_location="top"
+                    app:drawable_src="@drawable/ic_appeal_not_over"
+                    app:drawable_width="@dimen/y80" />
+            </LinearLayout>
+
+
+            <!--认证进度-->
+            <LinearLayout
+                android:id="@+id/rl_step"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:visibility="@{!viewModel.isAppealLayout}">
+
+                <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="@string/auth_step_id"
+                    android:textColor="@color/color_auth_step_txt"
+                    android:textSize="@dimen/x25"
+                    app:drawable_height="@dimen/y80"
+                    app:drawable_location="top"
+                    app:drawable_src="@drawable/ic_auth_step_id"
+                    app:drawable_width="@dimen/y80" />
+
+                <View
+                    android:layout_width="@dimen/y120"
+                    android:layout_height="@dimen/y5"
+                    android:layout_marginLeft="@dimen/y10"
+                    android:layout_marginTop="@dimen/y40"
+                    android:background="@color/color_un_auth_step_line" />
+
+                <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                    android:id="@+id/ll_step_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="@string/auth_step_basic_info"
+                    android:textColor="@color/color_un_auth_step_txt"
+                    android:textSize="@dimen/x25"
+                    app:drawable_height="@dimen/y80"
+                    app:drawable_location="top"
+                    app:drawable_src="@drawable/ic_base_un_auth"
+                    app:drawable_width="@dimen/y80" />
+
+                <View
+                    android:layout_width="@dimen/y120"
+                    android:layout_height="@dimen/y5"
+                    android:layout_marginLeft="@dimen/y10"
+                    android:layout_marginTop="@dimen/y40"
+                    android:background="@color/color_un_auth_step_line" />
+
+                <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                    android:id="@+id/ll_step_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="@string/auth_step_get_limit"
+                    android:textColor="@color/color_un_auth_step_txt"
+                    android:textSize="@dimen/x25"
+                    app:drawable_height="@dimen/y80"
+                    app:drawable_location="top"
+                    app:drawable_src="@drawable/ic_un_auth_limit"
+                    app:drawable_width="@dimen/y80" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/line_"
+            style="@style/hLineStyle"
+            android:layout_below="@+id/ll_step"
+            android:layout_marginTop="@dimen/y20" />
+
+        <RelativeLayout
+            android:id="@+id/rl_idfront"
+            android:layout_width="@dimen/y557"
+            android:layout_height="@dimen/y350"
+            android:layout_below="@+id/ll_step"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/y45"
+            android:background="@drawable/bg_id_front"
+            android:onClick="@{viewModel.idfrontClick}">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/ic_camera"
+                    android:layout_width="@dimen/y80"
+                    android:layout_height="@dimen/y85"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_camera" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y20"
+                    android:text="@string/user_id_card_front"
+                    android:textColor="@color/color_auth_id_txt" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ic_idfront"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:onClick="@{viewModel.idfrontClick}"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                app:defaultImage="@{@drawable/bg_id_back}"
+                app:roundImageRadius="@{10}"
+                app:roundImageUrl="@{viewModel.frontSource}" />
+
+            <TextView
+                android:id="@+id/btn_modify_front"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/bg_modify"
+                android:padding="@dimen/y10"
+                android:text="@string/rr_id_auth_modify"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="@dimen/y557"
+            android:layout_height="@dimen/y350"
+            android:layout_below="@+id/rl_idfront"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y30"
+            android:background="@drawable/bg_id_back"
+            android:onClick="@{viewModel.idbackClick}"
+            android:padding="2dp">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/y80"
+                    android:layout_height="@dimen/y80"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ic_camera" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y20"
+                    android:text="@string/rr_id_back"
+                    android:textColor="@color/color_auth_id_txt" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ic_idback"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:onClick="@{viewModel.idbackClick}"
+                android:scaleType="centerCrop"
+                app:defaultImage="@{@drawable/bg_id_back}"
+                app:roundImageRadius="@{10}"
+                app:roundImageUrl="@{viewModel.backSource}"
+                />
+
+            <TextView
+                android:id="@+id/btn_modify_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/bg_modify"
+                android:padding="@dimen/y10"
+                android:text="@string/rr_id_auth_modify"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <com.ald.asjauthlib.authframework.core.ui.NoDoubleClickButton
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y90"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/y15"
+            android:background="@drawable/btn_auth_bottom"
+            android:onClick="@{viewModel.confirm}"
+            android:text="@string/rr_id_auth_commit"
+            android:textColor="@color/text_white_color"
+            android:textSize="@dimen/x32" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_start"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/y15"
+                android:layout_height="@dimen/y15"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/y30"
+                android:src="@drawable/circle_sign_red" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rr_id_auth_hint1"
+                android:textSize="@dimen/x22" />
+
+            <ImageView
+                android:layout_width="@dimen/y15"
+                android:layout_height="@dimen/y15"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/y30"
+                android:src="@drawable/circle_sign_red" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rr_id_auth_hint2"
+                android:textSize="@dimen/x22" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

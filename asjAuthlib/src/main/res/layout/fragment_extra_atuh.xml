@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded,RtlSymmetry,RelativeOverlap">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.ExtraAuthVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_white_color"
+        android:orientation="vertical">
+
+
+        <!--社保认证-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:background="@drawable/item_selector"
+            android:onClick="@{viewModel.onAuthSecurityClick}"
+            android:paddingRight="@dimen/x24">
+
+            <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/x44"
+                android:drawablePadding="@dimen/x46"
+                android:gravity="center_vertical"
+                android:text="@string/extra_auth_security"
+                android:textColor="@color/text_ordinary_color"
+                android:textSize="@dimen/x30"
+                app:drawable_height="@dimen/y44"
+                app:drawable_location="left"
+                app:drawable_src="@drawable/ic_credit_auth_social"
+                app:drawable_width="@dimen/y44" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/x10"
+                android:drawableRight="@{viewModel.statusIcSecurity}"
+                android:gravity="right"
+                android:text="@{viewModel.displaySecurityStatus}"
+                android:textColor="@{viewModel.displaySecurityStatusColor}"
+                android:textSize="@dimen/x28"
+                tools:text="8天后重新认证" />
+        </RelativeLayout>
+
+        <View
+            style="@style/hLineStyle"
+            android:layout_marginLeft="@dimen/x120" />
+
+        <!--公积金-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:background="@drawable/item_selector"
+            android:onClick="@{viewModel.onAuthFundClick}"
+            android:paddingRight="@dimen/x24">
+
+            <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/x44"
+                android:drawablePadding="@dimen/x46"
+                android:gravity="center_vertical"
+                android:text="@string/extra_auth_fund"
+                android:textColor="@color/text_ordinary_color"
+                android:textSize="@dimen/x30"
+                app:drawable_height="@dimen/y44"
+                app:drawable_location="left"
+                app:drawable_src="@drawable/ic_credit_auth_fund"
+                app:drawable_width="@dimen/y44" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/x10"
+                android:drawableRight="@{viewModel.statusIcFund}"
+                android:gravity="right"
+                android:text="@{viewModel.displayFundStatus}"
+                android:textColor="@{viewModel.displayFundStatusColor}"
+                android:textSize="@dimen/x28" />
+        </RelativeLayout>
+
+        <View
+            style="@style/hLineStyle"
+            android:layout_marginLeft="@dimen/x120" />
+
+        <!--支付宝-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:background="@drawable/item_selector"
+            android:onClick="@{viewModel.onAuthAlipayClick}"
+            android:paddingRight="@dimen/x24">
+
+            <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/x44"
+                android:drawablePadding="@dimen/x46"
+                android:gravity="center_vertical"
+                android:text="@string/extra_auth_alipay"
+                android:textColor="@color/text_ordinary_color"
+                android:textSize="@dimen/x30"
+                app:drawable_height="@dimen/y44"
+                app:drawable_location="left"
+                app:drawable_src="@drawable/ic_credit_auth_alipay"
+                app:drawable_width="@dimen/y44" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/x10"
+                android:drawableRight="@{viewModel.statusIcAlipay}"
+                android:gravity="right"
+                android:text="@{viewModel.displayAlipayStatus}"
+                android:textColor="@{viewModel.displayAlipayStatusColor}"
+                android:textSize="@dimen/x28" />
+        </RelativeLayout>
+
+        <View
+            style="@style/hLineStyle"
+            android:layout_marginLeft="@dimen/x120"
+            android:visibility="@{viewModel.riskManagerStatus}" />
+
+        <!--信用卡邮箱-->
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:background="@drawable/item_selector"
+            android:onClick="@{viewModel.onAuthCreditCardClick}"
+            android:paddingRight="@dimen/x24"
+            android:visibility="@{viewModel.riskManagerStatus}">
+
+            <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/x44"
+                android:drawablePadding="@dimen/x46"
+                android:gravity="center_vertical"
+                android:text="@string/extra_auth_credit_card"
+                android:textColor="@color/text_ordinary_color"
+                android:textSize="@dimen/x30"
+                app:drawable_height="@dimen/y44"
+                app:drawable_location="left"
+                app:drawable_src="@drawable/ic_credit_auth_mail"
+                app:drawable_width="@dimen/y44" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/x10"
+                android:drawableRight="@{viewModel.statusIcCreditCard}"
+                android:gravity="right"
+                android:text="@{viewModel.displayCreditCardStatus}"
+                android:textColor="@{viewModel.displayCreditCardStatusColor}"
+                android:textSize="@dimen/x28" />
+        </RelativeLayout>
+
+        <View
+            style="@style/hLineStyle"
+            android:layout_marginLeft="@dimen/x120"
+            android:visibility="@{viewModel.showZhengxin}" />
+
+        <!--人行征信-->
+        <RelativeLayout
+            android:id="@+id/ll_zhengxin_identify"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:background="@drawable/item_selector"
+            android:onClick="@{viewModel.onAuthZhengxinClick}"
+            android:orientation="horizontal"
+            android:paddingRight="@dimen/x24"
+            android:visibility="@{viewModel.showZhengxin}">
+
+            <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x44"
+                android:drawablePadding="@dimen/x46"
+                android:gravity="center_vertical"
+                android:text="@string/extra_auth_zhengxin"
+                android:textColor="@color/text_ordinary_color"
+                android:textSize="@dimen/x30"
+                app:drawable_height="@dimen/y44"
+                app:drawable_location="left"
+                app:drawable_src="@drawable/ic_credit_auth_zhengxin"
+                app:drawable_width="@dimen/y44" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/x10"
+                android:drawableRight="@{viewModel.statusIcZhengxin}"
+                android:gravity="right"
+                android:text="@{viewModel.displayZhengxinStatus}"
+                android:textColor="@{viewModel.displayZhengxinStatusColor}"
+                android:textSize="@dimen/x28" />
+
+        </RelativeLayout>
+
+
+        <View
+            style="@style/hLineStyle"
+            android:layout_marginLeft="@dimen/x120"
+            app:visibility="@{viewModel.showOnlineBank}" />
+
+        <!--学信网-->
+        <RelativeLayout
+            android:id="@+id/ll_chsi_identify"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:background="@drawable/item_selector"
+            android:onClick="@{viewModel.onAuthChsiClick}"
+            android:orientation="horizontal"
+            android:paddingRight="@dimen/x24"
+            android:visibility="gone">
+
+            <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x44"
+                android:drawablePadding="@dimen/x46"
+                android:gravity="center_vertical"
+                android:text="@string/extra_auth_chsi"
+                android:textColor="@color/text_ordinary_color"
+                android:textSize="@dimen/x30"
+                app:drawable_height="@dimen/y44"
+                app:drawable_location="left"
+                app:drawable_src="@drawable/ic_credit_auth_chsi"
+                app:drawable_width="@dimen/y44" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/x10"
+                android:drawableRight="@{viewModel.statusIcChsi}"
+                android:gravity="right"
+                android:text="@{viewModel.displayChsiStatus}"
+                android:textColor="@{viewModel.displayChsiStatusColor}"
+                android:textSize="@dimen/x28" />
+        </RelativeLayout>
+
+        <View
+            style="@style/hLineStyle"
+            android:layout_marginLeft="@dimen/x120"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <!--网银认证-->
+        <RelativeLayout
+            android:id="@+id/ll_wangyin_identify"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:background="@drawable/item_selector"
+            android:onClick="@{viewModel.onAuthOnlineBankClick}"
+            android:orientation="horizontal"
+            android:paddingRight="@dimen/x24"
+            app:visibility="@{viewModel.showOnlineBank}">
+
+            <com.ald.asjauthlib.authframework.core.ui.DrawableText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x44"
+                android:drawablePadding="@dimen/x46"
+                android:gravity="center_vertical"
+                android:text="@string/extra_auth_online_bank"
+                android:textColor="@color/text_ordinary_color"
+                android:textSize="@dimen/x30"
+                app:drawable_height="@dimen/y44"
+                app:drawable_location="left"
+                app:drawable_src="@drawable/ic_credit_auth_online_bank"
+                app:drawable_width="@dimen/y44" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/x10"
+                android:drawableRight="@{viewModel.statusIcOnlineBank}"
+                android:gravity="right"
+                android:text="@{viewModel.displayOnlineBankStatus}"
+                android:textColor="@{viewModel.displayOnlineBankStatusColor}"
+                android:textSize="@dimen/x28" />
+
+        </RelativeLayout>
+
+        <View
+            style="@style/hLineStyle"
+            android:layout_marginLeft="@dimen/x120"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <!--社交认证-->
+       <!-- <RelativeLayout
+            android:id="@+id/ll_social_contact_identify"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y96"
+            android:background="@drawable/item_selector"
+            android:onClick="@{viewModel.onSocialContactAuthClick}"
+            android:orientation="horizontal"
+            android:paddingRight="@dimen/x24"
+            app:visibility="@{viewModel.showBubbleAuth}">
+
+         DrawableTextText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x44"
+                android:drawablePadding="@dimen/x46"
+                android:gravity="center_vertical"
+                android:text="@string/extra_auth_social_contact"
+                android:textColor="@color/text_ordinary_color"
+                android:textSize="@dimen/x30"
+                app:drawable_height="@dimen/y44"
+                app:drawable_location="left"
+                app:drawable_src="@drawable/ic_credit_auth_social_contact"
+                app:drawable_width="@dimen/y44" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:drawablePadding="@dimen/x10"
+                android:drawableRight="@{viewModel.statusIcBubble}"
+                android:gravity="right"
+                android:text="@{viewModel.displayBubbleStatus}"
+                android:textColor="@{viewModel.displayBubbleStatusColor}"
+                android:textSize="@dimen/x28" />
+
+        </RelativeLayout>-->
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/laIv"
+        tools:src="@color/aqua"
+        tools:layout_width="100dp"
+        tools:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_width="238dp"
+        android:layout_height="238dp" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="238dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center"
+        android:paddingBottom="10dp"
+        android:lineSpacingExtra="5dp"
+        tools:text="lottie动画"/>
+
+    <Button
+        android:id="@+id/btn"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@drawable/lottie_box_bg"
+        android:text="@string/box_coin"
+        android:textSize="16sp"
+        android:textColor="@color/color_2e2e2e"
+        android:onClick="onClick"
+        android:layout_width="238dp"
+        android:layout_height="44dp" />
+
+    <Button
+        android:id="@+id/btn1"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:text="@string/not_need"
+        android:textSize="16sp"
+        android:textColor="@color/fw_text_grey"
+        android:onClick="onClick"
+        android:layout_width="238dp"
+        android:layout_height="44dp" />
+
+</LinearLayout>

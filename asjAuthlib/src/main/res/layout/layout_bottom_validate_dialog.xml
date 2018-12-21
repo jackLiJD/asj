@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:ignore="ContentDescription,RtlHardcoded,RelativeOverlap">
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y96">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/pwd_pay_id_input_validate_title"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/x32" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/x18"
+            android:src="@drawable/icon_titlebar_heise_fanhui" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider"
+        style="@style/hLineStyle" />
+
+    <TextView
+        android:id="@+id/validate_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingBottom="10dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="10dp"
+        android:textColor="@color/text_color_normal"
+        android:textSize="13sp"
+        tools:text="已发送至手机号18248440821" />
+
+    <LinearLayout
+        android:id="@+id/validate_code_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="@dimen/x40">
+
+        <EditText
+            android:id="@+id/validate_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/drawable_validate_bg"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="@string/pwd_pay_id_input_validate_hint_title"
+            android:maxLength="6"
+            android:padding="10dp"
+            android:textColor="@color/text_color_black"
+            android:textColorHint="@color/text_color_normal_light"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/validate_gain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:background="@null"
+            android:enabled="false"
+            android:gravity="center"
+            android:minWidth="34dp"
+            android:text="60秒后重发"
+            android:textColor="@color/text_color_normal"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/validate_action"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/drawable_validate_confirm_bg"
+        android:enabled="false"
+        android:padding="10dp"
+        android:text="@string/pwd_pay_id_input_validate_confirm"
+        android:textColor="@color/btn_bottom_dialog_color"
+        android:textSize="14sp" />
+
+    <com.ald.asjauthlib.widget.KeyboardMsg
+        android:id="@+id/keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y24" />
+</LinearLayout>

@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded,RtlSymmetry,ContentDescription,HardcodedText">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.BankCardAddVM" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <ScrollView
+        android:background="@color/background_white_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/default_divider_color"/>
+            <!--老界面-->
+            <LinearLayout
+                android:id="@+id/old_top_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="9dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:visibility="@{!viewModel.showNewLayout}">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/bank_card_type_input_hint"
+                    android:textColor="#54576a"
+                    android:textSize="@dimen/x24" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y96"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="8dp"
+                    android:paddingLeft="15dp">
+
+                    <TextView
+                        android:id="@+id/tv_card_left"
+                        android:layout_width="@dimen/x160"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center_vertical"
+                        android:text="@string/bank_card_add_card_type_title"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/x28" />
+                    <TextView
+                        android:id="@+id/tv_cash"
+                        android:onClick="@{viewModel.bankCardTypeClick}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/tv_card_left"
+                        android:gravity="center_vertical"
+                        android:text="@{viewModel.displayCardType}"
+                        tools:text="储蓄卡"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/x28" />
+                    <ImageView
+                        android:id="@+id/iv_cardtype_right"
+                        android:onClick="@{viewModel.bankCardTypeClick}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/x10"
+                        android:src="@drawable/ic_down_arrow" />
+                    <!-- <TextView
+                         android:id="@+id/tv_cash"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_centerVertical="true"
+                         android:layout_toRightOf="@id/tv_card_left"
+                         android:drawableLeft="@drawable/selector_cashier_check"
+                         android:drawablePadding="5dp"
+                         android:gravity="center_vertical"
+                         android:onClick="@{viewModel.topBankTypeClick}"
+                         android:text="储蓄卡"
+                         android:textColor="@color/text_color_black"
+                         android:textSize="14sp" />
+
+                     <TextView
+                         android:id="@+id/tv_credit"
+                         android:layout_width="wrap_content"
+                         android:layout_height="wrap_content"
+                         android:layout_centerVertical="true"
+                         android:layout_marginLeft="30dp"
+                         android:layout_toRightOf="@id/tv_cash"
+                         android:drawableLeft="@drawable/selector_cashier_check"
+                         android:drawablePadding="5dp"
+                         android:gravity="center_vertical"
+                         android:onClick="@{viewModel.topBankTypeClick}"
+                         android:text="信用卡"
+                         android:textColor="@color/text_color_black"
+                         android:textSize="14sp" />-->
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@color/default_divider_color"/>
+
+            </LinearLayout>
+
+            <!--新界面-->
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/new_top_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                app:visibility="@{viewModel.showNewLayout}">
+
+                <TextView
+                    android:id="@+id/card_tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="招商银行信用卡" />
+
+                <TextView
+                    android:id="@+id/card_tv_last4num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/text_color_black"
+                    android:textSize="18sp"
+                    tools:text="尾号1279" />
+            </LinearLayout>
+
+            <!--<TextView-->
+            <!--android:id="@+id/txt_bank_no_err"-->
+            <!--style="@style/bank_add_err"-->
+            <!--android:text="@{viewModel.displayCardErr}"-->
+            <!--tools:visibility="gone" />-->
+
+            <!--<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/x170"
+                android:layout_marginTop="@dimen/x18"
+                android:text="@{viewModel.tipSpannableStr}"
+                android:textColor="@color/text_normal_color"
+                android:textSize="@dimen/x24" />-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/bank_card_phone_input_hint"
+                android:textColor="#54576a"
+                android:textSize="@dimen/x24" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y100"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp">
+
+                    <TextView
+                        android:id="@+id/tv_phone_left"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/bank_card_add_card_phone_title"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+
+                    <ImageView
+                        android:id="@+id/iv_phone_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/x10"
+                        android:onClick="@{viewModel.phoneClick}"
+                        android:src="@drawable/ic_info" />
+
+                    <com.ald.asjauthlib.authframework.core.ui.EditTextWithDelNew
+                        android:id="@+id/et_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/x32"
+                        android:layout_toLeftOf="@id/iv_phone_right"
+                        android:layout_toRightOf="@id/tv_phone_left"
+                        android:background="@null"
+                        android:digits="0123456789 "
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:gravity="center_vertical"
+                        android:hint="@string/bank_card_add_card_phone_hit"
+                        android:inputType="phone"
+                        android:lines="1"
+                        android:paddingLeft="@dimen/x10"
+                        android:textColor="@color/text_color_black"
+                        android:textColorHint="@color/text_color_normal_light"
+                        android:textSize="@dimen/x28"
+                        app:list="@{viewModel.edList}"
+                        app:mobilePhoneWatcher="@{viewModel.emptyMobileWatcher}"
+                        app:watcher="@{viewModel.watcher}" />
+
+                    <View
+                        style="@style/hLineStyle"
+                        android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/txt_phone_err"
+                    style="@style/bank_add_err"
+                    android:text="@{viewModel.displayPhoneErr}"
+                    tools:visibility="gone" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y100"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    app:visibility="@{viewModel.showCreditLayout}">
+
+                    <TextView
+                        android:id="@+id/tv_validity_left"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:text="有效期"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+
+                    <ImageView
+                        android:id="@+id/iv_validity_right"
+                        android:onClick="@{viewModel.validityClick}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/x10"
+                        android:src="@drawable/ic_down_arrow" />
+
+                    <EditText
+                        android:id="@+id/et_validity"
+                        android:onClick="@{viewModel.validityClick}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toLeftOf="@id/iv_validity_right"
+                        android:layout_toRightOf="@id/tv_validity_left"
+                        android:background="@null"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:gravity="center_vertical"
+                        android:hint="请选择到期日期"
+                        android:inputType="number"
+                        android:lines="1"
+                        android:paddingLeft="@dimen/x10"
+                        android:textColor="@color/text_color_black"
+                        android:textColorHint="@color/text_color_normal_light"
+                        android:textSize="@dimen/x28"
+                        app:watcher="@{viewModel.watcher}" />
+
+                    <View
+                        style="@style/hLineStyle"
+                        android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y100"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    app:visibility="@{viewModel.showCreditLayout}">
+
+                    <TextView
+                        android:id="@+id/tv_safeCode_left"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:text="安全码"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+
+                    <ImageView
+                        android:id="@+id/iv_safeCode_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/x10"
+                        android:onClick="@{viewModel.safeCodeClick}"
+                        android:src="@drawable/ic_info" />
+
+                    <EditText
+                        android:id="@+id/et_safeCode"
+                        android:maxLength="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toRightOf="@id/tv_safeCode_left"
+                        android:layout_toLeftOf="@id/iv_safeCode_right"
+                        android:background="@null"
+                        android:digits="0123456789 "
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:gravity="center_vertical"
+                        android:hint="请输入安全码（查看信用卡背面）"
+                        android:inputType="number"
+                        android:lines="1"
+                        android:paddingLeft="@dimen/x10"
+                        android:textColor="@color/text_color_black"
+                        android:textColorHint="@color/text_color_normal_light"
+                        android:textSize="@dimen/x28"
+                        app:watcher="@{viewModel.watcher}" />
+
+                    <View
+                        style="@style/hLineStyle"
+                        android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y100"
+                    android:layout_marginLeft="15dp">
+
+                    <TextView
+                        android:id="@+id/tv_captcha_left"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/bank_card_add_card_captcha_title"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:id="@+id/btn_captcha_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="center"
+                        android:lines="1"
+                        android:onClick="@{viewModel.captchaClick}"
+                        android:paddingLeft="@dimen/x40"
+                        android:paddingRight="@dimen/x40"
+                        android:text="@string/bank_card_add_card_get_captcha"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="@dimen/x28" />
+
+                    <com.ald.asjauthlib.authframework.core.ui.EditTextWithDel
+                        android:id="@+id/et_captcha"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/x24"
+                        android:layout_toLeftOf="@id/btn_captcha_right"
+                        android:layout_toRightOf="@id/tv_captcha_left"
+                        android:background="@null"
+                        android:cursorVisible="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:hint="请输入验证码"
+                        android:inputType="number"
+                        android:lines="1"
+                        android:maxLength="6"
+                        android:paddingLeft="@dimen/x10"
+                        android:paddingRight="@dimen/x10"
+                        android:textColor="@color/text_color_black"
+                        android:textColorHint="@color/text_color_normal_light"
+                        android:textSize="@dimen/x28"
+                        app:list="@{viewModel.edList}"
+                        app:watcher="@{viewModel.watcher}" />
+
+                    <View
+                        style="@style/hLineStyle"
+                        android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/x170"
+                    android:layout_marginTop="@dimen/x18"
+                    android:text="@string/bank_card_add_captcha_hit"
+                    android:textColor="@color/text_normal_color"
+                    android:textSize="@dimen/x24"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/x24"
+                android:layout_marginTop="@dimen/y30">
+
+                <CheckBox
+                    android:id="@+id/cb_agreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:background="#00000000"
+                    android:button="@null"
+                    android:checked="true"
+                    android:drawableLeft="@drawable/selector_cb_agreement"
+                    android:drawablePadding="@dimen/x5"
+                    android:focusable="false"
+                    android:padding="@dimen/x5"
+                    android:text="@string/register_agreement_cb"
+                    android:textColor="#646464"
+                    android:textSize="@dimen/x20"
+                    app:cb_list="@{viewModel.cbList}"
+                    app:cb_watcher="@{viewModel.cbWatcher}" />
+
+                <TextView
+                    android:id="@+id/tv_agreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{viewModel.agreementClick}"
+                    android:text="@string/bank_card_add_agreement"
+                    android:textColor="#2dc6ee"
+                    android:textSize="@dimen/x20" />
+            </LinearLayout>
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y90"
+                android:layout_marginLeft="@dimen/y30"
+                android:layout_marginRight="@dimen/y30"
+                android:layout_marginTop="@dimen/y90"
+                android:background="@drawable/drawable_validate_confirm_bg"
+                android:enabled="@{viewModel.enable}"
+                android:onClick="@{viewModel.saveClick}"
+                android:text="@{viewModel.displayAddBtnTxt}"
+                android:textColor="@color/btn_bottom_dialog_color"
+                android:textSize="@dimen/x32"
+                tools:text="添加并绑定银行卡" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/y30"
+                android:text="@string/bank_card_info_safe_hint"
+                android:textColor="@color/text_color_normal_light"
+                android:textSize="@dimen/x24" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</layout>

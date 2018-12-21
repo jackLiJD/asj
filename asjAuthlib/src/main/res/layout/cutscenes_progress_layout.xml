@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/loadingMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/page_loading"
+        android:textColor="@color/fw_text_important_black"
+        android:textSize="@dimen/x24"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/loadingImageView"
+        android:layout_width="@dimen/x130"
+        android:layout_height="@dimen/x130"
+        android:layout_gravity="center"
+        android:contentDescription="@string/empty" />
+</FrameLayout>

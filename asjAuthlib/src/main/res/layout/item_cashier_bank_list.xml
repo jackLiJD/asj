@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded,ContentDescription,RelativeOverlap">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.ItemBankVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y112"
+        android:gravity="center_vertical"
+        android:onClick="@{viewModel.onItemClick}">
+
+        <ImageView
+            android:id="@+id/iv_left"
+            android:layout_width="@dimen/x44"
+            android:layout_height="@dimen/x44"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x30"
+            app:defaultImage="@{@drawable/ic_order_phone_default}"
+            app:src="@{viewModel.displayIc}"
+            tools:src="@drawable/ic_ali_pay" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv_left"
+            android:lines="1"
+            android:text="@{viewModel.displayBankName}"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/x28"
+            tools:text="招商银行(8902)" />
+
+
+        <TextView
+            android:id="@+id/tv_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/tv_name"
+            android:layout_below="@+id/tv_name"
+            android:layout_marginTop="@dimen/y10"
+            android:text="@{viewModel.displayTip}"
+            app:visibility="@{viewModel.showDisplayTip}"
+            android:textColor="@color/text_color_normal"
+            android:textSize="@dimen/x24"
+            tools:text="银行卡可用" />
+
+        <!--手续费-->
+        <TextView
+            android:id="@+id/tv_charge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginTop="@dimen/y10"
+            android:layout_toEndOf="@+id/tv_tip"
+            android:layout_toRightOf="@id/iv_left"
+            android:text="@{viewModel.displayCreditCharge}"
+            android:textColor="@color/text_color_normal"
+            android:textSize="@dimen/x22"
+            app:visibility="@{viewModel.showCreditCharge}"
+            tools:text="@string/cashier_list_credit_charge" />
+
+
+        <ImageView
+            android:id="@+id/checker"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x30"
+            android:onClick="@{viewModel.onItemClick}"
+            android:src="@{viewModel.checkerBg}"
+            tools:src="@drawable/ic_cashier_checked" />
+
+        <View
+            style="@style/hNewLineStyle"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/default_divider_color" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cashier_bank_item_cover"
+            app:visibility="@{viewModel.isMaintain}"
+            tools:visibility="gone" />
+
+    </RelativeLayout>
+
+</layout>

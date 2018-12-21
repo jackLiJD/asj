@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription,RtlHardcoded,RtlSymmetry,RelativeOverlap">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.PayPwdSetVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.ald.asjauthlib.widget.PayEditText
+            android:id="@+id/pwd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x100"
+            android:layout_marginLeft="@dimen/x48"
+            android:layout_marginRight="@dimen/x48"
+            android:layout_marginTop="@dimen/x66"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pwd"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x50"
+            android:text="@{viewModel.hint}"
+            android:textColor="@{viewModel.hintColor}"
+            tools:text="为保障您的资金安全，请设置密码" />
+
+        <com.ald.asjauthlib.widget.Keyboard
+            android:id="@+id/keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y600"
+            android:layout_alignParentBottom="true" />
+
+        <RelativeLayout
+            android:id="@+id/ll_success"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/y30"
+                android:src="@drawable/icon_x" />
+
+            <RelativeLayout
+                android:id="@+id/rl_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/x150">
+
+                <!--<com.airbnb.lottie.LottieAnimationView-->
+                    <!--android:id="@+id/ic_success"-->
+                    <!--android:layout_width="@dimen/y450"-->
+                    <!--android:layout_height="@dimen/y450"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--app:lottie_autoPlay="true"-->
+                    <!--app:lottie_fileName="complete.json"-->
+                    <!--app:lottie_loop="false" />-->
+
+                <FrameLayout
+                    android:id="@+id/ll_anim"
+                    android:layout_width="@dimen/y200"
+                    android:layout_height="@dimen/y220"
+                    android:layout_centerInParent="true" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_success"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_container"
+                android:layout_centerHorizontal="true"
+                android:text="@string/pwd_pay_set_success"
+                android:textColor="@color/color_bankcard_add_success"
+                android:textSize="@dimen/x40" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_success"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/x30"
+                android:text="@string/pwd_pay_set_success_hint"
+                android:textColor="@color/color_bankcard_add_success_hint"
+                android:textSize="@dimen/x30" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

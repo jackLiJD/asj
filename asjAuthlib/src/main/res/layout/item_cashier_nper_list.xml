@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded,RtlSymmetry,ObsoleteLayoutParam">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.ItemCashierPerVM" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y152"
+        android:layout_marginLeft="@dimen/x8"
+        android:layout_marginRight="@dimen/x8"
+        android:layout_marginTop="@dimen/y20"
+        android:background="@{viewModel.itembg}"
+        android:gravity="center"
+        android:onClick="@{viewModel.onItemClick}"
+        android:orientation="vertical"
+        tools:background="@drawable/frame_cashier_per_item_select">
+
+        <LinearLayout
+            android:id="@+id/ll_per"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_per"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/x5"
+                android:text="@{viewModel.per}"
+                android:textColor="@{viewModel.nperColor}"
+                android:textSize="@dimen/x32"
+                tools:text="1期"
+                tools:textColor="@color/colorPrimaryNew" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/txt_per"
+                android:background="@drawable/drawable_cashier_free_nper"
+                android:paddingBottom="@dimen/y3"
+                android:paddingLeft="@dimen/y10"
+                android:paddingRight="@dimen/y10"
+                android:paddingTop="@dimen/y3"
+                android:text="@{viewModel.displayFreeNper}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x20"
+                app:visibility="@{viewModel.showFreeSign}"
+                tools:text="前3期免息"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/y12"
+            app:visibility="@{!viewModel.showOtherPerAmount}" />
+
+        <TextView
+            android:id="@+id/tv_not_free"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.displayPerAmount}"
+            android:textColor="@color/color_232323"
+            android:textSize="@dimen/x24"
+            app:visibility="@{viewModel.showDtl}"
+            tools:text="月供￥297.44"
+            tools:textColor="@color/text_color_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.displayOtherPerAmount}"
+            android:textColor="@color/color_232323"
+            android:textSize="@dimen/x24"
+            app:visibility="@{viewModel.showOtherPerAmount}"
+            tools:text="月供￥297.44"
+            tools:textColor="@color/text_color_black"
+            tools:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/tv_rebate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/ll_per_dtl"
+            android:gravity="bottom"
+            android:text="@{viewModel.includeFee}"
+            android:textColor="@color/text_color_normal"
+            android:textSize="@dimen/x22"
+            android:visibility="gone"
+            tools:text="含利息手续费¥160" />
+
+    </LinearLayout>
+</layout>

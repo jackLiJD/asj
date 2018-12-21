@@ -1,0 +1,8 @@
+1.由于databinding的坑,gradle版本请升到3.1.0以上,gradle.properties文件加上android.databinding.enableV2=true
+2.打成aar包只能上传到jcenter等线上库才能引用到aar内的依赖.
+3.如果冲突无法解决可以用complieOnly来让依赖只参与编译,不参与打包,但要去掉fileTree()
+4.lib下的switch R.id无法用,需要使用if else
+5.当手动implementation aar失败时,可以加上flatDir {dirs 'libs'}
+6.定位用的高德地图,app需要覆盖清单文件meta-data的apikey
+7.爱上街接口有版本号判断,低了会抛异常,故目前直接在获取版本号后面加了500
+8.face++,魔蝎要授权

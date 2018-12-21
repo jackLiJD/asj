@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded,ContentDescription,RelativeOverlap">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.ItemBankVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y112"
+        android:onClick="@{viewModel.onItemClick}">
+
+        <ImageView
+            android:id="@+id/iv_left"
+            android:layout_width="@dimen/x44"
+            android:layout_height="@dimen/x44"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x30"
+            android:src="@{viewModel.displayLocalIc}"
+            tools:src="@drawable/ic_ali_pay" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_toRightOf="@id/iv_left"
+            android:lines="1"
+            android:text="@{viewModel.displayBankName}"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/x28"
+            tools:text="支付宝" />
+
+        <ImageView
+            android:id="@+id/checker"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/y60"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/y30"
+            android:onClick="@{viewModel.onItemClick}"
+            android:src="@{viewModel.checkerBg}"
+            tools:src="@drawable/ic_cashier_checked" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/default_divider_color" />
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,120 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ald.asjauthlib">
+
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.BATTERY_STATS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_UPDATES" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!--采集传感器信息必要权限-->
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="true" />
+    <application>
+        <!-- 同盾风控 -->
+        <meta-data
+            android:name="PARTNER_CODE"
+            android:value="alading" />
+
+        <activity
+            android:name=".web.HTML5WebView"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".auth.ui.BankCardAddIdActivity" />
+        <activity android:name=".auth.ui.AccountAppealActivity" />
+        <activity android:name=".auth.ui.AllLimitActivity" />
+        <activity android:name=".auth.ui.AuthStatusActivity" />
+        <activity android:name=".auth.ui.AuthUserInfoActivity" />
+        <activity android:name=".auth.ui.BankCardAddActivity" />
+        <activity android:name=".auth.ui.BankCardEditActivity" />
+        <activity android:name=".auth.ui.BankCardListActivity" />
+        <activity android:name=".auth.ui.BankCardTypeActivity" />
+        <activity android:name=".auth.ui.CreditPromoteActivity" android:launchMode="singleTask"/>
+        <activity android:name=".auth.ui.PayPwdSetActivity" />
+        <activity android:name=".auth.ui.PaySettingsActivity" />
+        <activity android:name=".auth.ui.PwdPayCaptchaActivity" />
+        <activity android:name=".auth.ui.PwdPayIdfActivity" />
+        <activity android:name=".auth.ui.PwdPayNewActivity" />
+        <activity android:name=".auth.ui.PwdPayOriginalActivity" />
+        <activity android:name=".auth.ui.RRIdAuthActivity" />
+        <activity android:name=".auth.ui.RRIdConfirmActivity" />
+        <activity android:name=".auth.ui.StartFaceActivity" />
+        <activity android:name=".auth.ui.WithholdCardActivity" />
+        <activity android:name=".auth.ui.WithholdSettingsActivity" />
+        <activity android:name=".cashier.ui.BrandPaySuccessActivity" />
+        <activity android:name=".cashier.ui.CashierPayFailActivity" />
+        <activity android:name=".cashier.ui.CombPayActivity" />
+        <activity android:name=".cashier.ui.LimitDetailActivity" />
+        <activity android:name=".cashier.ui.LoanRepaymentDetailActivity" />
+        <activity android:name=".cashier.ui.MyTicketActivity" />
+        <activity android:name=".cashier.ui.PhoneTicketActivity" />
+        <activity android:name=".cashier.ui.RepaymentActivity" />
+        <activity android:name=".cashier.ui.RepaymentStatusActivity" />
+        <activity android:name=".cashier.ui.SelectPaymentActivity" />
+        <activity android:name=".cashier.ui.StageRefundActivity" />
+        <activity android:name=".cashier.ui.AllBillsActivity" />
+        <activity android:name=".cashier.ui.BillDtlActivity" />
+        <activity android:name=".cashier.ui.CalenderActivity" />
+        <activity android:name=".cashier.ui.ConsumeDtlActivity" />
+        <activity android:name=".cashier.ui.HistoryBillListActivity" />
+        <activity android:name=".cashier.ui.HistoryBillMonthStatusActivity" />
+        <activity android:name=".cashier.ui.RefundRecordActivity" />
+        <activity android:name=".cashier.ui.ReimburseDtlActivity" />
+        <activity android:name=".cashier.ui.RepaymentDtlActivity" />
+        <activity android:name=".cashier.ui.SettleAdvancedActivity" />
+        <activity android:name=".bankcardscan.BankCardScanActivity" />
+        <activity android:name=".bankcardscan.ResultActivity" />
+        <activity android:name="com.moxie.client.MainActivity" />
+        <activity android:name=".authframework.core.activity.HTML5WebView" />
+        <activity
+            android:name=".idcardlib.IDCardScanActivity"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" />
+        <activity
+            android:name=".livenesslib.LivenessActivity"
+            android:screenOrientation="portrait"  />
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="c1966ed525caa10ac42894605020f7cc" />
+        <!-- Required. For publish channel feature -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.coreprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <!--元数据-->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>

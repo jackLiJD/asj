@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.LoanRepaymentDetailVM" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_F3F5F7"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/bg_limit_detail" />
+
+        <TextView
+            android:id="@+id/tv_limit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y104"
+            android:text="@{viewModel.displayCash}"
+            android:textColor="@color/text_white_color"
+            android:textSize="@dimen/x56" />
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_limit"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y4"
+            android:text="@{viewModel.displayTitle}"
+            android:textColor="@color/text_white_color"
+            android:textSize="@dimen/x28" />
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tv_state"
+            android:layout_marginBottom="@dimen/x54"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginRight="@dimen/x24"
+            android:layout_marginTop="@dimen/y152"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/ll_limit_refund"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y96"
+                    android:gravity="center_vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/limit_detail_refund_desc_title"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@{viewModel.displayDesc}"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/hLineStyle"
+                    android:visibility="gone" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y96"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/x24"
+                    android:paddingRight="@dimen/x24"
+                    app:visibility="@{viewModel.displayOfferInfo}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/limit_detail_refund_offer"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@{viewModel.displayOffer}"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/hLineStyle"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:layout_marginRight="@dimen/x24"
+                    app:visibility="@{viewModel.displayOfferInfo}" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y96"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/x24"
+                    android:paddingRight="@dimen/x24"
+                    app:visibility="@{viewModel.displayRebateInfo}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/limit_detail_refund_rebate"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@{viewModel.displayRebate}"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/hLineStyle"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:layout_marginRight="@dimen/x24"
+                    app:visibility="@{viewModel.displayRebateInfo}" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y96"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/x24"
+                    android:paddingRight="@dimen/x24"
+                    app:visibility="@{viewModel.displayActualPayInfo}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/limit_detail_refund_actual_pay"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@{viewModel.displayActualPay}"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/hLineStyle"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:layout_marginRight="@dimen/x24"
+                    app:visibility="@{viewModel.displayActualPayInfo}" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_refund_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y96"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/x24"
+                    android:paddingRight="@dimen/x24">
+
+                    <TextView
+                        android:id="@+id/tv_refund_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/limit_detail_refund_type_title"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:id="@+id/tv_refund_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@{viewModel.displayPayWay}"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+                </RelativeLayout>
+
+                <View
+                    style="@style/hLineStyle"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:layout_marginRight="@dimen/x24" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y96"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/x24"
+                    android:paddingRight="@dimen/x24">
+
+                    <TextView
+                        android:id="@+id/tv_loan_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/limit_detail_refund_no_title"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:id="@+id/tv_loan_no_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@{viewModel.displayNo}"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/divider1"
+                    style="@style/hLineStyle"
+                    android:layout_marginLeft="@dimen/x24"
+                    android:layout_marginRight="@dimen/x24" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y96"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/x24"
+                    android:paddingRight="@dimen/x24">
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:text="@string/limit_detail_refund_time_title"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:id="@+id/tv_time_right"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@{viewModel.displayTime}"
+                        android:textColor="@color/text_important_color"
+                        android:textSize="@dimen/x28" />
+                </RelativeLayout>
+
+                <com.youth.banner.Banner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_F3F5F7"
+                    android:paddingTop="15dp"
+                    app:bannerImages="@{viewModel.bannerList}"
+                    app:bannerListener="@{viewModel.bannerListener}"
+                    app:delay_time="5000"
+                    app:image_scale_type="fit_xy"
+                    app:indicator_drawable_selected="@drawable/shape_banner_indicator_s"
+                    app:indicator_drawable_unselected="@drawable/shape_banner_indicator_u"
+                    app:indicator_height="@dimen/y4"
+                    app:indicator_margin="@dimen/x7"
+                    app:indicator_width="@dimen/x28"
+                    app:is_auto_play="true"
+                    app:layout_height="@{viewModel.adHeight}"
+                    app:layout_width="@{viewModel.adWidth}"
+                    tools:layout_height="50dp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

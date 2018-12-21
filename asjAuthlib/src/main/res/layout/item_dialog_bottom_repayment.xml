@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?><!--还款底部弹框item-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/y20"
+        android:paddingTop="@dimen/y20">
+
+        <CheckBox
+            android:id="@+id/checker"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/y60"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/y30"
+            android:button="@null"
+            android:checked="true"
+            android:drawableLeft="@drawable/select_address_bg"
+            android:drawablePadding="@dimen/y30"
+            android:focusable="false"
+            android:textColor="@color/color_646464"
+            android:textSize="@dimen/x30" />
+
+        <LinearLayout
+            android:id="@+id/rl_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/checker"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/y20"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_goods_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/x28"
+                tools:text="儿童双色双肩包小宝宝最可爱儿童双色双肩包小宝宝最可爱儿童双色双肩包小宝宝最可爱儿童双色双肩包小宝宝最可爱" />
+
+            <TextView
+                android:id="@+id/txt_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y20"
+                android:textColor="@color/color_969696"
+                android:textSize="@dimen/x24"
+                tools:text="还款日2017/06/07" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/y30"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_ff5546"
+                android:textSize="@dimen/x28"
+                tools:text="158.00元" />
+
+            <TextView
+                android:id="@+id/txt_stage_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y20"
+                android:gravity="right"
+                android:textColor="@color/color_646464"
+                android:textSize="@dimen/x24"
+                tools:text="01/12期" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/btn_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/y30"
+            android:src="@drawable/ic_auth_right_arrow" />
+    </LinearLayout>
+
+    <View style="@style/hLineStyleE4" />
+</LinearLayout>

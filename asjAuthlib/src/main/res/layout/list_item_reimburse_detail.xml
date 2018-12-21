@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlSymmetry">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.ItemReimburseDtlVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:onClick="@{viewModel.onDtlClick}"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/y20"
+        android:paddingEnd="@dimen/y20"
+        android:paddingTop="@dimen/y20">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/y20"
+                android:layout_marginLeft="@dimen/y30"
+                android:layout_marginRight="@dimen/y30"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="@{viewModel.displayRemark}"
+                android:textColor="@color/color_232323"
+                android:textSize="@dimen/x30"
+                tools:text="儿童双色双肩包小宝宝最可儿童双色双肩包小宝宝最可" />
+
+
+            <TextView
+                android:id="@id/txt_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/y15"
+                android:drawableEnd="@drawable/ic_auth_right_arrow"
+                android:drawablePadding="@dimen/y20"
+                android:gravity="center_vertical"
+                android:text="@{viewModel.displayAmount}"
+                android:textColor="@color/color_232323"
+                android:textSize="@dimen/x32"
+                tools:text="123.34 元" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/y30"
+                android:text="@string/Reimburse_time_ensure"
+                android:textColor="@color/fw_text_grey"
+                android:textSize="@dimen/x24" />
+
+            <TextView
+                android:id="@+id/txt_time_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/y30"
+                android:paddingTop="0dp"
+                android:text="@{viewModel.displayTime}"
+                android:textColor="@color/fw_text_grey"
+                android:textSize="@dimen/x24"
+                tools:text="2017/07/07 22:30:57" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/y60"
+                android:gravity="end"
+                android:text="@{viewModel.displayRepayStatus}"
+                android:textColor="@{viewModel.displayRepayStautsColor}"
+                android:textSize="@dimen/x28"
+                tools:text="处理中" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.MyTicketsVM" />
+
+        <import type="com.ald.asjauthlib.tatarka.bindingcollectionadapter.LayoutManagers" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/rg_sort"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y86"
+            android:gravity="center"
+            android:background="@color/background_white_color"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_platform"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/selector_rb_voucher"
+                android:button="@null"
+                android:checked="true"
+                android:drawableBottom="@{viewModel.shopDrawableBottom}"
+                android:gravity="center"
+                android:paddingBottom="@dimen/y4"
+                android:paddingLeft="@dimen/y20"
+                android:paddingRight="@dimen/y20"
+                android:paddingTop="@dimen/y10"
+                android:text="@{viewModel.platformCouponCount}"
+                android:textColor="@color/color_goods_search_search"
+                android:textSize="@dimen/x28" />
+
+            <View
+                android:layout_width="@dimen/x1"
+                android:layout_height="match_parent"
+                android:background="@color/linen"/>
+
+            <RadioButton
+                android:id="@+id/rb_brand"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingTop="@dimen/y10"
+                android:paddingBottom="@dimen/y4"
+                android:paddingLeft="@dimen/y20"
+                android:paddingRight="@dimen/y20"
+                android:gravity="center"
+                android:text="@{viewModel.brandCouponCount}"
+                android:textSize="@dimen/x28"
+                android:textColor="@color/color_goods_search_search"
+                android:button="@null"
+                android:drawableBottom="@{viewModel.brandDrawableBottom}"
+                android:background="@drawable/selector_rb_voucher"/>
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:visibility="@{viewModel.showPlatformVoucher}">
+
+            <com.ald.asjauthlib.widget.PagerSlidingTabStrip
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y94"
+                android:background="@color/background_white_color"
+                app:pstsDividerColor="@android:color/transparent"
+                app:pstsIndicatorColor="@color/colorPrimary_auth"
+                app:pstsUnderlineColor="@android:color/transparent" />
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:visibility="@{!viewModel.showPlatformVoucher}">
+
+            <com.ald.asjauthlib.widget.PagerSlidingTabStrip
+                android:id="@+id/tabs_brand"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y94"
+                android:background="@color/background_white_color"
+                app:pstsDividerColor="@android:color/transparent"
+                app:pstsIndicatorColor="@color/colorPrimary_auth"
+                app:pstsUnderlineColor="@android:color/transparent" />
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager_brand"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

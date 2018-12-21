@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.AuthStatusVM" />
+    </data>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_status"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/txt_mid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/credit_promote_submit_wait_minutes"
+            android:textColor="@color/color_969696" />
+
+        <TextView
+            android:id="@+id/txt_wait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/txt_mid"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/y30"
+            android:text="@string/credit_promote_submit_wait" />
+
+        <ImageView
+            android:layout_width="@dimen/y400"
+            android:layout_height="@dimen/y400"
+            android:layout_above="@+id/txt_wait"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/content_description"
+            android:src="@drawable/ic_wait" />
+
+        <TextView
+            android:id="@+id/btn_close"
+            android:layout_width="@dimen/y500"
+            android:layout_height="@dimen/y100"
+            android:layout_below="@+id/txt_mid"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y50"
+            android:background="@drawable/btn_auth"
+            android:gravity="center"
+            android:onClick="@{viewModel.onCloseClick}"
+            android:text="@string/credit_promote_submit_complete"
+            android:textColor="@color/white"
+            android:textSize="@dimen/x38" />
+
+        <TextView
+            android:id="@+id/txt_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_close"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/y40"
+            android:text="@{viewModel.displayTimerTxt}"
+            android:textColor="#c3c3c3"
+            tools:text="3s后自动返回" />
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription,UseCompoundDrawables,DisableBaselineAlignment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.CouponListItemVM" />
+    </data>
+
+
+    <com.ald.asjauthlib.widget.ShadowLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="6dp"
+        android:visibility="visible"
+        app:shadowDx="0dp"
+        app:shadowDy="3dp"
+        app:shadowRadius="3dp"
+        app:shadowSide="bottom"
+        app:shadow_Color="@color/color_35dedede">
+
+        <LinearLayout
+            android:id="@+id/list_item_coupon_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/img_item_coupon_bg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:gravity="center_horizontal"
+                android:onClick="@{viewModel.toExpandView}"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="@{viewModel.handleAmount}"
+                    android:textColor="@{viewModel.isValidate?@color/color_ff5252:@color/color_bababa}"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="5158" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@{viewModel.showCouponTypeName}"
+                    android:textColor="@{viewModel.isValidate?@color/color_ff5252:@color/color_bababa}"
+                    android:textSize="14sp"
+                    tools:text="满减券" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:onClick="@{viewModel.toExpandView}"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.showUseRange}"
+                    android:textColor="@{viewModel.isValidate?@color/color_393939:@color/color_bababa}"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="空间急急急急急急" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8.5dp"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:maxLines="1"
+                    android:text="@{viewModel.handleCouponName}"
+                    android:textColor="@{viewModel.isValidate?@color/color_393939:@color/color_bababa}"
+                    android:textSize="13sp"
+                    tools:text="使用说明" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="@{viewModel.getValidityTime}"
+                        android:textColor="@{viewModel.isValidate?@color/color_393939:@color/color_bababa}"
+                        android:textSize="12sp"
+                        tools:text="3天后过期" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5.5dp"
+                        android:rotation="@{viewModel.displayCouponStatement?(int)0:(int)180}"
+                        android:src="@drawable/xs" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp">
+
+                <CheckBox
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/drawable_coupon_check"
+                    android:button="@null"
+                    android:checked="@{viewModel.isSelected}"
+                    android:gravity="center"
+                    android:onClick="@{viewModel.itemClick}"
+                    android:textSize="13sp"
+                    app:visibility="@{viewModel.isValidate&amp;&amp;viewModel.isUsing}" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_coupon_invalidate"
+                    app:visibility="@{!viewModel.isValidate}" />
+
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/drawable_coupon_use"
+                    android:gravity="center"
+                    android:onClick="@{viewModel.itemClick}"
+                    android:text="@string/dialog_red_package_action_use"
+                    android:textColor="@color/color_2e2e2e"
+                    android:textSize="13sp"
+                    app:visibility="@{viewModel.isValidate&amp;&amp;!viewModel.isUsing}" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/coupon_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/list_item_coupon_parent"
+            android:background="@color/color_f5f6fa"
+            android:padding="10dp"
+            android:text="@{viewModel.couponStatement}"
+            android:textColor="@{viewModel.isValidate?@color/color_999999:@color/color_bababa}"
+            android:textSize="@dimen/x24"
+            app:visibility="@{viewModel.displayCouponStatement}"
+            tools:text="说啊付款了是否考虑接受康复科大夫手机发顺丰" />
+    </com.ald.asjauthlib.widget.ShadowLayout>
+
+
+</layout>

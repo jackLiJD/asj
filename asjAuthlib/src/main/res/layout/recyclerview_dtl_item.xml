@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.BillDtlItemVM" />
+    </data>
+
+    <RelativeLayout
+        android:background="@android:color/white"
+        android:onClick="@{viewModel.itemClick}"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/y30"
+        android:paddingLeft="@dimen/y30">
+
+
+        <TextView
+            android:layout_alignParentLeft="true"
+            android:id="@+id/txt_goods_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/txt_time"
+            android:layout_marginRight="38dp"
+            android:maxLines="1"
+            android:text="@{viewModel.displayName}"
+            android:ellipsize="end"
+            android:textColor="@color/black"
+            android:textSize="@dimen/x30"
+            tools:text="儿童双色双肩包小宝宝最可爱儿童双色双肩包小宝宝最可爱" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_goods_name"
+            android:layout_marginTop="@dimen/y20"
+            android:paddingBottom="@dimen/y30"
+            android:text="@{viewModel.displayPayDate}"
+            android:textColor="@color/color_969696"
+            android:textSize="@dimen/x28"
+            tools:text="2017/06/07 22:30:57" />
+
+        <ImageView
+            android:id="@+id/btn_open"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/y30"
+            android:src="@drawable/ic_auth_right_arrow" />
+
+        <TextView
+            android:id="@+id/txt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/y30"
+            android:layout_toLeftOf="@+id/btn_open"
+            android:text="@{viewModel.displayBillAmount}"
+            android:textColor="@color/color_ff5546"
+            android:textSize="@dimen/x30"
+            tools:text="158.00元" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_time"
+            android:layout_marginRight="@dimen/y30"
+            android:layout_marginTop="@dimen/y20"
+            android:layout_toLeftOf="@+id/btn_open"
+            android:text="@{viewModel.displayPerInfo}"
+            android:textColor="@color/color_646464"
+            android:textSize="@dimen/x28"
+            tools:text="01/12期" />
+
+    </RelativeLayout>
+</layout>

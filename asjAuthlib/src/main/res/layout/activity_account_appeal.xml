@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ObsoleteLayoutParam,RtlHardcoded,RtlSymmetry,ContentDescription,UseCompoundDrawables">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.AppealPhoneVM" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/activity_account_appeal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical"
+            tools:context=".auth.ui.AccountAppealActivity">
+
+            <com.ald.asjauthlib.widget.TitleBar
+                android:id="@+id/title_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y88" />
+
+            <LinearLayout
+                android:id="@+id/rl_step"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y30"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/y80"
+                        android:layout_height="@dimen/y80"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_appeal_auth_phone" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/y10"
+                        android:text="@string/appeal_verify_phone"
+                        android:textColor="@color/color_auth_step_txt"
+                        android:textSize="@dimen/x25" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/y120"
+                    android:layout_height="@dimen/y5"
+                    android:layout_marginLeft="@dimen/y10"
+                    android:layout_marginRight="@dimen/y10"
+                    android:layout_marginTop="@dimen/y40"
+                    android:background="@color/color_un_auth_step_line" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/y80"
+                        android:layout_height="@dimen/y80"
+                        android:layout_gravity="center"
+                        android:src="@{viewModel.ic_step_2}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/y10"
+                        android:text="@string/appeal_verify_id"
+                        android:textColor="@{viewModel.txt_color_step}"
+                        android:textSize="@dimen/x25" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/y120"
+                    android:layout_height="@dimen/y5"
+                    android:layout_marginLeft="@dimen/y10"
+                    android:layout_marginRight="@dimen/y10"
+                    android:layout_marginTop="@dimen/y40"
+                    android:background="@color/color_un_auth_step_line" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/y80"
+                        android:layout_height="@dimen/y80"
+                        android:layout_gravity="center"
+                        android:src="@{viewModel.ic_setp_3}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/y10"
+                        android:text="@string/appeal_modify_complete"
+                        android:textColor="@{viewModel.txt_color_step}"
+                        android:textSize="@dimen/x25" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/hLineStyleDE"
+                android:layout_marginTop="@dimen/y30" />
+
+            <RelativeLayout
+                android:id="@+id/rl_old_phone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y120"
+                android:paddingTop="@dimen/y40"
+                app:visibility="@{viewModel.displayStep1}">
+
+                <TextView
+                    android:id="@+id/lbl_old_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/y30"
+                    android:text="@string/appeal_old_phone"
+                    android:textColor="#232323"
+                    android:textSize="@dimen/x30" />
+
+                <!--<EditTextWithDelhDel&ndash;&gt;-->
+                <!--android:id="@+id/et_old_no"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_marginLeft="@dimen/y30"-->
+                <!--android:layout_marginRight="@dimen/y30"-->
+                <!--android:layout_toRightOf="@id/lbl_old_phone"-->
+                <!--android:background="@null"-->
+                <!--android:cursorVisible="true"-->
+                <!--android:focusable="true"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:hint="请输入旧手机号"-->
+                <!--android:inputType="phone"-->
+                <!--android:lines="1"-->
+                <!--android:paddingRight="@dimen/x24"-->
+                <!--android:textColor="@color/text_important_color"-->
+                <!--android:textColorHint="@color/text_other_color"-->
+                <!--android:textSize="@dimen/x32"-->
+                <!--app:list="@{viewModel.edList}"-->
+                <!--app:watcher="@{viewModel.watcherStep1}" />-->
+
+
+                <com.ald.asjauthlib.authframework.core.ui.EditTextWithDelNew
+                    android:id="@+id/et_old_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/y30"
+                    android:layout_marginRight="@dimen/y30"
+                    android:layout_toRightOf="@id/lbl_old_phone"
+                    android:background="@null"
+                    android:digits="0123456789 "
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center_vertical"
+                    android:hint="@string/appeal_hint_old_phone"
+                    android:inputType="phone"
+                    android:lines="1"
+                    android:paddingRight="@dimen/x24"
+                    android:textColor="@color/text_important_color"
+                    android:textColorHint="@color/text_other_color"
+                    android:textSize="@dimen/x30"
+                    app:list="@{viewModel.edList}"
+                    app:mobilePhoneWatcher="@{viewModel.emptyMobileWatcher}"
+                    app:watcher="@{viewModel.watcherStep1}" />
+
+
+                <View
+                    style="@style/hLineStyleED"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+
+            <!--新号码-->
+            <RelativeLayout
+                android:id="@+id/rl_phone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y120"
+                android:layout_below="@+id/base_line_step"
+                android:paddingTop="@dimen/y40"
+                app:visibility="@{viewModel.displayStep1}">
+
+                <TextView
+                    android:id="@+id/lbl_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/y30"
+                    android:text="@string/appeal_new_phone"
+                    android:textColor="#232323"
+                    android:textSize="@dimen/x30" />
+
+                <ImageView
+                    android:id="@+id/iv_q"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/y30"
+                    android:src="@drawable/ic_q"
+                    android:visibility="gone" />
+
+                <com.ald.asjauthlib.authframework.core.ui.EditTextWithDelNew
+                    android:id="@+id/et_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/y30"
+                    android:layout_marginRight="@dimen/y30"
+                    android:layout_toLeftOf="@+id/iv_q"
+                    android:layout_toRightOf="@id/lbl_phone"
+                    android:background="@null"
+                    android:cursorVisible="true"
+                    android:digits="0123456789 "
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:hint="@string/appeal_hint_new_phone"
+                    android:inputType="phone"
+                    android:lines="1"
+                    android:paddingRight="@dimen/x24"
+                    android:textColor="@color/text_important_color"
+                    android:textColorHint="@color/text_other_color"
+                    android:textSize="@dimen/x30"
+                    app:list="@{viewModel.edList}"
+                    app:mobilePhoneWatcher="@{viewModel.emptyMobileWatcher}"
+                    app:watcher="@{viewModel.watcherStep1}" />
+
+
+                <View
+                    android:id="@+id/base_line_phone"
+                    style="@style/hLineStyleED"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+            <!--验证码-->
+            <RelativeLayout
+                android:id="@+id/rl_msg_num"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y120"
+                app:visibility="@{viewModel.displayStep1}">
+
+                <TextView
+                    android:id="@+id/lbl_msg_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/y30"
+                    android:text="@string/appeal_verify_code"
+                    android:textColor="#232323"
+                    android:textSize="@dimen/x30" />
+
+                <com.ald.asjauthlib.authframework.core.ui.EditTextWithDelNew
+                    android:id="@+id/et_verify_code"
+                    android:layout_width="@dimen/y300"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/y30"
+                    android:layout_marginRight="@dimen/x30"
+                    android:layout_toRightOf="@id/lbl_msg_num"
+                    android:background="@null"
+                    android:cursorVisible="true"
+                    android:digits="0123456789"
+                    android:focusable="true"
+                    android:gravity="center_vertical"
+                    android:hint="@string/appeal_verify_code"
+                    android:inputType="phone"
+                    android:lines="1"
+                    android:maxLength="6"
+                    android:paddingRight="@dimen/y60"
+                    android:textColor="@color/text_important_color"
+                    android:textColorHint="@color/text_other_color"
+                    android:textSize="@dimen/x30"
+                    app:list="@{viewModel.edList}"
+                    app:watcher="@{viewModel.watcherStep1}" />
+
+                <TextView
+                    android:id="@+id/btn_captcha_right"
+                    android:layout_width="@dimen/y250"
+                    android:layout_height="@dimen/y80"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/x30"
+                    android:background="@drawable/selector_primary_e7_r4"
+                    android:enabled="true"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:onClick="@{viewModel.getMsgClick}"
+                    android:paddingLeft="@dimen/x40"
+                    android:paddingRight="@dimen/x40"
+                    android:text="@string/appeal_msg_get"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/x32" />
+
+                <View
+                    android:id="@+id/base_line_msg"
+                    style="@style/hLineStyleED"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y40"
+                app:visibility="@{viewModel.displayStep3}">
+
+                <TextView
+                    android:id="@+id/txt_old_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/y30"
+                    android:text="@{viewModel.txt_old_phone}"
+                    android:textColor="@color/fb_dark_third"
+                    android:textSize="@dimen/x33"
+                    tools:text="确认将原号码18612345678更换为" />
+
+                <TextView
+                    android:id="@+id/txt_new_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_old_phone"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/y30"
+                    android:text="@{viewModel.txt_new_phone}"
+                    android:textColor="@color/color_232323"
+                    android:textSize="@dimen/x35" />
+
+                <View
+                    android:id="@+id/base_line_new_phone"
+                    style="@style/hLineStyleED"
+                    android:layout_below="@+id/txt_new_phone"
+                    android:layout_marginBottom="@dimen/y40" />
+
+                <TextView
+                    android:id="@+id/lbl_new_pwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/base_line_new_phone"
+                    android:layout_marginLeft="@dimen/y30"
+                    android:text="@string/appeal_new_pwd"
+                    android:textSize="@dimen/x30" />
+
+                <EditText
+                    android:id="@+id/et_pwd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/base_line_new_phone"
+                    android:layout_marginLeft="@dimen/y30"
+                    android:layout_toRightOf="@+id/lbl_new_pwd"
+                    android:background="@null"
+                    android:hint="@string/appeal_set_new_pwd"
+                    android:inputType="textPassword"
+                    android:lines="1"
+                    android:textColor="#373747"
+                    android:textColorHint="@color/fb_hint"
+                    android:textSize="@dimen/x34"
+                    app:list="@{viewModel.edList}"
+                    app:watcher="@{viewModel.watcherStep1}" />
+
+                <View
+                    style="@style/hLineStyleED"
+                    android:layout_below="@+id/et_pwd"
+                    android:layout_marginTop="@dimen/y40" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.ald.asjauthlib.authframework.core.ui.NoDoubleClickButton
+                android:id="@+id/btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="@dimen/y150"
+                android:background="@drawable/btn_auth_bottom"
+                android:enabled="@{viewModel.enabled}"
+                android:onClick="@{viewModel.nestStepClick}"
+                android:text="@{viewModel.txt_btn}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/x32" />
+
+        </RelativeLayout>
+    </FrameLayout>
+</layout>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.ButtonItemVM" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <com.ald.asjauthlib.authframework.core.ui.NoDoubleClickButton
+        android:id="@+id/btn_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y80"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="21.5dp"
+        android:background="@drawable/drawable_btn_border_ffd500"
+        android:enabled="@{viewModel.btnEnable}"
+        android:onClick="@{viewModel.cancelSelectCoupon}"
+        android:text="@string/submit_order_stead_buy_coupon_action"
+        android:textColor="@{@colorStateList/text_btn}"
+        android:textSize="@dimen/x32" />
+</layout>

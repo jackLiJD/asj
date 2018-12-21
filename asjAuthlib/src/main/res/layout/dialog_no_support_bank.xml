@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/shape_circle_white_bg"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/bank_iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:padding="14dp"
+        android:src="@drawable/ic_round_delete" />
+
+    <TextView
+        android:id="@+id/bank_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/text_color_black"
+        android:textSize="17sp"
+        tools:text="抱歉，无法获取类型" />
+
+    <TextView
+        android:id="@+id/bank_tv_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bank_tv_title"
+        android:layout_marginLeft="23dp"
+        android:paddingRight="23dp"
+        android:layout_marginTop="30dp"
+        android:lineSpacingExtra="10dp"
+        android:textColor="@color/text_color_black"
+        android:textSize="14sp"
+        tools:text="可能您银行卡号录入错误\n核对卡号：5623849940033234" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bank_tv_middle"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="23dp"
+        android:layout_marginTop="38dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/bank_tv_back"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/drawable_validate_confirm_bg"
+            android:gravity="center"
+            android:text="返回，修改银行卡号"
+            android:textColor="@color/text_color_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/bank_tv_sure"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/drawable_validate_confirm_bg"
+            android:gravity="center"
+            android:text="没错，就是这个"
+            android:textColor="@color/text_color_black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/bank_tv_tobanklist"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/drawable_validate_confirm_bg"
+            android:gravity="center"
+            android:text="查看支持的银行卡"
+            android:textColor="@color/text_color_black"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

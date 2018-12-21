@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.BillDtlMonthItemVM" />
+
+        <import type="com.ald.asjauthlib.tatarka.bindingcollectionadapter.LayoutManagers" />
+    </data>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:onClick="@{viewModel.monthClick}"
+        android:paddingBottom="@dimen/y30"
+        android:paddingTop="@dimen/y30"
+        android:text="@{viewModel.monthText}"
+        android:textColor="@{viewModel.monthColor}"
+        android:textSize="13sp"
+        app:view_width="@{viewModel.monthWidth}"
+        tools:text="8月" />
+
+</layout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_white_color"
+    tools:ignore="ContentDescription,RtlHardcoded,RelativeOverlap">
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y96"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="@string/pwd_pay_id_input_pwd_title"
+            android:textColor="@color/text_color_black"
+            android:textSize="@dimen/x32" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="5dp"
+            android:src="@drawable/icon_titlebar_heise_fanhui" />
+
+
+        <TextView
+            android:id="@+id/tv_forget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x30"
+            android:text="@string/pwd_pay_original_forget_title"
+            android:textColor="@color/color_goods_dtl_add_default" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/divider"
+        style="@style/hLineStyle"
+        android:layout_below="@id/title_layout" />
+
+    <com.ald.asjauthlib.widget.PayEditText
+        android:id="@+id/pwd"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x100"
+        android:layout_below="@id/divider"
+        android:layout_marginLeft="@dimen/x48"
+        android:layout_marginRight="@dimen/x48"
+        android:layout_marginTop="@dimen/x46"
+        android:gravity="center" />
+
+
+    <com.ald.asjauthlib.widget.Keyboard
+        android:id="@+id/keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y600"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

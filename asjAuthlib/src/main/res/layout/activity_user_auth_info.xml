@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.AuthUserInfoVM" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View style="@style/hLineStyle" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y96"
+                android:background="@drawable/item_selector"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/x24"
+                android:paddingRight="@dimen/x24">
+
+                <TextView
+                    android:layout_width="@dimen/x122"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/x48"
+                    android:gravity="center_vertical"
+                    android:text="@string/auth_user_bind_name"
+                    android:textColor="@color/text_important_color"
+                    android:textSize="@dimen/x30" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/x10"
+                    android:text="@{viewModel.cardInfoView.displayName}"
+                    android:textColor="@color/text_important_color"
+                    android:textSize="@dimen/x30" />
+            </LinearLayout>
+
+            <View style="@style/hLineStyle" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y96"
+                android:background="@drawable/item_selector"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/x24"
+                android:paddingRight="@dimen/x24">
+
+                <TextView
+                    android:layout_width="@dimen/x122"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/x48"
+                    android:gravity="center_vertical"
+                    android:text="@string/auth_user_bind_number"
+                    android:textColor="@color/text_important_color"
+                    android:textSize="@dimen/x30" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/x10"
+                    android:text="@{viewModel.cardInfoView.displayCardNumber}"
+                    android:textColor="@color/text_important_color"
+                    android:textSize="@dimen/x30" />
+            </LinearLayout>
+
+            <View style="@style/hLineStyle" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y96"
+                android:background="@drawable/item_selector"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/x24"
+                android:paddingRight="@dimen/x24">
+
+                <TextView
+                    android:layout_width="@dimen/x122"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/x48"
+                    android:gravity="center_vertical"
+                    android:text="@string/auth_user_bind_mobile"
+                    android:textColor="@color/text_important_color"
+                    android:textSize="@dimen/x30" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/x10"
+                    android:text="@{viewModel.cardInfoView.displayPhone}"
+                    android:textColor="@color/text_important_color"
+                    android:textSize="@dimen/x30" />
+            </LinearLayout>
+
+            <View style="@style/hLineStyle" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</layout>

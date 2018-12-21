@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded,ContentDescription,RelativeOverlap,RtlSymmetry">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.CombPayVM" />
+
+        <import type="com.ald.asjauthlib.tatarka.bindingcollectionadapter.LayoutManagers" />
+
+        <import type="android.view.View" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/y80">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:paddingTop="@dimen/y20">
+
+                    <ImageView
+                        android:id="@+id/ic_51_pay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/x30"
+                        android:src="@drawable/ic_51_pay" />
+
+                    <TextView
+                        android:id="@+id/txt_buy_limit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/y20"
+                        android:layout_toRightOf="@id/ic_51_pay"
+                        android:text="@{viewModel.displayCategoryName}"
+                        android:textColor="@color/color_232323"
+                        android:textSize="@dimen/x28"
+                        tools:text="花吧" />
+
+                    <TextView
+                        android:id="@+id/available_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_buy_limit"
+                        android:layout_marginLeft="@dimen/y20"
+                        android:layout_toRightOf="@id/ic_51_pay"
+                        android:text="@string/cashier_cp_useable_amount"
+                        android:textColor="@color/color_666666"
+                        android:textSize="@dimen/x24" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_buy_limit"
+                        android:layout_marginLeft="@dimen/y20"
+                        android:layout_toRightOf="@id/available_amount"
+                        android:text="@{viewModel.usableAmount}"
+                        android:textColor="@color/color_666666"
+                        android:textSize="@dimen/x24"
+                        tools:text="¥500.00" />
+
+                    <TextView
+                        android:id="@+id/txt_right"
+                        textSize="@dimen/x28"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/x30"
+                        android:text="@{viewModel.usableAmount}"
+                        android:textColor="@color/color_232323"
+                        tools:text="¥600.00"
+
+                        tools:visibility="visible" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_below="@+id/available_amount"
+                        android:layout_marginTop="@dimen/y20"
+                        android:background="#eeeeee" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/x30">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/cashier_per_style"
+                        android:textColor="@color/color_666666"
+                        android:textSize="@dimen/x26" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.perDtl}"
+                        android:textColor="@color/color_666666"
+                        android:textSize="@dimen/x26"
+                        tools:text="¥ 183.73 x 3期" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y15"
+                    android:background="@color/background_gray_color" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingRight="@dimen/y30">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="@dimen/y20"
+                        android:paddingLeft="@dimen/x30"
+                        android:paddingTop="@dimen/y20"
+                        android:text="@string/cashier_other_pay_way"
+                        android:textColor="#222222"
+                        android:textSize="@dimen/x28" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/y20"
+                        android:paddingLeft="@dimen/x20"
+                        android:paddingTop="@dimen/y20"
+                        android:text="@{viewModel.showBankPayAmount}"
+                        android:textColor="@color/color_232323"
+                        android:textSize="@dimen/x28"
+                        tools:text="¥500.00" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#eeeeee" />
+
+                <TextView
+                    android:id="@+id/tv_tip_failed"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/y105"
+                    android:background="@color/color_bg_other_pay_optimization"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/x32"
+                    android:paddingRight="@dimen/x32"
+                    android:text="@{viewModel.payFailedTip}"
+                    android:textColor="@color/color_txt_other_pay_optimization"
+                    android:textSize="@dimen/x30"
+                    android:visibility="gone"
+                    app:visibility="@{viewModel.showFailedTip}" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    app:itemView="@{viewModel.itemView}"
+                    app:items="@{viewModel.items}"
+                    app:layoutManager="@{LayoutManagers.linear()}" />
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+        <com.ald.asjauthlib.authframework.core.ui.NoDoubleClickButton
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y100"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="@dimen/y20"
+            android:background="@drawable/btn_auth_right"
+            android:enabled="@{viewModel.payBtnEnabled}"
+            android:onClick="@{viewModel.payClick}"
+            android:text="@{viewModel.payBtnTxt}"
+            android:textColor="@color/btn_bottom_dialog_color"
+            android:textSize="@dimen/x32"
+            tools:text="组合支付¥600.00" />
+    </RelativeLayout>
+</layout>

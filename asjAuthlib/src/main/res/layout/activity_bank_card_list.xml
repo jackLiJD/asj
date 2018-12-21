@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.BankCardListVM" />
+
+        <import type="com.ald.asjauthlib.tatarka.bindingcollectionadapter.LayoutManagers" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <com.ald.asjauthlib.widget.CoverScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_bg_manage_bankcard_content"
+        android:scrollbars="none">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_bg_manage_bankcard_content"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--加载数据-->
+        <com.ald.asjauthlib.authframework.core.ui.EmptyBankcardListModelView
+            android:id="@+id/model_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/y86"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/color_bg_manage_bankcard_content"
+            app:emptyState="@{viewModel.modelState}"
+            app:visibility="@{viewModel.modelState.noData}"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_bg_manage_bankcard_content"
+            android:nestedScrollingEnabled="false"
+            app:addItemDecoration="@{viewModel.type}"
+            app:itemView="@{viewModel.itemView}"
+            app:items="@{viewModel.items}"
+            app:layoutManager="@{LayoutManagers.linear()}"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/tv_add_bank_card"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/x26"
+            android:layout_marginRight="@dimen/x26"
+            android:layout_height="wrap_content"
+            android:onClick="@{viewModel.toAddBankcardClick}"
+            android:background="@drawable/button_add"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/y100"
+            android:text="@string/add_bank_card"
+            android:textColor="@color/text_white_color"
+            android:textSize="@dimen/x32"/>
+
+        <TextView
+            android:id="@+id/tv_apply_credit_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/y44"
+            android:layout_marginBottom="@dimen/y60"
+            android:layout_gravity="center"
+            android:onClick="@{viewModel.toApplyCreditCard}"
+            android:gravity="center"
+            android:drawableLeft="@drawable/icon_card"
+            android:drawableRight="@drawable/icon_arrow"
+            android:drawablePadding="@dimen/x22"
+            android:text="申请信用卡"
+            android:textColor="@color/text_white_color"
+            android:textSize="@dimen/x28"/>
+
+    </LinearLayout>
+
+
+    </com.ald.asjauthlib.widget.CoverScrollView>
+
+</layout>

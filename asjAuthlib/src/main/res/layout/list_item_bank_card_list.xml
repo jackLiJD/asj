@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded,ContentDescription">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.auth.viewmodel.BankCardItemVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/x20"
+        android:layout_marginRight="@dimen/x20"
+        android:layout_marginTop="@dimen/y20"
+        android:background="@{viewModel.displayCardBg}"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{viewModel.itemClick}"
+        tools:background="@drawable/ic_bank_bg_0_2">
+
+        <com.ald.asjauthlib.authframework.core.ui.AlaCircleImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/x92"
+            android:layout_height="@dimen/x92"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginRight="@dimen/x24"
+            android:layout_marginTop="@dimen/y44"
+            android:background="@drawable/frame_circle_white"
+            android:scaleType="centerCrop"
+            bind:defaultImage="@{@drawable/ic_default_bank_card_logo}"
+            bind:src="@{viewModel.displayImageUrl}" />
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginRight="@dimen/x42"
+            android:layout_marginTop="@dimen/y48"
+            android:onClick="@{viewModel.deleteClick}"
+            android:src="@drawable/ic_bank_item_delete"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginTop="@dimen/y44"
+            android:layout_toLeftOf="@id/iv_right"
+            android:layout_toRightOf="@id/image"
+            android:gravity="center_vertical"
+            android:text="@{viewModel.displayTitle}"
+            android:textColor="@color/text_white_color"
+            android:textSize="@dimen/x34"
+            tools:text="招商银行" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/y10"
+            android:layout_marginTop="@dimen/y52"
+            android:layout_toRightOf="@+id/tv_name"
+            android:background="@drawable/frame_bank_card_main"
+            android:paddingLeft="@dimen/x10"
+            android:paddingRight="@dimen/x10"
+            android:text="@string/bank_card_main"
+            android:textColor="@color/colorPrimaryNew"
+            android:textSize="@dimen/x22"
+            tools:visibility="@{viewModel.isMain}" />
+
+        <TextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_name"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginTop="@dimen/y5"
+            android:layout_toLeftOf="@id/iv_right"
+            android:layout_toRightOf="@id/image"
+            android:gravity="center_vertical"
+            android:text="@{viewModel.displayCardType}"
+            android:textColor="@color/text_white_color"
+            android:textSize="@dimen/x28" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_type"
+            android:layout_marginLeft="@dimen/x24"
+            android:layout_marginTop="@dimen/y10"
+            android:layout_toLeftOf="@id/iv_right"
+            android:layout_toRightOf="@id/image"
+            android:gravity="center_vertical"
+            android:text="@{viewModel.displayCardNo}"
+            android:textColor="@color/text_white_color"
+            android:textSize="@dimen/x44" />
+
+    </RelativeLayout>
+</layout>

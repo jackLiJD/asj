@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.HasBillsVM" />
+
+        <import type="com.ald.asjauthlib.tatarka.bindingcollectionadapter.LayoutManagers" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/head"
+            android:layout_width="match_parent"
+            android:layout_height="164dp"
+            android:background="@drawable/ic_all_bill_has_bg">
+
+            <TextView
+                android:id="@+id/billStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:drawableRight="@drawable/bill_close"
+                android:gravity="center"
+                android:onClick="@{viewModel.hasBillClick}"
+                android:text="@{viewModel.billStatus}"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                tools:text="已出账单待还(元)" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="53dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="46dp"
+                android:text="@{viewModel.hasBillsText}"
+                android:textColor="@android:color/white"
+                android:textSize="38sp"
+                app:visibility="@{viewModel.hasTextVis}"
+                tools:text="1543.00" />
+
+            <TextView
+                android:layout_width="189dp"
+                android:layout_height="31dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="105dp"
+                android:background="@drawable/has_bill_btn_bg"
+                android:gravity="center"
+                android:onClick="@{viewModel.hasBtnClick}"
+                android:text="@string/loan_detail_repayment_btn"
+                android:textColor="#77b4ff"
+                android:textSize="15sp"
+                app:visibility="@{viewModel.hasBtnVis}" />
+
+            <ImageView
+                android:id="@+id/noMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="64dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/no_message"
+                app:visibility="@{viewModel.noBillsImage}"
+                tools:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_marginBottom="18dp"
+                android:alpha="0.6"
+                android:text="@string/stage_bill_list_no_data"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                app:visibility="@{viewModel.noBillsText}"
+                tools:text="暂无账单"
+                tools:visibility="gone" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="21dp">
+
+            <TextView
+                app:visibility="@{viewModel.showAD}"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textColor="@color/color_cccccc"
+                android:text="@string/quality_recommend"
+                android:paddingBottom="14dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:isRebound="@{viewModel.isRebound}"
+                app:itemView="@{viewModel.itemView}"
+                app:items="@{viewModel.items}"
+                app:layoutManager="@{LayoutManagers.linear()}" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

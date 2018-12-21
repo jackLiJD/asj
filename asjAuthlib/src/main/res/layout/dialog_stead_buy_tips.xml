@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cover_black_color"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/stead_buy_tips_bg"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/y44"
+            android:paddingLeft="@dimen/x46"
+            android:paddingRight="@dimen/x46"
+            android:paddingTop="@dimen/x64">
+
+            <ImageView
+                android:layout_width="@dimen/x160"
+                android:layout_height="@dimen/x160"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_stead_buy_dialog_tips" />
+
+            <TextView
+                android:id="@+id/tv_stead_buy_dialog_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/y62"
+                android:text="@string/cash_loan_commit_request" />
+
+            <com.ald.asjauthlib.authframework.core.ui.NoDoubleClickButton
+                android:id="@+id/btn_stead_buy_dialog_sure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/x66"
+                android:background="@drawable/bg_stead_buy_tips"
+                android:paddingBottom="@dimen/x24"
+                android:paddingLeft="@dimen/x148"
+                android:paddingRight="@dimen/x148"
+                android:paddingTop="@dimen/x24"
+                android:text="@string/stead_buy_tips_to_login"
+                android:textColor="@color/text_white_color"
+                android:textSize="@dimen/x30" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_stead_buy_dialog_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:padding="@dimen/x22"
+            android:src="@drawable/ic_guide_dialog_close" />
+    </FrameLayout>
+</RelativeLayout>

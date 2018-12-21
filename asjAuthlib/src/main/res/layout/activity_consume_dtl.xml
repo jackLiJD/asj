@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.ConsumeDtlVM" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/activity_consume_dtl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.alfl.www.business.ui.ConsumeDtlActivity">
+
+        <RelativeLayout
+            android:id="@+id/rl_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/origin_gradual"
+            android:paddingBottom="18dp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{viewModel.backClick}"
+                android:padding="15dp"
+                android:src="@drawable/back_white"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/back"
+                android:layout_alignTop="@id/back"
+                android:gravity="center"
+                android:text="@string/consume_dtl_title"
+                android:textColor="@android:color/white"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/lbl_principle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/back"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/stage_money"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@id/lbl_principle"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:text="@{viewModel.displayPrinciple}"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                tools:text="6499.00" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/price"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/bg_white_frame"
+                android:onClick="@{viewModel.aheadClick}"
+                android:text="@string/ahead_settle"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                app:visibility="@{viewModel.aheadVisibility}"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/commission"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_below="@id/price"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="9dp"
+                android:gravity="center"
+                android:text="@string/commission_charge"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/cCharge"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_below="@id/commission"
+                android:layout_marginLeft="18dp"
+                android:gravity="center"
+                android:text="@{viewModel.displayServiceCharge}"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:text="1012.00" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="1dp"
+                android:layout_height="34dp"
+                android:layout_alignBottom="@id/cCharge"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="11dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/overdue"
+                android:layout_width="wrap_content"
+                android:layout_height="17dp"
+                android:layout_alignBottom="@id/commission"
+                android:layout_toRightOf="@+id/divider"
+                android:gravity="center"
+                android:text="@string/overdue_charge"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_below="@id/overdue"
+                android:layout_toRightOf="@+id/divider"
+                android:gravity="center"
+                android:text="@{viewModel.displayOverdueInterest}"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:text="312.00" />
+
+        </RelativeLayout>
+
+        <com.ald.asjauthlib.widget.PagerSlidingTabStrip
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/background_white_color"
+            app:pstsDividerColor="@android:color/transparent"
+            app:pstsIndicatorColor="@color/order_list_select_color"
+            app:pstsIndicatorHeight="3dp"
+            app:pstsIndicatorPadding="40dp"
+            app:pstsTabBackground="@android:color/transparent"
+            app:pstsUnderlineColor="@color/gary_bg"
+            app:pstsUnderlineHeight="1dp"
+            app:selectedTabTextColor="@color/color_232323"
+            app:tabTextColor="@color/color_232323"
+            app:tabTextSize="16sp" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white" />
+    </LinearLayout>
+</layout>

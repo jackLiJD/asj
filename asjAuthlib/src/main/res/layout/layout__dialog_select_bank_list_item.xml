@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y106">
+        <ImageView
+            android:id="@+id/iv_left"
+            android:layout_width="@dimen/x82"
+            android:layout_height="@dimen/x82"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/x24"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_left"
+            android:layout_marginLeft="@dimen/x24"
+            android:lines="1"
+            android:layout_centerVertical="true"
+            android:textColor="@color/text_important_color"
+            android:textSize="@dimen/x32"/>
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x24"
+            android:src="@drawable/ic_select"/>
+
+        <TextView
+            android:id="@+id/tv_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x90"
+            android:textColor="@color/tab_normal_color"
+            android:textSize="@dimen/x26"/>
+    </RelativeLayout>
+    <View style="@style/hMarginLineStyle"/>
+</LinearLayout>

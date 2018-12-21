@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/y10"
+    android:paddingLeft="@dimen/y20"
+    android:paddingRight="@dimen/y20"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:paddingBottom="@dimen/y10"
+        android:paddingLeft="@dimen/y20"
+        android:paddingRight="@dimen/y20"
+        android:paddingTop="@dimen/y10"
+        android:textSize="@dimen/x26"
+        tools:background="@drawable/btn_auth"
+        tools:text="2017年"
+        tools:textColor="@color/white" />
+</RelativeLayout>

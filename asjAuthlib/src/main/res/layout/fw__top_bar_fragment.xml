@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="topBarVM"
+            type="com.ald.asjauthlib.authframework.core.vm.TopBarVM" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/fw_background_color"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/top_bar"
+            layout="@layout/appbar_layout"
+            app:hidden="@{topBarVM.hidden}" />
+
+        <RelativeLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--加载失败-->
+            <LinearLayout
+                android:id="@+id/ll_error_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/img_err"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/fw__load_err" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="加载失败,点击重试"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <!--加载中..-->
+            <LinearLayout
+                android:id="@+id/ll_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="80dp"
+                android:visibility="gone"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/img_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cutscenes" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="努力加载中..."
+                    android:textColor="@color/fw_text_dark"
+                    android:textSize="@dimen/x28" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

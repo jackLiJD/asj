@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="RtlHardcoded,RtlSymmetry,RelativeOverlap">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.SettleAdvancedVM" />
+
+        <import type="com.ald.asjauthlib.tatarka.bindingcollectionadapter.LayoutManagers" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/activity_repayment1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            app:visibility="@{viewModel.showDataView}"
+            tools:context="com.alfl.www.loan.ui.RepaymentActivity">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:addItemDecoration="@{viewModel.type}"
+                app:itemView="@{viewModel.itemView}"
+                app:items="@{viewModel.items}"
+                app:layoutManager="@{LayoutManagers.linear()}"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                app:notifyAdapter="@{viewModel.adapterListener}" />
+
+            <RelativeLayout
+                android:id="@+id/rl_ticket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/y30"
+                android:background="@color/white"
+                android:onClick="@{viewModel.onOpenCouponList}"
+                android:paddingBottom="@dimen/y10"
+                android:paddingLeft="@dimen/y30"
+                android:paddingTop="@dimen/y10"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/lbl_ticket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/repayment_ticket_lbl"
+                    android:textColor="@color/color_232323"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/y30"
+                    android:layout_toRightOf="@+id/lbl_ticket"
+                    android:text="@{viewModel.displayCouponCount}"
+                    android:textColor="@{viewModel.displayCouponTxtColor}"
+                    android:textSize="@dimen/x28"
+                    tools:text="￥100"
+                    tools:textColor="@color/color_ff5546" />
+
+                <ToggleButton
+                    android:id="@+id/tg_coupon1"
+                    android:layout_width="@dimen/x145"
+                    android:layout_height="@dimen/x80"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/y30"
+                    android:background="@drawable/selector_green_white_switcher"
+                    android:checked="@{viewModel.displayUseCouponChecked}"
+                    android:onClick="@{viewModel.onOpenCouponList}"
+                    android:enabled="@{viewModel.tgCouponEnable}"
+                    android:textOff="@string/empty_string"
+                    android:textOn="@string/empty_string"
+                    tools:checked="true" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/color_f6f6f6">
+
+            </View>
+
+            <RelativeLayout
+                android:id="@+id/rl_balance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/y10"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/y30"
+                android:paddingLeft="@dimen/y30"
+                android:paddingTop="@dimen/y10">
+
+                <TextView
+                    android:id="@+id/lbl_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/repayment_use_fl_balance"
+                    android:textColor="@color/color_232323"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/y30"
+                    android:layout_toRightOf="@+id/lbl_balance"
+                    android:text="@{viewModel.displayRebateAmount}"
+                    android:textColor="@color/color_232323"
+                    android:textSize="@dimen/x28"
+                    tools:text="80" />
+
+                <ToggleButton
+                    android:id="@+id/tg_rebate1"
+                    android:layout_width="@dimen/x145"
+                    android:layout_height="@dimen/x80"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/y30"
+                    android:background="@drawable/selector_green_white_switcher"
+                    android:checked="@{viewModel.displayUseRabteAmount}"
+                    android:onClick="@{viewModel.onUserRabte}"
+                    android:enabled="@{viewModel.tgRebteEnable}"
+                    android:textOff="@string/empty_string"
+                    android:textOn="@string/empty_string" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/y100"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/lbl_real_repayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/y30"
+                    android:paddingTop="@dimen/y10"
+                    android:text="@string/settle_advanced_real_pay"
+                    android:textColor="@color/color_232323"
+                    android:textSize="@dimen/x28" />
+
+                <TextView
+                    android:id="@+id/txt_real_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/lbl_real_repayment"
+                    android:layout_marginLeft="@dimen/y30"
+                    android:layout_toRightOf="@+id/lbl_real_repayment"
+                    android:text="@{viewModel.displayRealRepay}"
+                    android:textColor="@color/color_ff5546"
+                    android:textSize="@dimen/x32"
+                    tools:text="5000.00元" />
+
+                <TextView
+                    android:id="@+id/btn_submit"
+                    android:layout_width="@dimen/y320"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/btn_settle_ahead_bg"
+                    android:gravity="center"
+                    android:onClick="@{viewModel.onSettleClick}"
+                    android:text="@string/settle_advanced_repay"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/x34" />
+
+                <TextView
+                    android:id="@+id/lbl_free_charge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lbl_real_repayment"
+                    android:layout_marginTop="@dimen/y10"
+                    android:paddingLeft="@dimen/y30"
+                    android:text="@string/settle_advanced_free_charge"
+                    android:textSize="@dimen/x24"
+                    app:visibility="@{viewModel.displayShowCharge}"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/lbl_free_charge"
+                    android:layout_below="@+id/txt_real_pay"
+                    android:layout_marginLeft="@dimen/y10"
+                    android:layout_toRightOf="@+id/lbl_free_charge"
+                    android:text="@{viewModel.displayFreeCharge}"
+                    android:textSize="@dimen/x24"
+                    app:visibility="@{viewModel.displayShowCharge}"
+                    tools:text="100.00元"
+                    tools:visibility="visible" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!--加载数据-->
+        <com.ald.asjauthlib.authframework.core.ui.ModelView
+            android:id="@+id/model_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:emptyState="@{viewModel.modelState}"
+            app:visibility="@{viewModel.modelState.noData}" />
+    </FrameLayout>
+</layout>

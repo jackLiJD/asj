@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription,RelativeOverlap,RtlHardcoded">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.bankcardscan.viewmodel.BankCardScanResultVM" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/resutl_layout_rootRel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="9dp"
+                android:onClick="@{viewModel.onBackClick}"
+                android:src="@drawable/icon_titlebar_heise_fanhui" />
+
+            <TextView
+                android:id="@+id/resutl_layout_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/ensure_bank_card_num"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:onClick="@{viewModel.onRecognizeClick}"
+                android:text="@string/bank_card_scan_recognize"
+                android:textColor="#5aaffa"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dip"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/result_bankcard_titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请核对卡号信息确认无误"
+                android:textColor="#636564"
+                android:textSize="14sp"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/result_bankcard_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="15dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY" />
+
+            <com.ald.asjauthlib.bankcardscan.util.MoreEditView
+                android:id="@+id/result_bankcard_editText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="#323B45"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+            <TextView
+                android:id="@+id/result_bankcard_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dip"
+                android:gravity="center"
+                android:text="若识别不准确可尝试手动修改或重新识别"
+                android:textColor="#444444"
+                android:textSize="14sp"
+                android:visibility="visible" />
+
+            <!--<TextView-->
+            <!--android:id="@+id/result_bankcard_confidencetext"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_marginTop="10dip"-->
+            <!--android:text="confidence"-->
+            <!--android:textColor="#71716D"-->
+            <!--android:textSize="20sp"-->
+            <!--android:visibility="visible" />-->
+
+            <Button
+                android:id="@+id/result_layout_sureBtn"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:layout_marginTop="50dip"
+                android:background="@drawable/bg_button_right"
+                android:onClick="@{viewModel.onSubmitClick}"
+                android:text="@string/sure"
+                android:textColor="#ffffffff"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><!--退还款记录item title-->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.ItemReimburseDtlVM" />
+    </data>
+
+    <TextView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_f6f6f6"
+        android:padding="@dimen/y30"
+        android:text="@{viewModel.displayTitleText}"
+        android:textColor="@color/color_description"
+        android:textSize="@dimen/x28"
+        tools:text="7月份退款记录（共2条）" />
+</layout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ald.asjauthlib.cashier.viewmodel.ItemHistoryBillVM" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gary_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/y30"
+            android:layout_marginTop="@dimen/y10"
+            android:layout_marginBottom="@dimen/y10"
+            android:text="@{viewModel.displayYear}"
+            android:textSize="@dimen/x26"
+            tools:text="2017年" />
+    </RelativeLayout>
+
+</layout>
