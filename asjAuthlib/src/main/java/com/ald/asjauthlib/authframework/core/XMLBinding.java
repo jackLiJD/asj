@@ -98,7 +98,7 @@ public class XMLBinding {
      * 为ImageView设置图片
      */
     @BindingAdapter(value = {"src", "defaultImage", "hiddenPlaceholder", "width", "height"}, requireAll = false)
-    public static void setImage(final ImageView imageView, String path, Drawable defaultImage, boolean hidden, int width, int height) {
+    public static void setImageAsj(final ImageView imageView, String path, Drawable defaultImage, boolean hidden, int width, int height) {
         if (null == defaultImage && !hidden) {
             defaultImage = ContextCompat.getDrawable(AlaConfig.getContext(), R.drawable.fw__default_picture);
         }
@@ -164,7 +164,7 @@ public class XMLBinding {
      * 当后台不传宽高时取原图比例适配手机屏幕
      */
     @BindingAdapter(value = {"source", "defaultImage", "animRes", "width", "height", "appRect"}, requireAll = false)
-    public static void setImage(final ImageView imageView, String path, Drawable defaultImage, Animation animRes, int width, int height, final Rect appRect) {
+    public static void setImageAsj(final ImageView imageView, String path, Drawable defaultImage, Animation animRes, int width, int height, final Rect appRect) {
         if (null == defaultImage)
             defaultImage = ContextCompat.getDrawable(AlaConfig.getContext(), R.drawable.fw__default_picture);
         if (defaultImage != null) imageView.setImageDrawable(defaultImage);
