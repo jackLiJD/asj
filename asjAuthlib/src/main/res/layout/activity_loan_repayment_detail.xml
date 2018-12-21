@@ -101,7 +101,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/x24"
                     android:paddingRight="@dimen/x24"
-                    app:visibility="@{viewModel.displayOfferInfo}">
+                    app:asJvisibility="@{viewModel.displayOfferInfo}">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -128,7 +128,7 @@
                     style="@style/hLineStyle"
                     android:layout_marginLeft="@dimen/x24"
                     android:layout_marginRight="@dimen/x24"
-                    app:visibility="@{viewModel.displayOfferInfo}" />
+                    app:asJvisibility="@{viewModel.displayOfferInfo}" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -136,7 +136,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/x24"
                     android:paddingRight="@dimen/x24"
-                    app:visibility="@{viewModel.displayRebateInfo}">
+                    app:asJvisibility="@{viewModel.displayRebateInfo}">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -163,7 +163,7 @@
                     style="@style/hLineStyle"
                     android:layout_marginLeft="@dimen/x24"
                     android:layout_marginRight="@dimen/x24"
-                    app:visibility="@{viewModel.displayRebateInfo}" />
+                    app:asJvisibility="@{viewModel.displayRebateInfo}" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -171,7 +171,7 @@
                     android:gravity="center_vertical"
                     android:paddingLeft="@dimen/x24"
                     android:paddingRight="@dimen/x24"
-                    app:visibility="@{viewModel.displayActualPayInfo}">
+                    app:asJvisibility="@{viewModel.displayActualPayInfo}">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -198,7 +198,7 @@
                     style="@style/hLineStyle"
                     android:layout_marginLeft="@dimen/x24"
                     android:layout_marginRight="@dimen/x24"
-                    app:visibility="@{viewModel.displayActualPayInfo}" />
+                    app:asJvisibility="@{viewModel.displayActualPayInfo}" />
 
                 <RelativeLayout
                     android:id="@+id/rl_refund_type"
@@ -310,8 +310,8 @@
                     android:layout_height="wrap_content"
                     android:background="@color/color_F3F5F7"
                     android:paddingTop="15dp"
-                    app:bannerImages="@{viewModel.bannerList}"
-                    app:bannerListener="@{viewModel.bannerListener}"
+                    app:asJbannerImages="@{viewModel.bannerList}"
+                    app:asJbannerListener="@{viewModel.bannerListener}"
                     app:delay_time="5000"
                     app:image_scale_type="fit_xy"
                     app:indicator_drawable_selected="@drawable/shape_banner_indicator_s"
@@ -320,8 +320,8 @@
                     app:indicator_margin="@dimen/x7"
                     app:indicator_width="@dimen/x28"
                     app:is_auto_play="true"
-                    app:layout_height="@{viewModel.adHeight}"
-                    app:layout_width="@{viewModel.adWidth}"
+                    app:asJlayout_height="@{viewModel.adHeight}"
+                    app:asJlayout_width="@{viewModel.adWidth}"
                     tools:layout_height="50dp" />
 
             </LinearLayout>

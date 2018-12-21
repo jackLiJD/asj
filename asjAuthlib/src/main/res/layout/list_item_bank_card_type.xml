@@ -22,7 +22,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/x24"
-            bind:asjemptyState="@{viewModel.imgUrl}"/>
+            bind:asJsrc="@{viewModel.imgUrl}"/>
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
             android:layout_marginRight="@dimen/x24"
             android:gravity="center_vertical"
             android:visibility="gone"
-            bind:visibility="@{viewModel.state}"
+            bind:asJvisibility="@{viewModel.state}"
             android:layout_centerVertical="true"
             android:src="@drawable/ic_select"
         />

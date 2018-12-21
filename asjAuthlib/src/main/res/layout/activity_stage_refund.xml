@@ -50,7 +50,7 @@
                         android:text="@{viewModel.displayMaxAmount}"
                         android:textColor="@color/fb_dark_first"
                         android:textSize="@dimen/x58"
-                        app:visibility="@{!viewModel.displayEditAmountView}"
+                        app:asJvisibility="@{!viewModel.displayEditAmountView}"
                         tools:text="￥499.00"
                         tools:visibility="visible"/>
 
@@ -60,7 +60,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_below="@id/tv_repayment_amount"
-                        app:visibility="@{viewModel.displayEditAmountView}"
+                        app:asJvisibility="@{viewModel.displayEditAmountView}"
                         tools:visibility="gone">
 
                         <TextView
@@ -86,7 +86,7 @@
                             android:text="@={viewModel.displayEditAmount}"
                             android:textColor="@color/fb_dark_first"
                             android:textSize="@dimen/x58"
-                            app:textWatch="@{viewModel.watchListener}"/>
+                            app:asJtextWatch="@{viewModel.watchListener}"/>
                     </LinearLayout>
 
                 </RelativeLayout>
@@ -120,7 +120,7 @@
                 <!--android:text="@{viewModel.displayMaxAmount}"-->
                 <!--android:textColor="@color/text_other_color"-->
                 <!--android:textSize="@dimen/x30"-->
-                <!--app:visibility="@{!viewModel.displayEditAmountView}"/>-->
+                <!--app:asJvisibility="@{!viewModel.displayEditAmountView}"/>-->
 
                 <!--<TextView-->
                 <!--android:layout_width="wrap_content"-->
@@ -131,7 +131,7 @@
                 <!--android:text="￥"-->
                 <!--android:textColor="@color/text_important_color"-->
                 <!--android:textSize="@dimen/x30"-->
-                <!--app:visibility="@{viewModel.displayEditAmountView}"/>-->
+                <!--app:asJvisibility="@{viewModel.displayEditAmountView}"/>-->
 
                 <!--<EditText-->
                 <!--android:id="@+id/edit_loan_repayment_amount"-->
@@ -146,8 +146,8 @@
                 <!--android:text="@={viewModel.displayEditAmount}"-->
                 <!--android:textColor="@color/text_important_color"-->
                 <!--android:textSize="@dimen/x30"-->
-                <!--app:textWatch="@{viewModel.watchListener}"-->
-                <!--app:visibility="@{viewModel.displayEditAmountView}"/>-->
+                <!--app:asJtextWatch="@{viewModel.watchListener}"-->
+                <!--app:asJvisibility="@{viewModel.displayEditAmountView}"/>-->
                 <!--</LinearLayout>-->
 
                 <!--<View style="@style/hLineStyle"/>-->
@@ -198,7 +198,7 @@
                     android:paddingLeft="@dimen/x24"
                     android:paddingRight="@dimen/x24"
                     android:visibility="visible"
-                    app:visibility="@{viewModel.showJfbSwitch}">
+                    app:asJvisibility="@{viewModel.showJfbSwitch}">
 
                     <TextView
                         android:id="@+id/tv_refund_jifeng_title"
@@ -233,7 +233,7 @@
                         android:checked="false"
                         android:textOff=" "
                         android:textOn=" "
-                        app:switchWatch="@{viewModel.jfSwitchListener}"/>
+                        app:asJswitchWatch="@{viewModel.jfSwitchListener}"/>
 
                 </RelativeLayout>
 
@@ -282,7 +282,7 @@
                         android:checked="false"
                         android:textOff=" "
                         android:textOn=" "
-                        app:switchWatch="@{viewModel.rebateSwitchListener}"/>
+                        app:asJswitchWatch="@{viewModel.rebateSwitchListener}"/>
 
                 </RelativeLayout>
 

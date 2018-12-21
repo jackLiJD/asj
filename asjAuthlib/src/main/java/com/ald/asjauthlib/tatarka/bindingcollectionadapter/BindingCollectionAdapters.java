@@ -17,7 +17,7 @@ import com.ald.asjauthlib.tatarka.bindingcollectionadapter.factories.BindingAdap
 public class BindingCollectionAdapters {
     // AdapterView
     @SuppressWarnings("unchecked")
-    @BindingAdapter(value = {"asjitemView", "asjitems", "adapter", "dropDownItemView", "itemIds", "itemIsEnabled"}, requireAll = false)
+    @BindingAdapter(value = {"asJitemView", "asJitems", "asJadapter", "asJdropDownItemView", "asJitemIds", "asJitemIsEnabled"}, requireAll = false)
     public static <T> void setAdapter(AdapterView adapterView, ItemViewArg<T> arg, List<T> items, BindingAdapterViewFactory factory, ItemView dropDownItemView, BindingListViewAdapter.ItemIds<T> itemIds, BindingListViewAdapter.ItemIsEnabled<T> itemIsEnabled) {
         if (arg == null) {
             throw new IllegalArgumentException("itemView must not be null");
@@ -43,7 +43,7 @@ public class BindingCollectionAdapters {
 
     // ViewPager
     @SuppressWarnings("unchecked")
-    @BindingAdapter(value = {"asjitemView", "asjitems", "adapter", "pageTitles"}, requireAll = false)
+    @BindingAdapter(value = {"asJitemView", "asJitems", "asJadapter", "asJpageTitles"}, requireAll = false)
     public static <T> void setAdapter(ViewPager viewPager, ItemViewArg<T> arg, List<T> items, BindingViewPagerAdapterFactory factory, BindingViewPagerAdapter.PageTitles<T> pageTitles) {
         if (arg == null) {
             throw new IllegalArgumentException("itemView must not be null");

@@ -42,11 +42,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/background_color"
-                app:addItemDecoration="@{viewModel.type}"
-                app:asjitemView="@{viewModel.itemView}"
-                app:asjitems="@{viewModel.items}"
+                app:asJaddItemDecoration="@{viewModel.type}"
+                app:asJitemView="@{viewModel.itemView}"
+                app:asJitems="@{viewModel.items}"
 
-                app:layoutManager="@{LayoutManagers.linear()}" />
+                app:asJlayoutManager="@{LayoutManagers.linear()}" />
 
             <ImageView
                 android:id="@+id/calender"
@@ -64,7 +64,7 @@
                 android:background="@color/gary_bg"
                 android:gravity="center_horizontal"
                 android:orientation="vertical"
-                app:visibility="@{viewModel.showNoData}"
+                app:asJvisibility="@{viewModel.showNoData}"
                 tools:visibility="gone">
 
                 <ImageView

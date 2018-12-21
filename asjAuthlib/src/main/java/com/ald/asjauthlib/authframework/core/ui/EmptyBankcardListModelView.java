@@ -37,7 +37,7 @@ public class EmptyBankcardListModelView extends LinearLayout {
     /**
      * 设置空态值
      */
-    public void setEmptyState(ModelState state) {
+    public void setAsJemptyState(ModelState state) {
         binding.setModelState(state);
     }
 }

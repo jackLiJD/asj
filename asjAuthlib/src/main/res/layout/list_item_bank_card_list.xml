@@ -35,8 +35,8 @@
             android:layout_marginTop="@dimen/y44"
             android:background="@drawable/frame_circle_white"
             android:scaleType="centerCrop"
-            bind:defaultImage="@{@drawable/ic_default_bank_card_logo}"
-            bind:asjemptyState="@{viewModel.displayImageUrl}" />
+            bind:asJdefaultImage="@{@drawable/ic_default_bank_card_logo}"
+            bind:asJsrc="@{viewModel.displayImageUrl}" />
 
         <ImageView
             android:id="@+id/iv_right"
@@ -78,7 +78,7 @@
             android:text="@string/bank_card_main"
             android:textColor="@color/colorPrimaryNew"
             android:textSize="@dimen/x22"
-            tools:visibility="@{viewModel.isMain}" />
+             />
 
         <TextView
             android:id="@+id/tv_type"

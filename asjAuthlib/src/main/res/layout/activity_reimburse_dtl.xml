@@ -149,7 +149,7 @@
                 style="@style/reimburse_dtl_item_rl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:visibility="@{viewModel.showSystemDiscontLayout}"
+                app:asJvisibility="@{viewModel.showSystemDiscontLayout}"
                 tools:visibility="visible">
 
                 <TextView

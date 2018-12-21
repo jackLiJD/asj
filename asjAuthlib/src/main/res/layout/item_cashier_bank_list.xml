@@ -24,8 +24,8 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/x30"
-            app:asjdefaultImage="@{@drawable/ic_order_phone_default}"
-            app:asjsrc="@{viewModel.displayIc}"
+            app:asJdefaultImage="@{@drawable/ic_order_phone_default}"
+            app:asJsrc="@{viewModel.displayIc}"
             tools:src="@drawable/ic_ali_pay" />
 
         <TextView
@@ -50,7 +50,7 @@
             android:layout_below="@+id/tv_name"
             android:layout_marginTop="@dimen/y10"
             android:text="@{viewModel.displayTip}"
-            app:visibility="@{viewModel.showDisplayTip}"
+            app:asJvisibility="@{viewModel.showDisplayTip}"
             android:textColor="@color/text_color_normal"
             android:textSize="@dimen/x24"
             tools:text="银行卡可用" />
@@ -69,7 +69,7 @@
             android:text="@{viewModel.displayCreditCharge}"
             android:textColor="@color/text_color_normal"
             android:textSize="@dimen/x22"
-            app:visibility="@{viewModel.showCreditCharge}"
+            app:asJvisibility="@{viewModel.showCreditCharge}"
             tools:text="@string/cashier_list_credit_charge" />
 
 
@@ -94,7 +94,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/cashier_bank_item_cover"
-            app:visibility="@{viewModel.isMaintain}"
+            app:asJvisibility="@{viewModel.isMaintain}"
             tools:visibility="gone" />
 
     </RelativeLayout>

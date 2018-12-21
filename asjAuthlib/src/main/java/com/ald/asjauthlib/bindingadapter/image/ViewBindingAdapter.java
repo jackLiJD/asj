@@ -42,7 +42,7 @@ import java.util.List;
  */
 public final class ViewBindingAdapter {
 
-    @BindingAdapter(value = {"bannerImages", "defaultImage", "layout_width", "layout_height", "layout_marginTop", "arcHeight"}, requireAll = false)
+    @BindingAdapter(value = {"asJbannerImages", "asJdefaultImage", "asJlayout_width", "asJlayout_height", "asJlayout_marginTop", "asJarcHeight"}, requireAll = false)
     public static void setBannerImage(final Banner banner, List<BannerModel> bannerModels, Drawable defaultImage, int layout_width, int layout_height, int layout_marginTop, int arcHeight) {
         if (null == defaultImage) {
             defaultImage = ContextCompat.getDrawable(AlaConfig.getContext(), R.drawable.bg_img_load_rect);
@@ -65,7 +65,7 @@ public final class ViewBindingAdapter {
 
 
 
-    @BindingAdapter(value = {"bannerImages", "defaultImage", "layout_height", "layout_marginTop", "arcHeight"}, requireAll = false)
+    @BindingAdapter(value = {"asJbannerImages", "asJdefaultImage", "asJlayout_height", "asJlayout_marginTop", "asJarcHeight"}, requireAll = false)
     public static void setLocalBannerImage(final Banner banner, List<Integer> bannerModels, Drawable defaultImage, int layout_height, int layout_marginTop, int arcHeight
     ) {
         if (null == defaultImage) {
@@ -86,7 +86,7 @@ public final class ViewBindingAdapter {
     }
 
 
-    @BindingAdapter(value = {"layout_marginTop"}, requireAll = false)
+    @BindingAdapter(value = {"asJlayout_marginTop"}, requireAll = false)
     public static void setViewMarginTop(final View view, int layout_marginTop) {
         ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
         params.topMargin = layout_marginTop;
@@ -100,7 +100,7 @@ public final class ViewBindingAdapter {
         void onClick(int position);
     }
 
-    @BindingAdapter(value = {"selectImage", "defaultSelect", "unSelectImage", "defaultUnSelect", "isSelect"}, requireAll = false)
+    @BindingAdapter(value = {"asJselectImage", "asJdefaultSelect", "asJunSelectImage", "asJdefaultUnSelect", "asJisSelect"}, requireAll = false)
     public static void setTabImage(final ImageView imgView, String selectImage, Drawable defaultSelect,
                                    String unSelectImage, Drawable defaultUnSelect, boolean isSelect) {
         if (null == defaultSelect) {
@@ -160,7 +160,7 @@ public final class ViewBindingAdapter {
         }
     }*/
 
-    @BindingAdapter(value = {"selectColor", "defaultColor", "unSelectColor", "defaultUnColor", "isSelect"}, requireAll = false)
+    @BindingAdapter(value = {"asJselectColor", "asJdefaultColor", "asJunSelectColor", "asJdefaultUnColor", "asJisSelect"}, requireAll = false)
     public static void setTabText(final TextView textView, String selectColor, int defaultColor,
                                   String unSelectColor, int defaultUnColor, boolean isSelect) {
        /* if (MiscUtils.isEmpty(selectColor) || MiscUtils.isEmpty(unSelectColor)) {
@@ -208,7 +208,7 @@ public final class ViewBindingAdapter {
      * @param imageView
      * @param bgUrl
      */
-    @BindingAdapter(value = {"homeTitleBarBg"}, requireAll = false)
+    @BindingAdapter(value = {"asJhomeTitleBarBg"}, requireAll = false)
     public static void setSearchBg(final ImageView imageView, final String bgUrl) {
         int bgResId = 0;
         try {
@@ -231,7 +231,7 @@ public final class ViewBindingAdapter {
     /**
      * 为ImageView设置圆角图片
      */
-    @BindingAdapter(value = {"roundImageUrl", "defaultImage", "roundImageRadius"}, requireAll = false)
+    @BindingAdapter(value = {"asJroundImageUrl", "asJdefaultImage", "asJroundImageRadius"}, requireAll = false)
     public static void setRoundImage(final ImageView imageView, String roundImageUrl, Drawable defaultImage, int roundImageRadius) {
         if (null == defaultImage) {
             defaultImage = ContextCompat.getDrawable(AlaConfig.getContext(), R.drawable.bg_img_load_rect);
@@ -241,13 +241,12 @@ public final class ViewBindingAdapter {
         Glide.with(imageView.getContext()).load(roundImageUrl)
                 //.transform(new CenterCrop(imageView.getContext()), transform)
                 .transform(transform)
-//                .transition(DrawableTransitionOptions.withCrossFade())
                 .placeholder(defaultImage)
                 .error(defaultImage)
                 .into(imageView);
     }
 
-    @BindingAdapter(value = {"roundImageUrl", "roundImageRadius"}, requireAll = false)
+    @BindingAdapter(value = {"asJroundImageUrl", "asJroundImageRadius"}, requireAll = false)
     public static void setRoundImage(final ImageView imageView, String roundImageUrl, int roundImageRadius) {
         GlideRoundTransform transform = new GlideRoundTransform(imageView.getContext(), roundImageRadius);
         Glide.with(imageView.getContext()).load(roundImageUrl)
@@ -255,7 +254,7 @@ public final class ViewBindingAdapter {
                 .into(imageView);
     }
 
-    @BindingAdapter(value = {"url", "glideListener", "defaultImage"})
+    @BindingAdapter(value = {"asJurl", "asJglideListener", "asJdefaultImage"})
     public static void glideListener(final View view, String url, final GlideListener listener, Drawable defaultImage) {
         Glide.with(view.getContext()).load(url).placeholder(defaultImage)
                 .into(new SimpleTarget<GlideDrawable>() {
@@ -289,7 +288,7 @@ public final class ViewBindingAdapter {
 
     }
 
-    @BindingAdapter(value = {"isBannerPlay"}, requireAll = false)
+    @BindingAdapter(value = {"asJisBannerPlay"}, requireAll = false)
     public static void setBannerPlay(final Banner banner, boolean isBannerPlay) {
         if (isBannerPlay) banner.startAutoPlay();
         else banner.stopAutoPlay();
@@ -311,13 +310,13 @@ public final class ViewBindingAdapter {
                 } else {
                     Glide.with(context).load(((BannerModel) bannerModel).getImageUrl())
                             .diskCacheStrategy(DiskCacheStrategy.NONE).placeholder(defaultImage).error(defaultImage)
-//                            .transition(DrawableTransitionOptions.withCrossFade(1000))
+                            .crossFade(1000)
                             .into(imageView);
                 }
             } else {
                 Glide.with(context).load(bannerModel)
                         .diskCacheStrategy(DiskCacheStrategy.NONE).placeholder(defaultImage).error(defaultImage)
-//                        .transition(DrawableTransitionOptions.withCrossFade(1000))
+                        .crossFade(1000)
                         .into(imageView);
             }
         }
@@ -336,7 +335,7 @@ public final class ViewBindingAdapter {
         }
     }
 
-    @BindingAdapter(value = {"asjtextColor", "asjdefaultColor", "asjvisibility"}, requireAll = false)
+    @BindingAdapter(value = {"asJtextColor", "asJdefaultColor", "asJvisibility"}, requireAll = false)
     public static void setText(final TextView textView, String textColor, int defaultColor, boolean visibility) {
         if (0 == defaultColor) {
             defaultColor = ContextCompat.getColor(textView.getContext(), R.color.text_color_black);

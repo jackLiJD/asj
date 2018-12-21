@@ -34,7 +34,7 @@
                 android:gravity="center_horizontal"
                 android:orientation="horizontal"
                 android:visibility="visible"
-                app:visibility="@{viewModel.isAppealLayout}">
+                app:asJvisibility="@{viewModel.isAppealLayout}">
 
                 <com.ald.asjauthlib.authframework.core.ui.DrawableText
                     android:id="@+id/ll_appeal_step_1"
@@ -100,7 +100,7 @@
                 android:gravity="center_horizontal"
                 android:orientation="horizontal"
                 android:visibility="gone"
-                app:visibility="@{!viewModel.isAppealLayout}">
+                app:asJvisibility="@{!viewModel.isAppealLayout}">
 
                 <com.ald.asjauthlib.authframework.core.ui.DrawableText
                     android:layout_width="wrap_content"
@@ -207,9 +207,9 @@
                 android:onClick="@{viewModel.idfrontClick}"
                 android:scaleType="centerCrop"
                 android:visibility="gone"
-                app:asjdefaultImage="@{@drawable/bg_id_back}"
-                app:roundImageRadius="@{10}"
-                app:roundImageUrl="@{viewModel.frontSource}" />
+                app:asJdefaultImage="@{@drawable/bg_id_back}"
+               app:asJroundImageRadius="@{10}"
+                app:asJroundImageUrl="@{viewModel.frontSource}" />
 
             <TextView
                 android:id="@+id/btn_modify_front"
@@ -266,9 +266,9 @@
                 android:layout_centerInParent="true"
                 android:onClick="@{viewModel.idbackClick}"
                 android:scaleType="centerCrop"
-                app:asjdefaultImage="@{@drawable/bg_id_back}"
-                app:roundImageRadius="@{10}"
-                app:roundImageUrl="@{viewModel.backSource}"
+                app:asJdefaultImage="@{@drawable/bg_id_back}"
+               app:asJroundImageRadius="@{10}"
+                app:asJroundImageUrl="@{viewModel.backSource}"
                 />
 
             <TextView

@@ -235,7 +235,7 @@
         <View
             style="@style/hLineStyle"
             android:layout_marginLeft="@dimen/x120"
-            app:visibility="@{viewModel.showOnlineBank}" />
+            app:asJvisibility="@{viewModel.showOnlineBank}" />
 
         <!--学信网-->
         <RelativeLayout
@@ -293,7 +293,7 @@
             android:onClick="@{viewModel.onAuthOnlineBankClick}"
             android:orientation="horizontal"
             android:paddingRight="@dimen/x24"
-            app:visibility="@{viewModel.showOnlineBank}">
+            app:asJvisibility="@{viewModel.showOnlineBank}">
 
             <com.ald.asjauthlib.authframework.core.ui.DrawableText
                 android:layout_width="wrap_content"
@@ -341,7 +341,7 @@
             android:onClick="@{viewModel.onSocialContactAuthClick}"
             android:orientation="horizontal"
             android:paddingRight="@dimen/x24"
-            app:visibility="@{viewModel.showBubbleAuth}">
+            app:asJvisibility="@{viewModel.showBubbleAuth}">
 
          DrawableTextText
                 android:layout_width="wrap_content"

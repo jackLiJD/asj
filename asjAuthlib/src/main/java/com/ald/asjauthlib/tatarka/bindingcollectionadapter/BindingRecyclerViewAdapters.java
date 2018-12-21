@@ -14,7 +14,7 @@ import com.ald.asjauthlib.tatarka.bindingcollectionadapter.factories.BindingRecy
 public class BindingRecyclerViewAdapters {
     // RecyclerView
     @SuppressWarnings("unchecked")
-    @BindingAdapter(value = {"itemView", "items", "adapter", "itemIds", "viewHolder","notifyAdapter", "isRebound"}, requireAll = false)
+    @BindingAdapter(value = {"asJitemView", "asJitems", "asJadapter", "asJitemIds", "asJviewHolder","asJnotifyAdapter", "asJisRebound"}, requireAll = false)
     public static <T> void setAdapter(RecyclerView recyclerView, ItemViewArg<T> arg, List<T> items,
             BindingRecyclerViewAdapterFactory factory, BindingRecyclerViewAdapter.ItemIds<T> itemIds, BindingRecyclerViewAdapter.ViewHolderFactory viewHolderFactory,final RecyclerViewAdapterListener listener, boolean isRebound) {
         if (arg == null) {
@@ -38,7 +38,7 @@ public class BindingRecyclerViewAdapters {
         }
     }
 
-    @BindingAdapter("layoutManager")
+    @BindingAdapter("asJlayoutManager")
     public static void setLayoutManager(RecyclerView recyclerView, LayoutManagers.LayoutManagerFactory layoutManagerFactory) {
         recyclerView.setLayoutManager(layoutManagerFactory.create(recyclerView));
     }

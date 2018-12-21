@@ -65,10 +65,10 @@
             android:background="@color/white"
             android:paddingLeft="@dimen/y30"
             android:paddingRight="@dimen/y30"
-            app:addItemDecoration="@{viewModel.type}"
-            app:asjitemView="@{viewModel.itemView}"
-            app:asjitems="@{viewModel.items}"
-            app:layoutManager="@{LayoutManagers.linear()}"
+            app:asJaddItemDecoration="@{viewModel.type}"
+            app:asJitemView="@{viewModel.itemView}"
+            app:asJitems="@{viewModel.items}"
+            app:asJlayoutManager="@{LayoutManagers.linear()}"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
     </RelativeLayout>
 

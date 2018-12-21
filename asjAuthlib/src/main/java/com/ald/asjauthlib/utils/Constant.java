@@ -134,10 +134,10 @@ public interface Constant {
     String H5_PINTUAN_SUCCESS = "asj/collage/payResult?orderId=%1$s&refreshUrl=false";//拼团支付成功h5
     String H5_PINTUAN_DETAIL = "asj/collage/orderDetail?orderId=%1$s&refreshUrl=false";//拼团详情h5
     String H5_FQ_SHOP="asj/fqshop/fqshop?showTitle=false";//分期商城
-    String H5_ORDER_LIST_ALL="asj/fqshop/orders?&showTitle=false";//订单列表(全部)
-    String H5_ORDER_LIST_DAIZHIFU="asj/fqshop/orders?type=NEW&showTitle=false";//订单列表(待支付)
-    String H5_ORDER_LIST_DAIFAHUO="asj/fqshop/orders?type=TODELIVER&showTitle=false";//订单列表(待发货)
-    String H5_ORDER_LIST_DAISHOUHUO="asj/fqshop/orders?type=DELIVERED&showTitle=false";//订单列表(待收货)
+    String H5_ORDER_LIST_ALL="asj/fqshop/orders?fromClient=true&showTitle=false";//订单列表(全部)
+    String H5_ORDER_LIST_DAIZHIFU="asj/fqshop/orders?fromClient=true&type=NEW&showTitle=false";//订单列表(待支付)
+    String H5_ORDER_LIST_DAIFAHUO="asj/fqshop/orders?fromClient=true&type=TODELIVER&showTitle=false";//订单列表(待发货)
+    String H5_ORDER_LIST_DAISHOUHUO="asj/fqshop/orders?fromClient=true&type=DELIVERED&showTitle=false";//订单列表(待收货)
 
 
     //好友代付

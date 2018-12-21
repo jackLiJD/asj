@@ -33,7 +33,7 @@
                 android:onClick="@{viewModel.yearClick}"
                 android:text="@{viewModel.billYear}"
                 android:textColor="@color/color_ff7722"
-                app:view_width="@{viewModel.yearWidth}"
+                app:asJview_width="@{viewModel.yearWidth}"
                 tools:text="2017" />
 
             <View
@@ -48,9 +48,9 @@
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:asjitemView="@{viewModel.monthView}"
-                app:asjitems="@{viewModel.months}"
-                app:layoutManager="@{LayoutManagers.linear(0, false)}" />
+                app:asJitemView="@{viewModel.monthView}"
+                app:asJitems="@{viewModel.months}"
+                app:asJlayoutManager="@{LayoutManagers.linear(0, false)}" />
         </LinearLayout>
 
         <TextView
@@ -106,7 +106,7 @@
             tools:text="立即还款" />
 
         <ImageView
-            app:visibility="@{viewModel.qusVis}"
+            app:asJvisibility="@{viewModel.qusVis}"
             android:onClick="@{viewModel.questionClick}"
             android:layout_below="@+id/txt_deadline"
             android:layout_marginTop="21dp"
@@ -127,7 +127,7 @@
             android:layout_marginTop="10dp"
             android:adjustViewBounds="true"
             android:src="@{viewModel.imgSrc}"
-            app:visibility="@{viewModel.imgVis}"
+            app:asJvisibility="@{viewModel.imgVis}"
             tools:src="@drawable/no_bills"
             tools:visibility="gone" />
 
@@ -139,7 +139,7 @@
             android:text="@{viewModel.imgText}"
             android:textColor="@color/color_666666"
             android:textSize="14sp"
-            app:visibility="@{viewModel.imgVis}"
+            app:asJvisibility="@{viewModel.imgVis}"
             tools:text="无账单记录"
             tools:visibility="gone" />
 
@@ -166,10 +166,10 @@
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:addItemDecoration="@{viewModel.type}"
-                app:asjitemView="@{viewModel.itemView}"
-                app:asjitems="@{viewModel.items}"
-                app:layoutManager="@{LayoutManagers.linear()}" />
+                app:asJaddItemDecoration="@{viewModel.type}"
+                app:asJitemView="@{viewModel.itemView}"
+                app:asJitems="@{viewModel.items}"
+                app:asJlayoutManager="@{LayoutManagers.linear()}" />
 
             <com.scwang.smartrefresh.layout.footer.FalsifyFooter
                 android:layout_width="match_parent"

@@ -31,19 +31,19 @@
         <!--app:ptr_pull_to_fresh="false"-->
         <!--app:ptr_ratio_of_header_height_to_refresh="1.2"-->
         <!--app:ptr_resistance="1.7"-->
-        <!--app:visibility="@{viewModel.showList}">-->
+        <!--app:asJvisibility="@{viewModel.showList}">-->
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/background_gray_color"
-            app:addItemDecoration="@{viewModel.type}"
-            app:asjitemView="@{viewModel.itemView}"
-            app:asjitems="@{viewModel.items}"
-            app:layoutManager="@{LayoutManagers.linear()}"
-            app:onPullToRefreshListener="@{viewModel.pullToRefresh}"
-            app:visibility="@{viewModel.showList}" />
+            app:asJaddItemDecoration="@{viewModel.type}"
+            app:asJitemView="@{viewModel.itemView}"
+            app:asJitems="@{viewModel.items}"
+            app:asJlayoutManager="@{LayoutManagers.linear()}"
+            app:asJonPullToRefreshListener="@{viewModel.pullToRefresh}"
+            app:asJvisibility="@{viewModel.showList}" />
         <!--</in.srain.cube.views.ptr.PtrFrameLayout>-->
 
         <LinearLayout
@@ -53,7 +53,7 @@
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:visibility="visible"
-            app:visibility="@{viewModel.showNoData}">
+            app:asJvisibility="@{viewModel.showNoData}">
 
             <ImageView
                 android:layout_width="wrap_content"

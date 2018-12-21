@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ald.asjauthlib.R;
-//import com.ald.asjauthlib.authframework.core.GlideApp;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.ald.asjauthlib.authframework.core.config.AlaConfig;
@@ -70,7 +69,7 @@ public class CutscenesProgress extends Dialog {
         //如下设置不会造成一直gc
         Glide.with(AlaConfig.getContext())
                 .load(R.drawable.fw__ic_loading)
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                 .fitCenter()
                 .into(imageView);
 //                .into(new GlideDrawableImageViewTarget(imageView, GlideDrawable.LOOP_INTRINSIC));

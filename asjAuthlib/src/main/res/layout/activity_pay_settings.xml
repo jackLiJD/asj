@@ -58,7 +58,7 @@
             android:layout_height="@dimen/y96"
             android:background="@drawable/item_selector"
             android:onClick="@{viewModel.withholdClick}"
-            app:visibility="@{viewModel.showWithholdEntrance}">
+            app:asJvisibility="@{viewModel.showWithholdEntrance}">
 
             <TextView
                 android:layout_width="wrap_content"

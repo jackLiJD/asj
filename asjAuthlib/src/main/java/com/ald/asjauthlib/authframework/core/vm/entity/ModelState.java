@@ -130,8 +130,8 @@ public class ModelState extends BaseObservable {
     }
 
 
-    @BindingAdapter("modelState")
+    @BindingAdapter("asJmodelState")
     public static void modelState(View view, ModelState state) {
-        ((ModelView) view).setEmptyState(state);
+        ((ModelView) view).setAsJemptyState(state);
     }
 }

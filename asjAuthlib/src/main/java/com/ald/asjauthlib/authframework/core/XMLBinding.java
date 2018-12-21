@@ -52,7 +52,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.DrawableImageViewTarget;
-import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.util.Util;
 import com.ald.asjauthlib.authframework.core.ui.flowlayout.FlowLayout;
@@ -76,7 +75,7 @@ public class XMLBinding {
     /**
      * 设置方向指示器
      */
-    @BindingAdapter({"imageIndicator"})
+    @BindingAdapter({"asJimageIndicator"})
     public static void imageIndicator(ImageView imageView, boolean isShow) {
         if (isShow) {
             imageView.setImageResource(R.drawable.fw__ic_arrow_bottom);
@@ -88,7 +87,7 @@ public class XMLBinding {
     /**
      * View选择
      */
-    @BindingAdapter(value = {"selected", "selectorRes"}, requireAll = false)
+    @BindingAdapter(value = {"asJselected", "asJselectorRes"}, requireAll = false)
     public static void isSelect(View view, boolean isSelect, int res) {
         view.setBackgroundResource(res);
         view.setSelected(isSelect);
@@ -97,7 +96,7 @@ public class XMLBinding {
     /**
      * 为ImageView设置图片
      */
-    @BindingAdapter(value = {"asjsrc", "asjdefaultImage", "hiddenPlaceholder", "width", "height"}, requireAll = false)
+    @BindingAdapter(value = {"asJsrc", "asJdefaultImage", "asJhiddenPlaceholder", "asJwidth", "asJheight"}, requireAll = false)
     public static void setImage(final ImageView imageView, String path, Drawable defaultImage, boolean hidden, int width, int height) {
         if (null == defaultImage && !hidden) {
             defaultImage = ContextCompat.getDrawable(AlaConfig.getContext(), R.drawable.fw__default_picture);
@@ -113,42 +112,31 @@ public class XMLBinding {
         // .diskCacheStrategy(DiskCacheStrategy.SOURCE)防止Glide压缩图片后导致颜色不准
         if (Util.isOnMainThread()) {
             if (0 != width && 0 != height) {
-                Glide.with(AlaConfig.getContext()).load(path).override(width, height).skipMemoryCache(hidden).diskCacheStrategy(DiskCacheStrategy.ALL)
+                Glide.with(AlaConfig.getContext()).load(path).override(width, height).skipMemoryCache(hidden).diskCacheStrategy(DiskCacheStrategy.SOURCE)
                         .placeholder(defaultImage).error(defaultImage).into(imageView);
             } else {
-                Glide.with(AlaConfig.getContext()).load(path).skipMemoryCache(hidden).diskCacheStrategy(DiskCacheStrategy.ALL)
+                Glide.with(AlaConfig.getContext()).load(path).skipMemoryCache(hidden).diskCacheStrategy(DiskCacheStrategy.SOURCE)
                         .placeholder(defaultImage).error(defaultImage).into(imageView);
             }
         }
     }
 
-    @BindingAdapter(value = {"asjbackground", "asjdefaultImage"}, requireAll = false)
+    @BindingAdapter(value = {"asJbackground", "asJdefaultImage"}, requireAll = false)
     public static void setBackground(final View view, String path, Drawable defaultImage) {
         if (defaultImage != null) {
             view.setBackground(defaultImage);
         }
         if (Util.isOnMainThread()) {
-//            GlideApp.with(AlaConfig.getContext()).load(path).diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-//                    .placeholder(defaultImage).error(defaultImage).into(new SimpleTarget<Drawable>() {
-//                @Override
-//                public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
-//                    resource.setBounds(0, 0, view.getWidth(), view.getHeight());
-//                    view.setBackground(resource);
-//                }
-//            });
-            Glide.with(AlaConfig.getContext()).load(path).diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(defaultImage).error(defaultImage).into(new SimpleTarget<GlideDrawable>() {
-                @Override
-                public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
-                    resource.setBounds(0, 0, view.getWidth(), view.getHeight());
-                    view.setBackground(resource);
-                }
-            });
-
-
-
-
-//                    .into(new SimpleTarget<Drawable>() {
+            Glide.with(AlaConfig.getContext()).load(path).diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .placeholder(defaultImage).error(defaultImage)
+                    .into(new SimpleTarget<GlideDrawable>() {
+                        @Override
+                        public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
+                            resource.setBounds(0, 0, view.getWidth(), view.getHeight());
+                            view.setBackground(resource);
+                        }
+                    });
+//                    into(new SimpleTarget<Drawable>() {
 //                @Override
 //                public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
 //                    resource.setBounds(0, 0, view.getWidth(), view.getHeight());
@@ -163,7 +151,7 @@ public class XMLBinding {
      * 为ImageView设置图片
      * 当后台不传宽高时取原图比例适配手机屏幕
      */
-    @BindingAdapter(value = {"source", "asjdefaultImage", "animRes", "width", "height", "appRect"}, requireAll = false)
+    @BindingAdapter(value = {"asJsource", "asJdefaultImage", "asJanimRes", "asJwidth", "asJheight", "asJappRect"}, requireAll = false)
     public static void setImage(final ImageView imageView, String path, Drawable defaultImage, Animation animRes, int width, int height, final Rect appRect) {
         if (null == defaultImage)
             defaultImage = ContextCompat.getDrawable(AlaConfig.getContext(), R.drawable.fw__default_picture);
@@ -179,9 +167,15 @@ public class XMLBinding {
             Glide.with(AlaConfig.getContext()).load(path).skipMemoryCache(false)
                     .placeholder(defaultImage).error(defaultImage).into(imageView);
         } else {
-            Glide.with(AlaConfig.getContext()).load(path).diskCacheStrategy(DiskCacheStrategy.ALL)
-
-//                    .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+            Glide.with(AlaConfig.getContext()).load(path).diskCacheStrategy(DiskCacheStrategy.NONE
+            ).into(new SimpleTarget<GlideDrawable>() {
+                @Override
+                public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
+                    ViewGroup.LayoutParams lp = imageView.getLayoutParams();
+                    lp.width = appRect.width();
+                    lp.height = appRect.width() * resource.getIntrinsicHeight() / resource.getIntrinsicWidth();
+                }
+            });
 //                    .into(new DrawableImageViewTarget(imageView) {
 //                @Override
 //                public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
@@ -192,7 +186,7 @@ public class XMLBinding {
 //                }
 //            });
 
-                    .into(new GlideDrawableImageViewTarget(imageView) {
+                   /* .into(new GlideDrawableImageViewTarget(imageView) {
                         @Override
                         public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> animation) {
                             super.onResourceReady(resource, animation);
@@ -200,7 +194,7 @@ public class XMLBinding {
                             lp.width = appRect.width();
                             lp.height = appRect.width() * resource.getIntrinsicHeight() / resource.getIntrinsicWidth();
                         }
-                    });
+                    });*/
         }
     }
 
@@ -239,7 +233,7 @@ public class XMLBinding {
     /**
      * 加载本地GIF
      */
-    @BindingAdapter(value = {"localGif"}, requireAll = false)
+    @BindingAdapter(value = {"asJlocalGif"}, requireAll = false)
     public static void setLocalGif(final ImageView imageView, int localPath) {
         Glide.with(AlaConfig.getContext()).load(localPath).
                 diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView);
@@ -248,7 +242,7 @@ public class XMLBinding {
     /**
      * 为ImageView设置图片
      */
-    @BindingAdapter(value = {"bitmap"}, requireAll = false)
+    @BindingAdapter(value = {"asJbitmap"}, requireAll = false)
     public static void setImageBitmap(final ImageView imageView, Bitmap bitmap) {
 //        Glide.with(AlaConfig.getContext()).load(bitmap).diskCacheStrategy(DiskCacheStrategy.RESULT).into(imageView);
         imageView.setImageBitmap(bitmap);
@@ -260,7 +254,7 @@ public class XMLBinding {
      * @param visible true - 显示
      *                false - 不显示
      */
-    @BindingAdapter({"visibility"})
+    @BindingAdapter({"asJvisibility"})
     public static void viewVisibility(View view, boolean visible) {
         if (view == null) {
             return;
@@ -283,7 +277,7 @@ public class XMLBinding {
      * @param visible true - 显示
      *                false - 不显示
      */
-    @BindingAdapter({"viewStubVisibility"})
+    @BindingAdapter({"asJviewStubVisibility"})
     public static void viewStubVisibility(ViewStubProxy stubProxy, boolean visible) {
         ViewStub viewStub = stubProxy.getViewStub();
         if (viewStub != null) {
@@ -298,7 +292,7 @@ public class XMLBinding {
     /**
      * 设置显示内容值类型转换为string
      */
-    @BindingAdapter({"toString"})
+    @BindingAdapter({"asJtoString"})
     public static void valueToString(TextView view, Object object) {
         view.setText(String.valueOf(object));
     }
@@ -309,7 +303,7 @@ public class XMLBinding {
      * @param type 水平 - HORIZONTAL = 0;
      *             垂直 - VERTICAL = 1;
      */
-    @BindingAdapter({"addItemDecoration"})
+    @BindingAdapter({"asJaddItemDecoration"})
     public static void addItemDecoration(RecyclerView view, int type) {
         DividerLine dividerLine;
         switch (type) {
@@ -339,14 +333,14 @@ public class XMLBinding {
         }
     }
 
-    @BindingAdapter(value = {"recScrollChildX", "recScrollChildWidth"}, requireAll = false)
+    @BindingAdapter(value = {"asJrecScrollChildX", "asJrecScrollChildWidth"}, requireAll = false)
     public static void horizontalRecyclerViewScrollCenter(RecyclerView recyclerView, int recScrollChildX, int recScrollChildWidth) {
         int middle = (int) ((recyclerView.getX() + recyclerView.getWidth() / 2) - recScrollChildWidth);
         if (recScrollChildX != middle)
             recyclerView.smoothScrollBy(recScrollChildX - middle, 0);
     }
 
-    @BindingAdapter(value = {"gridSpanCount", "gridSpacing", "gridIncludeEdge"}, requireAll = false)
+    @BindingAdapter(value = {"asJgridSpanCount", "asJgridSpacing", "asJgridIncludeEdge"}, requireAll = false)
     public static void nineGridItemDecoration(RecyclerView recyclerView, int spanCount, int spacing, boolean includeEdge) {
         GridSpaceItemDecoration gridSpaceItemDecoration = new GridSpaceItemDecoration(spanCount, spacing, includeEdge);
         recyclerView.addItemDecoration(gridSpaceItemDecoration);
@@ -355,7 +349,7 @@ public class XMLBinding {
     /**
      * 设置TextView显示不同颜色的字体（仅限改变数字颜色）
      */
-    @BindingAdapter(value = {"middleColor", "middleValue"}, requireAll = false)
+    @BindingAdapter(value = {"asJmiddleColor", "asJmiddleValue"}, requireAll = false)
     public static void middleColorShow(TextView view, Integer color, String value) {
         if (color == null) {
             throw new IllegalArgumentException("TextView color must not be null");
@@ -373,7 +367,7 @@ public class XMLBinding {
      *
      * @param toggle 开关
      */
-    @BindingAdapter({"filter"})
+    @BindingAdapter({"asJfilter"})
     public static void lengthfilter(EditText view, boolean toggle) {
         if (toggle) {
             InputFilter[] old = view.getFilters();
@@ -390,8 +384,8 @@ public class XMLBinding {
     /**
      * 设置Textview drawable ColorFilter
      */
-    @BindingAdapter(value = {"drawableLeft", "drawableTop", "drawableRight", "drawableBottom",
-            "colorFilter"}, requireAll = false)
+    @BindingAdapter(value = {"asJdrawableLeft", "asJdrawableTop", "asJdrawableRight", "asJdrawableBottom",
+            "asJcolorFilter"}, requireAll = false)
     public static void drawableText(TextView tv, Drawable drawableLeft, Drawable drawableTop, Drawable drawableRight,
                                     Drawable drawableBottom, int color) {
         if (0 == color) {
@@ -416,7 +410,7 @@ public class XMLBinding {
     /**
      * 设置Textview drawable ColorFilter
      */
-    @BindingAdapter(value = {"drawable", "colorFilter"}, requireAll = true)
+    @BindingAdapter(value = {"asJdrawable", "asJcolorFilter"}, requireAll = true)
     public static void drawableImageView(ImageView imageView, Drawable drawable, int color) {
         if (0 == color) {
             color = ContextCompat.getColor(AlaConfig.getContext(), R.color.fw_app_color_principal);
@@ -432,7 +426,7 @@ public class XMLBinding {
     /**
      * list 中 EditText 变化通知
      */
-    @BindingAdapter(value = {"asjwatcher", "list"}, requireAll = false)
+    @BindingAdapter(value = {"asJwatcher", "asJlist"}, requireAll = false)
     public static void setEditChangeListener(EditText ed, EditTextFormat.EditTextFormatWatcher watcher,
                                              LinkedList<EditText> edlist) {
         if (null != watcher) {
@@ -446,7 +440,7 @@ public class XMLBinding {
     /**
      * list中CheckBox变化通知
      */
-    @BindingAdapter(value = {"cb_watcher", "cb_list"}, requireAll = false)
+    @BindingAdapter(value = {"asJcb_watcher", "asJcb_list"}, requireAll = false)
     public static void setCheckedChangeListener(CheckBox cb, EditTextFormat.CheckBoxCheckedWatcher watcher,
                                                 LinkedList<CheckBox> cbList) {
         if (null != watcher) {
@@ -461,7 +455,7 @@ public class XMLBinding {
     /**
      * 为ImageView设置圆角图片
      */
-    @BindingAdapter(value = {"asjroundsrc", "asjdefaultImage"}, requireAll = false)
+    @BindingAdapter(value = {"asJroundsrc", "asJdefaultImage"}, requireAll = false)
     public static void setRoundImage(final ImageView imageView, String path, Drawable defaultImage) {
         if (null == defaultImage) {
             defaultImage = ContextCompat.getDrawable(AlaConfig.getContext(), R.drawable.fw__default_picture);
@@ -474,7 +468,7 @@ public class XMLBinding {
     /**
      * 为ImageView设置成圆形图片
      */
-    @BindingAdapter(value = {"asjcirclesrc", "asjdefaultImage"}, requireAll = false)
+    @BindingAdapter(value = {"asJcirclesrc", "asJdefaultImage"}, requireAll = false)
     public static void setCircleImage(final ImageView imageView, String path, Drawable defaultImage) {
         if (null == defaultImage) {
             defaultImage = ContextCompat.getDrawable(AlaConfig.getContext(), R.drawable.fw__default_picture);
@@ -485,7 +479,7 @@ public class XMLBinding {
                 .error(BitmapUtil.bitmap2Drawable(BitmapUtil.toRoundCorner(bitmap, 90))).into(imageView);
     }
 
-    @BindingAdapter(value = {"asjbeforeTextChange", "asjonTextChanged", "asjafterTextChanged"}, requireAll = false)
+    @BindingAdapter(value = {"asJbeforeTextChange", "asJonTextChanged", "asJafterTextChanged"}, requireAll = false)
     public static void setTextWatcher(TextView textView, final XMLBindListener.TextWatcher.beforeTextChange before,
                                       final XMLBindListener.TextWatcher.onTextChanged changed,
                                       final XMLBindListener.TextWatcher.afterChanged afterChanged) {
@@ -527,7 +521,7 @@ public class XMLBinding {
         }
     }
 
-    @BindingAdapter(value = {"switchWatcher"})
+    @BindingAdapter(value = {"asJswitchWatcher"})
     public static void setSwitchWatcher(final CompoundButton button,
                                         final XMLBindListener.SwitchWatcher switchWatcher) {
         CompoundButton.OnCheckedChangeListener newValue = new CompoundButton.OnCheckedChangeListener() {
@@ -541,7 +535,7 @@ public class XMLBinding {
         button.setOnCheckedChangeListener(newValue);
     }
 
-    @BindingAdapter(value = {"animation", "animationRes", "animationStart", "animationEnd", "animationRepeat"}, requireAll = false)
+    @BindingAdapter(value = {"asJanimation", "asJanimationRes", "asJanimationStart", "asJanimationEnd", "asJanimationRepeat"}, requireAll = false)
     public static void setAnimation(final View view, Animation animation, @AnimRes int animationRes,
                                     final XMLBindListener.AnimationListener.AnimationStart start,
                                     final XMLBindListener.AnimationListener.AnimationEnd end,
@@ -579,7 +573,7 @@ public class XMLBinding {
     }
 
 
-    @BindingAdapter("showInputMethod")
+    @BindingAdapter("asJshowInputMethod")
     public static void isShowInputMethod(View view, boolean isShow) {
         if (isShow) {
             view.setFocusable(true);
@@ -596,7 +590,7 @@ public class XMLBinding {
         }
     }
 
-    @BindingAdapter("childViews")
+    @BindingAdapter("asJchildViews")
     public static void addChildView(final ViewGroup viewGroup, ObservableArrayList<View> views) {
         if (views == null) {
             return;
@@ -642,7 +636,7 @@ public class XMLBinding {
         });
     }
 
-    @BindingAdapter(value = {"InputMethodLinearLayoutListener"}, requireAll = false)
+    @BindingAdapter(value = {"asJInputMethodLinearLayoutListener"}, requireAll = false)
     public static void bannerListener(final InputMethodLinearLayout inputMethodLinearLayout, final
     XMLBindListener.InputMethodLinearLayoutListener listener) {
         if (null != listener) {
@@ -660,7 +654,7 @@ public class XMLBinding {
         }
     }
 
-    @BindingAdapter(value = {"typefaceSpan"}, requireAll = false)
+    @BindingAdapter(value = {"asJtypefaceSpan"}, requireAll = false)
     public static void typefaceSpan(TextView textView, String typefaceSpan) {
         if (TextUtils.isEmpty(typefaceSpan)) return;
         SpannableString spanRel = new SpannableString(typefaceSpan);
@@ -669,7 +663,7 @@ public class XMLBinding {
         textView.setText(spanRel);
     }
 
-    @BindingAdapter(value = {"labels"})
+    @BindingAdapter(value = {"asJlabels"})
     public static void setFlowLayout(FlowLayout flowLayout, List<String> labels) {
         flowLayout.removeAllViews();
         for (String label : labels) {
@@ -680,14 +674,14 @@ public class XMLBinding {
         }
     }
 
-    @BindingAdapter(value = {"rvListener"})
+    @BindingAdapter(value = {"asJrvListener"})
     public static void setRvListener(RecyclerView recyclerView, RecyclerView.OnScrollListener listener) {
         if (listener == null) return;
         recyclerView.clearOnScrollListeners();
         recyclerView.addOnScrollListener(listener);
     }
 
-    @BindingAdapter(value = {"newlabels"})
+    @BindingAdapter(value = {"asJnewlabels"})
     public static void setNewFlowLayout(FlowLayout flowLayout, List<String> labels) {
         flowLayout.removeAllViews();
         for (String label : labels) {
@@ -698,7 +692,7 @@ public class XMLBinding {
         }
     }
 
-    @BindingAdapter(value = {"imageLabel"})
+    @BindingAdapter(value = {"asJimageLabel"})
     public static void setImageLabels(LinearLayout layout, List<String> labels) {
         layout.removeAllViews();
         for (String label : labels) {
@@ -714,25 +708,18 @@ public class XMLBinding {
                 Glide.with(AlaConfig.getContext())
                         .load(label)
                         .skipMemoryCache(false)
-                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                         .into(new SimpleTarget<GlideDrawable>() {
                             @Override
                             public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
                                 child.setImageDrawable(resource);
                             }
                         });
-
-//                        .into(new SimpleTarget<Drawable>() {
-//                            @Override
-//                            public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
-//                                child.setImageDrawable(resource);
-//                            }
-//                        });
             }
         }
     }
 
-    @BindingAdapter(value = {"viewCheck"})
+    @BindingAdapter(value = {"asJviewCheck"})
     public static void setviewCheck(View view,boolean isChecked) {
         view.setSelected(isChecked);
     }

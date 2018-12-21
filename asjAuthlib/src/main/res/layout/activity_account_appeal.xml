@@ -130,7 +130,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/y120"
                 android:paddingTop="@dimen/y40"
-                app:visibility="@{viewModel.displayStep1}">
+                app:asJvisibility="@{viewModel.displayStep1}">
 
                 <TextView
                     android:id="@+id/lbl_old_phone"
@@ -161,8 +161,8 @@
                 <!--android:textColor="@color/text_important_color"-->
                 <!--android:textColorHint="@color/text_other_color"-->
                 <!--android:textSize="@dimen/x32"-->
-                <!--app:list="@{viewModel.edList}"-->
-                <!--app:watcher="@{viewModel.watcherStep1}" />-->
+                <!--app:asJlist="@{viewModel.edList}"-->
+                <!--app:asJwatcher="@{viewModel.watcherStep1}" />-->
 
 
                 <com.ald.asjauthlib.authframework.core.ui.EditTextWithDelNew
@@ -185,9 +185,9 @@
                     android:textColor="@color/text_important_color"
                     android:textColorHint="@color/text_other_color"
                     android:textSize="@dimen/x30"
-                    app:list="@{viewModel.edList}"
-                    app:mobilePhoneWatcher="@{viewModel.emptyMobileWatcher}"
-                    app:watcher="@{viewModel.watcherStep1}" />
+                    app:asJlist="@{viewModel.edList}"
+                    app:asJmobilePhoneWatcher="@{viewModel.emptyMobileWatcher}"
+                    app:asJwatcher="@{viewModel.watcherStep1}" />
 
 
                 <View
@@ -203,7 +203,7 @@
                 android:layout_height="@dimen/y120"
                 android:layout_below="@+id/base_line_step"
                 android:paddingTop="@dimen/y40"
-                app:visibility="@{viewModel.displayStep1}">
+                app:asJvisibility="@{viewModel.displayStep1}">
 
                 <TextView
                     android:id="@+id/lbl_phone"
@@ -246,9 +246,9 @@
                     android:textColor="@color/text_important_color"
                     android:textColorHint="@color/text_other_color"
                     android:textSize="@dimen/x30"
-                    app:list="@{viewModel.edList}"
-                    app:mobilePhoneWatcher="@{viewModel.emptyMobileWatcher}"
-                    app:watcher="@{viewModel.watcherStep1}" />
+                    app:asJlist="@{viewModel.edList}"
+                    app:asJmobilePhoneWatcher="@{viewModel.emptyMobileWatcher}"
+                    app:asJwatcher="@{viewModel.watcherStep1}" />
 
 
                 <View
@@ -262,7 +262,7 @@
                 android:id="@+id/rl_msg_num"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/y120"
-                app:visibility="@{viewModel.displayStep1}">
+                app:asJvisibility="@{viewModel.displayStep1}">
 
                 <TextView
                     android:id="@+id/lbl_msg_num"
@@ -295,8 +295,8 @@
                     android:textColor="@color/text_important_color"
                     android:textColorHint="@color/text_other_color"
                     android:textSize="@dimen/x30"
-                    app:list="@{viewModel.edList}"
-                    app:watcher="@{viewModel.watcherStep1}" />
+                    app:asJlist="@{viewModel.edList}"
+                    app:asJwatcher="@{viewModel.watcherStep1}" />
 
                 <TextView
                     android:id="@+id/btn_captcha_right"
@@ -328,7 +328,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/y40"
-                app:visibility="@{viewModel.displayStep3}">
+                app:asJvisibility="@{viewModel.displayStep3}">
 
                 <TextView
                     android:id="@+id/txt_old_phone"
@@ -381,8 +381,8 @@
                     android:textColor="#373747"
                     android:textColorHint="@color/fb_hint"
                     android:textSize="@dimen/x34"
-                    app:list="@{viewModel.edList}"
-                    app:watcher="@{viewModel.watcherStep1}" />
+                    app:asJlist="@{viewModel.edList}"
+                    app:asJwatcher="@{viewModel.watcherStep1}" />
 
                 <View
                     style="@style/hLineStyleED"

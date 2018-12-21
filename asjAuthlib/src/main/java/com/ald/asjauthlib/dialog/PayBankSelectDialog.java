@@ -248,8 +248,7 @@ public class PayBankSelectDialog extends Dialog {
             } else {
                 holder.ivLeft.setImageDrawable(null);
                 Glide.with(AlaConfig.getContext()).load(selectItem.getBankIcon())
-//                        .transition(DrawableTransitionOptions.withCrossFade(1000))
-                        .into(holder.ivLeft);
+                        .crossFade(1000).into(holder.ivLeft);
             }
             return convertView;
         }

@@ -48,8 +48,7 @@ public class ActivityDialog extends AlertDialog implements View.OnClickListener 
         findViewById(R.id.iv_activity_dialog_close).setOnClickListener(this);
         if (MiscUtils.isNotEmpty(imageResource)) {
             Glide.with(AlaConfig.getContext()).load(imageResource).diskCacheStrategy(DiskCacheStrategy.NONE)
-//                    .transition(DrawableTransitionOptions.withCrossFade(1000))
-                    .into(imgContent);
+                    .crossFade(1000).into(imgContent);
         }
         setDialogLayout();
     }
@@ -76,8 +75,7 @@ public class ActivityDialog extends AlertDialog implements View.OnClickListener 
         this.imageResource = imageResource;
         if (imgContent != null && MiscUtils.isNotEmpty(imageResource)) {
             Glide.with(AlaConfig.getContext()).load(imageResource).diskCacheStrategy(DiskCacheStrategy.NONE)
-//                    .transition(DrawableTransitionOptions.withCrossFade(1000))
-                    .into(imgContent);
+                    .crossFade(1000).into(imgContent);
         }
     }
 

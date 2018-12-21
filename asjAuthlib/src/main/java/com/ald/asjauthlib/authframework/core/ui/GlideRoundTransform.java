@@ -56,12 +56,14 @@ public class GlideRoundTransform extends BitmapTransformation {
         return roundCrop(pool, toTransform);
     }
 
- @Override
+   /* @Override
     public String getId() {
         return getClass().getName() + Math.round(radius);
-    }
+    }*/
 
-//    @Override
-//    public void updateDiskCacheKey(@NonNull MessageDigest messageDigest) {
-//    }
+
+    @Override
+    public String getId() {
+        return "";
+    }
 }

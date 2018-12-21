@@ -13,8 +13,8 @@
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:bannerImages="@{viewModel.bannerModelList}"
-        app:bannerListener="@{viewModel.bannerListener}"
+        app:asJbannerImages="@{viewModel.bannerModelList}"
+        app:asJbannerListener="@{viewModel.bannerListener}"
         android:background="@color/color_F3F5F7"
         android:paddingTop="30dp"
         app:delay_time="5000"
@@ -24,7 +24,7 @@
         app:indicator_height="@dimen/y4"
         app:indicator_margin="@dimen/x7"
         app:indicator_width="@dimen/x28"
-        app:layout_height="@{viewModel.bannerHeight}"
+        app:asJlayout_height="@{viewModel.bannerHeight}"
         app:is_auto_play="true"/>
 
 </layout>

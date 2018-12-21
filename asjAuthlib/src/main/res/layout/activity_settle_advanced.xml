@@ -23,19 +23,19 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingTop="@dimen/activity_vertical_margin"
-            app:visibility="@{viewModel.showDataView}"
+            app:asJvisibility="@{viewModel.showDataView}"
             tools:context="com.alfl.www.loan.ui.RepaymentActivity">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:addItemDecoration="@{viewModel.type}"
-                app:asjitemView="@{viewModel.itemView}"
-                app:asjitems="@{viewModel.items}"
-                app:layoutManager="@{LayoutManagers.linear()}"
+                app:asJaddItemDecoration="@{viewModel.type}"
+                app:asJitemView="@{viewModel.itemView}"
+                app:asJitems="@{viewModel.items}"
+                app:asJlayoutManager="@{LayoutManagers.linear()}"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                app:notifyAdapter="@{viewModel.adapterListener}" />
+                app:asJnotifyAdapter="@{viewModel.adapterListener}" />
 
             <RelativeLayout
                 android:id="@+id/rl_ticket"
@@ -190,7 +190,7 @@
                     android:paddingLeft="@dimen/y30"
                     android:text="@string/settle_advanced_free_charge"
                     android:textSize="@dimen/x24"
-                    app:visibility="@{viewModel.displayShowCharge}"
+                    app:asJvisibility="@{viewModel.displayShowCharge}"
                     tools:visibility="visible" />
 
                 <TextView
@@ -202,7 +202,7 @@
                     android:layout_toRightOf="@+id/lbl_free_charge"
                     android:text="@{viewModel.displayFreeCharge}"
                     android:textSize="@dimen/x24"
-                    app:visibility="@{viewModel.displayShowCharge}"
+                    app:asJvisibility="@{viewModel.displayShowCharge}"
                     tools:text="100.00元"
                     tools:visibility="visible" />
             </RelativeLayout>
@@ -212,7 +212,7 @@
             android:id="@+id/model_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:asjemptyState="@{viewModel.modelState}"
-            app:visibility="@{viewModel.modelState.noData}" />
+            app:asJemptyState="@{viewModel.modelState}"
+            app:asJvisibility="@{viewModel.modelState.noData}" />
     </FrameLayout>
 </layout>

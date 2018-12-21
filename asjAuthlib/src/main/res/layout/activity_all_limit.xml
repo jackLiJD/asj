@@ -25,8 +25,8 @@
             android:layout_marginBottom="@dimen/y10"
             android:fitsSystemWindows="true"
             android:focusable="true"
-            app:bannerImages="@{viewModel.bannerList}"
-            app:bannerListener="@{viewModel.bannerListener}"
+            app:asJbannerImages="@{viewModel.bannerList}"
+            app:asJbannerListener="@{viewModel.bannerListener}"
             app:delay_time="5000"
             app:image_scale_type="fit_xy"
             app:indicator_drawable_selected="@drawable/shape_banner_indicator_s"
@@ -105,7 +105,7 @@
                 android:paddingBottom="@dimen/y20"
                 android:paddingRight="@dimen/y40"
                 android:paddingTop="@dimen/y20"
-                app:visibility="@{viewModel.showRentLayout}"
+                app:asJvisibility="@{viewModel.showRentLayout}"
                 tools:visibility="gone">
 
                 <ImageView

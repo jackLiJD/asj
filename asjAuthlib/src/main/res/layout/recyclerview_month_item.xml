@@ -22,7 +22,7 @@
         android:text="@{viewModel.monthText}"
         android:textColor="@{viewModel.monthColor}"
         android:textSize="13sp"
-        app:view_width="@{viewModel.monthWidth}"
+        app:asJview_width="@{viewModel.monthWidth}"
         tools:text="8月" />
 
 </layout>

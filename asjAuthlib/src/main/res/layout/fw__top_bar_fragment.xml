@@ -19,7 +19,7 @@
         <include
             android:id="@+id/top_bar"
             layout="@layout/appbar_layout"
-            app:hidden="@{topBarVM.hidden}" />
+            app:asJhidden="@{topBarVM.hidden}" />
 
         <RelativeLayout
             android:id="@+id/container"

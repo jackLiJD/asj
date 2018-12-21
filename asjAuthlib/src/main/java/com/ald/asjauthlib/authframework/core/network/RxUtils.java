@@ -2,7 +2,6 @@ package com.ald.asjauthlib.authframework.core.network;
 
 
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import io.reactivex.ObservableTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
@@ -20,19 +19,10 @@ public class RxUtils {
      * @desc 单纯线程调度
      */
     public static <T> ObservableTransformer<T, T> io_main() {
-        return new ObservableTransformer<T, T>() {
-            @Override
-            public ObservableSource<T> apply(Observable<T> upstream) {
-                return  upstream
-                        .subscribeOn(Schedulers.io())
-                        .unsubscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread());
-            }
-        };
-       /* return upstream -> upstream
+        return upstream -> upstream
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());*/
+                .observeOn(AndroidSchedulers.mainThread());
     }
 
     /**

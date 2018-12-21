@@ -1,20 +1,20 @@
-//apply plugin: 'com.novoda.bintray-release'
-//android {
-//    lintOptions {
-//        abortOnError false
-//    }
-//}
-//
-//publish {
-//    repoName = 'TestAuthSdk'//远程仓库名字,不指明，默认是上传到maven
-//    userOrg = 'yangyang'//bintray的用户名
-//    groupId = 'com.ald.authlibrary'//gradle依赖前缀
-//    artifactId = 'test-auth-sdk'//远程仓库包名
-//    publishVersion = '1.0.5'//版本号
-//}
-//
-//tasks.withType(Javadoc) {//防止编码问题
-//    options.addStringOption('Xdoclint:none', '-quiet')
-//    options.addStringOption('encoding', 'UTF-8')
-//    options.addStringOption('charSet', 'UTF-8')
-//}
+apply plugin: 'com.novoda.bintray-release'
+android {
+    lintOptions {
+        abortOnError false
+    }
+}
+
+publish {
+    repoName = 'TestAuthSdk'//远程仓库名字,不指明，默认是上传到maven
+    userOrg = 'yangyang'//bintray的用户名
+    groupId = 'com.ald.authlibrary'//gradle依赖前缀
+    artifactId = 'test-auth-sdk'//远程仓库包名
+    publishVersion = '1.0.6'//版本号
+}
+
+tasks.withType(Javadoc) {//防止编码问题
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}

@@ -33,7 +33,7 @@
                 android:layout_marginBottom="9dp"
                 android:orientation="vertical"
                 android:visibility="gone"
-                app:visibility="@{!viewModel.showNewLayout}">
+                app:asJvisibility="@{!viewModel.showNewLayout}">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -133,7 +133,7 @@
                 android:orientation="vertical"
                 android:paddingLeft="15dp"
                 android:paddingTop="15dp"
-                app:visibility="@{viewModel.showNewLayout}">
+                app:asJvisibility="@{viewModel.showNewLayout}">
 
                 <TextView
                     android:id="@+id/card_tv_name"
@@ -233,9 +233,9 @@
                         android:textColor="@color/text_color_black"
                         android:textColorHint="@color/text_color_normal_light"
                         android:textSize="@dimen/x28"
-                        app:list="@{viewModel.edList}"
-                        app:mobilePhoneWatcher="@{viewModel.emptyMobileWatcher}"
-                        app:watcher="@{viewModel.watcher}" />
+                        app:asJlist="@{viewModel.edList}"
+                        app:asJmobilePhoneWatcher="@{viewModel.emptyMobileWatcher}"
+                        app:asJwatcher="@{viewModel.watcher}" />
 
                     <View
                         style="@style/hLineStyle"
@@ -253,7 +253,7 @@
                     android:layout_height="@dimen/y100"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    app:visibility="@{viewModel.showCreditLayout}">
+                    app:asJvisibility="@{viewModel.showCreditLayout}">
 
                     <TextView
                         android:id="@+id/tv_validity_left"
@@ -296,7 +296,7 @@
                         android:textColor="@color/text_color_black"
                         android:textColorHint="@color/text_color_normal_light"
                         android:textSize="@dimen/x28"
-                        app:watcher="@{viewModel.watcher}" />
+                        app:asJwatcher="@{viewModel.watcher}" />
 
                     <View
                         style="@style/hLineStyle"
@@ -308,7 +308,7 @@
                     android:layout_height="@dimen/y100"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
-                    app:visibility="@{viewModel.showCreditLayout}">
+                    app:asJvisibility="@{viewModel.showCreditLayout}">
 
                     <TextView
                         android:id="@+id/tv_safeCode_left"
@@ -352,7 +352,7 @@
                         android:textColor="@color/text_color_black"
                         android:textColorHint="@color/text_color_normal_light"
                         android:textSize="@dimen/x28"
-                        app:watcher="@{viewModel.watcher}" />
+                        app:asJwatcher="@{viewModel.watcher}" />
 
                     <View
                         style="@style/hLineStyle"
@@ -412,8 +412,8 @@
                         android:textColor="@color/text_color_black"
                         android:textColorHint="@color/text_color_normal_light"
                         android:textSize="@dimen/x28"
-                        app:list="@{viewModel.edList}"
-                        app:watcher="@{viewModel.watcher}" />
+                        app:asJlist="@{viewModel.edList}"
+                        app:asJwatcher="@{viewModel.watcher}" />
 
                     <View
                         style="@style/hLineStyle"
@@ -454,8 +454,8 @@
                     android:text="@string/register_agreement_cb"
                     android:textColor="#646464"
                     android:textSize="@dimen/x20"
-                    app:cb_list="@{viewModel.cbList}"
-                    app:cb_watcher="@{viewModel.cbWatcher}" />
+                    app:asJcb_list="@{viewModel.cbList}"
+                    app:asJcb_watcher="@{viewModel.cbWatcher}" />
 
                 <TextView
                     android:id="@+id/tv_agreement"

@@ -81,7 +81,7 @@
 
                     <TextView
                         android:id="@+id/txt_right"
-                        textSize="@dimen/x28"
+                        android:textSize="@dimen/x28"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -179,7 +179,7 @@
                     android:textColor="@color/color_txt_other_pay_optimization"
                     android:textSize="@dimen/x30"
                     android:visibility="gone"
-                    app:visibility="@{viewModel.showFailedTip}" />
+                    app:asJvisibility="@{viewModel.showFailedTip}" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyclerView"
@@ -187,9 +187,9 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:background="@color/white"
-                    app:asjitemView="@{viewModel.itemView}"
-                    app:asjitems="@{viewModel.items}"
-                    app:layoutManager="@{LayoutManagers.linear()}" />
+                    app:asJitemView="@{viewModel.itemView}"
+                    app:asJitems="@{viewModel.items}"
+                    app:asJlayoutManager="@{LayoutManagers.linear()}" />
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
 

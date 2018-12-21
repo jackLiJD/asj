@@ -21,7 +21,7 @@
         <include
             android:id="@+id/top_bar"
             layout="@layout/appbar_layout"
-            app:hidden="@{topBarVM.hidden}" />
+            app:asJhidden="@{topBarVM.hidden}" />
 
         <View
             android:id="@+id/top_line"

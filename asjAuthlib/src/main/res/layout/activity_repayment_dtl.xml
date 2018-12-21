@@ -108,7 +108,7 @@
 
             <RelativeLayout
                 style="@style/repayment_dtl_item_rl"
-                app:visibility="@{viewModel.showSystemDiscount}">
+                app:asJvisibility="@{viewModel.showSystemDiscount}">
 
                 <TextView
                     android:layout_width="wrap_content"

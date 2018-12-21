@@ -61,14 +61,14 @@
 
         <View
             style="@style/hDividerStyle"
-            app:visibility="@{viewModel.showPermissionLayout}"
+            app:asJvisibility="@{viewModel.showPermissionLayout}"
             tools:visibility="visible" />
 
         <View
             style="@style/hLineStyle"
             android:layout_marginEnd="@dimen/x30"
             android:layout_marginStart="@dimen/x30"
-            app:visibility="@{!viewModel.showPermissionLayout}"
+            app:asJvisibility="@{!viewModel.showPermissionLayout}"
             tools:visibility="gone" />
 
         <ImageView
@@ -80,8 +80,8 @@
             android:paddingLeft="@dimen/x30"
             android:paddingRight="@dimen/x30"
             android:scaleType="fitXY"
-            app:asjsrc="@{viewModel.displayCardImage}"
-            app:visibility="@{viewModel.showPermissionLayout}"
+            app:asJsrc="@{viewModel.displayCardImage}"
+            app:asJvisibility="@{viewModel.showPermissionLayout}"
             tools:src="@drawable/ic_card"
             tools:visibility="visible" />
 
@@ -91,7 +91,7 @@
             android:layout_margin="@dimen/x30"
             android:text="@{viewModel.displayVipHint}"
             android:textColor="@color/color_999999"
-            app:visibility="@{viewModel.showPermissionLayout}"
+            app:asJvisibility="@{viewModel.showPermissionLayout}"
             tools:text="@string/permission_package_buy_hint"
             tools:visibility="visible" />
 
@@ -107,7 +107,7 @@
             android:text="@string/permission_package_buy_btn"
             android:textColor="@color/color_2e2e2e"
             android:textSize="@dimen/x28"
-            app:visibility="@{viewModel.showBuyButton}"
+            app:asJvisibility="@{viewModel.showBuyButton}"
             tools:visibility="visible" />
 
         <TextView
@@ -122,7 +122,7 @@
             android:text="@string/permission_package_repay"
             android:textColor="@color/color_999999"
             android:textSize="@dimen/x28"
-            app:visibility="@{viewModel.showPermissionLayout}"
+            app:asJvisibility="@{viewModel.showPermissionLayout}"
             tools:visibility="visible" />
 
         <TextView
@@ -137,7 +137,7 @@
             android:text="@string/permission_package_repay"
             android:textColor="@color/color_2e2e2e"
             android:textSize="@dimen/x28"
-            app:visibility="@{!viewModel.showPermissionLayout}" />
+            app:asJvisibility="@{!viewModel.showPermissionLayout}" />
 
     </LinearLayout>
 

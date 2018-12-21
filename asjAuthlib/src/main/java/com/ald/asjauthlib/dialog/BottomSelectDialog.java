@@ -33,6 +33,8 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.microedition.khronos.opengles.GL;
+
 import static com.ald.asjauthlib.utils.BundleKeys.REQUEST_CODE_BRAND_DIALOG_BANK_CARD;
 
 

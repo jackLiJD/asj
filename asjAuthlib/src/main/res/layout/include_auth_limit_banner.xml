@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:visibility="gone"
-        app:visibility="@{viewModel.showLimitBanner}"
+        app:asJvisibility="@{viewModel.showLimitBanner}"
         tools:visibility="gone">
 
         <ImageView

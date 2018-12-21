@@ -72,7 +72,7 @@
             tools:text="已还款" />
 
         <TextView
-            app:visibility="@{viewModel.displayDateVis}"
+            app:asJvisibility="@{viewModel.displayDateVis}"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_alignBaseline="@id/txt_service_charge"

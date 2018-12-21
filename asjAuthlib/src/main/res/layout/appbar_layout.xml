@@ -5,7 +5,7 @@
     <data>
         <import type="com.ald.asjauthlib.authframework.core.XMLBinding"/>
         <variable
-            name="hidden"
+            name="asJhidden"
             type="boolean" />
 
     </data>
@@ -19,6 +19,6 @@
             android:id="@+id/appbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:visibility="@{!hidden}" />
+            app:asJvisibility="@{!asJhidden}" />
     </LinearLayout>
 </layout>

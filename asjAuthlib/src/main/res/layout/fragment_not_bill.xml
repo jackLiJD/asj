@@ -46,7 +46,7 @@
                 android:text="@{viewModel.noBillsAmount}"
                 android:textColor="@android:color/white"
                 android:textSize="38sp"
-                app:visibility="@{viewModel.billsVis}"
+                app:asJvisibility="@{viewModel.billsVis}"
                 tools:text="8895.00" />
 
             <TextView
@@ -61,7 +61,7 @@
                 android:text="@string/ahead_settle"
                 android:textColor="#e5ad5d"
                 android:textSize="15sp"
-                app:visibility="@{viewModel.billsVis}"
+                app:asJvisibility="@{viewModel.billsVis}"
                 tools:text="提前结清" />
 
             <ImageView
@@ -73,7 +73,7 @@
                 android:onClick="@{viewModel.questionClick}"
                 android:padding="8dp"
                 android:src="@drawable/question"
-                app:visibility="@{viewModel.billsVis}" />
+                app:asJvisibility="@{viewModel.billsVis}" />
 
             <ImageView
                 android:id="@+id/noMessage"
@@ -84,7 +84,7 @@
                 android:adjustViewBounds="true"
                 android:src="@drawable/no_message"
                 android:visibility="gone"
-                app:visibility="@{viewModel.noStatus}" />
+                app:asJvisibility="@{viewModel.noStatus}" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -95,7 +95,7 @@
                 android:textColor="@android:color/white"
                 android:textSize="12sp"
                 android:visibility="gone"
-                app:visibility="@{viewModel.noStatus}"
+                app:asJvisibility="@{viewModel.noStatus}"
                 tools:text="暂无账单" />
         </FrameLayout>
 
@@ -108,10 +108,10 @@
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:isRebound="@{viewModel.isRebound}"
-                app:asjitemView="@{viewModel.itemView}"
-                app:asjitems="@{viewModel.items}"
-                app:layoutManager="@{LayoutManagers.linear()}" />
+                app:asJisRebound="@{viewModel.isRebound}"
+                app:asJitemView="@{viewModel.itemView}"
+                app:asJitems="@{viewModel.items}"
+                app:asJlayoutManager="@{LayoutManagers.linear()}" />
 
         </FrameLayout>
 

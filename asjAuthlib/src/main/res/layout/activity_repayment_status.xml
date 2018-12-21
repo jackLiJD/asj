@@ -352,8 +352,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ll_dtl"
                 android:layout_marginTop="30dp"
-                app:bannerImages="@{viewModel.bannerList}"
-                app:bannerListener="@{viewModel.bannerListener}"
+                app:asJbannerImages="@{viewModel.bannerList}"
+                app:asJbannerListener="@{viewModel.bannerListener}"
                 app:delay_time="5000"
                 app:image_scale_type="fit_xy"
                 app:indicator_drawable_selected="@drawable/shape_banner_indicator_s"
@@ -362,8 +362,8 @@
                 app:indicator_margin="@dimen/x7"
                 app:indicator_width="@dimen/x28"
                 app:is_auto_play="true"
-                app:layout_height="@{viewModel.adHeight}"
-                app:layout_width="@{viewModel.adWidth}"
+                app:asJlayout_height="@{viewModel.adHeight}"
+                app:asJlayout_width="@{viewModel.adWidth}"
                 tools:layout_height="50dp" />
 
         </RelativeLayout>

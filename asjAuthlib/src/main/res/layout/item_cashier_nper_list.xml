@@ -55,7 +55,7 @@
                 android:text="@{viewModel.displayFreeNper}"
                 android:textColor="@color/white"
                 android:textSize="@dimen/x20"
-                app:visibility="@{viewModel.showFreeSign}"
+                app:asJvisibility="@{viewModel.showFreeSign}"
                 tools:text="前3期免息"
                 tools:visibility="visible" />
         </LinearLayout>
@@ -63,7 +63,7 @@
         <View
             android:layout_width="wrap_content"
             android:layout_height="@dimen/y12"
-            app:visibility="@{!viewModel.showOtherPerAmount}" />
+            app:asJvisibility="@{!viewModel.showOtherPerAmount}" />
 
         <TextView
             android:id="@+id/tv_not_free"
@@ -72,7 +72,7 @@
             android:text="@{viewModel.displayPerAmount}"
             android:textColor="@color/color_232323"
             android:textSize="@dimen/x24"
-            app:visibility="@{viewModel.showDtl}"
+            app:asJvisibility="@{viewModel.showDtl}"
             tools:text="月供￥297.44"
             tools:textColor="@color/text_color_black" />
 
@@ -82,7 +82,7 @@
             android:text="@{viewModel.displayOtherPerAmount}"
             android:textColor="@color/color_232323"
             android:textSize="@dimen/x24"
-            app:visibility="@{viewModel.showOtherPerAmount}"
+            app:asJvisibility="@{viewModel.showOtherPerAmount}"
             tools:text="月供￥297.44"
             tools:textColor="@color/text_color_black"
             tools:visibility="gone" />

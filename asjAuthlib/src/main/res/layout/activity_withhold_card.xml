@@ -45,8 +45,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/background_white_color"
-            app:addItemDecoration="@{viewModel.type}"
-            app:layoutManager="@{LayoutManagers.linear()}"
+            app:asJaddItemDecoration="@{viewModel.type}"
+            app:asJlayoutManager="@{LayoutManagers.linear()}"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
     </LinearLayout>
 </layout>

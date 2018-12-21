@@ -19,7 +19,7 @@
         android:orientation="horizontal"
         android:paddingLeft="@dimen/y40"
         android:paddingRight="@dimen/y40"
-        app:visibility="@{viewModel.displayStepLayout}"
+        app:asJvisibility="@{viewModel.displayStepLayout}"
         tools:visibility="visible">
 
         <com.ald.asjauthlib.authframework.core.ui.DrawableText

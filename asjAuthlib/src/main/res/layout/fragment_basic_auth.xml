@@ -123,7 +123,7 @@
             android:onClick="@{viewModel.bindZmClick}"
             android:paddingLeft="@dimen/x44"
             android:paddingRight="@dimen/x24"
-            app:visibility="@{viewModel.showZmLayout}"
+            app:asJvisibility="@{viewModel.showZmLayout}"
             tools:visibility="visible">
 
             <com.ald.asjauthlib.authframework.core.ui.DrawableText

@@ -71,8 +71,8 @@
                 android:textColor="@color/text_normal_color"
                 android:textColorHint="@color/text_other_color"
                 android:textSize="@dimen/x32"
-                app:list="@{viewModel.edList}"
-                app:watcher="@{viewModel.watcher}"/>
+                app:asJlist="@{viewModel.edList}"
+                app:asJwatcher="@{viewModel.watcher}"/>
 
 
         </RelativeLayout>

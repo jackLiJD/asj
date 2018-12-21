@@ -37,8 +37,8 @@
                 android:layout_marginTop="@dimen/y44"
                 android:background="@drawable/frame_circle_white"
                 android:scaleType="centerCrop"
-                app:asjdefaultImage="@{@drawable/ic_default_bank_card_logo}"
-                app:asjsrc="@{viewModel.displayImageUrl}" />
+                app:asJdefaultImage="@{@drawable/ic_default_bank_card_logo}"
+                app:asJsrc="@{viewModel.displayImageUrl}" />
 
             <TextView
                 android:id="@+id/tv_name"
@@ -66,7 +66,7 @@
                 android:text="@string/bank_card_main"
                 android:textColor="@color/colorPrimaryNew"
                 android:textSize="@dimen/x22"
-                app:visibility="@{viewModel.showMainTv}" />
+                app:asJvisibility="@{viewModel.showMainTv}" />
 
             <TextView
                 android:id="@+id/tv_type"
@@ -105,7 +105,7 @@
             android:text="@string/edit_main_card_set_main"
             android:textColor="@color/white"
             android:textSize="@dimen/x32"
-            app:visibility="@{viewModel.showSetMainBtn}" />
+            app:asJvisibility="@{viewModel.showSetMainBtn}" />
 
         <com.ald.asjauthlib.authframework.core.ui.NoDoubleClickButton
             android:layout_width="match_parent"

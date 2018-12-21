@@ -119,7 +119,7 @@ public class AppealPhoneVM extends BaseVM {
 
     public LinkedList<EditText> edList = new LinkedList<>();
     /**
-     * 监听 app:watcher="@{viewModel.watcher}"
+     * 监听 app:asJwatcher="@{viewModel.watcher}"
      */
     public EditTextFormat.EditTextFormatWatcher watcherStep1 = new EditTextFormat.EditTextFormatWatcher() {
         @Override

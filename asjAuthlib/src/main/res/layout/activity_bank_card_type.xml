@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:f="http://schemas.android.com/tools">
     <data>
         <variable
             name="viewModel"
@@ -19,11 +20,11 @@
             android:paddingLeft="@dimen/x24"
             android:background="@color/background_white_color"
             android:layout_height="match_parent"
-            app:asjitemView="@{viewModel.itemView}"
-            app:asjitems="@{viewModel.items}"
-            app:addItemDecoration="@{viewModel.type}"
-            app:layoutManager="@{LayoutManagers.linear()}"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+            app:asJaddItemDecoration="@{viewModel.type}"
+            app:asJitemView="@{viewModel.itemView}"
+            app:asJitems="@{viewModel.items}"
+            app:asJlayoutManager="@{LayoutManagers.linear()}"
+            layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 
     </LinearLayout>

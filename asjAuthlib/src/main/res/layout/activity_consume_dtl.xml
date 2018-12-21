@@ -78,7 +78,7 @@
                 android:text="@string/ahead_settle"
                 android:textColor="@color/white"
                 android:textSize="15sp"
-                app:visibility="@{viewModel.aheadVisibility}"
+                app:asJvisibility="@{viewModel.aheadVisibility}"
                 tools:visibility="visible" />
 
             <TextView

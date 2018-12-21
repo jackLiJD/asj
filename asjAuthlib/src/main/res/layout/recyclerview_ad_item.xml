@@ -15,12 +15,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"
-        app:paddingRight="@{viewModel.paddingRight}"
-        app:paddingLeft="@{viewModel.paddingLeft}"
-        app:paddingBottom="@{viewModel.paddingBottom}"
-        app:width="@{viewModel.adWidth}"
-        app:height="@{viewModel.adHeight}"
-        app:asjsrc="@{viewModel.adImage}"
+        app:asJpaddingRight="@{viewModel.paddingRight}"
+        app:asJpaddingLeft="@{viewModel.paddingLeft}"
+        app:asJpaddingBottom="@{viewModel.paddingBottom}"
+        app:asJwidth="@{viewModel.adWidth}"
+        app:asJheight="@{viewModel.adHeight}"
+        app:asJsrc="@{viewModel.adImage}"
         android:onClick="@{viewModel.adClick}"/>
 
 </layout>

@@ -44,8 +44,8 @@
             android:textCursorDrawable="@null"
             android:cursorVisible="true"
             android:textSize="@dimen/x32"
-            app:list="@{viewModel.edList}"
-            app:watcher="@{viewModel.watcher}"/>
+            app:asJlist="@{viewModel.edList}"
+            app:asJwatcher="@{viewModel.watcher}"/>
         <com.ald.asjauthlib.authframework.core.ui.NoDoubleClickButton
             android:id="@+id/button"
             android:layout_width="match_parent"

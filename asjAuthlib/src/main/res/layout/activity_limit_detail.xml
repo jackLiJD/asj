@@ -62,7 +62,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/background_white_color"
                         android:orientation="vertical"
-                        app:visibility="@{!viewModel.isLoan}">
+                        app:asJvisibility="@{!viewModel.isLoan}">
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/y96"
@@ -218,7 +218,7 @@
                         android:background="@color/background_white_color"
                         android:orientation="vertical"
                         android:visibility="gone"
-                        app:visibility="@{viewModel.isLoan}">
+                        app:asJvisibility="@{viewModel.isLoan}">
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/y96"
@@ -279,14 +279,14 @@
 
                         <View
                             style="@style/hMarginLineStyle"
-                            app:visibility="@{!viewModel.cash}"/>
+                            app:asJvisibility="@{!viewModel.cash}"/>
                         <RelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/y96"
                             android:gravity="center_vertical"
                             android:paddingLeft="@dimen/x24"
                             android:paddingRight="@dimen/x24"
-                            app:visibility="@{!viewModel.cash}">
+                            app:asJvisibility="@{!viewModel.cash}">
                             <TextView
                                 android:id="@+id/tv_loan_desc"
                                 android:layout_width="wrap_content"
@@ -313,7 +313,7 @@
                         </RelativeLayout>
                         <View
                             style="@style/hMarginLineStyle"
-                            app:visibility="@{!viewModel.cash}"/>
+                            app:asJvisibility="@{!viewModel.cash}"/>
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -321,7 +321,7 @@
                             android:gravity="center_vertical"
                             android:paddingLeft="@dimen/x24"
                             android:paddingRight="@dimen/x24"
-                            app:visibility="@{!viewModel.cash}">
+                            app:asJvisibility="@{!viewModel.cash}">
 
                             <TextView
                                 android:id="@+id/tv_loan_nper"
@@ -348,19 +348,19 @@
 
                         <View
                             style="@style/hMarginLineStyle"
-                            app:visibility="@{!viewModel.cash}"/>
+                            app:asJvisibility="@{!viewModel.cash}"/>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            app:visibility="@{!viewModel.cash}">
+                            app:asJvisibility="@{!viewModel.cash}">
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/y96"
                                 android:gravity="center_vertical"
                                 android:paddingLeft="@dimen/x24"
                                 android:paddingRight="@dimen/x24"
-                                app:visibility="@{viewModel.consumeSuccess}">
+                                app:asJvisibility="@{viewModel.consumeSuccess}">
 
                                 <TextView
                                     android:id="@+id/tv_loan_has_nper"
@@ -387,7 +387,7 @@
 
                             <View
                                 style="@style/hMarginLineStyle"
-                                app:visibility="@{!viewModel.cash}"/>
+                                app:asJvisibility="@{!viewModel.cash}"/>
                         </LinearLayout>
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -395,7 +395,7 @@
                             android:gravity="center_vertical"
                             android:paddingLeft="@dimen/x24"
                             android:paddingRight="@dimen/x24"
-                            app:visibility="@{!viewModel.cash}">
+                            app:asJvisibility="@{!viewModel.cash}">
 
                             <TextView
                                 android:id="@+id/tv_loan_nper_cash"
@@ -422,19 +422,19 @@
 
                         <View
                             style="@style/hMarginLineStyle"
-                            app:visibility="@{!viewModel.cash}"/>
+                            app:asJvisibility="@{!viewModel.cash}"/>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            app:visibility="@{!viewModel.cash}">
+                            app:asJvisibility="@{!viewModel.cash}">
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/y96"
                                 android:gravity="center_vertical"
                                 android:paddingLeft="@dimen/x24"
                                 android:paddingRight="@dimen/x24"
-                                app:visibility="@{viewModel.consumeSuccess}">
+                                app:asJvisibility="@{viewModel.consumeSuccess}">
 
                                 <TextView
                                     android:id="@+id/tv_loan_has_amount"
@@ -460,13 +460,13 @@
                             </RelativeLayout>
                             <View
                                 style="@style/hMarginLineStyle"
-                                app:visibility="@{viewModel.cash}"/>
+                                app:asJvisibility="@{viewModel.cash}"/>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            app:visibility="@{viewModel.cash}">
+                            app:asJvisibility="@{viewModel.cash}">
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/y96"
@@ -474,7 +474,7 @@
                                 android:paddingLeft="@dimen/x24"
                                 android:paddingRight="@dimen/x24"
                                 android:visibility="gone"
-                                app:visibility="@{viewModel.cashRefuse}">
+                                app:asJvisibility="@{viewModel.cashRefuse}">
 
                                 <TextView
                                     android:id="@+id/tv_loan_cash"
@@ -500,13 +500,13 @@
 
                             <View
                                 style="@style/hMarginLineStyle"
-                                app:visibility="@{viewModel.cash}"/>
+                                app:asJvisibility="@{viewModel.cash}"/>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            app:visibility="@{viewModel.cash}">
+                            app:asJvisibility="@{viewModel.cash}">
                             <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/y96"
@@ -514,7 +514,7 @@
                                 android:paddingLeft="@dimen/x24"
                                 android:paddingRight="@dimen/x24"
                                 android:visibility="gone"
-                                app:visibility="@{viewModel.cashRefuse}">
+                                app:asJvisibility="@{viewModel.cashRefuse}">
 
                                 <TextView
                                     android:layout_width="wrap_content"

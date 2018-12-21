@@ -67,7 +67,7 @@
                             android:text="@{viewModel.rebateMoney}"
                             android:textColor="@color/text_color_black"
                             android:textSize="@dimen/x30"
-                            app:visibility="@{viewModel.showRebateMoney}"
+                            app:asJvisibility="@{viewModel.showRebateMoney}"
                             tools:text="返利金额:¥6.00" />-->
                 </LinearLayout>
 
@@ -75,7 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/y15"
                     android:background="@color/fw_background_color"
-                    app:visibility="@{viewModel.showCreditPay}" />
+                    app:asJvisibility="@{viewModel.showCreditPay}" />
 
 
                 <!--代付/组合支付信息-->
@@ -84,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:orientation="vertical"
-                    app:visibility="@{viewModel.showCreditPay}"
+                    app:asJvisibility="@{viewModel.showCreditPay}"
                     tools:visibility="visible">
 
                     <RelativeLayout
@@ -92,7 +92,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/white"
                         android:paddingTop="@dimen/y20"
-                        app:visibility="@{viewModel.showCreditPay}">
+                        app:asJvisibility="@{viewModel.showCreditPay}">
 
                         <ImageView
                             android:id="@+id/ic_51_pay"
@@ -121,7 +121,7 @@
                             android:text="@string/cashier_need_comb"
                             android:textColor="@color/color_verifypay_countdown"
                             android:textSize="@dimen/x28"
-                            app:visibility="@{viewModel.needComb}" />
+                            app:asJvisibility="@{viewModel.needComb}" />
 
                         <TextView
                             android:id="@+id/available_amount"
@@ -152,7 +152,7 @@
                             android:onClick="@{viewModel.onApCheckerClick}"
                             android:textColor="@color/color_646464"
                             android:textSize="@dimen/x30"
-                            app:visibility="@{viewModel.showAPPay}"
+                            app:asJvisibility="@{viewModel.showAPPay}"
                             tools:checked="true"
                             tools:visibility="gone" />
 
@@ -194,10 +194,10 @@
                         android:background="@color/white"
                         android:paddingEnd="@dimen/x30"
                         android:paddingStart="@dimen/x30"
-                        app:asjitemView="@{perViewModel.itemView}"
-                        app:asjitems="@{perViewModel.items}"
-                        app:layoutManager="@{LayoutManagers.grid(3)}"
-                        app:visibility="@{viewModel.showAPPay}" />
+                        app:asJitemView="@{perViewModel.itemView}"
+                        app:asJitems="@{perViewModel.items}"
+                        app:asJlayoutManager="@{LayoutManagers.grid(3)}"
+                        app:asJvisibility="@{viewModel.showAPPay}" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -206,7 +206,7 @@
                         android:layout_marginStart="@dimen/x30"
                         android:layout_marginTop="@dimen/x36"
                         android:background="@drawable/shape_f9f9f9"
-                        app:visibility="@{viewModel.showAPPay}">
+                        app:asJvisibility="@{viewModel.showAPPay}">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -250,7 +250,7 @@
                         android:paddingBottom="@dimen/y20"
                         android:paddingLeft="@dimen/x30"
                         android:paddingTop="@dimen/y20"
-                        app:visibility="@{viewModel.showAPPay}">
+                        app:asJvisibility="@{viewModel.showAPPay}">
 
                         <TextView
                             android:layout_width="match_parent"
@@ -275,7 +275,7 @@
                     <!--android:background="@color/background_white_color"-->
                     <!--android:orientation="vertical"-->
                     <!--android:visibility="gone"-->
-                    <!--app:visibility="@{viewModel.showCombinationBank}">-->
+                    <!--app:asJvisibility="@{viewModel.showCombinationBank}">-->
 
                     <!--&lt;!&ndash;银行卡支付额度&ndash;&gt;-->
                     <!--<TextView-->
@@ -357,7 +357,7 @@
                         android:layout_height="@dimen/y100"
                         android:orientation="vertical"
                         android:visibility="gone">
-                        <!--app:visibility="@{viewModel.showCreditPay}"-->
+                        <!--app:asJvisibility="@{viewModel.showCreditPay}"-->
                         <!--51信用支付-->
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -424,7 +424,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/y15"
                         android:background="@color/background_gray_color"
-                        app:visibility="@{viewModel.showOtherPayTitle}" />
+                        app:asJvisibility="@{viewModel.showOtherPayTitle}" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -436,7 +436,7 @@
                         android:text="@string/cashier_other_pay_way"
                         android:textColor="@color/text_color_black"
                         android:textSize="@dimen/x28"
-                        app:visibility="@{viewModel.showOtherPayTitle}" />
+                        app:asJvisibility="@{viewModel.showOtherPayTitle}" />
 
 
                     <View
@@ -454,7 +454,7 @@
                         android:text="@{viewModel.payFailedTip}"
                         android:textColor="@color/color_txt_other_pay_optimization"
                         android:textSize="@dimen/x30"
-                        app:visibility="@{viewModel.showFailedTip}"
+                        app:asJvisibility="@{viewModel.showFailedTip}"
                         android:visibility="gone"/>
 
                     <android.support.v7.widget.RecyclerView
@@ -463,9 +463,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/y90"
                         android:layout_weight="1"
-                        app:asjitemView="@{viewModel.itemView}"
-                        app:asjitems="@{viewModel.items}"
-                        app:layoutManager="@{LayoutManagers.linear()}" />
+                        app:asJitemView="@{viewModel.itemView}"
+                        app:asJitems="@{viewModel.items}"
+                        app:asJlayoutManager="@{LayoutManagers.linear()}" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -485,7 +485,7 @@
             android:text="@{viewModel.payBtnTxt}"
             android:textColor="#ff2e2e2e"
             android:textSize="@dimen/x32"
-            app:visibility="@{viewModel.showPayBtn}"
+            app:asJvisibility="@{viewModel.showPayBtn}"
             tools:text="组合支付¥600.00" />
     </RelativeLayout>
 

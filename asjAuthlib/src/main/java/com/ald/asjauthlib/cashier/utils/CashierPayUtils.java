@@ -298,6 +298,7 @@ public class CashierPayUtils {
                     if (Constant.ORDER_FROM_SUREORDER.equals(cashierModel.getOrderFrom())) {
                         //关闭确认订单h5
                         ActivityUtils.finish(HTML5WebView.class);
+                        Utils.jumpH5(AlaConfig.getServerProvider().getH5Server() + Constant.H5_ORDER_LIST_ALL);
                     } else if (Constant.ORDER_FROM_ORDERLIST.equals(cashierModel.getOrderFrom())) {
                         //刷新订单列表h5
                         Intent intent = new Intent(HTML5WebView.ACTION_REFRESH);

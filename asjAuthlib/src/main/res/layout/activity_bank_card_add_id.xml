@@ -68,7 +68,7 @@
                 android:textColor="@color/text_color_black"
                 android:textColorHint="@color/text_color_normal_light"
                 android:textSize="@dimen/x28"
-                app:watcher="@{viewModel.idWatcher}" />
+                app:asJwatcher="@{viewModel.idWatcher}" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -76,7 +76,7 @@
                 android:layout_marginRight="33dp"
                 android:onClick="@{viewModel.nameClick}"
                 android:src="@drawable/ic_info"
-                app:visibility="@{viewModel.showNoticeIc}" />
+                app:asJvisibility="@{viewModel.showNoticeIc}" />
 
         </LinearLayout>
         <View
@@ -121,8 +121,8 @@
                 android:textColor="@color/text_color_black"
                 android:textColorHint="@color/text_color_normal_light"
                 android:textSize="@dimen/x28"
-                app:visibility="@{viewModel.isIDLayout}"
-                app:watcher="@{viewModel.idWatcher}"
+                app:asJvisibility="@{viewModel.isIDLayout}"
+                app:asJwatcher="@{viewModel.idWatcher}"
                 tools:visibility="gone" />
 
             <!--银行卡号输入框 增加inputType属性，获取焦点后调用数字键盘-->
@@ -145,8 +145,8 @@
                 android:textColor="@color/text_color_black"
                 android:textColorHint="@color/text_color_normal_light"
                 android:textSize="@dimen/x28"
-                app:visibility="@{!viewModel.isIDLayout}"
-                app:watcher="@{viewModel.bankCardWatcher}" />
+                app:asJvisibility="@{!viewModel.isIDLayout}"
+                app:asJwatcher="@{viewModel.bankCardWatcher}" />
 
 
             <ImageView
@@ -161,7 +161,7 @@
             android:layout_width="match_parent"
             android:layout_height="0.5dp"/>
         <TextView
-            app:visibility="@{viewModel.showSupportBank}"
+            app:asJvisibility="@{viewModel.showSupportBank}"
             android:onClick="@{viewModel::supportBankClick}"
             android:layout_marginRight="10dp"
             android:layout_gravity="end"

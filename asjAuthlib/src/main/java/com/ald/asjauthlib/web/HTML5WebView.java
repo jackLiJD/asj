@@ -29,11 +29,8 @@ import java.net.URLDecoder;
 
 public class HTML5WebView extends com.ald.asjauthlib.authframework.core.activity.HTML5WebView implements NoImmersionBar {
     public static final String ACTION_REFRESH = "auth__action_refresh__";
-    public static final String ACTION_SHARE_ONSTART = "action_share_onstart";
-    public static final String ACTION_SHARE_SUCCESS = "action_share_success";
     public static final String ACTION_REFRESH_CONTACTS = "action_refresh_contacts";
     private InnerReceiver receiver;
-    private ShareReceiver shareReceiver;
     private JSToJava jsToJava;
     private boolean hasSetSystemFit;
 
@@ -47,11 +44,6 @@ public class HTML5WebView extends com.ald.asjauthlib.authframework.core.activity
         receiver = new InnerReceiver();
         IntentFilter filter = new IntentFilter(ACTION_REFRESH);
         registerReceiver(receiver, filter);
-        shareReceiver = new ShareReceiver(this);
-        IntentFilter shareFilter = new IntentFilter();
-        shareFilter.addAction(ACTION_SHARE_ONSTART);
-        shareFilter.addAction(ACTION_SHARE_SUCCESS);
-        AlaConfig.getLocalBroadcastManager().registerReceiver(shareReceiver, shareFilter);
         setImmersionBar();
         hasSetSystemFit = true;
 
@@ -64,7 +56,7 @@ public class HTML5WebView extends com.ald.asjauthlib.authframework.core.activity
         hiddenRightOption();
         if (url.contains("showTitle=false")) {
             hideTitleBar();
-            if (!url.contains("/asj/fqshop/orders")&&hasSetSystemFit) {
+            if (hasSetSystemFit) {
                 setTransImmersionBar();
                 hasSetSystemFit = !hasSetSystemFit;
             }
@@ -144,7 +136,6 @@ public class HTML5WebView extends com.ald.asjauthlib.authframework.core.activity
     @Override
     protected void onDestroy() {
         unregisterReceiver(receiver);
-        AlaConfig.getLocalBroadcastManager().unregisterReceiver(shareReceiver);
         super.onDestroy();
     }
 
@@ -180,26 +171,4 @@ public class HTML5WebView extends com.ald.asjauthlib.authframework.core.activity
         }
     }
 
-    private static class ShareReceiver extends BroadcastReceiver {
-
-        private WeakReference<HTML5WebView> weakWebView;
-
-        public ShareReceiver(HTML5WebView webView) {
-            weakWebView = new WeakReference<>(webView);
-        }
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (intent == null || weakWebView == null || weakWebView.get() == null) {
-                return;
-            }
-            final String action = intent.getAction();
-            final String platform = intent.getStringExtra("share_media");
-            if (ACTION_SHARE_ONSTART.equals(action)) { // 点击平台按钮分享开始
-                weakWebView.get().statisticsShareClick(platform);
-            } else if (ACTION_SHARE_SUCCESS.equals(action)) {    // 分享成功
-                weakWebView.get().statisticsShareSuccess(platform);
-            }
-        }
-    }
 }

@@ -20,10 +20,10 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:addItemDecoration="@{viewModel.type}"
-            app:asjitemView="@{viewModel.itemView}"
-            app:asjitems="@{viewModel.items}"
-            app:layoutManager="@{LayoutManagers.linear()}"/>
+            app:asJaddItemDecoration="@{viewModel.type}"
+            app:asJitemView="@{viewModel.itemView}"
+            app:asJitems="@{viewModel.items}"
+            app:asJlayoutManager="@{LayoutManagers.linear()}"/>
 
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 

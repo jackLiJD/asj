@@ -54,12 +54,14 @@ public class GlideCircleTransform extends BitmapTransformation {
         return result;
     }
 
-    @Override public String getId() {
+    /*@Override public String getId() {
         return getClass().getName();
-    }
+    }*/
 
-//    @Override
-//    public void updateDiskCacheKey(@NonNull MessageDigest messageDigest) {
-//
-//    }
+
+
+    @Override
+    public String getId() {
+        return "";
+    }
 }

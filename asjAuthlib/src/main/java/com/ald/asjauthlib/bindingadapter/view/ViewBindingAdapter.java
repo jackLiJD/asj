@@ -1,9 +1,7 @@
 package com.ald.asjauthlib.bindingadapter.view;
 
 import android.databinding.BindingAdapter;
-import android.graphics.Bitmap;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -27,8 +25,10 @@ import com.ald.asjauthlib.R;
 import com.ald.asjauthlib.widget.AddSpaceTextWatcher;
 import com.ald.asjauthlib.widget.TextSwitcher;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.target.ViewTarget;
 import com.ald.asjauthlib.authframework.core.ui.flowlayout.TagAdapter;
 import com.ald.asjauthlib.authframework.core.ui.flowlayout.TagFlowLayout;
 import com.ald.asjauthlib.authframework.core.utils.DensityUtils;
@@ -49,7 +49,7 @@ import java.util.ArrayList;
  */
 public final class ViewBindingAdapter {
 
-    @BindingAdapter(value = {"textSize"}, requireAll = false)
+    @BindingAdapter(value = {"asJtextSize"}, requireAll = false)
     public static void setTextViewSize(final TextView textView, float textSize) {
         if (0 != textSize) {
             float size = DensityUtils.px2dp(textView.getContext(), textSize);
@@ -57,18 +57,18 @@ public final class ViewBindingAdapter {
         }
     }
 
-    @BindingAdapter(value = {"view_width", "view_height"}, requireAll = false)
+    @BindingAdapter(value = {"asJview_width", "asJview_height"}, requireAll = false)
     public static void setViewWidthHeight(final View view, int viewWidth, int viewHeight) {
         if (0 != viewWidth) view.getLayoutParams().width = viewWidth;
         if (0 != viewHeight) view.getLayoutParams().height = viewHeight;
     }
 
-    @BindingAdapter(value = {"paddingTop", "paddingBottom", "paddingLeft", "paddingRight"}, requireAll = false)
+    @BindingAdapter(value = {"asJpaddingTop", "asJpaddingBottom", "asJpaddingLeft", "asJpaddingRight"}, requireAll = false)
     public static void setViewPadding(final View view, int paddingTop, int paddingBottom, int paddingLeft, int paddingRight) {
         view.setPadding(paddingLeft, paddingTop, paddingRight, paddingBottom);
     }
 
-    @BindingAdapter(value = {"leftMargin", "topMargin", "rightMargin", "bottomMargin"}, requireAll = false)
+    @BindingAdapter(value = {"asJleftMargin", "asJtopMargin", "asJrightMargin", "asJbottomMargin"}, requireAll = false)
     public static void setViewMargin(final View view, int leftMargin, int topMargin, int rightMargin, int bottomMargin) {
         ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
         params.leftMargin = leftMargin;
@@ -78,7 +78,7 @@ public final class ViewBindingAdapter {
     }
 
 
-    @BindingAdapter(value = {"bannerListener"}, requireAll = false)
+    @BindingAdapter(value = {"asJbannerListener"}, requireAll = false)
     public static void bannerListener(final Banner banner, final BannerListener listener) {
         if (null != listener) {
             banner.setOnBannerClickListener(new OnBannerClickListener() {
@@ -90,7 +90,7 @@ public final class ViewBindingAdapter {
         }
     }
 
-    @BindingAdapter(value = {"backgroundUrl", "backgroundColor"}, requireAll = false)
+    @BindingAdapter(value = {"asJbackgroundUrl", "asJbackgroundColor"}, requireAll = false)
     public static void setViewGroupBackground(final View view, String backgroundUrl, String backgroundColor) {
         int bgResId = 0;
         try {
@@ -99,14 +99,12 @@ public final class ViewBindingAdapter {
                 view.setBackgroundColor(bgResId);
             } else {
                 if (MiscUtils.isNotEmpty(backgroundUrl)) {
-//                    GlideApp.with(view.getContext()).load(backgroundUrl)
-//                            .into(new ViewTarget<View, Drawable>(view) {
-//
-//                                @Override
-//                                public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
-//                                    view.setBackground(resource.getCurrent());
-//                                }
-//                            });
+                    Glide.with(view.getContext()).load(backgroundUrl).into(new SimpleTarget<GlideDrawable>() {
+                        @Override
+                        public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
+                            view.setBackground(resource);
+                        }
+                    });
                            /* .into(new ViewTarget<View, GlideDrawable>(view) {
                                 //括号里为需要加载的控件
                                 @Override
@@ -116,17 +114,17 @@ public final class ViewBindingAdapter {
                                 }
                             });*/
 
-                    Glide.with(view.getContext())
-                            .load(backgroundUrl)
-                            .asBitmap()
-                            .into(new SimpleTarget<Bitmap>() {
-                                @Override
-                                public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap>
-                                        glideAnimation) {
-                                    Drawable drawable = new BitmapDrawable(view.getResources(), resource);
-                                    view.setBackground(drawable);
-                                }
-                            });
+//                    Glide.with(view.getContext())
+//                            .load(backgroundUrl)
+//                            .asBitmap()
+//                            .into(new SimpleTarget<Bitmap>() {
+//                                @Override
+//                                public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap>
+//                                        glideAnimation) {
+//                                    Drawable drawable = new BitmapDrawable(view.getResources(), resource);
+//                                    view.setBackground(drawable);
+//                                }
+//                            });
                 } else if (MiscUtils.isNotEmpty(backgroundColor)) {
                     if (backgroundColor.charAt(0) == '#') {
                         view.setBackgroundColor(Color.parseColor(backgroundColor));
@@ -145,7 +143,7 @@ public final class ViewBindingAdapter {
     /**
      * Banner切换动画
      */
-    @BindingAdapter(value = {"bannerAnimation"}, requireAll = false)
+    @BindingAdapter(value = {"asJbannerAnimation"}, requireAll = false)
     public static void bannerAnimation(final Banner banner, Class<? extends ViewPager.PageTransformer> animation) {
         banner.setBannerAnimation(animation);
     }
@@ -153,13 +151,13 @@ public final class ViewBindingAdapter {
     /**
      * 设置RecyclerView Item宽高(布局使用RelativeLayout)
      */
-    @BindingAdapter(value = {"itemLayoutParams"}, requireAll = false)
+    @BindingAdapter(value = {"asJitemLayoutParams"}, requireAll = false)
     public static void itemLayoutParams(final RelativeLayout itemView, ViewGroup.LayoutParams layoutParams) {
         itemView.getLayoutParams().width = layoutParams.width;
         itemView.getLayoutParams().height = layoutParams.height;
     }
 
-    @BindingAdapter(value = {"onPullToRefreshListener"}, requireAll = false)
+    @BindingAdapter(value = {"asJonPullToRefreshListener"}, requireAll = false)
     public static void onPullToRefreshListener(final RecyclerView recyclerView, final PullToRefreshListener listener) {
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -196,7 +194,7 @@ public final class ViewBindingAdapter {
         });
     }
 
-    @BindingAdapter({"seekProgress"})
+    @BindingAdapter({"asJseekProgress"})
     public static void SeekBarChangeListener(SeekBar seekBar, final OnProgressChangeListener changeListener) {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -224,7 +222,7 @@ public final class ViewBindingAdapter {
 
     }
 
-    @BindingAdapter("textWatch")
+    @BindingAdapter("asJtextWatch")
     public static void addTextWatch(final EditText editText, final OnWatchListener listener) {
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -246,7 +244,7 @@ public final class ViewBindingAdapter {
         });
     }
 
-    @BindingAdapter("editActionDone")
+    @BindingAdapter("asJeditActionDone")
     public static void addEditActionDone(final EditText editText, final OnActionDoneListener listener) {
         editText.setOnEditorActionListener((textView, i, keyEvent) -> {
             if (i == EditorInfo.IME_ACTION_DONE) {
@@ -259,12 +257,12 @@ public final class ViewBindingAdapter {
         });
     }
 
-    @BindingAdapter("asjsetTextColor")
+    @BindingAdapter("asJsetTextColor")
     public static void setTextColor(TextView textView, int textColor) {
         textView.setTextColor(textColor);
     }
 
-    @BindingAdapter("switchWatch")
+    @BindingAdapter("asJswitchWatch")
     public static void addSwitchWatch(ToggleButton button, final SwitchWatch watch) {
         button.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (watch != null)
@@ -272,12 +270,12 @@ public final class ViewBindingAdapter {
         });
     }
 
-    @BindingAdapter("switchText")
+    @BindingAdapter("asJswitchText")
     public static void addSwitchText(TextSwitcher switcher, ArrayList<String> textList) {
         switcher.addTextList(textList);
     }
 
-    @BindingAdapter("checkWatch")
+    @BindingAdapter("asJcheckWatch")
     public static void addSwitchWatch(CheckBox box, final CheckWatch watch) {
         box.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (watch != null) {
@@ -286,14 +284,14 @@ public final class ViewBindingAdapter {
         });
     }
 
-    @BindingAdapter("flowAdapter")
+    @BindingAdapter("asJflowAdapter")
     public static void setAdapter(TagFlowLayout flowLayout, TagAdapter adapter) {
         flowLayout.setAdapter(adapter);
     }
 
 
     @Deprecated
-    @BindingAdapter("mobilePhoneWatcher")
+    @BindingAdapter("asJmobilePhoneWatcher")
     public static void setPhoneWatcher(EditText editText, MobileWatcher watcher) {
         AddSpaceTextWatcher addSpaceTextWatcher = new AddSpaceTextWatcher(editText, 13);
     }
@@ -306,7 +304,7 @@ public final class ViewBindingAdapter {
     //	editTextWithDelNew.setHint(new SpannableString(spannableString));
     //}
 
-    @BindingAdapter("dynamicMarginBottom")
+    @BindingAdapter("asJdynamicMarginBottom")
     public static void setMarginBottom(View view, int marginBottom) {
         ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
         if (lp != null) {
@@ -316,7 +314,7 @@ public final class ViewBindingAdapter {
     }
 
 
-    @BindingAdapter(value = {"indicatorGravity"}, requireAll = false)
+    @BindingAdapter(value = {"asJindicatorGravity"}, requireAll = false)
     public static void setBannerIndicatorGr(final Banner banner, int gravity) {
         banner.setIndicatorGravity(gravity);
     }

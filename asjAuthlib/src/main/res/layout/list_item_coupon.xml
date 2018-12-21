@@ -133,13 +133,13 @@
                     android:gravity="center"
                     android:onClick="@{viewModel.itemClick}"
                     android:textSize="13sp"
-                    app:visibility="@{viewModel.isValidate&amp;&amp;viewModel.isUsing}" />
+                    app:asJvisibility="@{viewModel.isValidate&amp;&amp;viewModel.isUsing}" />
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_coupon_invalidate"
-                    app:visibility="@{!viewModel.isValidate}" />
+                    app:asJvisibility="@{!viewModel.isValidate}" />
 
                 <Button
                     android:layout_width="70dp"
@@ -152,7 +152,7 @@
                     android:text="@string/dialog_red_package_action_use"
                     android:textColor="@color/color_2e2e2e"
                     android:textSize="13sp"
-                    app:visibility="@{viewModel.isValidate&amp;&amp;!viewModel.isUsing}" />
+                    app:asJvisibility="@{viewModel.isValidate&amp;&amp;!viewModel.isUsing}" />
 
             </RelativeLayout>
 
@@ -168,7 +168,7 @@
             android:text="@{viewModel.couponStatement}"
             android:textColor="@{viewModel.isValidate?@color/color_999999:@color/color_bababa}"
             android:textSize="@dimen/x24"
-            app:visibility="@{viewModel.displayCouponStatement}"
+            app:asJvisibility="@{viewModel.displayCouponStatement}"
             tools:text="说啊付款了是否考虑接受康复科大夫手机发顺丰" />
     </com.ald.asjauthlib.widget.ShadowLayout>
 
