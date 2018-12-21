@@ -97,7 +97,7 @@ public class XMLBinding {
     /**
      * 为ImageView设置图片
      */
-    @BindingAdapter(value = {"src", "defaultImage", "hiddenPlaceholder", "width", "height"}, requireAll = true)
+    @BindingAdapter(value = {"src", "defaultImage", "hiddenPlaceholder", "width", "height"})
     public static void setImageAsj(final ImageView imageView, String path, Drawable defaultImage, boolean hidden, int width, int height) {
         if (null == defaultImage && !hidden) {
             defaultImage = ContextCompat.getDrawable(AlaConfig.getContext(), R.drawable.fw__default_picture);
