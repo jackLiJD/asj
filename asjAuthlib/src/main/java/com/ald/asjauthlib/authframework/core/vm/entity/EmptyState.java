@@ -174,7 +174,7 @@ public class EmptyState extends BaseObservable {
         void onClick(View view);
     }
 
-    @BindingAdapter("emptyState")
+    @BindingAdapter("asjemptyState")
     public static void emptyState(View view, EmptyState state) {
         ((PageLoadingView) view).setEmptyState(state);
     }

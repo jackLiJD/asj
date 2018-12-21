@@ -187,8 +187,8 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:background="@color/white"
-                    app:itemView="@{viewModel.itemView}"
-                    app:items="@{viewModel.items}"
+                    app:asjitemView="@{viewModel.itemView}"
+                    app:asjitems="@{viewModel.items}"
                     app:layoutManager="@{LayoutManagers.linear()}" />
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>

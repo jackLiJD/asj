@@ -218,7 +218,7 @@
                 android:layout_below="@id/borrowTime"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="30dp"
-                app:src="@{viewModel.displayGoodsImage}"
+                app:asjsrc="@{viewModel.displayGoodsImage}"
                 tools:src="@drawable/ic_app" />
 
             <RelativeLayout

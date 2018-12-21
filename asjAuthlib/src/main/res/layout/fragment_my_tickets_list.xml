@@ -39,8 +39,8 @@
             android:layout_height="match_parent"
             android:background="@color/background_gray_color"
             app:addItemDecoration="@{viewModel.type}"
-            app:itemView="@{viewModel.itemView}"
-            app:items="@{viewModel.items}"
+            app:asjitemView="@{viewModel.itemView}"
+            app:asjitems="@{viewModel.items}"
             app:layoutManager="@{LayoutManagers.linear()}"
             app:onPullToRefreshListener="@{viewModel.pullToRefresh}"
             app:visibility="@{viewModel.showList}" />

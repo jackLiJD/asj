@@ -336,7 +336,7 @@ public final class ViewBindingAdapter {
         }
     }
 
-    @BindingAdapter(value = {"textColor", "defaultColor", "visibility"}, requireAll = false)
+    @BindingAdapter(value = {"asjtextColor", "asjdefaultColor", "asjvisibility"}, requireAll = false)
     public static void setText(final TextView textView, String textColor, int defaultColor, boolean visibility) {
         if (0 == defaultColor) {
             defaultColor = ContextCompat.getColor(textView.getContext(), R.color.text_color_black);

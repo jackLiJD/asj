@@ -97,8 +97,8 @@ public class XMLBinding {
     /**
      * 为ImageView设置图片
      */
-    @BindingAdapter(value = {"src", "defaultImage", "hiddenPlaceholder", "width", "height"})
-    public static void setImageAsj(final ImageView imageView, String path, Drawable defaultImage, boolean hidden, int width, int height) {
+    @BindingAdapter(value = {"asjsrc", "asjdefaultImage", "hiddenPlaceholder", "width", "height"}, requireAll = false)
+    public static void setImage(final ImageView imageView, String path, Drawable defaultImage, boolean hidden, int width, int height) {
         if (null == defaultImage && !hidden) {
             defaultImage = ContextCompat.getDrawable(AlaConfig.getContext(), R.drawable.fw__default_picture);
         }
@@ -122,7 +122,7 @@ public class XMLBinding {
         }
     }
 
-    @BindingAdapter(value = {"background", "defaultImage"}, requireAll = false)
+    @BindingAdapter(value = {"asjbackground", "asjdefaultImage"}, requireAll = false)
     public static void setBackground(final View view, String path, Drawable defaultImage) {
         if (defaultImage != null) {
             view.setBackground(defaultImage);
@@ -163,8 +163,8 @@ public class XMLBinding {
      * 为ImageView设置图片
      * 当后台不传宽高时取原图比例适配手机屏幕
      */
-    @BindingAdapter(value = {"source", "defaultImage", "animRes", "width", "height", "appRect"}, requireAll = false)
-    public static void setImageAsj(final ImageView imageView, String path, Drawable defaultImage, Animation animRes, int width, int height, final Rect appRect) {
+    @BindingAdapter(value = {"source", "asjdefaultImage", "animRes", "width", "height", "appRect"}, requireAll = false)
+    public static void setImage(final ImageView imageView, String path, Drawable defaultImage, Animation animRes, int width, int height, final Rect appRect) {
         if (null == defaultImage)
             defaultImage = ContextCompat.getDrawable(AlaConfig.getContext(), R.drawable.fw__default_picture);
         if (defaultImage != null) imageView.setImageDrawable(defaultImage);
@@ -432,7 +432,7 @@ public class XMLBinding {
     /**
      * list 中 EditText 变化通知
      */
-    @BindingAdapter(value = {"watcher", "list"}, requireAll = false)
+    @BindingAdapter(value = {"asjwatcher", "list"}, requireAll = false)
     public static void setEditChangeListener(EditText ed, EditTextFormat.EditTextFormatWatcher watcher,
                                              LinkedList<EditText> edlist) {
         if (null != watcher) {
@@ -461,7 +461,7 @@ public class XMLBinding {
     /**
      * 为ImageView设置圆角图片
      */
-    @BindingAdapter(value = {"roundsrc", "defaultImage"}, requireAll = false)
+    @BindingAdapter(value = {"asjroundsrc", "asjdefaultImage"}, requireAll = false)
     public static void setRoundImage(final ImageView imageView, String path, Drawable defaultImage) {
         if (null == defaultImage) {
             defaultImage = ContextCompat.getDrawable(AlaConfig.getContext(), R.drawable.fw__default_picture);
@@ -474,7 +474,7 @@ public class XMLBinding {
     /**
      * 为ImageView设置成圆形图片
      */
-    @BindingAdapter(value = {"circlesrc", "defaultImage"}, requireAll = false)
+    @BindingAdapter(value = {"asjcirclesrc", "asjdefaultImage"}, requireAll = false)
     public static void setCircleImage(final ImageView imageView, String path, Drawable defaultImage) {
         if (null == defaultImage) {
             defaultImage = ContextCompat.getDrawable(AlaConfig.getContext(), R.drawable.fw__default_picture);
@@ -485,7 +485,7 @@ public class XMLBinding {
                 .error(BitmapUtil.bitmap2Drawable(BitmapUtil.toRoundCorner(bitmap, 90))).into(imageView);
     }
 
-    @BindingAdapter(value = {"beforeTextChange", "onTextChanged", "afterTextChanged"}, requireAll = false)
+    @BindingAdapter(value = {"asjbeforeTextChange", "asjonTextChanged", "asjafterTextChanged"}, requireAll = false)
     public static void setTextWatcher(TextView textView, final XMLBindListener.TextWatcher.beforeTextChange before,
                                       final XMLBindListener.TextWatcher.onTextChanged changed,
                                       final XMLBindListener.TextWatcher.afterChanged afterChanged) {

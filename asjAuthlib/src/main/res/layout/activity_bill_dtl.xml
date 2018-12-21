@@ -48,8 +48,8 @@
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:itemView="@{viewModel.monthView}"
-                app:items="@{viewModel.months}"
+                app:asjitemView="@{viewModel.monthView}"
+                app:asjitems="@{viewModel.months}"
                 app:layoutManager="@{LayoutManagers.linear(0, false)}" />
         </LinearLayout>
 
@@ -167,8 +167,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:addItemDecoration="@{viewModel.type}"
-                app:itemView="@{viewModel.itemView}"
-                app:items="@{viewModel.items}"
+                app:asjitemView="@{viewModel.itemView}"
+                app:asjitems="@{viewModel.items}"
                 app:layoutManager="@{LayoutManagers.linear()}" />
 
             <com.scwang.smartrefresh.layout.footer.FalsifyFooter

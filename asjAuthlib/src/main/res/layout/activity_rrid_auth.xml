@@ -207,7 +207,7 @@
                 android:onClick="@{viewModel.idfrontClick}"
                 android:scaleType="centerCrop"
                 android:visibility="gone"
-                app:defaultImage="@{@drawable/bg_id_back}"
+                app:asjdefaultImage="@{@drawable/bg_id_back}"
                 app:roundImageRadius="@{10}"
                 app:roundImageUrl="@{viewModel.frontSource}" />
 
@@ -266,7 +266,7 @@
                 android:layout_centerInParent="true"
                 android:onClick="@{viewModel.idbackClick}"
                 android:scaleType="centerCrop"
-                app:defaultImage="@{@drawable/bg_id_back}"
+                app:asjdefaultImage="@{@drawable/bg_id_back}"
                 app:roundImageRadius="@{10}"
                 app:roundImageUrl="@{viewModel.backSource}"
                 />

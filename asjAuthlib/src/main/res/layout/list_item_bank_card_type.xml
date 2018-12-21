@@ -22,7 +22,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/x24"
-            bind:src="@{viewModel.imgUrl}"/>
+            bind:asjemptyState="@{viewModel.imgUrl}"/>
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"

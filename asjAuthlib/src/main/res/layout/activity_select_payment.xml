@@ -194,8 +194,8 @@
                         android:background="@color/white"
                         android:paddingEnd="@dimen/x30"
                         android:paddingStart="@dimen/x30"
-                        app:itemView="@{perViewModel.itemView}"
-                        app:items="@{perViewModel.items}"
+                        app:asjitemView="@{perViewModel.itemView}"
+                        app:asjitems="@{perViewModel.items}"
                         app:layoutManager="@{LayoutManagers.grid(3)}"
                         app:visibility="@{viewModel.showAPPay}" />
 
@@ -463,8 +463,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="@dimen/y90"
                         android:layout_weight="1"
-                        app:itemView="@{viewModel.itemView}"
-                        app:items="@{viewModel.items}"
+                        app:asjitemView="@{viewModel.itemView}"
+                        app:asjitems="@{viewModel.items}"
                         app:layoutManager="@{LayoutManagers.linear()}" />
                 </LinearLayout>
 

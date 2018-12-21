@@ -36,7 +36,7 @@
             android:background="@drawable/frame_circle_white"
             android:scaleType="centerCrop"
             bind:defaultImage="@{@drawable/ic_default_bank_card_logo}"
-            bind:src="@{viewModel.displayImageUrl}" />
+            bind:asjemptyState="@{viewModel.displayImageUrl}" />
 
         <ImageView
             android:id="@+id/iv_right"

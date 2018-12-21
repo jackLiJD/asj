@@ -41,7 +41,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:background="@color/color_bg_manage_bankcard_content"
-            app:emptyState="@{viewModel.modelState}"
+            app:asjemptyState="@{viewModel.modelState}"
             app:visibility="@{viewModel.modelState.noData}"/>
 
         <android.support.v7.widget.RecyclerView
@@ -51,8 +51,8 @@
             android:background="@color/color_bg_manage_bankcard_content"
             android:nestedScrollingEnabled="false"
             app:addItemDecoration="@{viewModel.type}"
-            app:itemView="@{viewModel.itemView}"
-            app:items="@{viewModel.items}"
+            app:asjitemView="@{viewModel.itemView}"
+            app:asjitems="@{viewModel.items}"
             app:layoutManager="@{LayoutManagers.linear()}"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 

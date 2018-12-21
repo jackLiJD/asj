@@ -259,7 +259,7 @@ public final class ViewBindingAdapter {
         });
     }
 
-    @BindingAdapter("setTextColor")
+    @BindingAdapter("asjsetTextColor")
     public static void setTextColor(TextView textView, int textColor) {
         textView.setTextColor(textColor);
     }

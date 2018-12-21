@@ -443,7 +443,7 @@
             android:id="@+id/model_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:emptyState="@{viewModel.modelState}"
+            app:asjemptyState="@{viewModel.modelState}"
             app:visibility="@{viewModel.modelState.noData}" />
     </RelativeLayout>
 </layout>

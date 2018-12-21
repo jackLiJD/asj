@@ -37,8 +37,8 @@
                 android:layout_marginTop="@dimen/y44"
                 android:background="@drawable/frame_circle_white"
                 android:scaleType="centerCrop"
-                app:defaultImage="@{@drawable/ic_default_bank_card_logo}"
-                app:src="@{viewModel.displayImageUrl}" />
+                app:asjdefaultImage="@{@drawable/ic_default_bank_card_logo}"
+                app:asjsrc="@{viewModel.displayImageUrl}" />
 
             <TextView
                 android:id="@+id/tv_name"

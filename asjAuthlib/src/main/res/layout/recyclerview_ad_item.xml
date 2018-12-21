@@ -20,7 +20,7 @@
         app:paddingBottom="@{viewModel.paddingBottom}"
         app:width="@{viewModel.adWidth}"
         app:height="@{viewModel.adHeight}"
-        app:src="@{viewModel.adImage}"
+        app:asjsrc="@{viewModel.adImage}"
         android:onClick="@{viewModel.adClick}"/>
 
 </layout>

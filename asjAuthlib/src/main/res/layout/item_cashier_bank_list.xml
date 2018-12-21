@@ -24,8 +24,8 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/x30"
-            app:defaultImage="@{@drawable/ic_order_phone_default}"
-            app:src="@{viewModel.displayIc}"
+            app:asjdefaultImage="@{@drawable/ic_order_phone_default}"
+            app:asjsrc="@{viewModel.displayIc}"
             tools:src="@drawable/ic_ali_pay" />
 
         <TextView

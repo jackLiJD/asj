@@ -31,8 +31,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:addItemDecoration="@{viewModel.type}"
-                app:itemView="@{viewModel.itemView}"
-                app:items="@{viewModel.items}"
+                app:asjitemView="@{viewModel.itemView}"
+                app:asjitems="@{viewModel.items}"
                 app:layoutManager="@{LayoutManagers.linear()}"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:notifyAdapter="@{viewModel.adapterListener}" />
@@ -212,7 +212,7 @@
             android:id="@+id/model_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:emptyState="@{viewModel.modelState}"
+            app:asjemptyState="@{viewModel.modelState}"
             app:visibility="@{viewModel.modelState.noData}" />
     </FrameLayout>
 </layout>

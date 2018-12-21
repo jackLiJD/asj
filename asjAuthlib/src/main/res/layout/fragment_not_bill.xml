@@ -109,8 +109,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:isRebound="@{viewModel.isRebound}"
-                app:itemView="@{viewModel.itemView}"
-                app:items="@{viewModel.items}"
+                app:asjitemView="@{viewModel.itemView}"
+                app:asjitems="@{viewModel.items}"
                 app:layoutManager="@{LayoutManagers.linear()}" />
 
         </FrameLayout>
